@@ -1,0 +1,1976 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>InvoiceService - Infusionsoft API</title>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap-extension.css"/>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+		<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+		<link href="google-code-prettify/src/prettify.css" type="text/css" rel="stylesheet"/>
+		<script type="text/javascript" src="google-code-prettify/src/prettify.js"></script>
+	</head>
+	<body onload="prettyPrint()">
+		<div class="container">
+			<div class="row">
+				<div class="span12" style="margin-top:40px;">
+				</div>
+			</div>
+			<div class="row">
+				<div class="span2 sidebar">
+					<div class="well">
+						<h4>Sidebar</h4>
+						<ul>
+							<li>Link 1</li>
+							<li>Link 2</li>
+							<li>Link 3</li>
+							<li>Link 4</li>
+						</ul>
+					</div>
+				</div>
+				<div class="span10">
+					<h1>InvoiceService API</h1>
+
+					<p>InvoiceService allows you to manage eCommerce transactions.</p>
+					
+					
+					
+					<!-- METHOD START -->
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">InvoiceService.</span><span class="method">createBlankOrder</span>
+					</div>
+					
+					<p>Creates a one-time order with no added line items</p>
+
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key.</td>
+							</tr>
+							<tr>
+								<td>contactId</td>
+								<td>int</td>
+								<td>the Id number of the contact record this order will be connected to</td>
+							</tr>
+							<tr>
+								<td>description</td>
+								<td>string</td>
+								<td>the name this order will display. This is also the hyperlink to the order found on the contact's order tab</td>
+							</tr>
+							<tr>
+								<td>orderDate</td>
+								<td>dateTime</td>
+								<td>date of order</td>
+							</tr>
+							<tr>
+								<td>leadAffiliateId</td>
+								<td>int</td>
+								<td>the Id number of the affiliate you would like placed as the lead affiliate. 0 if no affiliate should be attached</td>
+							</tr>
+							<tr>
+								<td>saleAffiliateId</td>
+								<td>int</td>
+								<td>the Id number of the affiliate you would like placed as the sale affiliate. 0 if no affiliate should be attached</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>(int) Invoice Id for this new order</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;InvoiceService.createBlankOrder&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;c94a1f2b395a9ab97d4263b37f7b0923&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;22&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;hello world&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;dateTime.iso8601&gt;20080908T00:00:00&lt;/dateTime.iso8601&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;2&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;2&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;i4&gt;
+          8
+        &lt;/i4&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+										<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$oDate = $myApp->infuDate("8-9-2008");
+$invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
+					
+					<!-- METHOD END -->
+					
+					<!-- METHOD START -->
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">InvoiceService.</span><span class="method">addOrderItem</span>
+					</div>
+					
+					<p>Adds a line item to an order. This used to add a Product to an order as well as any other sort of charge/discount.</p>
+
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key.</td>
+							</tr>
+							<tr>
+								<td>invoiceId</td>
+								<td>int</td>
+								<td>the Id number of the invoice this item is being added to</td>
+							</tr>
+							<tr>
+								<td>productId</td>
+								<td>int</td>
+								<td>the Id number of the product you are adding. If you are adding something such as tax, shipping, or a discount, make this 0</td>
+							</tr>
+							<tr>
+								<td>type</td>
+								<td>int</td>
+								<td>the line item type - defined in the table below</td>
+							</tr>
+							<tr>
+								<td>price</td>
+								<td>double</td>
+								<td>the price of this line item.</td>
+							</tr>
+							<tr>
+								<td>quantity</td>
+								<td>int</td>
+								<td>the quantity of item added</td>
+							</tr>
+							<tr>
+								<td>title</td>
+								<td>string</td>
+								<td>the name you want this line item to appear as</td>
+							</tr>
+							<tr>
+								<td>description</td>
+								<td>string</td>
+								<td>a full description for this line item</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<br>
+					
+					<h3>"Type" Parameter Options</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Type ID</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>Shipping</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Tax</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Service &amp; Misc</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>Product</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>Upsell Product</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>Finance Charge</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>Special</td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>Program</td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>Subscription Plan</td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td>Special: Free Trial Days</td>
+							</tr>
+							<tr>
+								<td>12</td>
+								<td>Special: Order Total</td>
+							</tr>
+							<tr>
+								<td>12</td>
+								<td>Special: Product</td>
+							</tr>
+							<tr>
+								<td>13</td>
+								<td>Special: Category</td>
+							</tr>
+							<tr>
+								<td>14</td>
+								<td>Special: Shipping</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>(boolean) True/False</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;InvoiceService.addOrderItem&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;orderId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;productId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;type&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;double&gt;price&lt;/double&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;quantity&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;title&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;description&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;boolean&gt;
+          1
+        &lt;/boolean&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+										<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$result = $myApp->addOrderItem($invoiceId, 17, 6, 23.07, 2, "Turbo Booster", "Jay's Awesome Turbo Booster");</pre>
+					
+					<!-- METHOD END -->
+					
+					<!-- METHOD START -->
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">InvoiceService.</span><span class="method">chargeInvoice</span>
+					</div>
+					
+					<p>This will cause a credit card to be charged for the amount currently due on an invoice</p>
+
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key.</td>
+							</tr>
+							<tr>
+								<td>invoiceId</td>
+								<td>int</td>
+								<td>the Invoice Id you would like to charge the balance due on</td>
+							</tr>
+							<tr>
+								<td>notes</td>
+								<td>string</td>
+								<td>a note about the payment. Ex: "API Upsell Payment"</td>
+							</tr>
+							<tr>
+								<td>creditCardId</td>
+								<td>int</td>
+								<td>Id number of the credit card being charged</td>
+							</tr>
+							<tr>
+								<td>merchantAccountId</td>
+								<td>int</td>
+								<td>the Id number of the merchant account the payment is to process through</td>
+							</tr>
+							<tr>
+								<td>bypassCommissions</td>
+								<td>boolean</td>
+								<td>a boolean telling the system if this payment should count towards affiliate commissions earned. This is almost always false.</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>(struct) a struct containing payment details. The struct will contain the following keys: <ul>
+							<li>Successful – true or fale on whether or not the card was charged. (If there was nothing to charge, this will be false)</li>
+							<li>Code – The approval code: APPROVED, DECLINED, ERROR, SKIPPED (there was no balance to charge)</li>
+							<li>RefNum – If charge was successful, this is the reference number passed back by the merchant account</li>
+							<li>Message – Error message for the transaction, if any</li>
+						</ul>
+					</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;InvoiceService.chargeInvoice&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;invoiceId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;notes&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;creditCardId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;merchId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;boolean&gt;bypassComm&lt;/boolean&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;fault&gt;
+    &lt;value&gt;
+      &lt;struct&gt;
+        &lt;member&gt;
+          &lt;name&gt;
+            faultCode
+          &lt;/name&gt;
+          &lt;value&gt;
+            &lt;i4&gt;
+              3
+            &lt;/i4&gt;
+          &lt;/value&gt;
+        &lt;/member&gt;
+        &lt;member&gt;
+          &lt;name&gt;
+            faultString
+          &lt;/name&gt;
+          &lt;value&gt;
+            [Unexpected]Error while charging card
+          &lt;/value&gt;
+        &lt;/member&gt;
+      &lt;/struct&gt;
+    &lt;/value&gt;
+  &lt;/fault&gt;
+&lt;/methodResponse&gt;</pre>
+	
+										<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$result = $myApp->chargeInvoice(16,"API Upsell Payment",2,1,false);</pre>
+					
+					<!-- METHOD END -->
+					
+					<!-- METHOD START -->
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">InvoiceService.</span><span class="method">deleteSubscription</span>
+					</div>
+					
+					<p>Deletes the specified subscription from the database, as well as all invoices tied to the subscription</p>
+
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key.</td>
+							</tr>
+							<tr>
+								<td>recurringOrderId</td>
+								<td>int</td>
+								<td>the Id number of the particular subscription being deleted</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>(boolean) True/False</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;InvoiceService.deleteSubscription&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;subscriptionId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;boolean&gt;
+          1
+        &lt;/boolean&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+										<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$result = $app->deleteSubscription($recurringOrderId);</pre>
+					
+					<!-- METHOD END -->
+					
+					<!-- METHOD START -->
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">InvoiceService.</span><span class="method">addRecurringOrder</span>
+					</div>
+					
+					<p>Creates a subscription for a contact. Subscriptions are billing automatically by Infusionsoft within the next six hours. If you want to bill immediately you will need to utilize the InvoiceService.createInvoiceForRecurring and InvoiceService.chargeInvoice methods to accomplish this.</p>
+
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key.</td>
+							</tr>
+							<tr>
+								<td>contactId</td>
+								<td>int</td>
+								<td>Id number of the contact this subscription will be connected with</td>
+							</tr>
+							<tr>
+								<td>allowDuplicate</td>
+								<td>boolean</td>
+								<td>if duplicate subscriptions should be allowed</td>
+							</tr>
+							<tr>
+								<td>cProgramId</td>
+								<td>int</td>
+								<td>the Id number of the subscription you are adding. This is from the cProgram table</td>
+							</tr>
+							<tr>
+								<td>qty</td>
+								<td>int</td>
+								<td>quantity of this service/product price - price charged per quantity</td>
+							</tr>
+							<tr>
+								<td>price</td>
+								<td>double</td>
+								<td>price to charge for the subscription</td>
+							</tr>
+							<tr>
+								<td>taxable</td>
+								<td>boolean</td>
+								<td>if tax should be charged on this subscription</td>
+							</tr>
+							<tr>
+								<td>merchantAccountId</td>
+								<td>int</td>
+								<td>the merchant account this subscription will bill through</td>
+							</tr>
+							<tr>
+								<td>creditCardId</td>
+								<td>int</td>
+								<td>the Id of the credit card this subscription will charge to</td>
+							</tr>
+							<tr>
+								<td>affiliateId</td>
+								<td>int</td>
+								<td>the Id number for the affiliate being placed as the sale affiliate. 0 if no affiliate</td>
+							</tr>
+							<tr>
+								<td>daysTillCharge</td>
+								<td>int</td>
+								<td>the number of days until this subscription should be charged. Essentially free trial days</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>(int) Id of the newly created Subscription</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;InvoiceService.addRecurringOrder&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;contactId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;boolean&gt;allowDup&lt;/boolean&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;cProgramId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;qty&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;double&gt;price&lt;/double&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;boolean&gt;allowTax&lt;/boolean&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;merchantId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;creditCardId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;affiliateId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;dayCharge&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;i4&gt;
+          6
+        &lt;/i4&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+										<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$result = $myApp->addRecurringAdv($cid,false,23,2,2.95,true,1,$ccId,$affId,0);</pre>
+					
+					<!-- METHOD END -->
+					
+					<!-- METHOD START -->
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">InvoiceService.</span><span class="method">addRecurringCommissionOverride</span>
+					</div>
+					
+					<p>Modifies the commissions being earned on a particular subscription. This does not affect previously generated invoices for this subscription.</p>
+
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key.</td>
+							</tr>
+							<tr>
+								<td>recurringOrderId</td>
+								<td>int</td>
+								<td>the Id number of the recurringOrder(subscription record) this override is being applied to</td>
+							</tr>
+							<tr>
+								<td>affiliateId</td>
+								<td>int</td>
+								<td>the Id of the affiliate earning this commission</td>
+							</tr>
+							<tr>
+								<td>amount</td>
+								<td>double</td>
+								<td>the commission amount being earned</td>
+							</tr>
+							<tr>
+								<td>payoutType</td>
+								<td>int</td>
+								<td>how the commissions will be earned. 4 - up front earning, 5 - upon customer payment. Typically this is 5</td>
+							</tr>
+							<tr>
+								<td>description</td>
+								<td>string</td>
+								<td>a short note about this commission override.</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>(boolean) True/False</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;InvoiceService.addRecurringCommissionOverride&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;recurringOrderId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;affId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;double&gt;commissionAmt&lt;/double&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;payoutType&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;No Description&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;boolean&gt;
+          1
+        &lt;/boolean&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+										<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$result = $myApp->recurringCommOverride(123,1,25.50,5,"Changed Commision to 25.50")</pre>
+					
+					<!-- METHOD END -->
+					
+					<!-- METHOD START -->
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">InvoiceService.</span><span class="method">createInvoiceForRecurring</span>
+					</div>
+					
+					<p>This will create an invoice for all charges due on a Subscription. If the subscription has three billing cycles that are due, it will create one invoice with all three items attached.</p>
+
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key.</td>
+							</tr>
+							<tr>
+								<td>recurringOrderId</td>
+								<td>int</td>
+								<td>the Id number for the particular subscription you want invoiced</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>(int) the Id of the invoice that was created, or zero if the subscription failed to generate any invoices (none due)</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;InvoiceService.createInvoiceForRecurring&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;recurringOrderId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;i4&gt;
+          10
+        &lt;/i4&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+										<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$result = $myApp->recurringInvoice($recurringOrderId);</pre>
+					
+					<!-- METHOD END -->
+					
+					<!-- METHOD START -->
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">InvoiceService.</span><span class="method">addManualPayment</span>
+					</div>
+					
+					<p>Adds a payment to an invoice without actually processing a charge through a merchant. This is useful if you accept cash/check, or handle payments outside of Infusionsoft.</p>
+
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key.</td>
+							</tr>
+							<tr>
+								<td>invoiceId</td>
+								<td>int</td>
+								<td>the Id of invoice being paid</td>
+							</tr>
+							<tr>
+								<td>amt</td>
+								<td>double</td>
+								<td>the amount of this payment</td>
+							</tr>
+							<tr>
+								<td>paymentDate</td>
+								<td>dateTime</td>
+								<td>date of payment</td>
+							</tr>
+							<tr>
+								<td>paymentType</td>
+								<td>string</td>
+								<td>Cash, Check, Credit Card, Money Order, PayPal, etc.</td>
+							</tr>
+							<tr>
+								<td>paymentDescription</td>
+								<td>string</td>
+								<td>an area useful for noting payment details such as a check number</td>
+							</tr>
+							<tr>
+								<td>bypassCommissions</td>
+								<td>boolean</td>
+								<td>a boolean which tells the system if this payment should count towards what the affiliate has earned. This is almost always false.</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>(boolean) True/False</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;InvoiceService.createInvoiceForRecurring&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;recurringOrderId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;i4&gt;
+          10
+        &lt;/i4&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+										<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$result = $myApp->recurringInvoice($recurringOrderId);</pre>
+					
+					<!-- METHOD END -->
+					
+					<!-- METHOD START -->
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">InvoiceService.</span><span class="method">addPaymentPlan</span>
+					</div>
+					
+					<p>Allows you to setup a custom payment plan for an invoice.</p>
+
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key.</td>
+							</tr>
+							<tr>
+								<td>invoiceId</td>
+								<td>int</td>
+								<td>Id of the invoice this payment plan is fo</td>
+							</tr>
+							<tr>
+								<td>autoCharge</td>
+								<td>boolean</td>
+								<td>if the autocharge for this payplan should be enabled or disabled</td>
+							</tr>
+							<tr>
+								<td>creditCardId</td>
+								<td>int</td>
+								<td>credit card being charged for this payplan</td>
+							</tr>
+							<tr>
+								<td>merchantAccountId</td>
+								<td>int</td>
+								<td>merchant account this payplan will charge through</td>
+							</tr>
+							<tr>
+								<td>daysBetweenRetry</td>
+								<td>int</td>
+								<td>the number of days Infusionsoft should wait before re-attempting to charge a failed payment</td>
+							</tr>
+							<tr>
+								<td>maxRetry</td>
+								<td>int</td>
+								<td>the maximum number of times Infusionsoft should retry a failed payment</td>
+							</tr>
+							<tr>
+								<td>initialPmtAmt</td>
+								<td>double</td>
+								<td>the amount of the very first charge on this payment plan</td>
+							</tr>
+							<tr>
+								<td>initialPmtDate</td>
+								<td>dateTime</td>
+								<td>the date the first payment should occur</td>
+							</tr>
+							<tr>
+								<td>planStartDate</td>
+								<td>dateTime</td>
+								<td>the date the second payment should occur for the payment plan</td>
+							</tr>
+							<tr>
+								<td>numPmts</td>
+								<td>int</td>
+								<td>the number of payments in this payment plan. This does not include the original/first payment</td>
+							</tr>
+							<tr>
+								<td>daysBetweenPmts</td>
+								<td>int</td>
+								<td>the number of days between payments in this payment plan. This first time this comes into play will be between the second and third payments</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>(boolean) True/False</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;InvoiceService.addPaymentPlan&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;invoiceId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;boolean&gt;autoCharge&lt;/boolean&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;creditCardId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;merchantAccountId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;daysRetry&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;maxRetry&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;double&gt;initialPmt&lt;/double&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;dateTime.iso8601&gt;initialPmtDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;dateTime.iso8601&gt;planStartDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;numPmts&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;daysBetweenPmts&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;boolean&gt;
+          1
+        &lt;/boolean&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+										<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$inDate = $myApp->infuDate("10-11-2008");
+$stDate = $myApp->infuDate("10-25-2008");
+$result = $myApp->payPlan(43,true,12,1,2,3,25.50,$inDate,$stDate,5,30);</pre>
+					
+					<!-- METHOD END -->
+					
+					<!-- METHOD START -->
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">InvoiceService.</span><span class="method">calculateAmountOwed</span>
+					</div>
+					
+					<p>Used to determine the outstanding amount owed on a given invoice.</p>
+
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key.</td>
+							</tr>
+							<tr>
+								<td>invoiceId</td>
+								<td>int</td>
+								<td>the invoice Id number you would like amount owed for</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>(double) outstanding amount on the supplied invoice</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;InvoiceService.calculateAmountOwed&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;invoiceId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;double&gt;
+          41.14
+        &lt;/double&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+										<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$payDate = $myApp->infuDate("01-12-2007");
+echo "Invoice 43 owes: " . $myApp->amtOwed(43) ;
+$operation = $myApp->manualPmt(43,5.06,$payDate,"Check","Personal check",false);
+if ($operation) {
+    echo "Manual Payment Successful";
+} else {
+    echo "Manual Payment Failed";
+}
+echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
+					
+					<!-- METHOD END -->
+					
+					<!-- METHOD START -->
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">InvoiceService.</span><span class="method">getAllPaymentOptions</span>
+					</div>
+					
+					<p>This is used to retrieve all Payment Types currently setup under the Order Settings section of Infusionsoft.</p>
+
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key.</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>(struct) all valid payment types currently setup in the application</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;InvoiceService.getAllPaymentOptions&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;struct&gt;
+          &lt;member&gt;
+            &lt;name&gt;
+              Credit Card (Manual)
+            &lt;/name&gt;
+            &lt;value&gt;
+              Credit Card (Manual)
+            &lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;
+              Check
+            &lt;/name&gt;
+            &lt;value&gt;
+              Check
+            &lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;
+              Cash
+            &lt;/name&gt;
+            &lt;value&gt;
+              Cash
+            &lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;
+              Money Order
+            &lt;/name&gt;
+            &lt;value&gt;
+              Money Order
+            &lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;
+              Adjustment
+            &lt;/name&gt;
+            &lt;value&gt;
+              Adjustment
+            &lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;
+              Credit Card
+            &lt;/name&gt;
+            &lt;value&gt;
+              Credit Card
+            &lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;
+              Credit
+            &lt;/name&gt;
+            &lt;value&gt;
+              Credit
+            &lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;
+              Refund
+            &lt;/name&gt;
+            &lt;value&gt;
+              Refund
+            &lt;/value&gt;
+          &lt;/member&gt;
+        &lt;/struct&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+										<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$result = $myApp->getAllPaymentOptions();</pre>
+					
+					<!-- METHOD END -->
+					
+					<!-- METHOD START -->
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">InvoiceService.</span><span class="method">getPayments</span>
+					</div>
+					
+					<p>Retrieves all payments for a given invoice.</p>
+
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key.</td>
+							</tr>
+							<tr>
+								<td>invoiceId</td>
+								<td>int</td>
+								<td>ID of the invoice you would like payments for.</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>(array) list of all payments for an invoice</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;InvoiceService.getPayments&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;paymentId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;array&gt;
+          &lt;data&gt;
+            &lt;value&gt;
+              &lt;struct&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    Id
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    &lt;i4&gt;
+                      2
+                    &lt;/i4&gt;
+                  &lt;/value&gt;
+                &lt;/member&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    PayDate
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    &lt;dateTime.iso8601&gt;
+                      20120314T00:00:00
+                    &lt;/dateTime.iso8601&gt;
+                  &lt;/value&gt;
+                &lt;/member&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    UserId
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    &lt;i4&gt;
+                      14
+                    &lt;/i4&gt;
+                  &lt;/value&gt;
+                &lt;/member&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    PayAmt
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    &lt;double&gt;
+                      5.0
+                    &lt;/double&gt;
+                  &lt;/value&gt;
+                &lt;/member&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    PayType
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    Credit Card (Manual)
+                  &lt;/value&gt;
+                &lt;/member&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    ContactId
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    &lt;i4&gt;
+                      22
+                    &lt;/i4&gt;
+                  &lt;/value&gt;
+                &lt;/member&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    PayNote
+                  &lt;/name&gt;
+                  &lt;value/&gt;
+                &lt;/member&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    InvoiceId
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    &lt;i4&gt;
+                      6
+                    &lt;/i4&gt;
+                  &lt;/value&gt;
+                &lt;/member&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    RefundId
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    &lt;i4&gt;
+                      0
+                    &lt;/i4&gt;
+                  &lt;/value&gt;
+                &lt;/member&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    ChargeId
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    &lt;i4&gt;
+                      0
+                    &lt;/i4&gt;
+                  &lt;/value&gt;
+                &lt;/member&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    Synced
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    &lt;i4&gt;
+                      0
+                    &lt;/i4&gt;
+                  &lt;/value&gt;
+                &lt;/member&gt;
+              &lt;/struct&gt;
+            &lt;/value&gt;
+          &lt;/data&gt;
+        &lt;/array&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+					<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$result = $myApp->getPayments($invId);</pre>
+					
+					<!-- METHOD END -->
+					
+					<!-- METHOD START -->
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">InvoiceService.</span><span class="method">locateExistingCard</span>
+					</div>
+					
+					<p>Finds a credit card on file for a contactId that matches the last four digits of the card.</p>
+
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key.</td>
+							</tr>
+							<tr>
+								<td>contactId</td>
+								<td>int</td>
+								<td>the contact Id number for which you would like to find the credit card for</td>
+							</tr>
+							<tr>
+								<td>last4</td>
+								<td>int</td>
+								<td>the last 4 digits of the card you need the Id number for</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>(int) creditCardId if the card is found. Zero if no card matches</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;InvoiceService.locateExistingCard&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;contactId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;last4&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;i4&gt;
+          0
+        &lt;/i4&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+										<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$result = $myApp->locateCard($contactId,"1234");</pre>
+					
+					<!-- METHOD END -->
+					
+					
+					<!-- METHOD START -->
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">InvoiceService.</span><span class="method">recalculateTax</span>
+					</div>
+					
+					<p>Calculates tax, and places it onto the given invoice.</p>
+
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key.</td>
+							</tr>
+							<tr>
+								<td>invoiceId</td>
+								<td>int</td>
+								<td>the id of the invoice you want to calculate tax on</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>(int) creditCardId if the card is found. Zero if no card matches</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;InvoiceService.recalculateTax&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;invoiceId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;boolean&gt;
+          1
+        &lt;/boolean&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+										<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$ret = $app->recalculateTax($invoiceId);</pre>
+					
+					<!-- METHOD END -->
+					
+					<!-- METHOD START -->
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">InvoiceService.</span><span class="method">validateCreditCard</span>
+					</div>
+					
+					<p>Validates a credit card in one of two ways - the first will validate an existing card in the Infusionsoft system by grabbing card data via the credit card ID. The second takes card details as a struct and validates it without having it already saved.</p>
+
+					<h3>Existing Card Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key.</td>
+							</tr>
+							<tr>
+								<td>creditCardId</td>
+								<td>int</td>
+								<td>The Infusionsoft ID number of an existing credit card</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					
+					<h3>New Card Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key.</td>
+							</tr>
+							<tr>
+								<td>CardType</td>
+								<td>int</td>
+								<td>Credit card type (Visa, American Express, etc)</td>
+							</tr>
+							<tr>
+								<td>ContactId</td>
+								<td>int</td>
+								<td>ID of a contact to own the credit card</td>
+							</tr>
+							<tr>
+								<td>CardNumber</td>
+								<td>int</td>
+								<td>Credit card number</td>
+							</tr>
+							<tr>
+								<td>ExpirationMonth</td>
+								<td>int</td>
+								<td>Two digit expiration month</td>
+							</tr>
+							<tr>
+								<td>ExpirationYear</td>
+								<td>int</td>
+								<td>Four digit expiration year</td>
+							</tr>
+							<tr>
+								<td>CVV2</td>
+								<td>int</td>
+								<td>Card security code</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>(struct) Valid – True or False, and Message – any message about card validation</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;InvoiceService.validateCreditCard&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;privateKet&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;struct&gt;
+&lt;member&gt;&lt;name&gt;CardType&lt;/name&gt;
+&lt;value&gt;&lt;string&gt;Visa&lt;/string&gt;&lt;/value&gt;
+&lt;/member&gt;
+&lt;member&gt;&lt;name&gt;ContactId&lt;/name&gt;
+&lt;value&gt;&lt;int&gt;123&lt;/int&gt;&lt;/value&gt;
+&lt;/member&gt;
+&lt;member&gt;&lt;name&gt;CardNumber&lt;/name&gt;
+&lt;value&gt;&lt;string&gt;4111111111111111&lt;/string&gt;&lt;/value&gt;
+&lt;/member&gt;
+&lt;member&gt;&lt;name&gt;ExpirationMonth&lt;/name&gt;
+&lt;value&gt;&lt;string&gt;12&lt;/string&gt;&lt;/value&gt;
+&lt;/member&gt;
+&lt;member&gt;&lt;name&gt;ExpirationYear&lt;/name&gt;
+&lt;value&gt;&lt;string&gt;2009&lt;/string&gt;&lt;/value&gt;
+&lt;/member&gt;
+&lt;member&gt;&lt;name&gt;CVV2&lt;/name&gt;
+&lt;value&gt;&lt;string&gt;123&lt;/string&gt;&lt;/value&gt;
+&lt;/member&gt;
+&lt;/struct&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;struct&gt;
+          &lt;member&gt;
+            &lt;name&gt;
+              Message
+            &lt;/name&gt;
+            &lt;value&gt;
+              Card has expired
+            &lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;
+              Valid
+            &lt;/name&gt;
+            &lt;value&gt;
+              false
+            &lt;/value&gt;
+          &lt;/member&gt;
+        &lt;/struct&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+					<h3>Existing Card PHP iSDK Sample</h3>
+					<pre class="prettyprint">$result = $myApp->validateCard(156);</pre>
+					
+					<h3>New Card PHP iSDK Sample</h3>
+					<pre class="prettyprint">$card = array('CardType' => 'Visa',
+              'ContactId' => 123,
+              'CardNumber' => "4111111111111111",
+              'ExpirationMonth' => '12',
+              'ExpirationYear' => '2009',
+              'CVV2' => '123');
+$result = $myApp->validateCard($card);</pre>
+					
+					<!-- METHOD END -->
+					
+					<!-- METHOD START -->
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">InvoiceService.</span><span class="method">getAllShippingOptions</span>
+					</div>
+					
+					<p>Retrieves the shipping options currently setup for the Infusionsoft shopping cart.</p>
+
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key.</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>(array) all shipping options that have been configured</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;InvoiceService.getAllShippingOptions&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;boolean&gt;
+          1
+        &lt;/boolean&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+										<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$result = $myApp->getAllShippingOptions();</pre>
+					
+					<!-- METHOD END -->
+					
+					<!-- METHOD START -->
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">InvoiceService.</span><span class="method">updateJobRecurringNextBillDate</span>
+					</div>
+					
+					<p>Changes the next bill date on a subscription.</p>
+
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key.</td>
+							</tr>
+							<tr>
+								<td>recurringOrderId</td>
+								<td>int</td>
+								<td>the Id number of the subscription you would like to update. retrieved from the RecurringOrder table.</td>
+							</tr>
+							<tr>
+								<td>nextBillDate</td>
+								<td>date</td>
+								<td>the next billing date the subscription is being set to.</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>(boolean) True/False</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;InvoiceService.updateJobRecurringNextBillDate&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;recurringOrderId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;dateTime.iso8601&gt;nextBillDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;boolean&gt;
+          1
+        &lt;/boolean&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+										<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$currentDate = date("d-m-Y");
+$nDate = $app->infuDate($currentDate);
+
+$result = $app->updateSubscriptionNextBillDate($recurringOrderId,$nDate);</pre>
+					
+					<!-- METHOD END -->
+					
+					<!-- METHOD START -->
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">InvoiceService.</span><span class="method">addOrderCommissionOverride</span>
+					</div>
+					
+					<p>Creates a commission on an existing invoice.</p>
+
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key.</td>
+							</tr>
+							<tr>
+								<td>invoiceId</td>
+								<td>int</td>
+								<td>Id number of the invoice to create a commission on</td>
+							</tr>
+							<tr>
+								<td>affiliateId</td>
+								<td>int</td>
+								<td>Id number of the affiliate the commission is for</td>
+							</tr>
+							<tr>
+								<td>productId</td>
+								<td>int</td>
+								<td>Id number of the product this commission is for</td>
+							</tr>
+							<tr>
+								<td>percentage</td>
+								<td>int</td>
+								<td>percentage paid for the product being sold</td>
+							</tr>
+							<tr>
+								<td>amount</td>
+								<td>double</td>
+								<td>amount of commission being paid for the product sold</td>
+							</tr>
+							<tr>
+								<td>payoutType</td>
+								<td>int</td>
+								<td>how the commission should be earned - 4 if paid up front in full, 5 if earned upon customer payment</td>
+							</tr>
+							<tr>
+								<td>description</td>
+								<td>string</td>
+								<td>a note about this commission</td>
+							</tr>
+							<tr>
+								<td>date</td>
+								<td>date</td>
+								<td>date the commission was generated, not necessarily earned (unless paid up front in full)</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>(boolean) True/False</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;InvoiceService.addOrderCommissionOverride&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;invoiceId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;affiliateId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;productId&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;commissionPercentage&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;double&gt;amountPaid&lt;/double&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;payoutType&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;desc&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;dateTime.iso8601&gt;date&lt;/dateTime.iso8601&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;boolean&gt;
+          1
+        &lt;/boolean&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+										<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$cDate = $myApp->infuDate("01-12-2007");
+
+$myApp->commOverride(43,1,3,15,5.06,5,"No Description",$cDate);</pre>
+					
+					<!-- METHOD END -->
+					
+					
+					<hr>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
