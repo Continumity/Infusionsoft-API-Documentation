@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>EmailService - Infusionsoft API</title>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap-extension.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+		<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+		<link href="google-code-prettify/src/prettify.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript" src="google-code-prettify/src/prettify.js"></script>
+	</head>
+	<body onload="prettyPrint()">
+		<div class="container">
+			<div class="row">
+				<div class="span12" style="margin-top:40px;">
+				</div>
+			</div>
+			<div class="row">
+				<div class="span2 sidebar">
+					<div class="well">
+						<h4>Sidebar</h4>
+						<ul>
+							<li>Link 1</li>
+							<li>Link 2</li>
+							<li>Link 3</li>
+							<li>Link 4</li>
+						</ul>
+					</div>
+				</div>
+				<div class="span10">
+					<h1>Changelog</h1>
+					<p>Changes in the API from version 2.4 to 2.5</p>
+					
+					<hr>
+				
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Change</th>
+							<th>Change Name</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>New method</td>
+								<td>getInventory</td>
+								<td>Returns a product inventory provided the Id</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>incrementInventory</td>
+								<td>Increments the inventory by one product, provided you pass the productId to increment with</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>decrementInventory</td>
+								<td>Decrements the inventory by one product, provided you pass the productId to decrement with</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>increaseInventory</td>
+								<td>Increases the inventory with a particular product by the quanity you specify</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>decreaseInventory</td>
+								<td>Decreases the inventory with a particular product by the quanity you specify</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>deactivateCreditCard</td>
+								<td>Deactivates a credit card</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>getAllShippingOptions</td>
+								<td>Returns all configured shipping options</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>getFlatRateShippingOption</td>
+								<td>Returns the options and values of the flat rate shipping option provided</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>getOrderTotalShippingOption</td>
+								<td>Returns the options and values of the order total shipping option provided</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>getOrderTotalShippingRanges</td>
+								<td>Returns the options and values of the order total shipping ranges option provided</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>getProductBasedShippingOption</td>
+								<td>Returns the options and values of the product based shipping option provided</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>getProductShippingPricesForProductShippingOption</td>
+								<td>Returns the options and values of the prices for product shipping option provided</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>getOrderQuantityShippingOption</td>
+								<td>Returns the options and values of the order quantity shipping option provided</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>getWeightBasedShippingOption</td>
+								<td>Returns the options and values of the weight based shipping option provided</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>getUpsShippingOption</td>
+								<td>Returns the options and values of the ups shipping option provided</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>addFreeTrial</td>
+								<td>Adds a free trial</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>getFreeTrial</td>
+								<td>Returns the options and values of the free trial id passed</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>addOrderTotalDiscount</td>
+								<td>Adds a order total discount</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>getOrderTotalDiscount</td>
+								<td>Returns the options and values of the order total discount id passed</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>addCategoryDiscount</td>
+								<td>Adds a category discount</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>getCategoryDiscount</td>
+								<td>Returns the options and values of the category discount id passed</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>addCategoryAssignmentToCategoryDiscount</td>
+								<td>Assigns a product to a category discount</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>getCategoryAssignmentsForCategoryDiscount</td>
+								<td>Returns the options and values of the category assignment for category discount passed</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>addProductTotalDiscount</td>
+								<td>Add a product total discount</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>getProductTotalDiscount</td>
+								<td>Returns the options and values of the product total discount id passed</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>addShippingTotalDiscount</td>
+								<td>Adds a shipping total discount</td>
+							</tr>
+							<tr>
+								<td>New method</td>
+								<td>getShippingTotalDiscount</td>
+								<td>Returns the options and values of the shipping total discount id passed</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -73,23 +73,23 @@ To manage affiliate information (ie Name, Phone, etc.) you will need to use the 
 					</table>
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;APIAffiliateService.affClawbacks&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;affiliateId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;dateTime.iso8601&gt;startDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;dateTime.iso8601&gt;endDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;APIAffiliateService.affClawbacks&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;affiliateId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;dateTime.iso8601&gt;startDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;dateTime.iso8601&gt;endDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -98,11 +98,7 @@ To manage affiliate information (ie Name, Phone, etc.) you will need to use the 
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;array&gt;
-          &lt;data/&gt;
-        &lt;/array&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;array&gt;&lt;data/&gt;&lt;/array&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -152,38 +148,34 @@ $claws = $app->affClawbacks(123,$start,$finish);</pre>
 					</table>
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;APIAffiliateService.affCommissions&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;affiliateId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;dateTime.iso8601&gt;startDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;dateTime.iso8601&gt;endDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;APIAffiliateService.affCommissions&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;affiliateId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;dateTime.iso8601&gt;startDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;dateTime.iso8601&gt;endDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
 					<pre class="prettyprint">
 &lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodResponse&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;
-&lt;array&gt;
-&lt;data/&gt;
-&lt;/array&gt;
-&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;array&gt;&lt;data/&gt;&lt;/array&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
 	
 					<h3>PHP iSDK Sample</h3>
@@ -231,23 +223,23 @@ $comms = $app->affCommissions(123,$start,$finish);</pre>
 </table>
 <h3>Sample Request</h3>
 <pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;APIAffiliateService.affPayouts&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;affiliateId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;dateTime.iso8601&gt;startDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;dateTime.iso8601&gt;endDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;APIAffiliateService.affPayouts&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;affiliateId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;dateTime.iso8601&gt;startDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;dateTime.iso8601&gt;endDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 <h3>Sample Response</h3>
@@ -255,11 +247,7 @@ $comms = $app->affCommissions(123,$start,$finish);</pre>
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;array&gt;
-          &lt;data/&gt;
-        &lt;/array&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;array&gt;&lt;data/&gt;&lt;/array&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -298,23 +286,23 @@ $pays = $app->affPayouts(123,$start,$finish);</pre>
 </table>
 <h3>Sample Request</h3>
 <pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;APIAffiliateService.affRunningTotals&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;array&gt;
-&lt;data&gt;
-&lt;value&gt;&lt;int&gt;affList1&lt;/int&gt;&lt;/value&gt;
-&lt;value&gt;&lt;int&gt;affList2&lt;/int&gt;&lt;/value&gt;
-&lt;value&gt;&lt;int&gt;affList3&lt;/int&gt;&lt;/value&gt;
-&lt;/data&gt;
-&lt;/array&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;APIAffiliateService.affRunningTotals&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;array&gt;
+        &lt;data&gt;
+          &lt;value&gt;&lt;int&gt;affList1&lt;/int&gt;&lt;/value&gt;
+          &lt;value&gt;&lt;int&gt;affList2&lt;/int&gt;&lt;/value&gt;
+          &lt;value&gt;&lt;int&gt;affList3&lt;/int&gt;&lt;/value&gt;
+        &lt;/data&gt;
+      &lt;/array&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 <h3>Sample Response</h3>
@@ -328,162 +316,72 @@ $pays = $app->affPayouts(123,$start,$finish);</pre>
             &lt;value&gt;
               &lt;struct&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    Clawbacks
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;double&gt;
-                      0.0
-                    &lt;/double&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;Clawbacks&lt;/name&gt;
+                  &lt;value&gt;&lt;double&gt;0.0&lt;/double&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    AmountEarned
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;double&gt;
-                      0.5483
-                    &lt;/double&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;AmountEarned&lt;/name&gt;
+                  &lt;value&gt;&lt;double&gt;0.5483&lt;/double&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    Payments
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;double&gt;
-                      0.0
-                    &lt;/double&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;Payments&lt;/name&gt;
+                  &lt;value&gt;&lt;double&gt;0.0&lt;/double&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    RunningBalance
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;double&gt;
-                      0.5483
-                    &lt;/double&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;RunningBalance&lt;/name&gt;
+                  &lt;value&gt;&lt;double&gt;0.5483&lt;/double&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    AffiliateId
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;i4&gt;
-                      2
-                    &lt;/i4&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;AffiliateId&lt;/name&gt;
+                  &lt;value&gt;&lt;i4&gt;2&lt;/i4&gt;&lt;/value&gt;
                 &lt;/member&gt;
               &lt;/struct&gt;
             &lt;/value&gt;
             &lt;value&gt;
               &lt;struct&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    Clawbacks
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;double&gt;
-                      0.0
-                    &lt;/double&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;Clawbacks&lt;/name&gt;
+                  &lt;value&gt;&lt;double&gt;0.0&lt;/double&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    AmountEarned
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;double&gt;
-                      0.0
-                    &lt;/double&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;AmountEarned&lt;/name&gt;
+                  &lt;value&gt;&lt;double&gt;0.0&lt;/double&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    Payments
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;double&gt;
-                      0.0
-                    &lt;/double&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;Payments&lt;/name&gt;
+                  &lt;value&gt;&lt;double&gt;0.0&lt;/double&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    RunningBalance
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;double&gt;
-                      0.0
-                    &lt;/double&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;RunningBalance&lt;/name&gt;
+                  &lt;value&gt;&lt;double&gt;=0.0&lt;/double&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    AffiliateId
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;i4&gt;
-                      4
-                    &lt;/i4&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;AffiliateId&lt;/name&gt;
+                  &lt;value&gt;&lt;i4&gt;4&lt;/i4&gt;&lt;/value&gt;
                 &lt;/member&gt;
               &lt;/struct&gt;
             &lt;/value&gt;
             &lt;value&gt;
               &lt;struct&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    Clawbacks
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;double&gt;
-                      0.0
-                    &lt;/double&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;Clawbacks&lt;/name&gt;
+                  &lt;value&gt;&lt;double&gt;0.0&lt;/double&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    AmountEarned
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;double&gt;
-                      0.0
-                    &lt;/double&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;AmountEarned&lt;/name&gt;
+                  &lt;value&gt;&lt;double&gt;0.0&lt;/double&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    Payments
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;double&gt;
-                      0.0
-                    &lt;/double&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;Payments&lt;/name&gt;
+                  &lt;value&gt;&lt;double&gt;0.0&lt;/double&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    RunningBalance
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;double&gt;
-                      0.0
-                    &lt;/double&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;RunningBalance&lt;/name&gt;
+                  &lt;value&gt;&lt;double&gt;0.0&lt;/double&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    AffiliateId
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;i4&gt;
-                      6
-                    &lt;/i4&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;AffiliateId&lt;/name&gt;
+                  &lt;value&gt;&lt;i4&gt;6&lt;/i4&gt;&lt;/value&gt;
                 &lt;/member&gt;
               &lt;/struct&gt;
             &lt;/value&gt;
@@ -537,29 +435,29 @@ $totals = $app->affPayouts($affs);</pre>
 </table>
 <h3>Sample Request</h3>
 <pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;APIAffiliateService.affSummary&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;array&gt;
-&lt;data&gt;
-&lt;value&gt;&lt;int&gt;affList1&lt;/int&gt;&lt;/value&gt;
-&lt;value&gt;&lt;int&gt;affList2&lt;/int&gt;&lt;/value&gt;
-&lt;value&gt;&lt;int&gt;affList3&lt;/int&gt;&lt;/value&gt;
-&lt;/data&gt;
-&lt;/array&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;dateTime.iso8601&gt;startDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;dateTime.iso8601&gt;endDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;APIAffiliateService.affSummary&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;array&gt;
+        &lt;data&gt;
+          &lt;value&gt;&lt;int&gt;affList1&lt;/int&gt;&lt;/value&gt;
+          &lt;value&gt;&lt;int&gt;affList2&lt;/int&gt;&lt;/value&gt;
+          &lt;value&gt;&lt;int&gt;affList3&lt;/int&gt;&lt;/value&gt;
+        &lt;/data&gt;
+      &lt;/array&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;dateTime.iso8601&gt;startDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;dateTime.iso8601&gt;endDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 <h3>Sample Response</h3>
@@ -573,132 +471,61 @@ $totals = $app->affPayouts($affs);</pre>
             &lt;value&gt;
               &lt;struct&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    Clawbacks
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;double&gt;
-                      0.0
-                    &lt;/double&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;Clawbacks&lt;/name&gt;
+                  &lt;value&gt;&lt;double&gt;0.0&lt;/double&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    AmountEarned
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;double&gt;
-                      0.0
-                    &lt;/double&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;AmountEarned&lt;/name&gt;
+                  &lt;value&gt;&lt;double&gt;0.0&lt;/double&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    Balance
-                  &lt;/name&gt;
+                  &lt;name&gt;Balance&lt;/name&gt;
                   &lt;value&gt;
-                    &lt;double&gt;
-                      0.0
-                    &lt;/double&gt;
-                  &lt;/value&gt;
+                    &lt;double&gt;0.0&lt;/double&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    AffiliateId
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;i4&gt;
-                      2
-                    &lt;/i4&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;AffiliateId&lt;/name&gt;
+                  &lt;value&gt;&lt;i4&gt;2&lt;/i4&gt;&lt;/value&gt;
                 &lt;/member&gt;
               &lt;/struct&gt;
             &lt;/value&gt;
             &lt;value&gt;
               &lt;struct&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    Clawbacks
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;double&gt;
-                      0.0
-                    &lt;/double&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;Clawbacks&lt;/name&gt;
+                  &lt;value&gt;&lt;double&gt;0.0&lt;/double&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    AmountEarned
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;double&gt;
-                      0.0
-                    &lt;/double&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;AmountEarned&lt;/name&gt;
+                  &lt;value&gt;&lt;double&gt;0.0&lt;/double&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    Balance
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;double&gt;
-                      0.0
-                    &lt;/double&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;Balance&lt;/name&gt;
+                  &lt;value&gt;&lt;double&gt;0.0&lt;/double&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    AffiliateId
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;i4&gt;
-                      4
-                    &lt;/i4&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;AffiliateId&lt;/name&gt;
+                  &lt;value&gt;&lt;i4&gt;4&lt;/i4&gt;&lt;/value&gt;
                 &lt;/member&gt;
               &lt;/struct&gt;
             &lt;/value&gt;
             &lt;value&gt;
               &lt;struct&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    Clawbacks
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;double&gt;
-                      0.0
-                    &lt;/double&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;Clawbacks&lt;/name&gt;
+                  &lt;value&gt;&lt;double&gt;0.0&lt;/double&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    AmountEarned
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;double&gt;
-                      0.0
-                    &lt;/double&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;AmountEarned&lt;/name&gt;
+                  &lt;value&gt;&lt;double&gt;0.0&lt;/double&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    Balance
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;double&gt;
-                      0.0
-                    &lt;/double&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;Balance&lt;/name&gt;
+                  &lt;value&gt;&lt;double&gt;0.0&lt;/double&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    AffiliateId
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;i4&gt;
-                      6
-                    &lt;/i4&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;AffiliateId&lt;/name&gt;
+                  &lt;value&gt;&lt;i4&gt;6&lt;/i4&gt;&lt;/value&gt;
                 &lt;/member&gt;
               &lt;/struct&gt;
             &lt;/value&gt;

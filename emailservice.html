@@ -109,47 +109,47 @@
 					
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;APIEmailService.addEmailTemplate&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;title&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;category&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;fromAddress&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;toAddress~Contact.Email~&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;ccAddresses&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;bccAddresses&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;subject&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;textBody&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;htmlBody&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;contentType&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;mergeContext&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;APIEmailService.addEmailTemplate&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;title&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;category&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;fromAddress&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;toAddress~Contact.Email~&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;ccAddresses&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;bccAddresses&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;subject&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;textBody&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;htmlBody&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;contentType&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;mergeContext&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -158,11 +158,7 @@
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;i4&gt;
-          3378
-        &lt;/i4&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;i4&gt;3378&lt;/i4&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -259,7 +255,7 @@
 							<tr>
 								<td>emailSentType</td>
 								<td>int</td>
-								<td>Set this to 1</td>
+								<td>A boolean int, 1 is used for marking the email as sent inside the contact history and 0 is used for marking the email as received</td>
 							</tr>
 						</tbody>
 					</table>
@@ -269,56 +265,56 @@
 					
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;APIEmailService.attachEmail&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;contactId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;fromName&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;fromAddress&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;toAddress&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;ccAddress&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;bccAddress&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;contentType&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;subject&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;htmlBody&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;textBody&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;header&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;receivedDate&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;sentDate&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;emailSentType(Set To 1)&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;APIEmailService.attachEmail&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;contactId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;fromName&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;fromAddress&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;toAddress&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;ccAddress&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;bccAddress&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;contentType&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;subject&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;htmlBody&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;textBody&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;header&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;receivedDate&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;sentDate&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;emailSentType(Set To 1)&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -327,11 +323,7 @@
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;boolean&gt;
-          1
-        &lt;/boolean&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;boolean&gt;1&lt;/boolean&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -430,17 +422,17 @@
 					
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-	&lt;methodName&gt;APIEmailService.getEmailTemplate&lt;/methodName&gt;
-	&lt;params&gt;
-		&lt;param&gt;
-			&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-		&lt;/param&gt;
-		&lt;param&gt;
-			&lt;value&gt;&lt;int&gt;templateId&lt;/int&gt;&lt;/value&gt;
-		&lt;/param&gt;
-	&lt;/params&gt;
+  &lt;methodName&gt;APIEmailService.getEmailTemplate&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;templateId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -452,88 +444,48 @@
       &lt;value&gt;
         &lt;struct&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              pieceTitle
-            &lt;/name&gt;
-            &lt;value&gt;
-              template API Test
-            &lt;/value&gt;
+            &lt;name&gt;pieceTitle&lt;/name&gt;
+            &lt;value&gt;template API Test&lt;/value&gt;
           &lt;/member&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              categories
-            &lt;/name&gt;
-            &lt;value&gt;
-              API Category
-            &lt;/value&gt;
+            &lt;name&gt;categories&lt;/name&gt;
+            &lt;value&gt;API Category&lt;/value&gt;
           &lt;/member&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              fromAddress
-            &lt;/name&gt;
-            &lt;value&gt;
-              from@infusionsoft.com
-            &lt;/value&gt;
+            &lt;name&gt;fromAddress&lt;/name&gt;
+            &lt;value&gt;from@infusionsoft.com&lt;/value&gt;
           &lt;/member&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              toAddress
-            &lt;/name&gt;
-            &lt;value&gt;
-              ~Contact.Email~
-            &lt;/value&gt;
+            &lt;name&gt;toAddress&lt;/name&gt;
+            &lt;value&gt;~Contact.Email~&lt;/value&gt;
           &lt;/member&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              ccAddress
-            &lt;/name&gt;
+            &lt;name&gt;ccAddress&lt;/name&gt;
             &lt;value/&gt;
           &lt;/member&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              bccAddress
-            &lt;/name&gt;
+            &lt;name&gt;bccAddress&lt;/name&gt;
             &lt;value/&gt;
           &lt;/member&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              subject
-            &lt;/name&gt;
-            &lt;value&gt;
-              My Fancy Subject Line
-            &lt;/value&gt;
+            &lt;name&gt;subject&lt;/name&gt;
+            &lt;value&gt;My Fancy Subject Line&lt;/value&gt;
           &lt;/member&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              textBody
-            &lt;/name&gt;
-            &lt;value&gt;
-              This is the text email body
-            &lt;/value&gt;
+            &lt;name&gt;textBody&lt;/name&gt;
+            &lt;value&gt;This is the text email body&lt;/value&gt;
           &lt;/member&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              htmlBody
-            &lt;/name&gt;
-            &lt;value&gt;
-              This is html body
-            &lt;/value&gt;
+            &lt;name&gt;htmlBody&lt;/name&gt;
+            &lt;value&gt;This is html body&lt;/value&gt;
           &lt;/member&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              contentType
-            &lt;/name&gt;
-            &lt;value&gt;
-              HTML
-            &lt;/value&gt;
+            &lt;name&gt;contentType&lt;/name&gt;
+            &lt;value&gt;HTML&lt;/value&gt;
           &lt;/member&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              mergeContext
-            &lt;/name&gt;
-            &lt;value&gt;
-              Contact
-            &lt;/value&gt;
+            &lt;name&gt;mergeContext&lt;/name&gt;
+            &lt;value&gt;Contact&lt;/value&gt;
           &lt;/member&gt;
         &lt;/struct&gt;
       &lt;/value&gt;
@@ -578,17 +530,17 @@
 					
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-	&lt;methodName&gt;APIEmailService.getOptStatus&lt;/methodName&gt;
-		&lt;params&gt;
-			&lt;param&gt;
-				&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-			&lt;/param&gt;
-			&lt;param&gt;
-				&lt;value&gt;&lt;string&gt;email&lt;/string&gt;&lt;/value&gt;
-			&lt;/param&gt;
-	&lt;/params&gt;
+  &lt;methodName&gt;APIEmailService.getOptStatus&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;email&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -597,11 +549,7 @@
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;i4&gt;
-          0
-        &lt;/i4&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;i4&gt;0&lt;/i4&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -648,7 +596,7 @@
 					
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
 &lt;methodName&gt;APIEmailService.optIn&lt;/methodName&gt;
   &lt;params&gt;
@@ -670,11 +618,7 @@
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;boolean&gt;
-          0
-        &lt;/boolean&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;boolean&gt;0&lt;/boolean&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -721,7 +665,7 @@
 					
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
 &lt;methodName&gt;APIEmailService.optOut&lt;/methodName&gt;
   &lt;params&gt;
@@ -743,11 +687,7 @@
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;boolean&gt;
-          0
-        &lt;/boolean&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;boolean&gt;0&lt;/boolean&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -834,52 +774,125 @@
 					
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
 &lt;methodName&gt;APIEmailService.sendEmail&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;array&gt;
-&lt;data&gt;
-&lt;value&gt;&lt;int&gt;contactList1&lt;/int&gt;&lt;/value&gt;
-&lt;value&gt;&lt;int&gt;contactList2&lt;/int&gt;&lt;/value&gt;
-&lt;value&gt;&lt;int&gt;contactList3&lt;/int&gt;&lt;/value&gt;
-&lt;/data&gt;
-&lt;/array&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;fromAddress&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;toAddress&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;ccAddresses&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;bccAddresses&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;contentType&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;subject&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;htmlBody&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;textBody&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;array&gt;
+        &lt;data&gt;
+          &lt;value&gt;&lt;int&gt;contactList1&lt;/int&gt;&lt;/value&gt;
+          &lt;value&gt;&lt;int&gt;contactList2&lt;/int&gt;&lt;/value&gt;
+          &lt;value&gt;&lt;int&gt;contactList3&lt;/int&gt;&lt;/value&gt;
+        &lt;/data&gt;
+      &lt;/array&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;fromAddress&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;toAddress&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;ccAddresses&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;bccAddresses&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;contentType&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;subject&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;htmlBody&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;textBody&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
 					<pre class="prettyprint">
 &lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;boolean&gt;1&lt;/boolean&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+					<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$clist = array(123,456,789); $status = $app->sendEmail($clist,"Test@test.com","~Contact.Email~", "","","Text","Test Subject","","This is the body");</pre>
+					
+					
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">EmailService.</span><span class="method">sendTemplate</span>
+					</div>
+					<p>This will send an email to a list of contacts, as well as record the email in the contacts' email history</p>
+					
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key</td>
+							</tr>
+							<tr>
+								<td>contactList</td>
+								<td>array</td>
+								<td>an integer array of Contact Id numbers you would like to send this email to</td>
+							</tr>
+							<tr>
+								<td>templateId</td>
+								<td>string</td>
+								<td>Id of of template to send</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>Return: True if the email has been sent, an error will be sent back otherwise!</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;APIEmailService.sendEmail&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;c94a1f2b395a9ab97d4263b37f7b0923&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;array&gt;
+&lt;data&gt;
+&lt;value&gt;&lt;int&gt;12&lt;/int&gt;&lt;/value&gt;
+&lt;value&gt;&lt;int&gt;16&lt;/int&gt;&lt;/value&gt;
+&lt;value&gt;&lt;int&gt;22&lt;/int&gt;&lt;/value&gt;
+&lt;/data&gt;
+&lt;/array&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;3380&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
@@ -893,7 +906,7 @@
 &lt;/methodResponse&gt;</pre>
 	
 					<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">$clist = array(123,456,789); $status = $app->sendEmail($clist,"Test@test.com","~Contact.Email~", "","","Text","Test Subject","","This is the body");</pre>
+					<pre class="prettyprint">$app->sendTemplate(array(12,16,22), 3380);</pre>
 					
 					
 					<hr>

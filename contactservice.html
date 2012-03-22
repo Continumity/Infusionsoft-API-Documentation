@@ -61,28 +61,28 @@
 					</table>
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;ContactService.add&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;struct&gt;
-&lt;member&gt;&lt;name&gt;FirstName&lt;/name&gt;
-&lt;value&gt;&lt;string&gt;John&lt;/string&gt;&lt;/value&gt;
-&lt;/member&gt;
-&lt;member&gt;&lt;name&gt;LastName&lt;/name&gt;
-&lt;value&gt;&lt;string&gt;Doe&lt;/string&gt;&lt;/value&gt;
-&lt;/member&gt;
-&lt;member&gt;&lt;name&gt;Email&lt;/name&gt;
-&lt;value&gt;&lt;string&gt;there_he_go@itsjohndoe.com&lt;/string&gt;&lt;/value&gt;
-&lt;/member&gt;
-&lt;/struct&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
-&lt;/methodCall&gt;</pre>
+  &lt;methodName&gt;ContactService.add&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;struct&gt;
+        &lt;member&gt;&lt;name&gt;FirstName&lt;/name&gt;
+          &lt;value&gt;&lt;string&gt;John&lt;/string&gt;&lt;/value&gt;
+        &lt;/member&gt;
+        &lt;member&gt;&lt;name&gt;LastName&lt;/name&gt;
+          &lt;value&gt;&lt;string&gt;Doe&lt;/string&gt;&lt;/value&gt;
+        &lt;/member&gt;
+        &lt;member&gt;&lt;name&gt;Email&lt;/name&gt;
+          &lt;value&gt;&lt;string&gt;there_he_go@itsjohndoe.com&lt;/string&gt;&lt;/value&gt;
+        &lt;/member&gt;
+      &lt;/struct&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+  &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
 					<pre class="prettyprint">
@@ -90,11 +90,7 @@
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;i4&gt;
-          contactIDNumber
-        &lt;/i4&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;i4&gt;contactIDNumber&lt;/i4&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -140,20 +136,20 @@ $conID = $app->addCon($conDat);</pre>
 					</table>
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;ContactService.addToCampaign&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;contactIDNumber&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;campaignIDNumber&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;ContactService.addToCampaign&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;contactIDNumber&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;campaignIDNumber&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -199,20 +195,20 @@ $result = $app->campAssign($contactId, $campId)</pre>
 					</table>
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;ContactService.addToGroup&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;contactIDNumber&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;groupIDNumber&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;ContactService.addToGroup&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;contactIDNumber&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;groupIDNumber&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -220,11 +216,7 @@ $result = $app->campAssign($contactId, $campId)</pre>
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;boolean&gt;
-          0
-        &lt;/boolean&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;boolean&gt;0&lt;/boolean&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -267,20 +259,20 @@ $result = $app->grpAssign($contactId, $groupId);</pre>
 					</table>
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;ContactService.getNextCampaignStep&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;contactIDNumber&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;followUpSequenceId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;ContactService.getNextCampaignStep&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;contactIDNumber&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;followUpSequenceId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 <h3>Sampe Response</h3>
 <pre class="prettyprint">no response made yet</pre>
@@ -322,26 +314,26 @@ $result = $app->grpAssign($contactId, $groupId);</pre>
 					</table>
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;ContactService.findByEmail&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;there_he_go@itsjohndoe.com&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;array&gt;
-&lt;data&gt;
-&lt;value&gt;&lt;string&gt;Id&lt;/string&gt;&lt;/value&gt;
-&lt;value&gt;&lt;string&gt;FirstName&lt;/string&gt;&lt;/value&gt;
-&lt;value&gt;&lt;string&gt;LastName&lt;/string&gt;&lt;/value&gt;
-&lt;/data&gt;
-&lt;/array&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;ContactService.findByEmail&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;there_he_go@itsjohndoe.com&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;array&gt;
+        &lt;data&gt;
+          &lt;value&gt;&lt;string&gt;Id&lt;/string&gt;&lt;/value&gt;
+          &lt;value&gt;&lt;string&gt;FirstName&lt;/string&gt;&lt;/value&gt;
+          &lt;value&gt;&lt;string&gt;LastName&lt;/string&gt;&lt;/value&gt;
+        &lt;/data&gt;
+      &lt;/array&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 <h3>Sampe Response</h3>
 <pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
@@ -354,60 +346,32 @@ $result = $app->grpAssign($contactId, $groupId);</pre>
             &lt;value&gt;
               &lt;struct&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    FirstName
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    John
-                  &lt;/value&gt;
+                  &lt;name&gt;FirstName&lt;/name&gt;
+                  &lt;value&gt;John&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    Id
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;i4&gt;
-                      16
-                    &lt;/i4&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;Id&lt;/name&gt;
+                  &lt;value&gt;&lt;i4&gt;16&lt;/i4&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    LastName
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    Doe
-                  &lt;/value&gt;
+                  &lt;name&gt;LastName&lt;/name&gt;
+                  &lt;value&gt;Doe&lt;/value&gt;
                 &lt;/member&gt;
               &lt;/struct&gt;
             &lt;/value&gt;
             &lt;value&gt;
               &lt;struct&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    FirstName
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    Ron
-                  &lt;/value&gt;
+                  &lt;name&gt;FirstName&lt;/name&gt;
+                  &lt;value&gt;Ron&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    Id
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;i4&gt;
-                      18
-                    &lt;/i4&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;Id&lt;/name&gt;
+                  &lt;value&gt;&lt;i4&gt;18&lt;/i4&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    LastName
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    Doe
-                  &lt;/value&gt;
+                  &lt;name&gt;LastName&lt;/name&gt;
+                  &lt;value&gt;Doe&lt;/value&gt;
                 &lt;/member&gt;
               &lt;/struct&gt;
             &lt;/value&gt;
@@ -455,26 +419,26 @@ $data = $app->findByEmail($email, $returnFields);</pre>
 						</tbody>
 					</table>
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
 &lt;methodName&gt;ContactService.load&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;contactIDNumber&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;array&gt;
-&lt;data&gt;
-&lt;value&gt;&lt;string&gt;Id&lt;/string&gt;&lt;/value&gt;
-&lt;value&gt;&lt;string&gt;FirstName&lt;/string&gt;&lt;/value&gt;
-&lt;value&gt;&lt;string&gt;LastName&lt;/string&gt;&lt;/value&gt;
-&lt;/data&gt;
-&lt;/array&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;contactIDNumber&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;array&gt;
+        &lt;data&gt;
+          &lt;value&gt;&lt;string&gt;Id&lt;/string&gt;&lt;/value&gt;
+          &lt;value&gt;&lt;string&gt;FirstName&lt;/string&gt;&lt;/value&gt;
+          &lt;value&gt;&lt;string&gt;LastName&lt;/string&gt;&lt;/value&gt;
+        &lt;/data&gt;
+      &lt;/array&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 <h3>Sampe Response</h3>
 <pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
@@ -484,30 +448,16 @@ $data = $app->findByEmail($email, $returnFields);</pre>
       &lt;value&gt;
         &lt;struct&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              FirstName
-            &lt;/name&gt;
-            &lt;value&gt;
-              Ron
-            &lt;/value&gt;
+            &lt;name&gt;FirstName&lt;/name&gt;
+            &lt;value&gt;Ron&lt;/value&gt;
           &lt;/member&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              Id
-            &lt;/name&gt;
-            &lt;value&gt;
-              &lt;i4&gt;
-                18
-              &lt;/i4&gt;
-            &lt;/value&gt;
+            &lt;name&gt;Id&lt;/name&gt;
+            &lt;value&gt;&lt;i4&gt;18&lt;/i4&gt;&lt;/value&gt;
           &lt;/member&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              LastName
-            &lt;/name&gt;
-            &lt;value&gt;
-              Doe
-            &lt;/value&gt;
+            &lt;name&gt;LastName&lt;/name&gt;
+            &lt;value&gt;Doe&lt;/value&gt;
           &lt;/member&gt;
         &lt;/struct&gt;
       &lt;/value&gt;
@@ -552,23 +502,34 @@ $conDat = $app->loadCon(123, $returnFields);</pre>
 						</tbody>
 					</table>
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
 &lt;methodName&gt;ContactService.pauseCampaign&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;c94a1f2b395a9ab97d4263b37f7b0923&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;22&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;2&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;c94a1f2b395a9ab97d4263b37f7b0923&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;22&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;2&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 <h3>Sampe Response</h3>
-<pre class="prettyprint">only errors</pre>
+<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;boolean&gt;
+          1
+        &lt;/boolean&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
 	
 										<h3>PHP iSDK Sample</h3>
 					<pre class="prettyprint">$contactId = 123;
@@ -608,23 +569,34 @@ $result = $app->campPause($contactId, $seqId);</pre>
 						</tbody>
 					</table>
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
 &lt;methodName&gt;ContactService.removeFromCampaign&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;contactIDNumber&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;campaignIDNumber&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;contactIDNumber&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;campaignIDNumber&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 <h3>Sampe Response</h3>
-<pre class="prettyprint">only errors</pre>
+<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;boolean&gt;
+          1
+        &lt;/boolean&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
 	
 										<h3>PHP iSDK Sample</h3>
 					<pre class="prettyprint">$contactId = 123;
@@ -664,31 +636,27 @@ $result = $app->campRemove($contactId, $fusId);</pre>
 						</tbody>
 					</table>
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
 &lt;methodName&gt;ContactService.removeFromGroup&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;contactIDNumber&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;groupIDNumber&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;contactIDNumber&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;groupIDNumber&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 <h3>Sample Response</h3>
 <pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;boolean&gt;
-          0
-        &lt;/boolean&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;boolean&gt;0&lt;/boolean&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -731,7 +699,7 @@ $result = $app->grpRemove($contactId, $groupId);</pre>
 						</tbody>
 					</table>
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 </pre>
 <h3>Sample Response</h3>
 <pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
@@ -778,10 +746,39 @@ $result = $app->grpRemove($contactId, $groupId);</pre>
 					</table>
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
-</pre>
+&lt;methodCall&gt;
+&lt;methodName&gt;ContactService.rescheduleCampaignStep&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;c94a1f2b395a9ab97d4263b37f7b0923&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;array&gt;
+&lt;data&gt;
+&lt;value&gt;&lt;int&gt;22&lt;/int&gt;&lt;/value&gt;
+&lt;value&gt;&lt;int&gt;12&lt;/int&gt;&lt;/value&gt;
+&lt;value&gt;&lt;int&gt;16&lt;/int&gt;&lt;/value&gt;
+&lt;/data&gt;
+&lt;/array&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;2&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
 <h3>Sample Response</h3>
 <pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-</pre>
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;i4&gt;
+          3
+        &lt;/i4&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
 	
 					<h3>PHP iSDK Sample</h3>
 					<pre class="prettyprint">$conIds = array(123,456,789);
@@ -821,20 +818,20 @@ $numCons = $app->rescheduleCampaignStep($conIds, 23);</pre>
 						</tbody>
 					</table>
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
 &lt;methodName&gt;ContactService.removeFromGroup&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;contactIDNumber&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;groupIDNumber&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;contactIDNumber&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;groupIDNumber&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;
 </pre>
 <h3>Sample Response</h3>
@@ -842,11 +839,7 @@ $numCons = $app->rescheduleCampaignStep($conIds, 23);</pre>
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;boolean&gt;
-          0
-        &lt;/boolean&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;boolean&gt;0&lt;/boolean&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -890,20 +883,20 @@ $result = $myApp->grpRemove($contactId, $groupId);</pre>
 						</tbody>
 					</table>
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
 &lt;methodName&gt;ContactService.runActionSequence&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;contactIDNumber&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;1&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;contactIDNumber&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;1&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;
 </pre>
 <h3>Sample Response</h3>
@@ -911,11 +904,7 @@ $result = $myApp->grpRemove($contactId, $groupId);</pre>
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;boolean&gt;
-          0
-        &lt;/boolean&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;boolean&gt;0&lt;/boolean&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -959,7 +948,7 @@ $result = $myApp->runAS($contactId, $actionId);</pre>
 						</tbody>
 					</table>
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 </pre>
 <h3>Sample Response</h3>
 <pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
@@ -1005,38 +994,34 @@ $result = $myApp->runAS($contactId, $actionId);</pre>
 						</tbody>
 					</table>
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
 &lt;methodName&gt;ContactService.update&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;contactIDNumber&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;struct&gt;
-&lt;member&gt;&lt;name&gt;fieldToUpdate1&lt;/name&gt;
-&lt;value&gt;&lt;string&gt;field1&lt;/string&gt;&lt;/value&gt;
-&lt;/member&gt;
-&lt;member&gt;&lt;name&gt;fieldToUpdate2&lt;/name&gt;
-&lt;value&gt;&lt;string&gt;field2&lt;/string&gt;&lt;/value&gt;
-&lt;/member&gt;
-&lt;/struct&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;contactIDNumber&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;struct&gt;
+        &lt;member&gt;&lt;name&gt;fieldToUpdate1&lt;/name&gt;
+          &lt;value&gt;&lt;string&gt;field1&lt;/string&gt;&lt;/value&gt;
+        &lt;/member&gt;
+        &lt;member&gt;&lt;name&gt;fieldToUpdate2&lt;/name&gt;
+          &lt;value&gt;&lt;string&gt;field2&lt;/string&gt;&lt;/value&gt;
+        &lt;/member&gt;
+      &lt;/struct&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 <h3>Sample Response</h3>
 <pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;i4&gt;
-          contactIDNumber
-        &lt;/i4&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;i4&gt;contactIDNumber&lt;/i4&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>

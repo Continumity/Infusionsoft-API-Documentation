@@ -61,7 +61,7 @@
 					</table>
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
   &lt;methodName&gt;FileService.getFile&lt;/methodName&gt;
   &lt;params&gt;
@@ -80,9 +80,7 @@
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-	fileData
-      &lt;/value&gt;
+      &lt;value&gt;fileData&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -120,22 +118,38 @@ $myUrl = $app->getFile($fileId);</pre>
 					</table>
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
-  &lt;methodCall&gt;
-    &lt;methodName&gt;FileService.getDownloadUrl&lt;/methodName&gt;
-    &lt;params&gt;
-      &lt;param&gt;
-        &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-      &lt;/param&gt;
-      &lt;param&gt;
-        &lt;value&gt;&lt;int&gt;fileUID&lt;/int&gt;&lt;/value&gt;
-      &lt;/param&gt;
-    &lt;/params&gt;
-  &lt;/methodCall&gt;</pre>
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;FileService.getDownloadUrl&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;fileUID&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;methodResponse&gt;&lt;fault&gt;&lt;value&gt;&lt;struct&gt;&lt;member&gt;&lt;name&gt;faultCode&lt;/name&gt;&lt;value&gt;&lt;i4&gt;3&lt;/i4&gt;&lt;/value&gt;&lt;/member&gt;&lt;member&gt;&lt;name&gt;faultString&lt;/name&gt;&lt;value&gt;[Unexpected]Error getting download url: Access denied&lt;/value&gt;&lt;/member&gt;&lt;/struct&gt;&lt;/value&gt;&lt;/fault&gt;&lt;/methodResponse&gt;</pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;methodResponse&gt;
+  &lt;fault&gt;
+    &lt;value&gt;
+      &lt;struct&gt;
+        &lt;member&gt;
+          &lt;name&gt;faultCode&lt;/name&gt;
+          &lt;value&gt;&lt;i4&gt;3&lt;/i4&gt;&lt;/value&gt;
+        &lt;/member&gt;
+        &lt;member&gt;
+          &lt;name&gt;faultString&lt;/name&gt;
+          &lt;value&gt;[Unexpected]Error getting download url: Access denied&lt;/value&gt;
+        &lt;/member&gt;
+      &lt;/struct&gt;
+    &lt;/value&gt;
+  &lt;/fault&gt;
+&lt;/methodResponse&gt;</pre>
 
 					<h3>PHP iSDK Sample</h3>
 					<pre class="prettyprint">$fileId = 64;
@@ -180,7 +194,7 @@ $myUrl = $app->getDownloadUrl($fileId);</pre>
 					</table>
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
   &lt;methodName&gt;FileService.uploadFile&lt;/methodName&gt;
     &lt;params&gt;
@@ -205,9 +219,7 @@ $myUrl = $app->getDownloadUrl($fileId);</pre>
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;i4&gt;482&lt;/i4&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;i4&gt;482&lt;/i4&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -249,7 +261,7 @@ $myUrl = $app->getDownloadUrl($fileId);</pre>
 					</table>
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
   &lt;methodName&gt;FileService.replaceFile&lt;/methodName&gt;
   &lt;params&gt;
@@ -271,9 +283,7 @@ $myUrl = $app->getDownloadUrl($fileId);</pre>
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;boolean&gt;1&lt;/boolean&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;boolean&gt;1&lt;/boolean&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>

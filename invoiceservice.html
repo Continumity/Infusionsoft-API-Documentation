@@ -88,29 +88,29 @@
 					<p>(int) Invoice Id for this new order</p>
 					
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;InvoiceService.createBlankOrder&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;c94a1f2b395a9ab97d4263b37f7b0923&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;22&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;hello world&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;dateTime.iso8601&gt;20080908T00:00:00&lt;/dateTime.iso8601&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;2&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;2&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;InvoiceService.createBlankOrder&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;c94a1f2b395a9ab97d4263b37f7b0923&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;22&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;hello world&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;dateTime.iso8601&gt;20080908T00:00:00&lt;/dateTime.iso8601&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;2&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;2&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -118,11 +118,7 @@
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;i4&gt;
-          8
-        &lt;/i4&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;i4&gt;8&lt;/i4&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -265,35 +261,35 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 					<p>(boolean) True/False</p>
 					
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;InvoiceService.addOrderItem&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;orderId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;productId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;type&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;double&gt;price&lt;/double&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;quantity&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;title&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;description&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;InvoiceService.addOrderItem&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;orderId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;productId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;type&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;double&gt;price&lt;/double&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;quantity&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;title&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;description&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -301,11 +297,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;boolean&gt;
-          1
-        &lt;/boolean&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;boolean&gt;1&lt;/boolean&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -375,58 +367,77 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 					</p>
 					
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;InvoiceService.chargeInvoice&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;invoiceId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;notes&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;creditCardId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;merchId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;boolean&gt;bypassComm&lt;/boolean&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;InvoiceService.chargeInvoice&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;invoiceId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;notes&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;creditCardId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;merchId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;boolean&gt;bypassComm&lt;/boolean&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
-					<pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodResponse&gt;
-  &lt;fault&gt;
-    &lt;value&gt;
-      &lt;struct&gt;
-        &lt;member&gt;
-          &lt;name&gt;
-            faultCode
-          &lt;/name&gt;
-          &lt;value&gt;
-            &lt;i4&gt;
-              3
-            &lt;/i4&gt;
-          &lt;/value&gt;
-        &lt;/member&gt;
-        &lt;member&gt;
-          &lt;name&gt;
-            faultString
-          &lt;/name&gt;
-          &lt;value&gt;
-            [Unexpected]Error while charging card
-          &lt;/value&gt;
-        &lt;/member&gt;
-      &lt;/struct&gt;
-    &lt;/value&gt;
-  &lt;/fault&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;struct&gt;
+          &lt;member&gt;
+            &lt;name&gt;
+              Successful
+            &lt;/name&gt;
+            &lt;value&gt;
+              &lt;boolean&gt;
+                0
+              &lt;/boolean&gt;
+            &lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;
+              Message
+            &lt;/name&gt;
+            &lt;value&gt;
+              (TESTMODE) The merchant login ID or password is invalid or the
+              account is inactive. (13)
+            &lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;
+              RefNum
+            &lt;/name&gt;
+            &lt;value&gt;
+              0
+            &lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;
+              Code
+            &lt;/name&gt;
+            &lt;value&gt;
+              ERROR
+            &lt;/value&gt;
+          &lt;/member&gt;
+        &lt;/struct&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
 	
 										<h3>PHP iSDK Sample</h3>
@@ -468,17 +479,17 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 					<p>(boolean) True/False</p>
 					
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;InvoiceService.deleteSubscription&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;subscriptionId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;InvoiceService.deleteSubscription&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;subscriptionId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -486,11 +497,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;boolean&gt;
-          1
-        &lt;/boolean&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;boolean&gt;1&lt;/boolean&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -579,44 +586,44 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 					<p>(int) Id of the newly created Subscription</p>
 					
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;InvoiceService.addRecurringOrder&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;contactId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;boolean&gt;allowDup&lt;/boolean&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;cProgramId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;qty&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;double&gt;price&lt;/double&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;boolean&gt;allowTax&lt;/boolean&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;merchantId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;creditCardId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;affiliateId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;dayCharge&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;InvoiceService.addRecurringOrder&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;contactId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;boolean&gt;allowDup&lt;/boolean&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;cProgramId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;qty&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;double&gt;price&lt;/double&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;boolean&gt;allowTax&lt;/boolean&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;merchantId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;creditCardId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;affiliateId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;dayCharge&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -624,11 +631,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;i4&gt;
-          6
-        &lt;/i4&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;i4&gt;6&lt;/i4&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -692,29 +695,29 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 					<p>(boolean) True/False</p>
 					
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;InvoiceService.addRecurringCommissionOverride&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;recurringOrderId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;affId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;double&gt;commissionAmt&lt;/double&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;payoutType&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;No Description&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;InvoiceService.addRecurringCommissionOverride&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;recurringOrderId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;affId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;double&gt;commissionAmt&lt;/double&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;payoutType&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;No Description&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -722,11 +725,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;boolean&gt;
-          1
-        &lt;/boolean&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;boolean&gt;1&lt;/boolean&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -770,17 +769,17 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 					<p>(int) the Id of the invoice that was created, or zero if the subscription failed to generate any invoices (none due)</p>
 					
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;InvoiceService.createInvoiceForRecurring&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;recurringOrderId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;InvoiceService.createInvoiceForRecurring&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;recurringOrderId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -788,11 +787,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;i4&gt;
-          10
-        &lt;/i4&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;i4&gt;10&lt;/i4&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -861,17 +856,17 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 					<p>(boolean) True/False</p>
 					
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;InvoiceService.createInvoiceForRecurring&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;recurringOrderId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;InvoiceService.createInvoiceForRecurring&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;recurringOrderId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -879,11 +874,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;i4&gt;
-          10
-        &lt;/i4&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;i4&gt;10&lt;/i4&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -977,47 +968,47 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 					<p>(boolean) True/False</p>
 					
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;InvoiceService.addPaymentPlan&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;invoiceId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;boolean&gt;autoCharge&lt;/boolean&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;creditCardId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;merchantAccountId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;daysRetry&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;maxRetry&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;double&gt;initialPmt&lt;/double&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;dateTime.iso8601&gt;initialPmtDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;dateTime.iso8601&gt;planStartDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;numPmts&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;daysBetweenPmts&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;InvoiceService.addPaymentPlan&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;invoiceId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;boolean&gt;autoCharge&lt;/boolean&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;creditCardId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;merchantAccountId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;daysRetry&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;maxRetry&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;double&gt;initialPmt&lt;/double&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;dateTime.iso8601&gt;initialPmtDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;dateTime.iso8601&gt;planStartDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;numPmts&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;daysBetweenPmts&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -1026,10 +1017,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
   &lt;params&gt;
     &lt;param&gt;
       &lt;value&gt;
-        &lt;boolean&gt;
-          1
-        &lt;/boolean&gt;
-      &lt;/value&gt;
+        &lt;boolean&gt;1&lt;/boolean&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -1075,17 +1063,17 @@ $result = $myApp->payPlan(43,true,12,1,2,3,25.50,$inDate,$stDate,5,30);</pre>
 					<p>(double) outstanding amount on the supplied invoice</p>
 					
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;InvoiceService.calculateAmountOwed&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;invoiceId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;InvoiceService.calculateAmountOwed&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;invoiceId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -1093,11 +1081,7 @@ $result = $myApp->payPlan(43,true,12,1,2,3,25.50,$inDate,$stDate,5,30);</pre>
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;double&gt;
-          41.14
-        &lt;/double&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;double&gt;41.14&lt;/double&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -1144,14 +1128,14 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
 					<p>(struct) all valid payment types currently setup in the application</p>
 					
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;InvoiceService.getAllPaymentOptions&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;InvoiceService.getAllPaymentOptions&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -1162,68 +1146,36 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
       &lt;value&gt;
         &lt;struct&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              Credit Card (Manual)
-            &lt;/name&gt;
-            &lt;value&gt;
-              Credit Card (Manual)
-            &lt;/value&gt;
+            &lt;name&gt;Credit Card (Manual)&lt;/name&gt;
+            &lt;value&gt;Credit Card (Manual)&lt;/value&gt;
           &lt;/member&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              Check
-            &lt;/name&gt;
-            &lt;value&gt;
-              Check
-            &lt;/value&gt;
+            &lt;name&gt;Check&lt;/name&gt;
+            &lt;value&gt;Check&lt;/value&gt;
           &lt;/member&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              Cash
-            &lt;/name&gt;
-            &lt;value&gt;
-              Cash
-            &lt;/value&gt;
+            &lt;name&gt;Cash&lt;/name&gt;
+            &lt;value&gt;Cash&lt;/value&gt;
           &lt;/member&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              Money Order
-            &lt;/name&gt;
-            &lt;value&gt;
-              Money Order
-            &lt;/value&gt;
+            &lt;name&gt;Money Order&lt;/name&gt;
+            &lt;value&gt;Money Order&lt;/value&gt;
           &lt;/member&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              Adjustment
-            &lt;/name&gt;
-            &lt;value&gt;
-              Adjustment
-            &lt;/value&gt;
+            &lt;name&gt;Adjustment&lt;/name&gt;
+            &lt;value&gt;Adjustment&lt;/value&gt;
           &lt;/member&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              Credit Card
-            &lt;/name&gt;
-            &lt;value&gt;
-              Credit Card
-            &lt;/value&gt;
+            &lt;name&gt;Credit Card&lt;/name&gt;
+            &lt;value&gt;Credit Card&lt;/value&gt;
           &lt;/member&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              Credit
-            &lt;/name&gt;
-            &lt;value&gt;
-              Credit
-            &lt;/value&gt;
+            &lt;name&gt;Credit&lt;/name&gt;
+            &lt;value&gt;Credit&lt;/value&gt;
           &lt;/member&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              Refund
-            &lt;/name&gt;
-            &lt;value&gt;
-              Refund
-            &lt;/value&gt;
+            &lt;name&gt;Refund&lt;/name&gt;
+            &lt;value&gt;Refund&lt;/value&gt;
           &lt;/member&gt;
         &lt;/struct&gt;
       &lt;/value&gt;
@@ -1270,17 +1222,17 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
 					<p>(array) list of all payments for an invoice</p>
 					
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;InvoiceService.getPayments&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;paymentId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;InvoiceService.getPayments&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;paymentId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -1294,108 +1246,48 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
             &lt;value&gt;
               &lt;struct&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    Id
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;i4&gt;
-                      2
-                    &lt;/i4&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;Id&lt;/name&gt;
+                  &lt;value&gt;&lt;i4&gt;2&lt;/i4&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    PayDate
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;dateTime.iso8601&gt;
-                      20120314T00:00:00
-                    &lt;/dateTime.iso8601&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;PayDate&lt;/name&gt;
+                  &lt;value&gt;&lt;dateTime.iso8601&gt;20120314T00:00:00&lt;/dateTime.iso8601&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    UserId
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;i4&gt;
-                      14
-                    &lt;/i4&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;UserId&lt;/name&gt;
+                  &lt;value&gt;&lt;i4&gt;14&lt;/i4&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    PayAmt
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;double&gt;
-                      5.0
-                    &lt;/double&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;PayAmt&lt;/name&gt;
+                  &lt;value&gt;&lt;double&gt;5.0&lt;/double&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    PayType
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    Credit Card (Manual)
-                  &lt;/value&gt;
+                  &lt;name&gt;PayType&lt;/name&gt;
+                  &lt;value&gt;Credit Card (Manual)&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    ContactId
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;i4&gt;
-                      22
-                    &lt;/i4&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;ContactId&lt;/name&gt;
+                  &lt;value&gt;&lt;i4&gt;22&lt;/i4&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    PayNote
-                  &lt;/name&gt;
+                  &lt;name&gt;PayNote&lt;/name&gt;
                   &lt;value/&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    InvoiceId
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;i4&gt;
-                      6
-                    &lt;/i4&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;InvoiceId&lt;/name&gt;
+                  &lt;value&gt;&lt;i4&gt;6&lt;/i4&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    RefundId
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;i4&gt;
-                      0
-                    &lt;/i4&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;RefundId&lt;/name&gt;
+                  &lt;value&gt;&lt;i4&gt;0&lt;/i4&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    ChargeId
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;i4&gt;
-                      0
-                    &lt;/i4&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;ChargeId&lt;/name&gt;
+                  &lt;value&gt;&lt;i4&gt;0&lt;/i4&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    Synced
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;i4&gt;
-                      0
-                    &lt;/i4&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;Synced&lt;/name&gt;
+                  &lt;value&gt;&lt;i4&gt;0&lt;/i4&gt;&lt;/value&gt;
                 &lt;/member&gt;
               &lt;/struct&gt;
             &lt;/value&gt;
@@ -1450,20 +1342,20 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
 					<p>(int) creditCardId if the card is found. Zero if no card matches</p>
 					
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;InvoiceService.locateExistingCard&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;contactId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;last4&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;InvoiceService.locateExistingCard&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;contactId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;last4&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -1471,11 +1363,7 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;i4&gt;
-          0
-        &lt;/i4&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;i4&gt;0&lt;/i4&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -1520,17 +1408,17 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
 					<p>(int) creditCardId if the card is found. Zero if no card matches</p>
 					
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;InvoiceService.recalculateTax&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;invoiceId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;InvoiceService.recalculateTax&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;invoiceId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -1538,11 +1426,7 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;boolean&gt;
-          1
-        &lt;/boolean&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;boolean&gt;1&lt;/boolean&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -1633,36 +1517,36 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
 					<p>(struct) Valid – True or False, and Message – any message about card validation</p>
 					
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;InvoiceService.validateCreditCard&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKet&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;struct&gt;
-&lt;member&gt;&lt;name&gt;CardType&lt;/name&gt;
-&lt;value&gt;&lt;string&gt;Visa&lt;/string&gt;&lt;/value&gt;
-&lt;/member&gt;
-&lt;member&gt;&lt;name&gt;ContactId&lt;/name&gt;
-&lt;value&gt;&lt;int&gt;123&lt;/int&gt;&lt;/value&gt;
-&lt;/member&gt;
-&lt;member&gt;&lt;name&gt;CardNumber&lt;/name&gt;
-&lt;value&gt;&lt;string&gt;4111111111111111&lt;/string&gt;&lt;/value&gt;
-&lt;/member&gt;
-&lt;member&gt;&lt;name&gt;ExpirationMonth&lt;/name&gt;
-&lt;value&gt;&lt;string&gt;12&lt;/string&gt;&lt;/value&gt;
-&lt;/member&gt;
-&lt;member&gt;&lt;name&gt;ExpirationYear&lt;/name&gt;
-&lt;value&gt;&lt;string&gt;2009&lt;/string&gt;&lt;/value&gt;
-&lt;/member&gt;
-&lt;member&gt;&lt;name&gt;CVV2&lt;/name&gt;
-&lt;value&gt;&lt;string&gt;123&lt;/string&gt;&lt;/value&gt;
-&lt;/member&gt;
-&lt;/struct&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;InvoiceService.validateCreditCard&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKet&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;struct&gt;
+        &lt;member&gt;&lt;name&gt;CardType&lt;/name&gt;
+          &lt;value&gt;&lt;string&gt;Visa&lt;/string&gt;&lt;/value&gt;
+        &lt;/member&gt;
+        &lt;member&gt;&lt;name&gt;ContactId&lt;/name&gt;
+          &lt;value&gt;&lt;int&gt;123&lt;/int&gt;&lt;/value&gt;
+        &lt;/member&gt;
+        &lt;member&gt;&lt;name&gt;CardNumber&lt;/name&gt;
+          &lt;value&gt;&lt;string&gt;4111111111111111&lt;/string&gt;&lt;/value&gt;
+        &lt;/member&gt;
+        &lt;member&gt;&lt;name&gt;ExpirationMonth&lt;/name&gt;
+          &lt;value&gt;&lt;string&gt;12&lt;/string&gt;&lt;/value&gt;
+        &lt;/member&gt;
+        &lt;member&gt;&lt;name&gt;ExpirationYear&lt;/name&gt;
+          &lt;value&gt;&lt;string&gt;2009&lt;/string&gt;&lt;/value&gt;
+        &lt;/member&gt;
+        &lt;member&gt;&lt;name&gt;CVV2&lt;/name&gt;
+          &lt;value&gt;&lt;string&gt;123&lt;/string&gt;&lt;/value&gt;
+        &lt;/member&gt;
+      &lt;/struct&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -1673,20 +1557,12 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
       &lt;value&gt;
         &lt;struct&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              Message
-            &lt;/name&gt;
-            &lt;value&gt;
-              Card has expired
-            &lt;/value&gt;
+            &lt;name&gt;Message&lt;/name&gt;
+            &lt;value&gt;Card has expired&lt;/value&gt;
           &lt;/member&gt;
           &lt;member&gt;
-            &lt;name&gt;
-              Valid
-            &lt;/name&gt;
-            &lt;value&gt;
-              false
-            &lt;/value&gt;
+            &lt;name&gt;Valid&lt;/name&gt;
+            &lt;value&gt;false&lt;/value&gt;
           &lt;/member&gt;
         &lt;/struct&gt;
       &lt;/value&gt;
@@ -1737,14 +1613,14 @@ $result = $myApp->validateCard($card);</pre>
 					<p>(array) all shipping options that have been configured</p>
 					
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;InvoiceService.getAllShippingOptions&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;InvoiceService.getAllShippingOptions&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -1752,11 +1628,7 @@ $result = $myApp->validateCard($card);</pre>
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;boolean&gt;
-          1
-        &lt;/boolean&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;boolean&gt;1&lt;/boolean&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -1805,20 +1677,20 @@ $result = $myApp->validateCard($card);</pre>
 					<p>(boolean) True/False</p>
 					
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;InvoiceService.updateJobRecurringNextBillDate&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;recurringOrderId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;dateTime.iso8601&gt;nextBillDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;InvoiceService.updateJobRecurringNextBillDate&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;recurringOrderId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;dateTime.iso8601&gt;nextBillDate&lt;/dateTime.iso8601&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -1826,11 +1698,7 @@ $result = $myApp->validateCard($card);</pre>
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;boolean&gt;
-          1
-        &lt;/boolean&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;boolean&gt;1&lt;/boolean&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -1912,38 +1780,38 @@ $result = $app->updateSubscriptionNextBillDate($recurringOrderId,$nDate);</pre>
 					<p>(boolean) True/False</p>
 					
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;InvoiceService.addOrderCommissionOverride&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;invoiceId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;affiliateId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;productId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;commissionPercentage&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;double&gt;amountPaid&lt;/double&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;payoutType&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;desc&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;dateTime.iso8601&gt;date&lt;/dateTime.iso8601&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;InvoiceService.addOrderCommissionOverride&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;invoiceId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;affiliateId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;productId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;commissionPercentage&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;double&gt;amountPaid&lt;/double&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;payoutType&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;desc&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;dateTime.iso8601&gt;date&lt;/dateTime.iso8601&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -1951,11 +1819,7 @@ $result = $app->updateSubscriptionNextBillDate($recurringOrderId,$nDate);</pre>
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;boolean&gt;
-          1
-        &lt;/boolean&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;boolean&gt;1&lt;/boolean&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>

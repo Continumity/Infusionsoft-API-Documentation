@@ -71,30 +71,30 @@
 					
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;DataService.add&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;tableName&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;struct&gt;
-&lt;member&gt;&lt;name&gt;tableColumn1&lt;/name&gt;
-&lt;value&gt;&lt;string&gt;columnValue1&lt;/string&gt;&lt;/value&gt;
-&lt;/member&gt;
-&lt;member&gt;&lt;name&gt;tableColumn2&lt;/name&gt;
-&lt;value&gt;&lt;string&gt;columnValue2&lt;/string&gt;&lt;/value&gt;
-&lt;/member&gt;
-&lt;member&gt;&lt;name&gt;tableColumn3&lt;/name&gt;
-&lt;value&gt;&lt;string&gt;columnValue3&lt;/string&gt;&lt;/value&gt;
-&lt;/member&gt;
-&lt;/struct&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;DataService.add&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;tableName&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;struct&gt;
+        &lt;member&gt;&lt;name&gt;tableColumn1&lt;/name&gt;
+          &lt;value&gt;&lt;string&gt;columnValue1&lt;/string&gt;&lt;/value&gt;
+        &lt;/member&gt;
+        &lt;member&gt;&lt;name&gt;tableColumn2&lt;/name&gt;
+          &lt;value&gt;&lt;string&gt;columnValue2&lt;/string&gt;&lt;/value&gt;
+        &lt;/member&gt;
+        &lt;member&gt;&lt;name&gt;tableColumn3&lt;/name&gt;
+          &lt;value&gt;&lt;string&gt;columnValue3&lt;/string&gt;&lt;/value&gt;
+        &lt;/member&gt;
+      &lt;/struct&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -103,11 +103,7 @@
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;i4&gt;
-          26
-        &lt;/i4&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;i4&gt;26&lt;/i4&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -164,68 +160,56 @@
 							
 							<h3>Sample Request</h3>
 							<pre class="prettyprint">
-		&lt;?xml version=&quot;1.0&quot;?&gt;
-		&lt;methodCall&gt;
-		&lt;methodName&gt;DataService.load&lt;/methodName&gt;
-		&lt;params&gt;
-		&lt;param&gt;
-		&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-		&lt;/param&gt;
-		&lt;param&gt;
-		&lt;value&gt;&lt;string&gt;tableName&lt;/string&gt;&lt;/value&gt;
-		&lt;/param&gt;
-		&lt;param&gt;
-		&lt;value&gt;&lt;int&gt;idNumber&lt;/int&gt;&lt;/value&gt;
-		&lt;/param&gt;
-		&lt;param&gt;
-		&lt;value&gt;&lt;array&gt;
-		&lt;data&gt;
-		&lt;value&gt;&lt;string&gt;field1&lt;/string&gt;&lt;/value&gt;
-		&lt;value&gt;&lt;string&gt;field2&lt;/string&gt;&lt;/value&gt;
-		&lt;value&gt;&lt;string&gt;field3&lt;/string&gt;&lt;/value&gt;
-		&lt;/data&gt;
-		&lt;/array&gt;&lt;/value&gt;
-		&lt;/param&gt;
-		&lt;/params&gt;
-		&lt;/methodCall&gt;</pre>
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;DataService.load&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;tableName&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;idNumber&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;array&gt;
+        &lt;data&gt;
+          &lt;value&gt;&lt;string&gt;field1&lt;/string&gt;&lt;/value&gt;
+          &lt;value&gt;&lt;string&gt;field2&lt;/string&gt;&lt;/value&gt;
+          &lt;value&gt;&lt;string&gt;field3&lt;/string&gt;&lt;/value&gt;
+        &lt;/data&gt;
+      &lt;/array&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
 		
 							<h3>Sample Response</h3>
 							<pre class="prettyprint">
-		&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
-		&lt;methodResponse&gt;
-		  &lt;params&gt;
-		    &lt;param&gt;
-		      &lt;value&gt;
-		        &lt;struct&gt;
-		          &lt;member&gt;
-		            &lt;name&gt;
-		              field1
-		            &lt;/name&gt;
-		            &lt;value&gt;
-		              field1Value
-		            &lt;/value&gt;
-		          &lt;/member&gt;
-		          &lt;member&gt;
-		            &lt;name&gt;
-		             field2
-		            &lt;/name&gt;
-		            &lt;value&gt;
-		              field2Value
-		            &lt;/value&gt;
-		          &lt;/member&gt;
-		          &lt;member&gt;
-		            &lt;name&gt;
-		              field3
-		            &lt;/name&gt;
-		            &lt;value&gt;
-		              field3Value
-		            &lt;/value&gt;
-		          &lt;/member&gt;
-		        &lt;/struct&gt;
-		      &lt;/value&gt;
-		    &lt;/param&gt;
-		  &lt;/params&gt;
-		&lt;/methodResponse&gt;</pre>
+&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;struct&gt;
+          &lt;member&gt;
+            &lt;name&gt;field1&lt;/name&gt;
+            &lt;value&gt;field1Value&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;field2&lt;/name&gt;
+            &lt;value&gt;field2Value&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;field3&lt;/name&gt;
+            &lt;value&gt;field3Value&lt;/value&gt;
+          &lt;/member&gt;
+        &lt;/struct&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
 			
 					<h3>PHP iSDK Sample</h3>
 					<pre class="prettyprint">$returnFields = array('Email', 'FirstName', 'LastName');
@@ -275,24 +259,27 @@
 					
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;DataService.updateCustomField&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;customFieldId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;struct&gt;
-&lt;member&gt;&lt;name&gt;contextOfField&lt;/name&gt;
-&lt;value&gt;&lt;string&gt;fieldValue&lt;/string&gt;&lt;/value&gt;
-&lt;/member&gt;
-&lt;/struct&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;DataService.updateCustomField&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;customFieldId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;struct&gt;
+          &lt;member&gt;
+            &lt;name&gt;contextOfField&lt;/name&gt;
+            &lt;value&gt;&lt;string&gt;fieldValue&lt;/string&gt;&lt;/value&gt;
+          &lt;/member&gt;
+        &lt;/struct&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -303,22 +290,12 @@
     &lt;value&gt;
       &lt;struct&gt;
         &lt;member&gt;
-          &lt;name&gt;
-            faultCode
-          &lt;/name&gt;
-          &lt;value&gt;
-            &lt;i4&gt;
-              4
-            &lt;/i4&gt;
-          &lt;/value&gt;
+          &lt;name&gt;faultCode&lt;/name&gt;
+          &lt;value&gt;&lt;i4&gt;4&lt;/i4&gt;&lt;/value&gt;
         &lt;/member&gt;
         &lt;member&gt;
-          &lt;name&gt;
-            faultString
-          &lt;/name&gt;
-          &lt;value&gt;
-            [DatabaseError]Error creating custom field
-          &lt;/value&gt;
+          &lt;name&gt;faultString&lt;/name&gt;
+          &lt;value&gt;[DatabaseError]Error creating custom field&lt;/value&gt;
         &lt;/member&gt;
       &lt;/struct&gt;
     &lt;/value&gt;
@@ -370,20 +347,20 @@
 					
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;DataService.delete&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;tableName&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;idNumberToDelete&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;DataService.delete&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;tableName&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;idNumberToDelete&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -392,11 +369,7 @@
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;boolean&gt;
-          1
-        &lt;/boolean&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;boolean&gt;1&lt;/boolean&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -463,36 +436,36 @@
 					
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;DataService.findByField&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;tableName&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;limit&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;page&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;fieldName&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;fieldValue&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;array&gt;
-&lt;data&gt;
-&lt;value&gt;&lt;string&gt;returnField1&lt;/string&gt;&lt;/value&gt;
-&lt;/data&gt;
-&lt;/array&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;DataService.findByField&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;tableName&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;limit&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;page&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;fieldName&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;fieldValue&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;array&gt;
+        &lt;data&gt;
+          &lt;value&gt;&lt;string&gt;returnField1&lt;/string&gt;&lt;/value&gt;
+        &lt;/data&gt;
+      &lt;/array&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -501,11 +474,7 @@
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;array&gt;
-          &lt;data/&gt;
-        &lt;/array&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;array&gt;&lt;data/&gt;&lt;/array&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -569,38 +538,38 @@ $contacts = $myApp->dsFind('ContactGroupAssign',5,0,'GroupId',97,$returnFields);
 					
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;DataService.query&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;tableName&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;limit&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;page&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;struct&gt;
-&lt;member&gt;&lt;name&gt;queryField&lt;/name&gt;
-&lt;value&gt;&lt;string&gt;query&lt;/string&gt;&lt;/value&gt;
-&lt;/member&gt;
-&lt;/struct&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;array&gt;
-&lt;data&gt;
-&lt;value&gt;&lt;string&gt;returnField1&lt;/string&gt;&lt;/value&gt;
-&lt;value&gt;&lt;string&gt;returnField2&lt;/string&gt;&lt;/value&gt;
-&lt;/data&gt;
-&lt;/array&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;DataService.query&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;tableName&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;limit&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;page&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;struct&gt;
+        &lt;member&gt;&lt;name&gt;queryField&lt;/name&gt;
+          &lt;value&gt;&lt;string&gt;query&lt;/string&gt;&lt;/value&gt;
+        &lt;/member&gt;
+      &lt;/struct&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;array&gt;
+        &lt;data&gt;
+          &lt;value&gt;&lt;string&gt;returnField1&lt;/string&gt;&lt;/value&gt;
+          &lt;value&gt;&lt;string&gt;returnField2&lt;/string&gt;&lt;/value&gt;
+        &lt;/data&gt;
+      &lt;/array&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -615,22 +584,12 @@ $contacts = $myApp->dsFind('ContactGroupAssign',5,0,'GroupId',97,$returnFields);
             &lt;value&gt;
               &lt;struct&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    FirstName
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    Chuck
-                  &lt;/value&gt;
+                  &lt;name&gt;FirstName&lt;/name&gt;
+                  &lt;value&gt;Chuck&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    Id
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;i4&gt;
-                      22
-                    &lt;/i4&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;Id&lt;/name&gt;
+                  &lt;value&gt;&lt;i4&gt;22&lt;/i4&gt;&lt;/value&gt;
                 &lt;/member&gt;
               &lt;/struct&gt;
             &lt;/value&gt;
@@ -708,26 +667,26 @@ $contacts = $myApp->dsQuery("Contact",10,0,$query,$returnFields);</pre>
 					
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;DataService.addCustomField&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;contextOfField&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;displayName&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;dataType&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;headerID&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;DataService.addCustomField&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;contextOfField&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;displayName&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;dataType&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;headerID&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -736,11 +695,7 @@ $contacts = $myApp->dsQuery("Contact",10,0,$query,$returnFields);</pre>
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        &lt;i4&gt;
-          4
-        &lt;/i4&gt;
-      &lt;/value&gt;
+      &lt;value&gt;&lt;i4&gt;4&lt;/i4&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -788,20 +743,20 @@ $newField = $app->addCustomField('Contact','Test Field','Text',1);</pre>
 					
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;DataService.authenticateUser&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;userName&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;password&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;DataService.authenticateUser&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;userName&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;password&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -812,22 +767,12 @@ $newField = $app->addCustomField('Contact','Test Field','Text',1);</pre>
     &lt;value&gt;
       &lt;struct&gt;
         &lt;member&gt;
-          &lt;name&gt;
-            faultCode
-          &lt;/name&gt;
-          &lt;value&gt;
-            &lt;i4&gt;
-              13
-            &lt;/i4&gt;
-          &lt;/value&gt;
+          &lt;name&gt;faultCode&lt;/name&gt;
+          &lt;value&gt;&lt;i4&gt;13&lt;/i4&gt;&lt;/value&gt;
         &lt;/member&gt;
         &lt;member&gt;
-          &lt;name&gt;
-            faultString
-          &lt;/name&gt;
-          &lt;value&gt;
-            [FailedLoginAttempt]Invalid username and/or password.
-          &lt;/value&gt;
+          &lt;name&gt;faultString&lt;/name&gt;
+          &lt;value&gt;[FailedLoginAttempt]Invalid username and/or password.&lt;/value&gt;
         &lt;/member&gt;
       &lt;/struct&gt;
     &lt;/value&gt;
@@ -880,20 +825,20 @@ $uid = $app->authenticateUser("JDoe","Test123");</pre>
 					
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;DataService.getAppSetting&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;moduleName&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;settingName&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;DataService.getAppSetting&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;moduleName&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;settingName&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -902,9 +847,7 @@ $uid = $app->authenticateUser("JDoe","Test123");</pre>
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;
-        Prospect,Customer,Partner,Personal Contact,Vendor
-      &lt;/value&gt;
+      &lt;value&gt;Prospect,Customer,Partner,Personal Contact,Vendor&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
@@ -1001,24 +944,24 @@ $result = $app->dsGetSetting('Contact', 'optiontypes');</pre>
 					
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;DataService.updateCustomField&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;customFieldId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;struct&gt;
-&lt;member&gt;&lt;name&gt;contextOfField&lt;/name&gt;
-&lt;value&gt;&lt;string&gt;fieldValue&lt;/string&gt;&lt;/value&gt;
-&lt;/member&gt;
-&lt;/struct&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;DataService.updateCustomField&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;customFieldId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;struct&gt;
+        &lt;member&gt;&lt;name&gt;contextOfField&lt;/name&gt;
+          &lt;value&gt;&lt;string&gt;fieldValue&lt;/string&gt;&lt;/value&gt;
+        &lt;/member&gt;
+      &lt;/struct&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
@@ -1029,22 +972,12 @@ $result = $app->dsGetSetting('Contact', 'optiontypes');</pre>
     &lt;value&gt;
       &lt;struct&gt;
         &lt;member&gt;
-          &lt;name&gt;
-            faultCode
-          &lt;/name&gt;
-          &lt;value&gt;
-            &lt;i4&gt;
-              4
-            &lt;/i4&gt;
-          &lt;/value&gt;
+          &lt;name&gt;faultCode&lt;/name&gt;
+          &lt;value&gt;&lt;i4&gt;4&lt;/i4&gt;&lt;/value&gt;
         &lt;/member&gt;
         &lt;member&gt;
-          &lt;name&gt;
-            faultString
-          &lt;/name&gt;
-          &lt;value&gt;
-            [DatabaseError]Error creating custom field
-          &lt;/value&gt;
+          &lt;name&gt;faultString&lt;/name&gt;
+          &lt;value&gt;[DatabaseError]Error creating custom field&lt;/value&gt;
         &lt;/member&gt;
       &lt;/struct&gt;
     &lt;/value&gt;
