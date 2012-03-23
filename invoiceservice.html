@@ -17,13 +17,44 @@
 			</div>
 			<div class="row">
 				<div class="span2 sidebar">
-					<div class="well">
-						<h4>Sidebar</h4>
-						<ul>
-							<li>Link 1</li>
-							<li>Link 2</li>
-							<li>Link 3</li>
-							<li>Link 4</li>
+					<div class="well" style="padding: 8px 0;">
+						<ul class="nav nav-list">
+							<li class="nav-header">Overview</li>
+							<li><a href="introduction.html">Introduction</a></li>
+							<li><a href="request.html">Requests</a></li>
+							<li><a href="response.html">Responses</a></li>
+							<li><a href="error.html">Errors</a></li>
+							<li class="nav-header">Services</li>
+							<li><a href="affiliateservice.html">AffiliateService</a></li>
+							<li><a href="contactservice.html">ContactService</a></li>
+							<li><a href="dataservice.html">DataService</a></li>
+							<li><a href="discountservice.html">DiscountService</a></li>
+							<li><a href="emailservice.html">EmailService</a></li>
+							<li><a href="fileservice.html">FileService</a></li>
+							<li class="nav-header active"><a href="invoiceservice.html">InvoiceService</a></li>
+							<li><a href="#createBlankOrder">createBlankOrder</a></li>
+							<li><a href="#addOrderItem">addOrderItem</a></li>
+							<li><a href="#chargeInvoice">chargeInvoice</a></li>
+							<li><a href="#deleteSubscription">deleteSubscription</a></li>
+							<li><a href="#addRecurringOrder">addRecurringOrder</a></li>
+							<li><a href="#addRecurringCommissionOverride">addRecurringCommissionOverride</a></li>
+							<li><a href="#createInvoiceForRecurring">createInvoiceForRecurring</a></li>
+							<li><a href="#addManualPayment">addManualPayment</a></li>
+							<li><a href="#addPaymentPlan">addPaymentPlan</a></li>
+							<li><a href="#calculateAmountOwed">calculateAmountOwed</a></li>
+							<li><a href="#getAllPaymentOptions">getAllPaymentOptions</a></li>
+							<li><a href="#getPayments">getPayments</a></li>
+							<li><a href="#locateExistingCard">locateExistingCard</a></li>
+							<li><a href="#recalculateTax">recalculateTax</a></li>
+							<li><a href="#validateCreditCard">validateCreditCard</a></li>
+							<li><a href="#getAllShippingOptions">getAllShippingOptions</a></li>
+							<li><a href="#updateJobRecurringNextBillDate">updateJobRecurringNextBillDate</a></li>
+							<li><a href="#addOrderCommissionOverride">addOrderCommissionOverride</a></li>
+							<li class="divider"></li>
+							<li><a href="productservice.html">ProductService</a></li>
+							<li><a href="searchservice.html">SearchService</a></li>
+							<li><a href="shippingservice.html">ShippingService</a></li>
+							<li><a href="webformservice.html">WebFormService</a></li>
 						</ul>
 					</div>
 				</div>
@@ -38,7 +69,7 @@
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">InvoiceService.</span><span class="method">createBlankOrder</span>
+						<span class="collection">InvoiceService.</span><span class="method"><a name="createBlankOrder">createBlankOrder</a></span>
 					</div>
 					
 					<p>Creates a one-time order with no added line items</p>
@@ -133,7 +164,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">InvoiceService.</span><span class="method">addOrderItem</span>
+						<span class="collection">InvoiceService.</span><span class="method"><a name="addOrderItem">addOrderItem</a></span>
 					</div>
 					
 					<p>Adds a line item to an order. This used to add a Product to an order as well as any other sort of charge/discount.</p>
@@ -311,7 +342,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">InvoiceService.</span><span class="method">chargeInvoice</span>
+						<span class="collection">InvoiceService.</span><span class="method"><a name="chargeInvoice">chargeInvoice</a></span>
 					</div>
 					
 					<p>This will cause a credit card to be charged for the amount currently due on an invoice</p>
@@ -449,7 +480,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">InvoiceService.</span><span class="method">deleteSubscription</span>
+						<span class="collection">InvoiceService.</span><span class="method"><a name="deleteSubscription">deleteSubscription</a></span>
 					</div>
 					
 					<p>Deletes the specified subscription from the database, as well as all invoices tied to the subscription</p>
@@ -511,7 +542,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">InvoiceService.</span><span class="method">addRecurringOrder</span>
+						<span class="collection">InvoiceService.</span><span class="method"><a name="addRecurringOrder">addRecurringOrder</a></span>
 					</div>
 					
 					<p>Creates a subscription for a contact. Subscriptions are billing automatically by Infusionsoft within the next six hours. If you want to bill immediately you will need to utilize the InvoiceService.createInvoiceForRecurring and InvoiceService.chargeInvoice methods to accomplish this.</p>
@@ -645,7 +676,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">InvoiceService.</span><span class="method">addRecurringCommissionOverride</span>
+						<span class="collection">InvoiceService.</span><span class="method"><a name="addRecurringCommissionOverride">addRecurringCommissionOverride</a></span>
 					</div>
 					
 					<p>Modifies the commissions being earned on a particular subscription. This does not affect previously generated invoices for this subscription.</p>
@@ -739,7 +770,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">InvoiceService.</span><span class="method">createInvoiceForRecurring</span>
+						<span class="collection">InvoiceService.</span><span class="method"><a name="createInvoiceForRecurring">createInvoiceForRecurring</a></span>
 					</div>
 					
 					<p>This will create an invoice for all charges due on a Subscription. If the subscription has three billing cycles that are due, it will create one invoice with all three items attached.</p>
@@ -801,7 +832,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">InvoiceService.</span><span class="method">addManualPayment</span>
+						<span class="collection">InvoiceService.</span><span class="method"><a name="addManualPayment">addManualPayment</a></span>
 					</div>
 					
 					<p>Adds a payment to an invoice without actually processing a charge through a merchant. This is useful if you accept cash/check, or handle payments outside of Infusionsoft.</p>
@@ -888,7 +919,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">InvoiceService.</span><span class="method">addPaymentPlan</span>
+						<span class="collection">InvoiceService.</span><span class="method"><a name="addPaymentPlan">addPaymentPlan</a></span>
 					</div>
 					
 					<p>Allows you to setup a custom payment plan for an invoice.</p>
@@ -1033,7 +1064,7 @@ $result = $myApp->payPlan(43,true,12,1,2,3,25.50,$inDate,$stDate,5,30);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">InvoiceService.</span><span class="method">calculateAmountOwed</span>
+						<span class="collection">InvoiceService.</span><span class="method"><a name="calculateAmountOwed">calculateAmountOwed</a></span>
 					</div>
 					
 					<p>Used to determine the outstanding amount owed on a given invoice.</p>
@@ -1103,7 +1134,7 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">InvoiceService.</span><span class="method">getAllPaymentOptions</span>
+						<span class="collection">InvoiceService.</span><span class="method"><a name="getAllPaymentOptions">getAllPaymentOptions</a></span>
 					</div>
 					
 					<p>This is used to retrieve all Payment Types currently setup under the Order Settings section of Infusionsoft.</p>
@@ -1192,7 +1223,7 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">InvoiceService.</span><span class="method">getPayments</span>
+						<span class="collection">InvoiceService.</span><span class="method"><a name="getPayments">getPayments</a></span>
 					</div>
 					
 					<p>Retrieves all payments for a given invoice.</p>
@@ -1307,7 +1338,7 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">InvoiceService.</span><span class="method">locateExistingCard</span>
+						<span class="collection">InvoiceService.</span><span class="method"><a name="locateExistingCard">locateExistingCard</a></span>
 					</div>
 					
 					<p>Finds a credit card on file for a contactId that matches the last four digits of the card.</p>
@@ -1378,7 +1409,7 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">InvoiceService.</span><span class="method">recalculateTax</span>
+						<span class="collection">InvoiceService.</span><span class="method"><a name="recalculateTax">recalculateTax</a></span>
 					</div>
 					
 					<p>Calculates tax, and places it onto the given invoice.</p>
@@ -1440,7 +1471,7 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">InvoiceService.</span><span class="method">validateCreditCard</span>
+						<span class="collection">InvoiceService.</span><span class="method"><a name="validateCreditCard">validateCreditCard</a></span>
 					</div>
 					
 					<p>Validates a credit card in one of two ways - the first will validate an existing card in the Infusionsoft system by grabbing card data via the credit card ID. The second takes card details as a struct and validates it without having it already saved.</p>
@@ -1588,7 +1619,7 @@ $result = $myApp->validateCard($card);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">InvoiceService.</span><span class="method">getAllShippingOptions</span>
+						<span class="collection">InvoiceService.</span><span class="method"><a name="getAllShippingOptions">getAllShippingOptions</a></span>
 					</div>
 					
 					<p>Retrieves the shipping options currently setup for the Infusionsoft shopping cart.</p>
@@ -1642,7 +1673,7 @@ $result = $myApp->validateCard($card);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">InvoiceService.</span><span class="method">updateJobRecurringNextBillDate</span>
+						<span class="collection">InvoiceService.</span><span class="method"><a name="updateJobRecurringNextBillDate">updateJobRecurringNextBillDate</a></span>
 					</div>
 					
 					<p>Changes the next bill date on a subscription.</p>
@@ -1715,7 +1746,7 @@ $result = $app->updateSubscriptionNextBillDate($recurringOrderId,$nDate);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">InvoiceService.</span><span class="method">addOrderCommissionOverride</span>
+						<span class="collection">InvoiceService.</span><span class="method"><a name="addOrderCommissionOverride">addOrderCommissionOverride</a></span>
 					</div>
 					
 					<p>Creates a commission on an existing invoice.</p>

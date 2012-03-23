@@ -17,13 +17,31 @@
 			</div>
 			<div class="row">
 				<div class="span2 sidebar">
-					<div class="well">
-						<h4>Sidebar</h4>
-						<ul>
-							<li>Link 1</li>
-							<li>Link 2</li>
-							<li>Link 3</li>
-							<li>Link 4</li>
+					<div class="well" style="padding: 8px 0;">
+						<ul class="nav nav-list">
+							<li class="nav-header">Overview</li>
+							<li><a href="introduction.html">Introduction</a></li>
+							<li><a href="request.html">Requests</a></li>
+							<li><a href="response.html">Responses</a></li>
+							<li><a href="error.html">Errors</a></li>
+							<li class="nav-header">Services</li>
+							<li class="nav-header active"><a href="affiliateservice.html">AffiliateService</a></li>
+							<li><a href="#affCrawlbacks">affCrawlbacks</a></li>
+							<li><a href="#affCommissions">affCommissions</a></li>
+							<li><a href="#affPayouts">affPayouts</a></li>
+							<li><a href="#affRunningTotals">affRunningTotals</a></li>
+							<li><a href="#affSummary">affSummary</a></li>
+							<li class="divider"></li>
+							<li><a href="contactservice.html">ContactService</a></li>
+							<li><a href="dataservice.html">DataService</a></li>
+							<li><a href="discountservice.html">DiscountService</a></li>
+							<li><a href="emailservice.html">EmailService</a></li>
+							<li><a href="fileservice.html">FileService</a></li>
+							<li><a href="invoiceservice.html">InvoiceService</a></li>
+							<li><a href="productservice.html">ProductService</a></li>
+							<li><a href="searchservice.html">SearchService</a></li>
+							<li><a href="shippingservice.html">ShippingService</a></li>
+							<li><a href="webformservice.html">WebFormService</a></li>
 						</ul>
 					</div>
 				</div>
@@ -37,7 +55,7 @@ To manage affiliate information (ie Name, Phone, etc.) you will need to use the 
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">AffiliateService.</span><span class="method">affClawbacks</span>
+						<span class="collection">AffiliateService.</span><span class="method"><a name="affClawbacks">affClawbacks</a></span>
 					</div>
 					
 					<p>The affClawbacks method is used when you need to retrieve all clawed back commissions for a particular affiliate. Claw backs typically occur when an order has been refunded to the customer</p>
@@ -112,7 +130,7 @@ $claws = $app->affClawbacks(123,$start,$finish);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">AffiliateService.</span><span class="method">affCommissions</span>
+						<span class="collection">AffiliateService.</span><span class="method"><a name="affCommissions">affCommissions</a></span>
 					</div>
 					
 					<p>This method is used to retrieve all commissions for a specific affiliate within a date range</p>
@@ -187,7 +205,7 @@ $comms = $app->affCommissions(123,$start,$finish);</pre>
 					<hr>
 					
 <div class="full_method">
-	<span class="collection">AffiliateService.</span><span class="method">affPayouts</span>
+	<span class="collection">AffiliateService.</span><span class="method"><a name="affPayouts">affPayouts</a></span>
 </div>
 
 <p>This method is used to retrieve all payments for a specific affiliate within a date range</p>
@@ -260,7 +278,7 @@ $pays = $app->affPayouts(123,$start,$finish);</pre>
 <hr>
 
 <div class="full_method">
-	<span class="collection">AffiliateService.</span><span class="method">affRunningTotals</span>
+	<span class="collection">AffiliateService.</span><span class="method"><a name="affRunningTotals">affRunningTotals</a></span>
 </div>
 
 <p>The affRunningTotals method is used to retrieve the current balances for Amount Earned, Clawbacks, and Running Balance.</p>
@@ -399,7 +417,7 @@ $totals = $app->affPayouts($affs);</pre>
 <hr>
 
 <div class="full_method">
-	<span class="collection">AffiliateService.</span><span class="method">affSummary</span>
+	<span class="collection">AffiliateService.</span><span class="method"><a name="affSummary">affSummary</a></span>
 </div>
 
 <p>The affSummary method is used to retrieve a summary of statistics for a list of affiliates</p>

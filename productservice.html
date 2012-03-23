@@ -17,13 +17,32 @@
 			</div>
 			<div class="row">
 				<div class="span2 sidebar">
-					<div class="well">
-						<h4>Sidebar</h4>
-						<ul>
-							<li>Link 1</li>
-							<li>Link 2</li>
-							<li>Link 3</li>
-							<li>Link 4</li>
+					<div class="well" style="padding: 8px 0;">
+						<ul class="nav nav-list">
+							<li class="nav-header">Overview</li>
+							<li><a href="introduction.html">Introduction</a></li>
+							<li><a href="request.html">Requests</a></li>
+							<li><a href="response.html">Responses</a></li>
+							<li><a href="error.html">Errors</a></li>
+							<li class="nav-header">Services</li>
+							<li><a href="affiliateservice.html">AffiliateService</a></li>
+							<li><a href="contactservice.html">ContactService</a></li>
+							<li><a href="dataservice.html">DataService</a></li>
+							<li><a href="discountservice.html">DiscountService</a></li>
+							<li><a href="emailservice.html">EmailService</a></li>
+							<li><a href="fileservice.html">FileService</a></li>
+							<li><a href="invoiceservice.html">InvoiceService</a></li>
+							<li class="nav-header active"><a href="productservice.html">ProductService</a></li>
+							<li><a href="#getInventory">getInventory</a></li>
+							<li><a href="#incrementInventory">incrementInventory</a></li>
+							<li><a href="#decrementInventory">decrementInventory</a></li>
+							<li><a href="#increaseInventory">increaseInventory</a></li>
+							<li><a href="#decreaseInventory">decreaseInventory</a></li>
+							<li><a href="#deactivateCreditCard">deactivateCreditCard</a></li>
+							<li class="divider"></li>
+							<li><a href="searchservice.html">SearchService</a></li>
+							<li><a href="shippingservice.html">ShippingService</a></li>
+							<li><a href="webformservice.html">WebFormService</a></li>
 						</ul>
 					</div>
 				</div>
@@ -35,7 +54,7 @@
 					<hr>
 					
 <div class="full_method">
-<span class="collection">ProductService.</span><span class="method">getInventory</span>
+<span class="collection">ProductService.</span><span class="method"><a name="getInventory">getInventory</a></span>
 </div>
 <p>returns the inventory</p>
 <h3>Required Parameters</h3>
@@ -86,7 +105,7 @@
 <pre class="prettyprint">$app->getInventory(1);</pre>
 <hr>
 <div class="full_method">
-<span class="collection">ProductService.</span><span class="method">incrementInventory</span>
+<span class="collection">ProductService.</span><span class="method"><a name="incrementInventory">incrementInventory</a></span>
 </div>
 <p>increments the inventory</p>
 <h3>Required Parameters</h3>
@@ -138,7 +157,59 @@
 <hr>
 
 <div class="full_method">
-<span class="collection">ProductService.</span><span class="method">increaseInventory</span>
+<span class="collection">ProductService.</span><span class="method"><a name="decrementInventory">decrementInventory</a></span>
+</div>
+<p>decrements the inventory</p>
+<h3>Required Parameters</h3>
+<table class="table table-bordered table-striped">
+<thead>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Definition</th>
+</thead>
+<tbody>
+<tr>
+<td>Key</td>
+<td>string</td>
+<td>Your Infusionsoft API key.</td>
+</tr>
+<tr>
+<td>productId</td>
+<td>int</td>
+<td>id of the product</td>
+</tr>
+</tbody>
+</table>
+<h3>Sample Request</h3>
+<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ProductService.decrementInventory&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;productId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+<h3>Sample Response</h3>
+<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;boolean&gt;1&lt;/boolean&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+
+<h3>PHP iSDK Sample</h3>
+<pre class="prettyprint">$app->decrementInventory(1);</pre>
+<hr>
+
+<div class="full_method">
+<span class="collection">ProductService.</span><span class="method"><a name="increaseInventory">increaseInventory</a></span>
 </div>
 <p>increases the inventory by a specified quanity</p>
 <h3>Required Parameters</h3>
@@ -198,7 +269,7 @@
 <hr>
 
 <div class="full_method">
-<span class="collection">ProductService.</span><span class="method">decreaseInventory</span>
+<span class="collection">ProductService.</span><span class="method"><a name="decreaseInventory">decreaseInventory</a></span>
 </div>
 <p>decreases the inventory by a specified quanity</p>
 <h3>Required Parameters</h3>
@@ -258,7 +329,7 @@
 <hr>
 
 <div class="full_method">
-<span class="collection">ProductService.</span><span class="method">deactivateCreditCard</span>
+<span class="collection">ProductService.</span><span class="method"><a name="deactivateCreditCard">deactivateCreditCard</a></span>
 </div>
 <p>deactivates the specified credit card</p>
 <h3>Required Parameters</h3>

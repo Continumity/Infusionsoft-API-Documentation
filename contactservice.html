@@ -17,13 +17,37 @@
 			</div>
 			<div class="row">
 				<div class="span2 sidebar">
-					<div class="well">
-						<h4>Sidebar</h4>
-						<ul>
-							<li>Link 1</li>
-							<li>Link 2</li>
-							<li>Link 3</li>
-							<li>Link 4</li>
+					<div class="well" style="padding: 8px 0;">
+						<ul class="nav nav-list">
+							<li class="nav-header">Overview</li>
+							<li><a href="introduction.html">Introduction</a></li>
+							<li><a href="request.html">Requests</a></li>
+							<li><a href="response.html">Responses</a></li>
+							<li><a href="error.html">Errors</a></li>
+							<li class="nav-header">Services</li>
+							<li><a href="affiliateservice.html">AffiliateService</a></li>
+							<li class="nav-header active"><a href="contactservice.html">ContactService</a></li>
+							<li><a href="#add">add</a></li>
+							<li><a href="#addToCampaign">addToCampaign</a></li>
+							<li><a href="#addToGroup">addToGroup</a></li>
+							<li><a href="#findByEmail">findByEmail</a></li>
+							<li><a href="#load">load</a></li>
+							<li><a href="#getNextCampaignStep">getNextCampaignStep</a></li>
+							<li><a href="#pauseCampaign">pauseCampaign</a></li>
+							<li><a href="#removeFromCampaign">removeFromCampaign</a></li>
+							<li><a href="#removeFromGroup">removeFromGroup</a></li
+							<li><a href="#runActionSequence">runActionSequence</a></li>
+							<li><a href="#update">update</a></li>
+							<li class="divider"></li>
+							<li><a href="dataservice.html">DataService</a></li>
+							<li><a href="discountservice.html">DiscountService</a></li>
+							<li><a href="emailservice.html">EmailService</a></li>
+							<li><a href="fileservice.html">FileService</a></li>
+							<li><a href="invoiceservice.html">InvoiceService</a></li>
+							<li><a href="productservice.html">ProductService</a></li>
+							<li><a href="searchservice.html">SearchService</a></li>
+							<li><a href="shippingservice.html">ShippingService</a></li>
+							<li><a href="webformservice.html">WebFormService</a></li>
 						</ul>
 					</div>
 				</div>
@@ -35,7 +59,7 @@
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">ContactService.</span><span class="method">add</span>
+						<span class="collection">ContactService.</span><span class="method"><a name="add">add</a></span>
 					</div>
 					
 					<p>Creates a new contact record from the data passed in the associative array</p>
@@ -105,7 +129,7 @@ $conID = $app->addCon($conDat);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">ContactService.</span><span class="method">addToCampaign</span>
+						<span class="collection">ContactService.</span><span class="method"><a name="addToCampaign">addToCampaign</a></span>
 					</div>
 					
 					<p>Adds a contact to a follow-up sequence (campaigns were the original name of follow-up sequences)</p>
@@ -164,7 +188,7 @@ $result = $app->campAssign($contactId, $campId)</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">ContactService.</span><span class="method">addToGroup</span>
+						<span class="collection">ContactService.</span><span class="method"><a name="addToGroup">addToGroup</a></span>
 					</div>
 					
 					<p>Adds a tag to a contact record</p>
@@ -228,7 +252,7 @@ $result = $app->grpAssign($contactId, $groupId);</pre>
 
 					<hr>
 					<div class="full_method">
-						<span class="collection">ContactService.</span><span class="method">getNextCampaignStep</span>
+						<span class="collection">ContactService.</span><span class="method"><a name="getNextCampaignStep">getNextCampaignStep</a></span>
 					</div>
 					
 					<p>Returns the Id number of the next follow-up sequence step for the given contact</p>
@@ -283,7 +307,7 @@ $result = $app->grpAssign($contactId, $groupId);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">ContactService.</span><span class="method">findByEmail</span>
+						<span class="collection">ContactService.</span><span class="method"><a name="findByEmail">findByEmail</a></span>
 					</div>
 					
 					<p>Finds all contacts with the given email address. This searches the Email, Email 2, and Email 3 fields</p>
@@ -389,7 +413,7 @@ $data = $app->findByEmail($email, $returnFields);</pre>
 
 					<hr>
 					<div class="full_method">
-						<span class="collection">ContactService.</span><span class="method">load</span>
+						<span class="collection">ContactService.</span><span class="method"><a name="load">load</a></span>
 					</div>
 					
 					<p>Load data from a specific contact record</p>
@@ -472,7 +496,7 @@ $conDat = $app->loadCon(123, $returnFields);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">ContactService.</span><span class="method">pauseCampaign</span>
+						<span class="collection">ContactService.</span><span class="method"><a name="pauseCampaign">pauseCampaign</a></span>
 					</div>
 					
 					<p>Pauses a follow-up sequence for the given contact record</p>
@@ -539,7 +563,7 @@ $result = $app->campPause($contactId, $seqId);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">ContactService.</span><span class="method">removeFromCampaign</span>
+						<span class="collection">ContactService.</span><span class="method"><a name="removeFromCampaign">removeFromCampaign</a></span>
 					</div>
 					
 					<p>Removes a follow-up sequence from a contact record</p>
@@ -606,7 +630,7 @@ $result = $app->campRemove($contactId, $fusId);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">ContactService.</span><span class="method">removeFromGroup</span>
+						<span class="collection">ContactService.</span><span class="method"><a name="removeFromGroup">removeFromGroup</a></span>
 					</div>
 					
 					<p>Removes a tag from a contact (groups were the original name of tags)</p>
@@ -669,7 +693,7 @@ $result = $app->grpRemove($contactId, $groupId);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">ContactService.</span><span class="method">resumeCampaignForContact</span>
+						<span class="collection">ContactService.</span><span class="method"><a name="resumeCampaignForContact">resumeCampaignForContact</a></span>
 					</div>
 					
 					<p>Resumes a follow-up sequence that has been stopped/paused for a given contact</p>
@@ -715,7 +739,7 @@ $result = $app->grpRemove($contactId, $groupId);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">ContactService.</span><span class="method">rescheduleCampaignStep</span>
+						<span class="collection">ContactService.</span><span class="method"><a name="rescheduleCampaignStep">rescheduleCampaignStep</a></span>
 					</div>
 					
 					<p>Immediately performs the given follow-up sequence stepId for the given contacts</p>
@@ -788,7 +812,7 @@ $numCons = $app->rescheduleCampaignStep($conIds, 23);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">ContactService.</span><span class="method">removeFromGroup</span>
+						<span class="collection">ContactService.</span><span class="method"><a name="removeFromGroup">removeFromGroup</a></span>
 					</div>
 					
 					<p>Removes a tag from a contact (groups were the original name of tags)</p>
@@ -853,7 +877,7 @@ $result = $myApp->grpRemove($contactId, $groupId);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">ContactService.</span><span class="method">runActionSequence</span>
+						<span class="collection">ContactService.</span><span class="method"><a name="runActionSequence">runActionSequence</a></span>
 					</div>
 					
 					<p>Runs an action set on a given contact record</p>
@@ -918,7 +942,7 @@ $result = $myApp->runAS($contactId, $actionId);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">ContactService.</span><span class="method">addWithDupCheck</span>
+						<span class="collection">ContactService.</span><span class="method"><a name="addWithDupCheck">addWithDupCheck</a></span>
 					</div>
 					
 					<p>Adds or updates a contact record based on matching data</p>
@@ -964,7 +988,7 @@ $result = $myApp->runAS($contactId, $actionId);</pre>
 					
 					
 					<div class="full_method">
-						<span class="collection">ContactService.</span><span class="method">update</span>
+						<span class="collection">ContactService.</span><span class="method"><a name="update">update</a></span>
 					</div>
 					
 					<p>Updates the data on a contact record</p>
@@ -1029,10 +1053,6 @@ $result = $myApp->runAS($contactId, $actionId);</pre>
 					<h3>PHP iSDK Sample</h3>
 					<pre class="prettyprint">$conDat = array('Email' => 'JDoe2@email.com');
 $conID = $myApp->updateCon(123, $conDat);</pre>
-
-
-
-
 					<hr>
 				</div>
 			</div>

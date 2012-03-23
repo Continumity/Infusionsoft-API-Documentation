@@ -17,13 +17,36 @@
 			</div>
 			<div class="row">
 				<div class="span2 sidebar">
-					<div class="well">
-						<h4>Sidebar</h4>
-						<ul>
-							<li>Link 1</li>
-							<li>Link 2</li>
-							<li>Link 3</li>
-							<li>Link 4</li>
+					<div class="well" style="padding: 8px 0;">
+						<ul class="nav nav-list">
+							<li class="nav-header">Overview</li>
+							<li><a href="introduction.html">Introduction</a></li>
+							<li><a href="request.html">Requests</a></li>
+							<li><a href="response.html">Responses</a></li>
+							<li><a href="error.html">Errors</a></li>
+							<li class="nav-header">Services</li>
+							<li><a href="affiliateservice.html">AffiliateService</a></li>
+							<li><a href="contactservice.html">ContactService</a></li>
+							<li class="nav-header active"><a href="dataservice.html">DataService</a></li>
+							<li><a href="#add">add</a></li>
+							<li><a href="#load">load</a></li>
+							<li><a href="#update">update</a></li>
+							<li><a href="#delete">delete</a></li>
+							<li><a href="#findByField">findByField</a></li>
+							<li><a href="#query">query</a></li>
+							<li><a href="#addCustomField">addCustomField</a></li>
+							<li><a href="#authenticateUser">authenticateUser</a></li>
+							<li><a href="#getAppSetting">getAppSetting</a></li>
+							<li><a href="#updateCustomField">updateCustomField</a></li>
+							<li class="divider"></li>
+							<li><a href="discountservice.html">DiscountService</a></li>
+							<li><a href="emailservice.html">EmailService</a></li>
+							<li><a href="fileservice.html">FileService</a></li>
+							<li><a href="invoiceservice.html">InvoiceService</a></li>
+							<li><a href="productservice.html">ProductService</a></li>
+							<li><a href="searchservice.html">SearchService</a></li>
+							<li><a href="shippingservice.html">ShippingService</a></li>
+							<li><a href="webformservice.html">WebFormService</a></li>
 						</ul>
 					</div>
 				</div>
@@ -35,7 +58,7 @@
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">DataService.</span><span class="method">add</span>
+						<span class="collection">DataService.</span><span class="method"><a name="add">add</a></span>
 					</div>
 					<p>Adds a record to the specified table in Infusionsoft</p>
 					
@@ -118,7 +141,7 @@
 					<hr>
 									
 					<div class="full_method">
-						<span class="collection">DataService.</span><span class="method">load</span>
+						<span class="collection">DataService.</span><span class="method"><a name="load">load</a></span>
 					</div>
 					
 					<p>Loads a struct with data from the given database record</p>
@@ -219,7 +242,7 @@
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">DataService.</span><span class="method">update</span>
+						<span class="collection">DataService.</span><span class="method"><a name="update">update</a></span>
 					</div>
 					
 					<p>Updates the specified record (indicated by ID) with the data provided</p>
@@ -312,7 +335,7 @@
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">DataService.</span><span class="method">delete</span>
+						<span class="collection">DataService.</span><span class="method"><a name="delete">delete</a></span>
 					</div>
 					<p>Deletes the specified record in the given table from the database</p>
 					
@@ -381,7 +404,7 @@
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">DataService.</span><span class="method">findByField</span>
+						<span class="collection">DataService.</span><span class="method"><a name="findByField">findByField</a></span>
 					</div>
 					<p>This will locate all records in a given table that match the criteria for a given field</p>
 					
@@ -488,7 +511,7 @@ $contacts = $myApp->dsFind('ContactGroupAssign',5,0,'GroupId',97,$returnFields);
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">DataService.</span><span class="method">query</span>
+						<span class="collection">DataService.</span><span class="method"><a name="query">query</a></span>
 					</div>
 					<p>Performs a query across the given table based on the query data</p>
 					
@@ -610,7 +633,7 @@ $contacts = $myApp->dsQuery("Contact",10,0,$query,$returnFields);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">DataService.</span><span class="method">addCustomField</span>
+						<span class="collection">DataService.</span><span class="method"><a name="addCustomField">addCustomField</a></span>
 					</div>
 					<p>Creates a new custom fields within Infusionsoft</p>
 					
@@ -708,7 +731,7 @@ $newField = $app->addCustomField('Contact','Test Field','Text',1);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">DataService.</span><span class="method">authenticateUser</span>
+						<span class="collection">DataService.</span><span class="method"><a name="authenticateUser">authenticateUser</a></span>
 					</div>
 					<p>This method is used to authenticate an Infusionsoft username and password(md5 hash). If the credentials match it will return back a User ID, if the credentials do not match it will send back an error message</p>
 					
@@ -787,7 +810,7 @@ $uid = $app->authenticateUser("JDoe","Test123");</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">DataService.</span><span class="method">getAppSetting</span>
+						<span class="collection">DataService.</span><span class="method"><a name="getAppSetting">getAppSetting</a></span>
 					</div>
 					<p>This method will return back the data currently configured in a user configured application setting</p>
 					
@@ -860,7 +883,7 @@ $result = $app->dsGetSetting('Contact', 'optiontypes');</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">DataService.</span><span class="method">getTemporaryKey</span>
+						<span class="collection">DataService.</span><span class="method"><a name="getTemporaryKey">getTemporaryKey</a></span>
 					</div>
 					<p>Returns a temporary API key if given a valid Vendor key and user credentials</p>
 					
@@ -909,7 +932,7 @@ $result = $app->dsGetSetting('Contact', 'optiontypes');</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">DataService.</span><span class="method">updateCustomField</span>
+						<span class="collection">DataService.</span><span class="method"><a name="updateCustomField">updateCustomField</a></span>
 					</div>
 					<p>Updates a custom field. Every field can have it’s display name and group id changed, but only certain data types will allow you to change values(dropdown, listbox, radio, etc)</p>
 					

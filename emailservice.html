@@ -17,13 +17,34 @@
 			</div>
 			<div class="row">
 				<div class="span2 sidebar">
-					<div class="well">
-						<h4>Sidebar</h4>
-						<ul>
-							<li>Link 1</li>
-							<li>Link 2</li>
-							<li>Link 3</li>
-							<li>Link 4</li>
+					<div class="well" style="padding: 8px 0;">
+						<ul class="nav nav-list">
+							<li class="nav-header">Overview</li>
+							<li><a href="introduction.html">Introduction</a></li>
+							<li><a href="request.html">Requests</a></li>
+							<li><a href="response.html">Responses</a></li>
+							<li><a href="error.html">Errors</a></li>
+							<li class="nav-header">Services</li>
+							<li><a href="affiliateservice.html">AffiliateService</a></li>
+							<li><a href="contactservice.html">ContactService</a></li>
+							<li><a href="dataservice.html">DataService</a></li>
+							<li><a href="discountservice.html">DiscountService</a></li>
+							<li class="nav-header active"><a href="emailservice.html">EmailService</a></li>
+							<li><a href="#addEmailTemplate">addEmailTemplate</a></li>
+							<li><a href="#attachEmail">attachEmail</a></li>
+							<li><a href="#getEmailTemplate">getEmailTemplate</a></li>
+							<li><a href="#getOptStatus">getOptStatus</a></li>
+							<li><a href="#optIn">optIn</a></li>
+							<li><a href="#optOut">optOut</a></li>
+							<li><a href="#sendEmail">sendEmail</a></li>
+							<li><a href="#sendTemplate">sendTemplate</a></li>
+							<li class="divider"></li>
+							<li><a href="fileservice.html">FileService</a></li>
+							<li><a href="invoiceservice.html">InvoiceService</a></li>
+							<li><a href="productservice.html">ProductService</a></li>
+							<li><a href="searchservice.html">SearchService</a></li>
+							<li><a href="shippingservice.html">ShippingService</a></li>
+							<li><a href="webformservice.html">WebFormService</a></li>
 						</ul>
 					</div>
 				</div>
@@ -34,7 +55,7 @@
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">EmailService.</span><span class="method">addEmailTemplate</span>
+						<span class="collection">EmailService.</span><span class="method"><a name="addEmailTemplate">addEmailTemplate</a></span>
 					</div>
 					<p>Create a new email template that can be used for future emails</p>
 					
@@ -170,7 +191,7 @@
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">EmailService.</span><span class="method">attachEmail</span>
+						<span class="collection">EmailService.</span><span class="method"><a name="attachEmail">attachEmail</a></span>
 					</div>
 					<p>This will create an item in the email history for a contact. This does not actually send the email, it only places an item into the email history. Using the API to instruct Infusionsoft to send an email will handle this automatically.</p>
 					
@@ -337,7 +358,7 @@
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">EmailService.</span><span class="method">getAvailableMergeFields</span>
+						<span class="collection">EmailService.</span><span class="method"><a name="getAvailableMergeFields">getAvailableMergeFields</a></span>
 					</div>
 					<p>This retrieves all possible merge fields for the context provided</p>
 					
@@ -378,7 +399,7 @@
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">EmailService.</span><span class="method">getEmailTemplate</span>
+						<span class="collection">EmailService.</span><span class="method"><a name="getEmailTemplate">getEmailTemplate</a></span>
 					</div>
 					<p>Retrieves the details for a particular email template</p>
 					
@@ -500,7 +521,7 @@
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">EmailService.</span><span class="method">getOptStatus</span>
+						<span class="collection">EmailService.</span><span class="method"><a name="getOptStatus">getOptStatus</a></span>
 					</div>
 					<p></p>
 					
@@ -561,7 +582,7 @@
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">EmailService.</span><span class="method">optIn</span>
+						<span class="collection">EmailService.</span><span class="method"><a name="optIn">optIn</a></span>
 					</div>
 					<p>This method opts-in an email address. This method only works the first time an email address opts-in</p>
 					
@@ -630,7 +651,7 @@
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">EmailService.</span><span class="method">optOut</span>
+						<span class="collection">EmailService.</span><span class="method"><a name="optOut">optOut</a></span>
 					</div>
 					<p>Opts-out an email address. Note that once an address is opt-out, the API cannot opt it back in</p>
 					
@@ -699,7 +720,7 @@
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">EmailService.</span><span class="method">sendEmail</span>
+						<span class="collection">EmailService.</span><span class="method"><a name="sendEmail">sendEmail</a></span>
 					</div>
 					<p>This will send an email to a list of contacts, as well as record the email in the contacts' email history</p>
 					
@@ -835,7 +856,7 @@
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">EmailService.</span><span class="method">sendTemplate</span>
+						<span class="collection">EmailService.</span><span class="method"><a name="sendTemplate">sendTemplate</a></span>
 					</div>
 					<p>This will send an email to a list of contacts, as well as record the email in the contacts' email history</p>
 					
@@ -912,7 +933,7 @@
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">EmailService.</span><span class="method">updateEmailTemplate</span>
+						<span class="collection">EmailService.</span><span class="method"><a name="updateEmailTemplate">updateEmailTemplate</a></span>
 					</div>
 					<p>This method is used to update an already existing email template</p>
 					

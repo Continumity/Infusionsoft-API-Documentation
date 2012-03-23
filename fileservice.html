@@ -17,13 +17,31 @@
 			</div>
 			<div class="row">
 				<div class="span2 sidebar">
-					<div class="well">
-						<h4>Sidebar</h4>
-						<ul>
-							<li>Link 1</li>
-							<li>Link 2</li>
-							<li>Link 3</li>
-							<li>Link 4</li>
+					<div class="well" style="padding: 8px 0;">
+						<ul class="nav nav-list">
+							<li class="nav-header">Overview</li>
+							<li><a href="introduction.html">Introduction</a></li>
+							<li><a href="request.html">Requests</a></li>
+							<li><a href="response.html">Responses</a></li>
+							<li><a href="error.html">Errors</a></li>
+							<li class="nav-header">Services</li>
+							<li><a href="affiliateservice.html">AffiliateService</a></li>
+							<li><a href="contactservice.html">ContactService</a></li>
+							<li><a href="dataservice.html">DataService</a></li>
+							<li><a href="discountservice.html">DiscountService</a></li>
+							<li><a href="emailservice.html">EmailService</a></li>
+							<li class="nav-header active"><a href="fileservice.html">FileService</a></li>
+							<li><a href="#getFile">getFile</a></li>
+							<li><a href="#getDownloadUrl">getDownloadUrl</a></li>
+							<li><a href="#uploadFile">uploadFile</a></li>
+							<li><a href="#replaceFile">replaceFile</a></li>
+							<li><a href="#renameFile">renameFile</a></li>
+							<li class="divider"></li>
+							<li><a href="invoiceservice.html">InvoiceService</a></li>
+							<li><a href="productservice.html">ProductService</a></li>
+							<li><a href="searchservice.html">SearchService</a></li>
+							<li><a href="shippingservice.html">ShippingService</a></li>
+							<li><a href="webformservice.html">WebFormService</a></li>
 						</ul>
 					</div>
 				</div>
@@ -35,7 +53,7 @@
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">FileService.</span><span class="method">getFile</span>
+						<span class="collection">FileService.</span><span class="method"><a name="getFile">getFile</a></span>
 					</div>
 					
 					<p>This method retrieves the file data for the given ID number.</p>
@@ -92,7 +110,7 @@ $myUrl = $app->getFile($fileId);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">FileService.</span><span class="method">getDownloadUrl</span>
+						<span class="collection">FileService.</span><span class="method"><a name="getDownloadUrl">getDownloadUrl</a></span>
 					</div>
 					
 					<p>This method will return a string of the download URL for the given file.</p>
@@ -158,7 +176,7 @@ $myUrl = $app->getDownloadUrl($fileId);</pre>
 					<hr>
 
 					<div class="full_method">
-						<span class="collection">FileService.</span><span class="method">uploadFile</span>
+						<span class="collection">FileService.</span><span class="method"><a name="uploadFile">uploadFile</a></span>
 					</div>
 									
 					<p>This method uploads the file to Infusionsoft. The optional contactId parameter is used to place the file in a specific contact’s filebox.</p>
@@ -230,7 +248,7 @@ $myUrl = $app->getDownloadUrl($fileId);</pre>
 					<hr>
 
 					<div class="full_method">
-						<span class="collection">FileService.</span><span class="method">replaceFile</span>
+						<span class="collection">FileService.</span><span class="method"><a name="replaceFile">replaceFile</a></span>
 					</div>
 					
 					<p>This method will return a string of the download URL for the given file.</p>
@@ -291,6 +309,70 @@ $myUrl = $app->getDownloadUrl($fileId);</pre>
 <h3>PHP iSDK Sample</h3>
 					<pre class="prettyprint">$fileId = 64;
 $myUrl = $app->getDownloadUrl($fileId);</pre>
+				<hr>
+				<div class="full_method">
+						<span class="collection">FileService.</span><span class="method"><a name="renameFile">renameFile</a></span>
+					</div>
+					
+					<p>This method will return a string of the download URL for the given file.</p>
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key</td>
+							</tr>
+							<tr>
+								<td>FileId</td>
+								<td>int</td>
+								<td>ID of the file to be renamed.</td>
+							</tr>
+							<tr>
+								<td>fileName</td>
+								<td>string</td>
+								<td>New string of data.</td>
+							</tr>
+						</tbody>
+					</table>
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;FileService.renameFile&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;int&gt;fileUID&lt;/int&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;param&gt;
+&lt;value&gt;&lt;string&gt;fileName&lt;/string&gt;&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;boolean&gt;
+          1
+        &lt;/boolean&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+
+<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$app->renameFile(1, "new_name.pdf");</pre>
 				</div>
 			</div>
 		</div>

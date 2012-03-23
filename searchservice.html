@@ -17,13 +17,31 @@
 			</div>
 			<div class="row">
 				<div class="span2 sidebar">
-					<div class="well">
-						<h4>Sidebar</h4>
-						<ul>
-							<li>Link 1</li>
-							<li>Link 2</li>
-							<li>Link 3</li>
-							<li>Link 4</li>
+					<div class="well" style="padding: 8px 0;">
+						<ul class="nav nav-list">
+							<li class="nav-header">Overview</li>
+							<li><a href="introduction.html">Introduction</a></li>
+							<li><a href="request.html">Requests</a></li>
+							<li><a href="response.html">Responses</a></li>
+							<li><a href="error.html">Errors</a></li>
+							<li class="nav-header">Services</li>
+							<li><a href="affiliateservice.html">AffiliateService</a></li>
+							<li><a href="contactservice.html">ContactService</a></li>
+							<li><a href="dataservice.html">DataService</a></li>
+							<li><a href="discountservice.html">DiscountService</a></li>
+							<li><a href="emailservice.html">EmailService</a></li>
+							<li><a href="fileservice.html">FileService</a></li>
+							<li><a href="invoiceservice.html">InvoiceService</a></li>
+							<li><a href="productservice.html">ProductService</a></li>
+							<li class="nav-header active"><a href="searchservice.html">SearchService</a></li>
+							<li><a href="#getAllReportcolumns">getAllReportcolumns</a></li>
+							<li><a href="#getSavedSearchResultsAllFields">getSavedSearchResultsAllFields</a></li>
+							<li><a href="#getAvailableQuickSearches">getAvailableQuickSearches </a></li>
+							<li><a href="#quickSearch">quickSearch</a></li>
+							<li><a href="#getDefaultQuickSearch">getDefaultQuickSearch</a></li>
+							<li class="divider"></li>
+							<li><a href="shippingservice.html">ShippingService</a></li>
+							<li><a href="webformservice.html">WebFormService</a></li>
 						</ul>
 					</div>
 				</div>
@@ -35,7 +53,7 @@
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">SearchService.</span><span class="method">getAllReportColumns</span>
+						<span class="collection">SearchService.</span><span class="method"><a name="getAllReportColumns">getAllReportColumns</a></span>
 					</div>
 					<p>Gets all possible fields/columns available for return on a saved search/report</p>
 					
@@ -851,7 +869,7 @@ $results = $myApp->getAvailableFields($savedSearchId, $userId);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">SearchService.</span><span class="method">getSavedSearchResultsAllFields</span>
+						<span class="collection">SearchService.</span><span class="method"><a name="getSavedSearchResultsAllFields">getSavedSearchResultsAllFields</a></span>
 					</div>
 					<p>Runs a saved search/report and returns all possible fields</p>
 					
@@ -1179,7 +1197,7 @@ $results = $myApp->savedSearchAllFields($savedSearchId, $userId, 0);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">SearchService.</span><span class="method">getAvailableQuickSearches</span>
+						<span class="collection">SearchService.</span><span class="method"><a name="getAvailableQuickSearches">getAvailableQuickSearches</a></span>
 					</div>
 					<p>This is used to find what possible quick searches the given user has access to</p>
 					
@@ -1298,7 +1316,7 @@ $result = $MyApp->getQuickSearches($userId);</pre>
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">SearchService.</span><span class="method">quickSearch</span>
+						<span class="collection">SearchService.</span><span class="method"><a name="quickSearch">quickSearch</a></span>
 					</div>
 					<p>This allows you to run a quick search via the API. The quick search is the search bar in the upper right hand corner of the Infusionsoft application</p>
 					
@@ -1395,7 +1413,7 @@ $results = $myApp->quickSearch('FindPerson', $userId, $searchData, 0, 1000);</pr
 					<hr>
 					
 					<div class="full_method">
-						<span class="collection">SearchService.</span><span class="method">getDefaultQuickSearch</span>
+						<span class="collection">SearchService.</span><span class="method"><a name="getDefaultQuickSearch">getDefaultQuickSearch</a></span>
 					</div>
 					<p>Retrieves the quick search type that the given users has set as their default</p>
 					
