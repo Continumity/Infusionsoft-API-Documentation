@@ -327,12 +327,12 @@ $result = $app->grpAssign($contactId, $groupId);</pre>
 							<tr>
 								<td>email</td>
 								<td>email</td>
-								<td>the email address to search contacts by</td>
+								<td>The email address to search contacts by</td>
 							</tr>
 							<tr>
 								<td>selectedFields</td>
 								<td>array</td>
-								<td>the contact fields you would like returned</td>
+								<td>The contact fields you would like returned</td>
 							</tr>
 						</tbody>
 					</table>
@@ -433,12 +433,12 @@ $data = $app->findByEmail($email, $returnFields);</pre>
 							<tr>
 								<td>contactId</td>
 								<td>int</td>
-								<td>the Id number of the contact you would like to load data from</td>
+								<td>The Id number of the contact you would like to load data from</td>
 							</tr>
 							<tr>
 								<td>selectedFields</td>
 								<td>array</td>
-								<td>an array of strings where each string is the database field name of the field you would like sent back</td>
+								<td>An array of strings where each string is the database field name of the field you would like sent back</td>
 							</tr>
 						</tbody>
 					</table>
@@ -516,12 +516,12 @@ $conDat = $app->loadCon(123, $returnFields);</pre>
 							<tr>
 								<td>contactId</td>
 								<td>int</td>
-								<td>the Id number of the contact record you are pausing the sequence on</td>
+								<td>The Id number of the contact record you are pausing the sequence on</td>
 							</tr>
 							<tr>
 								<td>sequenceId</td>
 								<td>int</td>
-								<td>the follow-up sequence Id number</td>
+								<td>The follow-up sequence Id number</td>
 							</tr>
 						</tbody>
 					</table>
@@ -583,12 +583,12 @@ $result = $app->campPause($contactId, $seqId);</pre>
 							<tr>
 								<td>contactId</td>
 								<td>int</td>
-								<td>the Id number of the contact you want to remove the sequence from</td>
+								<td>The Id number of the contact you want to remove the sequence from</td>
 							</tr>
 							<tr>
 								<td>followUpSequenceId</td>
 								<td>int</td>
-								<td>the Id number of the sequence you would like to remove the contact from</td>
+								<td>The Id number of the sequence you would like to remove the contact from</td>
 							</tr>
 						</tbody>
 					</table>
@@ -650,12 +650,12 @@ $result = $app->campRemove($contactId, $fusId);</pre>
 							<tr>
 								<td>contactId</td>
 								<td>int</td>
-								<td>the Id number of the contact you would like to remove the tag from</td>
+								<td>The Id number of the contact you would like to remove the tag from</td>
 							</tr>
 							<tr>
 								<td>TagId</td>
 								<td>int</td>
-								<td>the tag Id number. This is found on the Setup->Tags menu</td>
+								<td>The tag Id number. This is found on the Setup->Tags menu</td>
 							</tr>
 						</tbody>
 					</table>
@@ -713,12 +713,12 @@ $result = $app->grpRemove($contactId, $groupId);</pre>
 							<tr>
 								<td>contactId</td>
 								<td>int</td>
-								<td>the Id number of the contact you would like to remove the tag from</td>
+								<td>The Id number of the contact you would like to remove the tag from</td>
 							</tr>
 							<tr>
 								<td>seqId</td>
 								<td>int</td>
-								<td>the follow-up sequence Id number</td>
+								<td>The follow-up sequence Id number</td>
 							</tr>
 						</tbody>
 					</table>
@@ -759,12 +759,12 @@ $result = $app->grpRemove($contactId, $groupId);</pre>
 							<tr>
 								<td>contactIds</td>
 								<td>array</td>
-								<td>an array of contact Id numbers you would like to reschedule the step for</td>
+								<td>An array of contact Id numbers you would like to reschedule the step for</td>
 							</tr>
 							<tr>
 								<td>sequenceStepId</td>
 								<td>int</td>
-								<td>the Id number of the particular sequence step you would like to reschedule</td>
+								<td>The Id number of the particular sequence step you would like to reschedule</td>
 							</tr>
 						</tbody>
 					</table>
@@ -832,12 +832,12 @@ $numCons = $app->rescheduleCampaignStep($conIds, 23);</pre>
 							<tr>
 								<td>contactId</td>
 								<td>int</td>
-								<td>the Id number of the contact you would like to remove the tag from</td>
+								<td>The Id number of the contact you would like to remove the tag from</td>
 							</tr>
 							<tr>
 								<td>tagId</td>
 								<td>int</td>
-								<td>the tag Id number. This is found on the Setup->Tags menu</td>
+								<td>The tag Id number. This is found on the Setup->Tags menu</td>
 							</tr>
 						</tbody>
 					</table>
@@ -897,12 +897,12 @@ $result = $myApp->grpRemove($contactId, $groupId);</pre>
 							<tr>
 								<td>contactId</td>
 								<td>int</td>
-								<td>the Id number of the contact record you want to run the action set on</td>
+								<td>The Id number of the contact record you want to run the action set on</td>
 							</tr>
 							<tr>
 								<td>actionSetId</td>
 								<td>int</td>
-								<td>the Id number of the action set you would like to run. This is found on the Setup->Action sets menu</td>
+								<td>The Id number of the action set you would like to run. This is found on the Setup->Action sets menu</td>
 							</tr>
 						</tbody>
 					</table>
@@ -962,12 +962,12 @@ $result = $myApp->runAS($contactId, $actionId);</pre>
 							<tr>
 								<td>data</td>
 								<td>array</td>
-								<td>an associative array of the data for this new contact record. The array key is the field name to store the value within</td>
+								<td>An associative array of the data for this new contact record. The array key is the field name to store the value within</td>
 							</tr>
 							<tr>
 								<td>dupCheckType</td>
 								<td>string</td>
-								<td>determines how to consider a duplicate record. Options: 'Email', 'EmailAndName', 'EmailAndNameAndCompany'</td>
+								<td>Determines how to consider a duplicate record. Options: 'Email', 'EmailAndName', 'EmailAndNameAndCompany'</td>
 							</tr>
 						</tbody>
 					</table>
@@ -1008,12 +1008,12 @@ $result = $myApp->runAS($contactId, $actionId);</pre>
 							<tr>
 								<td>contactId</td>
 								<td>int</td>
-								<td>the Id number of the contact you wish to update</td>
+								<td>The Id number of the contact you wish to update</td>
 							</tr>
 							<tr>
 								<td>data</td>
 								<td>array</td>
-								<td>an associate array of the data for this contact. The array key needs to be the field name in which you store the value</td>
+								<td>An associate array of the data for this contact. The array key needs to be the field name in which you store the value</td>
 							</tr>
 						</tbody>
 					</table>
