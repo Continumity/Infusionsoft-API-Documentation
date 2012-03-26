@@ -53,7 +53,7 @@
 				<div class="span10">
 					<h1>DataService</h1>
 					<p>DataService The DataService is used to manipulate most data in Infusionsoft. It permits you to work on any available tables and has a wide range of uses.</p>
-					<p>To manage affiliate information (ie Name, Phone, etc.) you will need to use the DataService.</p>
+					<p>To manage affiliate information (i.e. Name, Phone, etc.) you will need to use the DataService.</p>
 					
 					<hr>
 					
@@ -73,17 +73,17 @@
 							<tr>
 								<td>key</td>
 								<td>string</td>
-								<td>your Infusionsoft API key</td>
+								<td>Your Infusionsoft API key</td>
 							</tr>
 							<tr>
 								<td>table</td>
 								<td>string</td>
-								<td>the Infusionsoft database table name</td>
+								<td>The Infusionsoft database table name</td>
 							</tr>
 							<tr>
 								<td>values</td>
 								<td>struct</td>
-								<td>an associative array of data you would like stored into this new row in the table</td>
+								<td>An associative array of data you would like stored into this new row in the table</td>
 							</tr>
 							
 						</tbody>
@@ -156,22 +156,22 @@
 							<tr>
 								<td>key</td>
 								<td>string</td>
-								<td>your Infusionsoft API key</td>
+								<td>Your Infusionsoft API key</td>
 							</tr>
 							<tr>
 								<td>table</td>
 								<td>string</td>
-								<td>Infusionsoft database table name you want to load a record from</td>
+								<td>Infusionsoft database table name from which you want to load a record</td>
 							</tr>
 							<tr>
 								<td>recordId</td>
 								<td>int</td>
-								<td>the unique Id number for the record you would like to load</td>
+								<td>The unique Id number for the record you would like to load</td>
 							</tr>
 							<tr>
 								<td>wantedFields</td>
 								<td>array</td>
-								<td>the fields you would like returned from this row in the database</td>
+								<td>The fields you would like returned from this row in the database</td>
 							</tr>
 							
 							
@@ -257,22 +257,22 @@
 							<tr>
 								<td>key</td>
 								<td>string</td>
-								<td>your Infusionsoft API key</td>
+								<td>Your Infusionsoft API key</td>
 							</tr>
 							<tr>
 								<td>table</td>
 								<td>string</td>
-								<td>the Infusionsoft database table name</td>
+								<td>The Infusionsoft database table name</td>
 							</tr>
 							<tr>
 								<td>Id</td>
 								<td>int</td>
-								<td>the Id number of the record you would like updated on the given table</td>
+								<td>The Id number of the record you would like updated on the given table</td>
 							</tr>
 							<tr>
 								<td>values</td>
 								<td>struct</td>
-								<td>an associative array of data you would like updated</td>
+								<td>An associative array of data you would like updated</td>
 							</tr>
 						</tbody>
 					</table>
@@ -350,17 +350,17 @@
 							<tr>
 								<td>key</td>
 								<td>string</td>
-								<td>your Infusionsoft API key</td>
+								<td>Your Infusionsoft API key</td>
 							</tr>
 							<tr>
 								<td>table</td>
 								<td>string</td>
-								<td>the table you would like to delete the record from</td>
+								<td>The table you would like to delete the record from</td>
 							</tr>
 							<tr>
 								<td>Id</td>
 								<td>int</td>
-								<td>the id number of the record you want to delete</td>
+								<td>The id number of the record you want to delete</td>
 							</tr>
 						</tbody>
 					</table>
@@ -424,32 +424,32 @@
 							<tr>
 								<td>table</td>
 								<td>string</td>
-								<td>the Infusionsoft database table name</td>
+								<td>The Infusionsoft database table name</td>
 							</tr>
 							<tr>
 								<td>limit</td>
 								<td>string</td>
-								<td>how many records you would like returned. The max possible is 1000</td>
+								<td>How many records you would like returned. The maximum possible is 1000</td>
 							</tr>
 							<tr>
 								<td>page</td>
 								<td>string</td>
-								<td>the page of results you would like returned. The first page is page 0 (loop through pages to get more than 1000 records)</td>
+								<td>The page of results you would like returned. The first page is page 0 (loop through pages to get more than 1000 records)</td>
 							</tr>
 							<tr>
 								<td>fieldName</td>
 								<td>string</td>
-								<td>the name of the field you would like to run the search on</td>
+								<td>The name of the field you would like to run the search on</td>
 							</tr>
 							<tr>
 								<td>fieldValue</td>
 								<td>string</td>
-								<td>the value stored in the field you would like to search by</td>
+								<td>The value stored in the field you would like to search by</td>
 							</tr>
 							<tr>
 								<td>returnFields</td>
 								<td>string</td>
-								<td>the fields you would like returned from the table you are searching on</td>
+								<td>The fields you would like returned from the table you are searching on</td>
 							</tr>
 						</tbody>
 					</table>
@@ -531,27 +531,27 @@ $contacts = $myApp->dsFind('ContactGroupAssign',5,0,'GroupId',97,$returnFields);
 							<tr>
 								<td>table</td>
 								<td>string</td>
-								<td>the table to look in</td>
+								<td>The table to look in</td>
 							</tr>
 							<tr>
 								<td>limit</td>
 								<td>int</td>
-								<td>the number of records to pull (max 1000)</td>
+								<td>The number of records to pull (max 1000)</td>
 							</tr>
 							<tr>
 								<td>page</td>
 								<td>int</td>
-								<td>what page of data to pull (in case there are more than 1000 records). The paging starts with 0</td>
+								<td>What page of data to pull (in case there are more than 1000 records). The paging starts with 0</td>
 							</tr>
 							<tr>
 								<td>queryData</td>
 								<td>struct</td>
-								<td>a struct containing query data. The key is the field to search on, and the value is the data to look for. % is the wild card operator and all searches are case insensitive. If you would like to query for an empty(null) field, use ~null~ in your query parameter, such as ‘FirstName’ => ‘~null~’</td>
+								<td>A struct containing query data. The key is the field to search on, and the value is the data to look for. % is the wild card operator and all searches are case insensitive. If you would like to query for an empty(null) field, use ~null~ in your query parameter, such as ‘FirstName’ => ‘~null~’</td>
 							</tr>
 							<tr>
 								<td>selectedFields</td>
 								<td>array</td>
-								<td>what fields to return from the query</td>
+								<td>What fields to return from the query</td>
 							</tr>
 						</tbody>
 					</table>
@@ -653,22 +653,22 @@ $contacts = $myApp->dsQuery("Contact",10,0,$query,$returnFields);</pre>
 							<tr>
 								<td>customFieldType</td>
 								<td>string</td>
-								<td>where the custom field will be used inside Infusionsoft. Options include Contact, Company, Affiliate, Task/Appt/Note, Order, Subscription, or Opportunity</td>
+								<td>Where the custom field will be used inside Infusionsoft. Options include Contact, Company, Affiliate, Task/Appt/Note, Order, Subscription, or Opportunity</td>
 							</tr>
 							<tr>
 								<td>displayName</td>
 								<td>string</td>
-								<td>the label/name of this new custom field</td>
+								<td>The label/name of this new custom field</td>
 							</tr>
 							<tr>
 								<td>dataType</td>
 								<td>string</td>
-								<td>what type of data this field will support. Text, Dropdown, TextArea, etc.</td>
+								<td>What type of data this field will support. Text, Dropdown, TextArea, etc.</td>
 							</tr>
 							<tr>
 								<td>headerId</td>
 								<td>int</td>
-								<td>which custom field header you want this field to appear under. Customer headers are located on custom tabs</td>
+								<td>Which custom field header you want this field to appear under. Customer headers are located on custom tabs</td>
 							</tr>
 						</tbody>
 					</table>
@@ -751,12 +751,12 @@ $newField = $app->addCustomField('Contact','Test Field','Text',1);</pre>
 							<tr>
 								<td>username</td>
 								<td>string</td>
-								<td>the Infusionsoft username</td>
+								<td>The Infusionsoft username</td>
 							</tr>
 							<tr>
 								<td>passwordHash</td>
 								<td>string</td>
-								<td>MD5 hash of the Infusionsoft users' password</td>
+								<td>An MD5 hash of the Infusionsoft users' password</td>
 							</tr>
 						</tbody>
 					</table>
@@ -830,12 +830,12 @@ $uid = $app->authenticateUser("JDoe","Test123");</pre>
 							<tr>
 								<td>module</td>
 								<td>string</td>
-								<td>the application module this setting is a part of</td>
+								<td>The application module this setting is a part of</td>
 							</tr>
 							<tr>
 								<td>setting</td>
 								<td>string</td>
-								<td>the database name of the setting you would like the values returned for</td>
+								<td>The database name of the setting you would like the values returned for</td>
 							</tr>
 						</tbody>
 					</table>
@@ -903,12 +903,12 @@ $result = $app->dsGetSetting('Contact', 'optiontypes');</pre>
 							<tr>
 								<td>username</td>
 								<td>string</td>
-								<td>an Infusionsoft username</td>
+								<td>An Infusionsoft username</td>
 							</tr>
 							<tr>
 								<td>passwordHash</td>
 								<td>string</td>
-								<td>and MD5 hash of the users' password. This is the password used to login to the Infusionsoft UI</td>
+								<td>An MD5 hash of the users' password. This is the password used to login to the Infusionsoft UI</td>
 							</tr>
 						</tbody>
 					</table>
@@ -952,12 +952,12 @@ $result = $app->dsGetSetting('Contact', 'optiontypes');</pre>
 							<tr>
 								<td>customFieldId</td>
 								<td>int</td>
-								<td>Id number of the custom field you would like to update</td>
+								<td>The Id number of the custom field you would like to update</td>
 							</tr>
 							<tr>
 								<td>values</td>
 								<td>struct</td>
-								<td>preset values for the given custom field</td>
+								<td>The preset values for the given custom field</td>
 							</tr>
 						</tbody>
 					</table>
