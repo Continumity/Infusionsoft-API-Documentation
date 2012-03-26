@@ -90,27 +90,27 @@
 							<tr>
 								<td>contactId</td>
 								<td>int</td>
-								<td>the Id number of the contact record this order will be connected to</td>
+								<td>The Id number of the contact record this order will be connected to</td>
 							</tr>
 							<tr>
 								<td>description</td>
 								<td>string</td>
-								<td>the name this order will display. This is also the hyperlink to the order found on the contact's order tab</td>
+								<td>The name this order will display. This is also the hyperlink to the order found on the contact's order tab</td>
 							</tr>
 							<tr>
 								<td>orderDate</td>
 								<td>dateTime</td>
-								<td>date of order</td>
+								<td>Date of order</td>
 							</tr>
 							<tr>
 								<td>leadAffiliateId</td>
 								<td>int</td>
-								<td>the Id number of the affiliate you would like placed as the lead affiliate. 0 if no affiliate should be attached</td>
+								<td>The Id number of the affiliate you would like placed as the lead affiliate. 0 if no affiliate should be attached</td>
 							</tr>
 							<tr>
 								<td>saleAffiliateId</td>
 								<td>int</td>
-								<td>the Id number of the affiliate you would like placed as the sale affiliate. 0 if no affiliate should be attached</td>
+								<td>The Id number of the affiliate you would like placed as the sale affiliate. 0 if no affiliate should be attached</td>
 							</tr>
 						</tbody>
 					</table>
@@ -185,37 +185,37 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 							<tr>
 								<td>invoiceId</td>
 								<td>int</td>
-								<td>the Id number of the invoice this item is being added to</td>
+								<td>The Id number of the invoice this item is being added to</td>
 							</tr>
 							<tr>
 								<td>productId</td>
 								<td>int</td>
-								<td>the Id number of the product you are adding. If you are adding something such as tax, shipping, or a discount, make this 0</td>
+								<td>The Id number of the product you are adding. If you are adding something such as tax, shipping, or a discount, make this 0</td>
 							</tr>
 							<tr>
 								<td>type</td>
 								<td>int</td>
-								<td>the line item type - defined in the table below</td>
+								<td>The line item type - defined in the table below</td>
 							</tr>
 							<tr>
 								<td>price</td>
 								<td>double</td>
-								<td>the price of this line item.</td>
+								<td>The price of this line item.</td>
 							</tr>
 							<tr>
 								<td>quantity</td>
 								<td>int</td>
-								<td>the quantity of item added</td>
+								<td>The quantity of item added</td>
 							</tr>
 							<tr>
 								<td>title</td>
 								<td>string</td>
-								<td>the name you want this line item to appear as</td>
+								<td>The name you want this line item to appear as</td>
 							</tr>
 							<tr>
 								<td>description</td>
 								<td>string</td>
-								<td>a full description for this line item</td>
+								<td>A full description for this line item</td>
 							</tr>
 						</tbody>
 					</table>
@@ -363,34 +363,34 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 							<tr>
 								<td>invoiceId</td>
 								<td>int</td>
-								<td>the Invoice Id you would like to charge the balance due on</td>
+								<td>The Invoice Id you would like to charge the balance due on</td>
 							</tr>
 							<tr>
 								<td>notes</td>
 								<td>string</td>
-								<td>a note about the payment. Ex: "API Upsell Payment"</td>
+								<td>A note about the payment. Ex: "API Upsell Payment"</td>
 							</tr>
 							<tr>
 								<td>creditCardId</td>
 								<td>int</td>
-								<td>Id number of the credit card being charged</td>
+								<td>The Id number of the credit card being charged</td>
 							</tr>
 							<tr>
 								<td>merchantAccountId</td>
 								<td>int</td>
-								<td>the Id number of the merchant account the payment is to process through</td>
+								<td>The Id number of the merchant account the payment is to process through</td>
 							</tr>
 							<tr>
 								<td>bypassCommissions</td>
 								<td>boolean</td>
-								<td>a boolean telling the system if this payment should count towards affiliate commissions earned. This is almost always false.</td>
+								<td>A boolean telling the system if this payment should count towards affiliate commissions earned. This is almost always false.</td>
 							</tr>
 						</tbody>
 					</table>
 					
 					<h3>Returns</h3>
 					<p>(struct) a struct containing payment details. The struct will contain the following keys: <ul>
-							<li>Successful – true or fale on whether or not the card was charged. (If there was nothing to charge, this will be false)</li>
+							<li>Successful – true or false on whether or not the card was charged. (If there was nothing to charge, this will be false)</li>
 							<li>Code – The approval code: APPROVED, DECLINED, ERROR, SKIPPED (there was no balance to charge)</li>
 							<li>RefNum – If charge was successful, this is the reference number passed back by the merchant account</li>
 							<li>Message – Error message for the transaction, if any</li>
@@ -501,7 +501,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 							<tr>
 								<td>recurringOrderId</td>
 								<td>int</td>
-								<td>the Id number of the particular subscription being deleted</td>
+								<td>The Id number of the particular subscription being deleted</td>
 							</tr>
 						</tbody>
 					</table>
@@ -563,52 +563,52 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 							<tr>
 								<td>contactId</td>
 								<td>int</td>
-								<td>Id number of the contact this subscription will be connected with</td>
+								<td>The Id number of the contact this subscription will be connected with</td>
 							</tr>
 							<tr>
 								<td>allowDuplicate</td>
 								<td>boolean</td>
-								<td>if duplicate subscriptions should be allowed</td>
+								<td>If duplicate subscriptions should be allowed</td>
 							</tr>
 							<tr>
 								<td>cProgramId</td>
 								<td>int</td>
-								<td>the Id number of the subscription you are adding. This is from the cProgram table</td>
+								<td>The Id number of the subscription you are adding. This is from the cProgram table</td>
 							</tr>
 							<tr>
 								<td>qty</td>
 								<td>int</td>
-								<td>quantity of this service/product price - price charged per quantity</td>
+								<td>Quantity of this service/product price - price charged per quantity</td>
 							</tr>
 							<tr>
 								<td>price</td>
 								<td>double</td>
-								<td>price to charge for the subscription</td>
+								<td>Price to charge for the subscription</td>
 							</tr>
 							<tr>
 								<td>taxable</td>
 								<td>boolean</td>
-								<td>if tax should be charged on this subscription</td>
+								<td>If tax should be charged on this subscription</td>
 							</tr>
 							<tr>
 								<td>merchantAccountId</td>
 								<td>int</td>
-								<td>the merchant account this subscription will bill through</td>
+								<td>The merchant account this subscription will bill through</td>
 							</tr>
 							<tr>
 								<td>creditCardId</td>
 								<td>int</td>
-								<td>the Id of the credit card this subscription will charge to</td>
+								<td>The Id of the credit card this subscription will charge to</td>
 							</tr>
 							<tr>
 								<td>affiliateId</td>
 								<td>int</td>
-								<td>the Id number for the affiliate being placed as the sale affiliate. 0 if no affiliate</td>
+								<td>The Id number for the affiliate being placed as the sale affiliate. 0 if no affiliate</td>
 							</tr>
 							<tr>
 								<td>daysTillCharge</td>
 								<td>int</td>
-								<td>the number of days until this subscription should be charged. Essentially free trial days</td>
+								<td>The number of days until this subscription should be charged. Essentially free trial days</td>
 							</tr>
 						</tbody>
 					</table>
@@ -697,27 +697,27 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 							<tr>
 								<td>recurringOrderId</td>
 								<td>int</td>
-								<td>the Id number of the recurringOrder(subscription record) this override is being applied to</td>
+								<td>The Id number of the recurringOrder(subscription record) this override is being applied to</td>
 							</tr>
 							<tr>
 								<td>affiliateId</td>
 								<td>int</td>
-								<td>the Id of the affiliate earning this commission</td>
+								<td>The Id of the affiliate earning this commission</td>
 							</tr>
 							<tr>
 								<td>amount</td>
 								<td>double</td>
-								<td>the commission amount being earned</td>
+								<td>The commission amount being earned</td>
 							</tr>
 							<tr>
 								<td>payoutType</td>
 								<td>int</td>
-								<td>how the commissions will be earned. 4 - up front earning, 5 - upon customer payment. Typically this is 5</td>
+								<td>How the commissions will be earned. 4 - up front earning, 5 - upon customer payment. Typically this is 5</td>
 							</tr>
 							<tr>
 								<td>description</td>
 								<td>string</td>
-								<td>a short note about this commission override.</td>
+								<td>A short note about this commission override.</td>
 							</tr>
 						</tbody>
 					</table>
@@ -791,7 +791,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 							<tr>
 								<td>recurringOrderId</td>
 								<td>int</td>
-								<td>the Id number for the particular subscription you want invoiced</td>
+								<td>The Id number for the particular subscription you want invoiced</td>
 							</tr>
 						</tbody>
 					</table>
@@ -853,17 +853,17 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 							<tr>
 								<td>invoiceId</td>
 								<td>int</td>
-								<td>the Id of invoice being paid</td>
+								<td>The Id of invoice being paid</td>
 							</tr>
 							<tr>
 								<td>amt</td>
 								<td>double</td>
-								<td>the amount of this payment</td>
+								<td>The amount of this payment</td>
 							</tr>
 							<tr>
 								<td>paymentDate</td>
 								<td>dateTime</td>
-								<td>date of payment</td>
+								<td>Date of payment</td>
 							</tr>
 							<tr>
 								<td>paymentType</td>
@@ -873,12 +873,12 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 							<tr>
 								<td>paymentDescription</td>
 								<td>string</td>
-								<td>an area useful for noting payment details such as a check number</td>
+								<td>An area useful for noting payment details such as a check number</td>
 							</tr>
 							<tr>
 								<td>bypassCommissions</td>
 								<td>boolean</td>
-								<td>a boolean which tells the system if this payment should count towards what the affiliate has earned. This is almost always false.</td>
+								<td>A boolean which tells the system if this payment should count towards what the affiliate has earned. This is almost always false.</td>
 							</tr>
 						</tbody>
 					</table>
@@ -940,57 +940,57 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 							<tr>
 								<td>invoiceId</td>
 								<td>int</td>
-								<td>Id of the invoice this payment plan is fo</td>
+								<td>The Id of the invoice this payment plan is fo</td>
 							</tr>
 							<tr>
 								<td>autoCharge</td>
 								<td>boolean</td>
-								<td>if the autocharge for this payplan should be enabled or disabled</td>
+								<td>If the auto-charge for this pay plan should be enabled or disabled</td>
 							</tr>
 							<tr>
 								<td>creditCardId</td>
 								<td>int</td>
-								<td>credit card being charged for this payplan</td>
+								<td>Credit card being charged for this pay plan</td>
 							</tr>
 							<tr>
 								<td>merchantAccountId</td>
 								<td>int</td>
-								<td>merchant account this payplan will charge through</td>
+								<td>Merchant account this pay plan will charge through</td>
 							</tr>
 							<tr>
 								<td>daysBetweenRetry</td>
 								<td>int</td>
-								<td>the number of days Infusionsoft should wait before re-attempting to charge a failed payment</td>
+								<td>The number of days Infusionsoft should wait before re-attempting to charge a failed payment</td>
 							</tr>
 							<tr>
 								<td>maxRetry</td>
 								<td>int</td>
-								<td>the maximum number of times Infusionsoft should retry a failed payment</td>
+								<td>The maximum number of times Infusionsoft should retry a failed payment</td>
 							</tr>
 							<tr>
 								<td>initialPmtAmt</td>
 								<td>double</td>
-								<td>the amount of the very first charge on this payment plan</td>
+								<td>The amount of the very first charge on this payment plan</td>
 							</tr>
 							<tr>
 								<td>initialPmtDate</td>
 								<td>dateTime</td>
-								<td>the date the first payment should occur</td>
+								<td>The date the first payment should occur</td>
 							</tr>
 							<tr>
 								<td>planStartDate</td>
 								<td>dateTime</td>
-								<td>the date the second payment should occur for the payment plan</td>
+								<td>The date the second payment should occur for the payment plan</td>
 							</tr>
 							<tr>
 								<td>numPmts</td>
 								<td>int</td>
-								<td>the number of payments in this payment plan. This does not include the original/first payment</td>
+								<td>The number of payments in this payment plan. This does not include the original/first payment</td>
 							</tr>
 							<tr>
 								<td>daysBetweenPmts</td>
 								<td>int</td>
-								<td>the number of days between payments in this payment plan. This first time this comes into play will be between the second and third payments</td>
+								<td>The number of days between payments in this payment plan. This first time this comes into play will be between the second and third payments</td>
 							</tr>
 						</tbody>
 					</table>
@@ -1085,7 +1085,7 @@ $result = $myApp->payPlan(43,true,12,1,2,3,25.50,$inDate,$stDate,5,30);</pre>
 							<tr>
 								<td>invoiceId</td>
 								<td>int</td>
-								<td>the invoice Id number you would like amount owed for</td>
+								<td>The invoice Id number you would like amount owed for</td>
 							</tr>
 						</tbody>
 					</table>
@@ -1244,7 +1244,7 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
 							<tr>
 								<td>invoiceId</td>
 								<td>int</td>
-								<td>ID of the invoice you would like payments for.</td>
+								<td>The Id of the invoice you would like payments for.</td>
 							</tr>
 						</tbody>
 					</table>
@@ -1359,12 +1359,12 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
 							<tr>
 								<td>contactId</td>
 								<td>int</td>
-								<td>the contact Id number for which you would like to find the credit card for</td>
+								<td>The contact Id number for which you would like to find the credit card for</td>
 							</tr>
 							<tr>
 								<td>last4</td>
 								<td>int</td>
-								<td>the last 4 digits of the card you need the Id number for</td>
+								<td>The last 4 digits of the card you need the Id number for</td>
 							</tr>
 						</tbody>
 					</table>
@@ -1430,7 +1430,7 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
 							<tr>
 								<td>invoiceId</td>
 								<td>int</td>
-								<td>the id of the invoice you want to calculate tax on</td>
+								<td>The id of the invoice you want to calculate tax on</td>
 							</tr>
 						</tbody>
 					</table>
@@ -1519,7 +1519,7 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
 							<tr>
 								<td>ContactId</td>
 								<td>int</td>
-								<td>ID of a contact to own the credit card</td>
+								<td>The Id of a contact to own the credit card</td>
 							</tr>
 							<tr>
 								<td>CardNumber</td>
@@ -1694,12 +1694,12 @@ $result = $myApp->validateCard($card);</pre>
 							<tr>
 								<td>recurringOrderId</td>
 								<td>int</td>
-								<td>the Id number of the subscription you would like to update. retrieved from the RecurringOrder table.</td>
+								<td>The Id number of the subscription you would like to update. retrieved from the RecurringOrder table.</td>
 							</tr>
 							<tr>
 								<td>nextBillDate</td>
 								<td>date</td>
-								<td>the next billing date the subscription is being set to.</td>
+								<td>The next billing date the subscription is being set to.</td>
 							</tr>
 						</tbody>
 					</table>
@@ -1767,42 +1767,42 @@ $result = $app->updateSubscriptionNextBillDate($recurringOrderId,$nDate);</pre>
 							<tr>
 								<td>invoiceId</td>
 								<td>int</td>
-								<td>Id number of the invoice to create a commission on</td>
+								<td>The Id number of the invoice to create a commission on</td>
 							</tr>
 							<tr>
 								<td>affiliateId</td>
 								<td>int</td>
-								<td>Id number of the affiliate the commission is for</td>
+								<td>The Id number of the affiliate the commission is for</td>
 							</tr>
 							<tr>
 								<td>productId</td>
 								<td>int</td>
-								<td>Id number of the product this commission is for</td>
+								<td>The Id number of the product this commission is for</td>
 							</tr>
 							<tr>
 								<td>percentage</td>
 								<td>int</td>
-								<td>percentage paid for the product being sold</td>
+								<td>The percentage paid for the product being sold</td>
 							</tr>
 							<tr>
 								<td>amount</td>
 								<td>double</td>
-								<td>amount of commission being paid for the product sold</td>
+								<td>Amount of commission being paid for the product sold</td>
 							</tr>
 							<tr>
 								<td>payoutType</td>
 								<td>int</td>
-								<td>how the commission should be earned - 4 if paid up front in full, 5 if earned upon customer payment</td>
+								<td>How the commission should be earned - 4 if paid up front in full, 5 if earned upon customer payment</td>
 							</tr>
 							<tr>
 								<td>description</td>
 								<td>string</td>
-								<td>a note about this commission</td>
+								<td>A note about this commission</td>
 							</tr>
 							<tr>
 								<td>date</td>
 								<td>date</td>
-								<td>date the commission was generated, not necessarily earned (unless paid up front in full)</td>
+								<td>Date the commission was generated, not necessarily earned (unless paid up front in full)</td>
 							</tr>
 						</tbody>
 					</table>
