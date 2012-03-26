@@ -49,7 +49,7 @@
 					<h3>Request Authentication</h3>
 					<p>All requests to the Infusionsoft API must be made over a secure HTTP connection (HTTPS). However, authentication is handled by passing your private API Key as a parameter in your XML request, as outlined below.</p>
 					<h3>Request Format</h3>
-					<p>Traditionally, requests to the Infusionsoft API have been documented as requireing XML-RPC. In reality, it is perfectly alloweable to send valid XML as a string over HTTP to the endpoint provided to you. XML-RPC as a protocol is powerful, and may programming languages have classes and/or libraries available that make it easy to send XML-RPC requests.</p>
+					<p>Traditionally, requests to the Infusionsoft API have been documented as requiring XML-RPC. In reality, it is perfectly allowable to send valid XML as a string over HTTP to the endpoint provided to you. XML-RPC as a protocol is powerful, and may programming languages have classes and/or libraries available that make it easy to send XML-RPC requests.</p>
 					<p>No matter how you send your request, your XML must be valid, properly formatted, and contain the service and method, API Key, and any required parameters to make a valid request.</p>
 					<p>Though the XML can take any data type that’s a string, the endpoint will require certain data types to not balk. The PHP iSDK will handle this for you, but in case you’re not using that we’ve made several considerations. To help you, we’ve included two data types with each variable. The first data type is what you’ll want to output as, and the second is what the endpoint is expecting. Some common ones you’ll see are:</p>
 					<ul>

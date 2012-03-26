@@ -73,12 +73,12 @@
 							<tr>
 								<td>savedSearchId</td>
 								<td>int</td>
-								<td>Id of the saved search you would like columns for</td>
+								<td>The Id of the saved search you would like columns for</td>
 							</tr>
 							<tr>
 								<td>userId</td>
 								<td>int</td>
-								<td>the Id number of the user who created the saved search</td>
+								<td>The Id number of the user who created the saved search</td>
 							</tr>
 						</tbody>
 					</table>
@@ -889,17 +889,17 @@ $results = $myApp->getAvailableFields($savedSearchId, $userId);</pre>
 							<tr>
 								<td>savedSearchId</td>
 								<td>int</td>
-								<td>the Id number of the saved search being run</td>
+								<td>The Id number of the saved search being run</td>
 							</tr>
 							<tr>
 								<td>userId</td>
 								<td>int</td>
-								<td>the userId who the saved search is assigned to. If it is 'Everyone', you still need to pass a valid userId</td>
+								<td>The userId who the saved search is assigned to. If it is 'Everyone', you still need to pass a valid userId</td>
 							</tr>
 							<tr>
 								<td>pageNumber</td>
 								<td>int</td>
-								<td>the page you would like results from. Zero is the first page</td>
+								<td>The page you would like results from. Zero is the first page</td>
 							</tr>
 						</tbody>
 					</table>
@@ -1217,7 +1217,7 @@ $results = $myApp->savedSearchAllFields($savedSearchId, $userId, 0);</pre>
 							<tr>
 								<td>userId</td>
 								<td>int</td>
-								<td>the userId you are checking access for</td>
+								<td>The userId you are checking access for</td>
 							</tr>
 						</tbody>
 					</table>
@@ -1336,27 +1336,27 @@ $result = $MyApp->getQuickSearches($userId);</pre>
 							<tr>
 								<td>quickSearchType</td>
 								<td>int</td>
-								<td>the type of search you are running. Person, Order, Opportunity, Company, Task, Subscription, or Affiliate</td>
+								<td>The type of search you are running. Person, Order, Opportunity, Company, Task, Subscription, or Affiliate</td>
 							</tr>
 							<tr>
 								<td>userId</td>
 								<td>int</td>
-								<td>Id number of the user running this search. Results are dependent on this users' permissions</td>
+								<td>The Id number of the user running this search. Results are dependent on this users' permissions</td>
 							</tr>
 							<tr>
 								<td>searchData</td>
 								<td>int</td>
-								<td>string to run the search based on</td>
+								<td>String to run the search based on</td>
 							</tr>
 							<tr>
 								<td>page</td>
 								<td>int</td>
-								<td>page of results you would like returned</td>
+								<td>The page of results you would like returned</td>
 							</tr>
 							<tr>
 								<td>returnLimit</td>
 								<td>int</td>
-								<td>number of results returned. Max is 1000</td>
+								<td>Number of results returned. Max is 1000</td>
 							</tr>
 						</tbody>
 					</table>
