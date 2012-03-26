@@ -77,35 +77,37 @@
 				</table>
 				<h3>Sample Request</h3>
 				<pre class="prettyprint">
-				&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-				&lt;methodCall&gt;
-				  &lt;methodName&gt;ShippingService.getAllShippingOptions&lt;/methodName&gt;
-				  &lt;params&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
-				    &lt;/param&gt;
-				  &lt;/params&gt;
-				&lt;/methodCall&gt;</pre>
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ShippingService.getAllShippingOptions&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
 				
 				<h3>Sample Response</h3>
 				<pre class="prettyprint">
-				&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-				&lt;methodResponse&gt;
-				  &lt;params&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;&lt;array&gt;&lt;data/&gt;&lt;/array&gt;&lt;/value&gt;
-				    &lt;/param&gt;
-				  &lt;/params&gt;
-				&lt;/methodResponse&gt;</pre>
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;array&gt;&lt;data/&gt;&lt;/array&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
 				
 				<h3>PHP iSDK Sample</h3>
 				<pre class="prettyprint">$app->getAllConfiguredShippingOptions();</pre>
+				
+				
 				<hr>
 				
 				<div class="full_method">
 					<span class="collection">ShippingService.</span><span class="method"><a name="getFlatRateShippingOption">getFlatRateShippingOption</a></span>
 				</div>
-				<p>Returns all shipping options configured</p>
+				<p>Returns the options and values of the flat rate shipping option provided</p>
 				<h3>Required Parameters</h3>
 				<table class="table table-bordered table-striped">
 					<thead>
@@ -128,73 +130,75 @@
 				</table>
 				<h3>Sample Request</h3>
 				<pre class="prettyprint">
-				&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-				&lt;methodCall&gt;
-				  &lt;methodName&gt;ShippingService.getFlatRateShippingOption&lt;/methodName&gt;
-				  &lt;params&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
-				    &lt;/param&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;&lt;int&gt;optionId&lt;/int&gt;&lt;/value&gt;
-				    &lt;/param&gt;
-				  &lt;/params&gt;
-				&lt;/methodCall&gt;</pre>
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ShippingService.getFlatRateShippingOption&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;optionId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
 				
 				<h3>Sample Response</h3>
 				<pre class="prettyprint">
-				&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-				&lt;methodResponse&gt;
-				  &lt;params&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;
-				        &lt;struct&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;id&lt;/name&gt;
-				            &lt;value&gt;1&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;price&lt;/name&gt;
-				            &lt;value&gt;0.0&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;description&lt;/name&gt;
-				            &lt;value&gt;test&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;orderBased&lt;/name&gt;
-				            &lt;value&gt;false&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;name&lt;/name&gt;
-				            &lt;value&gt;Flat Rate Per Order&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;international&lt;/name&gt;
-				            &lt;value&gt;false&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;active&lt;/name&gt;
-				            &lt;value&gt;true&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;type&lt;/name&gt;
-				            &lt;value&gt;Flat&lt;/value&gt;
-				          &lt;/member&gt;
-				        &lt;/struct&gt;
-				      &lt;/value&gt;
-				    &lt;/param&gt;
-				  &lt;/params&gt;
-				&lt;/methodResponse&gt;</pre>
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;struct&gt;
+          &lt;member&gt;
+            &lt;name&gt;id&lt;/name&gt;
+            &lt;value&gt;1&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;price&lt;/name&gt;
+            &lt;value&gt;0.0&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;description&lt;/name&gt;
+            &lt;value&gt;test&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;orderBased&lt;/name&gt;
+            &lt;value&gt;false&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;name&lt;/name&gt;
+            &lt;value&gt;Flat Rate Per Order&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;international&lt;/name&gt;
+            &lt;value&gt;false&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;active&lt;/name&gt;
+            &lt;value&gt;true&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;type&lt;/name&gt;
+            &lt;value&gt;Flat&lt;/value&gt;
+          &lt;/member&gt;
+        &lt;/struct&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
 				
 				<h3>PHP iSDK Sample</h3>
 				<pre class="prettyprint">$app->getFlatRateShippingOption(1);</pre>
+				
+				
 				<hr>
 				
 				<div class="full_method">
 					<span class="collection">ShippingService.</span><span class="method"><a name="getOrderTotalShippingOption">getOrderTotalShippingOption</a></span>
 				</div>
-				<p>(NEEDS UPDATE) returns all shipping options configured</p>
+				<p>Returns the options and values of the order total shipping option provided</p>
 				<h3>Required Parameters</h3>
 				<table class="table table-bordered table-striped">
 					<thead>
@@ -217,42 +221,44 @@
 				</table>
 				<h3>Sample Request</h3>
 				<pre class="prettyprint">
-				&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-				&lt;methodCall&gt;
-				  &lt;methodName&gt;ShippingService.getOrderTotalShippingOption&lt;/methodName&gt;
-				  &lt;params&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
-				    &lt;/param&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;&lt;int&gt;optionId&lt;/int&gt;&lt;/value&gt;
-				    &lt;/param&gt;
-				  &lt;/params&gt;
-				&lt;/methodCall&gt;</pre>
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ShippingService.getOrderTotalShippingOption&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;optionId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
 				
 				<h3>Sample Response</h3>
 				<pre class="prettyprint">
-				&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-				&lt;methodResponse&gt;
-				  &lt;params&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;
-				        &lt;array&gt;
-				          &lt;data/&gt;
-				        &lt;/array&gt;
-				      &lt;/value&gt;
-				    &lt;/param&gt;
-				  &lt;/params&gt;
-				&lt;/methodResponse&gt;</pre>
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;array&gt;
+          &lt;data/&gt;
+        &lt;/array&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
 				
 				<h3>PHP iSDK Sample</h3>
 				<pre class="prettyprint">$app->getOrderTotalShippingOption(1);</pre>
+				
+				
 				<hr>
 				
 				<div class="full_method">
 					<span class="collection">ShippingService.</span><span class="method"><a name="getOrderTotalShippingRanges">getOrderTotalShippingRanges</a></span>
 				</div>
-				<p>Returns all shipping options configured</p>
+				<p>Returns the options and values of the order total shipping ranges option provided</p>
 				<h3>Required Parameters</h3>
 				<table class="table table-bordered table-striped">
 					<thead>
@@ -275,42 +281,44 @@
 				</table>
 				<h3>Sample Request</h3>
 				<pre class="prettyprint">
-				&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-				&lt;methodCall&gt;
-				  &lt;methodName&gt;ShippingService.getOrderTotalShippingRanges&lt;/methodName&gt;
-				  &lt;params&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
-				    &lt;/param&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;&lt;int&gt;optionId&lt;/int&gt;&lt;/value&gt;
-				    &lt;/param&gt;
-				  &lt;/params&gt;
-				&lt;/methodCall&gt;</pre>
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ShippingService.getOrderTotalShippingRanges&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;optionId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
 				
 				<h3>Sample Response</h3>
 				<pre class="prettyprint">
-				&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-				&lt;methodResponse&gt;
-				  &lt;params&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;
-				        &lt;array&gt;
-				          &lt;data/&gt;
-				        &lt;/array&gt;
-				      &lt;/value&gt;
-				    &lt;/param&gt;
-				  &lt;/params&gt;
-				&lt;/methodResponse&gt;</pre>
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;array&gt;
+          &lt;data/&gt;
+        &lt;/array&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
 				
 				<h3>PHP iSDK Sample</h3>
 				<pre class="prettyprint">$app->getOrderTotalShippingRanges(1);</pre>
+				
+				
 				<hr>
 				
 				<div class="full_method">
 					<span class="collection">ShippingService.</span><span class="method"><a name="getProductBasedShippingOption">getProductBasedShippingOption</a></span>
 				</div>
-				<p>Returns all shipping options configured</p>
+				<p>Returns the options and values of the product based shipping option provided</p>
 				<h3>Required Parameters</h3>
 				<table class="table table-bordered table-striped">
 					<thead>
@@ -333,53 +341,55 @@
 				</table>
 				<h3>Sample Request</h3>
 				<pre class="prettyprint">
-				&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-				&lt;methodCall&gt;
-				  &lt;methodName&gt;ShippingService.getProductBasedShippingOption&lt;/methodName&gt;
-				  &lt;params&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
-				    &lt;/param&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;&lt;int&gt;optionId&lt;/int&gt;&lt;/value&gt;
-				    &lt;/param&gt;
-				  &lt;/params&gt;
-				&lt;/methodCall&gt;</pre>
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ShippingService.getProductBasedShippingOption&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;optionId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
 				
 				<h3>Sample Response</h3>
 				<pre class="prettyprint">
-				&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-				&lt;methodResponse&gt;
-				  &lt;params&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;
-				        &lt;struct&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;id&lt;/name&gt;
-				            &lt;value&gt;3&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;description&lt;/name&gt;
-				            &lt;value/&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;name&lt;/name&gt;
-				            &lt;value&gt;Specific Price Per Product&lt;/value&gt;
-				          &lt;/member&gt;
-				        &lt;/struct&gt;
-				      &lt;/value&gt;
-				    &lt;/param&gt;
-				  &lt;/params&gt;
-				&lt;/methodResponse&gt;</pre>
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;struct&gt;
+          &lt;member&gt;
+            &lt;name&gt;id&lt;/name&gt;
+            &lt;value&gt;3&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;description&lt;/name&gt;
+            &lt;value/&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;name&lt;/name&gt;
+            &lt;value&gt;Specific Price Per Product&lt;/value&gt;
+          &lt;/member&gt;
+        &lt;/struct&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
 				
 				<h3>PHP iSDK Sample</h3>
 				<pre class="prettyprint">$app->getProductBasedShippingOption(1);</pre>
+				
+				
 				<hr>
 				
 				<div class="full_method">
 					<span class="collection">ShippingService.</span><span class="method"><a name="getOrderQuantityShippingOption">getOrderQuantityShippingOption</a></span>
 				</div>
-				<p>Returns all shipping options configured</p>
+				<p>Returns the options and values of the order quantity shipping option provided</p>
 				<h3>Required Parameters</h3>
 				<table class="table table-bordered table-striped">
 					<thead>
@@ -402,81 +412,83 @@
 				</table>
 				<h3>Sample Request</h3>
 				<pre class="prettyprint">
-				&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-				&lt;methodCall&gt;
-				  &lt;methodName&gt;ShippingService.getOrderQuantityShippingOption&lt;/methodName&gt;
-				  &lt;params&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
-				    &lt;/param&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;&lt;int&gt;optionId&lt;/int&gt;&lt;/value&gt;
-				    &lt;/param&gt;
-				  &lt;/params&gt;
-				&lt;/methodCall&gt;</pre>
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ShippingService.getOrderQuantityShippingOption&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;optionId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
 				
 				<h3>Sample Response</h3>
 				<pre class="prettyprint">
-				&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-				&lt;methodResponse&gt;
-				  &lt;params&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;
-				        &lt;struct&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;id&lt;/name&gt;
-				            &lt;value&gt;7&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;baseShippingPrice&lt;/name&gt;
-				            &lt;value&gt;1.0&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;pricePerItem&lt;/name&gt;
-				            &lt;value&gt;1.0&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;description&lt;/name&gt;
-				            &lt;value/&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;orderBased&lt;/name&gt;
-				            &lt;value&gt;false&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;name&lt;/name&gt;
-				            &lt;value&gt;test quan&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;international&lt;/name&gt;
-				            &lt;value&gt;false&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;active&lt;/name&gt;
-				            &lt;value&gt;true&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;type&lt;/name&gt;
-				            &lt;value&gt;Quantity&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;minimumShippingPrice&lt;/name&gt;
-				            &lt;value&gt;1.0&lt;/value&gt;
-				          &lt;/member&gt;
-				        &lt;/struct&gt;
-				      &lt;/value&gt;
-				    &lt;/param&gt;
-				  &lt;/params&gt;
-				&lt;/methodResponse&gt;</pre>
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;struct&gt;
+          &lt;member&gt;
+            &lt;name&gt;id&lt;/name&gt;
+            &lt;value&gt;7&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;baseShippingPrice&lt;/name&gt;
+            &lt;value&gt;1.0&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;pricePerItem&lt;/name&gt;
+            &lt;value&gt;1.0&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;description&lt;/name&gt;
+            &lt;value/&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;orderBased&lt;/name&gt;
+            &lt;value&gt;false&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;name&lt;/name&gt;
+            &lt;value&gt;test quan&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;international&lt;/name&gt;
+            &lt;value&gt;false&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;active&lt;/name&gt;
+            &lt;value&gt;true&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;type&lt;/name&gt;
+            &lt;value&gt;Quantity&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;minimumShippingPrice&lt;/name&gt;
+            &lt;value&gt;1.0&lt;/value&gt;
+          &lt;/member&gt;
+        &lt;/struct&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
 				
 				<h3>PHP iSDK Sample</h3>
 				<pre class="prettyprint">$app->getOrderQuantityShippingOption(1);</pre>
+				
+				
 				<hr>
 				
 				<div class="full_method">
 					<span class="collection">ShippingService.</span><span class="method"><a name="getWeightBasedShippingOption">getWeightBasedShippingOption</a></span>
 				</div>
-				<p>returns all shipping options configured</p>
+				<p>Returns the options and values of the weight based shipping option provided</p>
 				<h3>Required Parameters</h3>
 				<table class="table table-bordered table-striped">
 					<thead>
@@ -499,69 +511,71 @@
 				</table>
 				<h3>Sample Request</h3>
 				<pre class="prettyprint">
-				&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-				&lt;methodCall&gt;
-				  &lt;methodName&gt;ShippingService.getWeightBasedShippingOption&lt;/methodName&gt;
-				  &lt;params&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
-				    &lt;/param&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;&lt;int&gt;optionId&lt;/int&gt;&lt;/value&gt;
-				    &lt;/param&gt;
-				  &lt;/params&gt;
-				&lt;/methodCall&gt;</pre>
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ShippingService.getWeightBasedShippingOption&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;optionId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
 				
 				<h3>Sample Response</h3>
 				<pre class="prettyprint">
-				&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-				&lt;methodResponse&gt;
-				  &lt;params&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;
-				        &lt;struct&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;id&lt;/name&gt;
-				            &lt;value&gt;11&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;description&lt;/name&gt;
-				            &lt;value/&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;name&lt;/name&gt;
-				            &lt;value&gt;Ship by Weight&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;orderBased&lt;/name&gt;
-				            &lt;value&gt;true&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;international&lt;/name&gt;
-				            &lt;value&gt;false&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;active&lt;/name&gt;
-				            &lt;value&gt;true&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;type&lt;/name&gt;
-				            &lt;value&gt;Weight&lt;/value&gt;
-				          &lt;/member&gt;
-				        &lt;/struct&gt;
-				      &lt;/value&gt;
-				    &lt;/param&gt;
-				  &lt;/params&gt;
-				&lt;/methodResponse&gt;</pre>
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;struct&gt;
+          &lt;member&gt;
+            &lt;name&gt;id&lt;/name&gt;
+            &lt;value&gt;11&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;description&lt;/name&gt;
+            &lt;value/&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;name&lt;/name&gt;
+            &lt;value&gt;Ship by Weight&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;orderBased&lt;/name&gt;
+            &lt;value&gt;true&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;international&lt;/name&gt;
+            &lt;value&gt;false&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;active&lt;/name&gt;
+            &lt;value&gt;true&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;type&lt;/name&gt;
+            &lt;value&gt;Weight&lt;/value&gt;
+          &lt;/member&gt;
+        &lt;/struct&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
 				
 				<h3>PHP iSDK Sample</h3>
 				<pre class="prettyprint">$app->getWeightBasedShippingOption(1);</pre>
+				
+				
 				<hr>
 				
 				<div class="full_method">
 					<span class="collection">ShippingService.</span><span class="method"><a name="getUpsShippingOption">getUpsShippingOption</a></span>
 				</div>
-				<p>Returns all shipping options configured</p>
+				<p>Returns the options and values of the ups shipping option provided</p>
 				<h3>Required Parameters</h3>
 				<table class="table table-bordered table-striped">
 					<thead>
@@ -584,92 +598,92 @@
 				</table>
 				<h3>Sample Request</h3>
 				<pre class="prettyprint">
-				&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-				&lt;methodCall&gt;
-				  &lt;methodName&gt;ShippingService.getUpsShippingOption&lt;/methodName&gt;
-				  &lt;params&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
-				    &lt;/param&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;&lt;int&gt; optionId &lt;/int&gt;&lt;/value&gt;
-				    &lt;/param&gt;
-				  &lt;/params&gt;
-				&lt;/methodCall&gt;</pre>
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ShippingService.getUpsShippingOption&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt; optionId &lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
 				
 				<h3>Sample Response</h3>
 				<pre class="prettyprint">
-				&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-				&lt;methodResponse&gt;
-				  &lt;params&gt;
-				    &lt;param&gt;
-				      &lt;value&gt;
-				        &lt;struct&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;deliveryType&lt;/name&gt;
-				            &lt;value&gt;01,03,07&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;orderBased&lt;/name&gt;
-				            &lt;value&gt;false&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;international&lt;/name&gt;
-				            &lt;value&gt;false&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;accessLicenseNumber&lt;/name&gt;
-				            &lt;value&gt;niewonfidso&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;type&lt;/name&gt;
-				            &lt;value&gt;UPS&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;pickupType&lt;/name&gt;
-				            &lt;value&gt;01&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;id&lt;/name&gt;
-				            &lt;value&gt;13&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;accountNumber&lt;/name&gt;
-				            &lt;value&gt;39208234&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;accessPassword&lt;/name&gt;
-				            &lt;value&gt;ronald11&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;destinationType&lt;/name&gt;
-				            &lt;value&gt;0&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;description&lt;/name&gt;
-				            &lt;value/&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;packagingType&lt;/name&gt;
-				            &lt;value&gt;01&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;name&lt;/name&gt;
-				            &lt;value&gt;UPS&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;active&lt;/name&gt;
-				            &lt;value&gt;true&lt;/value&gt;
-				          &lt;/member&gt;
-				          &lt;member&gt;
-				            &lt;name&gt;accessUserId&lt;/name&gt;
-				            &lt;value&gt;ron&lt;/value&gt;
-				          &lt;/member&gt;
-				        &lt;/struct&gt;
-				      &lt;/value&gt;
-				    &lt;/param&gt;
-				  &lt;/params&gt;
-				&lt;/methodResponse&gt;</pre>
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;struct&gt;
+          &lt;member&gt;
+            &lt;name&gt;deliveryType&lt;/name&gt;
+            &lt;value&gt;01,03,07&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;orderBased&lt;/name&gt;
+            &lt;value&gt;false&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;international&lt;/name&gt;
+            &lt;value&gt;false&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;accessLicenseNumber&lt;/name&gt;
+            &lt;value&gt;niewonfidso&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;type&lt;/name&gt;
+            &lt;value&gt;UPS&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;pickupType&lt;/name&gt;
+            &lt;value&gt;01&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;id&lt;/name&gt;
+            &lt;value&gt;13&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;accountNumber&lt;/name&gt;
+            &lt;value&gt;39208234&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;accessPassword&lt;/name&gt;
+            &lt;value&gt;ronald11&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;destinationType&lt;/name&gt;
+            &lt;value&gt;0&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;description&lt;/name&gt;
+            &lt;value/&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;packagingType&lt;/name&gt;
+            &lt;value&gt;01&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;name&lt;/name&gt;
+            &lt;value&gt;UPS&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;active&lt;/name&gt;
+            &lt;value&gt;true&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;accessUserId&lt;/name&gt;
+            &lt;value&gt;ron&lt;/value&gt;
+          &lt;/member&gt;
+        &lt;/struct&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
 				
 				<h3>PHP iSDK Sample</h3>
 				<pre class="prettyprint">$app->getUpsShippingOption(1);</pre>
