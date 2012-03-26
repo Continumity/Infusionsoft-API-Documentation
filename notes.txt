@@ -1,0 +1,3 @@
+/request.html - needs a link to be filled in on the top ordered list for discussion of the encrypted API key
+/shippingservice.html - needs an update in .getOrderTotalShippingOption for if that actually works as described
+
