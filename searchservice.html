@@ -16,7 +16,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="span2 sidebar">
+				<div class="span3 sidebar">
 					<div class="well" style="padding: 8px 0;">
 						<ul class="nav nav-list">
 							<li class="nav-header">Overview</li>
@@ -45,10 +45,10 @@
 						</ul>
 					</div>
 				</div>
-				<div class="span10">
+				<div class="span9">
 					<h1>SearchService API</h1>
 					<p>The SearchService allows you to retrieve the results of saved searches and reports that have been saved within Infusionsoft. Saved searches/reports are tied to the User that created them. This service also allows you to utilize the quick search function found in the upper right hand corner of your Infusionsoft application.</p>
-					<p>Note** that in order to retrieve the Id number for saved searches you will need to utilize the DataService.query method and query the table called SavedFilter based on the UserId you are looking for the saved search Id for. Also note that UserId field on the SavedFilter table can contain multiple userId’s separated by a comma, so if you are querying for a report created by userId 6, I recommend appending the wildcard to the end of the userId. Something like $query = array( ‘UserId’ => ’6%’ );</p>
+					<p>Note** that in order to retrieve the Id number for saved searches you will need to utilize the DataService.query method and query the table called SavedFilter based on the UserId you are looking for the saved search Id for. Also note that UserId field on the SavedFilter table can contain multiple userId's separated by a comma, so if you are querying for a report created by userId 6, I recommend appending the wildcard to the end of the userId. Something like $query = array( 'UserId' => '6%' );</p>
 					
 					<hr>
 					
