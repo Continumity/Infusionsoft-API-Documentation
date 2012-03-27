@@ -79,12 +79,12 @@
 					<p>This method is intended to update one, or all of the fields of a contact. In PHP, you’d simply use an array with the fields for keys. In XML, we need to be a little bit more thorough. </p>
 					<pre class="prettyprint">
 &lt;value&gt;&lt;struct&gt;
-&lt;member&gt;&lt;name&gt;fieldToUpdate1&lt;/name&gt;
-&lt;value&gt;&lt;string&gt;field1&lt;/string&gt;&lt;/value&gt;
-&lt;/member&gt;
-&lt;member&gt;&lt;name&gt;fieldToUpdate2&lt;/name&gt;
-&lt;value&gt;&lt;string&gt;field2&lt;/string&gt;&lt;/value&gt;
-&lt;/member&gt;
+    &lt;member&gt;&lt;name&gt;fieldToUpdate1&lt;/name&gt;
+    &lt;value&gt;&lt;string&gt;field1&lt;/string&gt;&lt;/value&gt;
+  &lt;/member&gt;
+    &lt;member&gt;&lt;name&gt;fieldToUpdate2&lt;/name&gt;
+    &lt;value&gt;&lt;string&gt;field2&lt;/string&gt;&lt;/value&gt;
+  &lt;/member&gt;
 &lt;/struct&gt;&lt;/value&gt;
 					</pre>
 					<p>In XML, we have a &lt;struct&gt; element and within &lt;members&gt; we put the Member/Value pair. So, to update only the FirstName and Email fields, we would put together a Member/Value request like this:</p>
@@ -103,11 +103,11 @@
 					<p><a href="#">ContactService.findByEmail</a> is designed to let you search the database by Email, and return any of the fields you’d like from the Contacts table. In PHP, you’d just send an array of the fields you’d like returned. In XML, we simply just list the values inside the &lt;array&gt; element surrounded by &lt;value&gt; and &lt;string&gt; tags.</p>
 					<pre class="prettyprint">
 &lt;value&gt;&lt;array&gt;
-&lt;data&gt;
-&lt;value&gt;&lt;string&gt;Id&lt;/string&gt;&lt;/value&gt;
-&lt;value&gt;&lt;string&gt;FirstName&lt;/string&gt;&lt;/value&gt;
-&lt;value&gt;&lt;string&gt;LastName&lt;/string&gt;&lt;/value&gt;
-&lt;/data&gt;
+  &lt;data&gt;
+    &lt;value&gt;&lt;string&gt;Id&lt;/string&gt;&lt;/value&gt;
+  &lt;value&gt;&lt;string&gt;FirstName&lt;/string&gt;&lt;/value&gt;
+    &lt;value&gt;&lt;string&gt;LastName&lt;/string&gt;&lt;/value&gt;
+  &lt;/data&gt;
 &lt;/array&gt;&lt;/value&gt;
 					</pre>
 				</div>
