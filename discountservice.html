@@ -35,8 +35,8 @@
 							<li><a href="#getOrderTotalDiscount">getOrderTotalDiscount</a></li>
 							<li><a href="#addCategoryDiscount">addCategoryDiscount</a></li>
 							<li><a href="#getCategoryDiscount">getCategoryDiscount</a></li>
-							<li><a href="#addCategoryAssignmentToCategoryDiscount">addCategoryAssignmentToCategoryDiscount</a></li>
-							<li><a href="#getCategoryAssignmentsForCategoryDiscount">getCategoryAssignmentsForCategoryDiscount</a></li>
+							<li><a href="#addCategoryAssignmentToCategoryDiscount">addCategoryAssignmentToCat...</a></li>
+							<li><a href="#getCategoryAssignmentsForCategoryDiscount">getCategoryAssignmentsForCat...</a></li>
 							<li><a href="#addProductTotalDiscount">addProductTotalDiscount</a></li>
 							<li><a href="#getProductTotalDiscount">getProductTotalDiscount</a></li>
 							<li><a href="#addShippingTotalDiscount">addShippingTotalDiscount</a></li>
@@ -54,52 +54,52 @@
 				</div>
 				<div class="span9">
 					<h1>DiscountService API</h1>
-
 					<p>DiscountService is used to manage products. You can add, update and find products in addition to managing follow up sequences, tags and action sets.</p>
 					
 					<hr>
 					
-<div class="full_method">
-	<span class="collection">DiscountService.</span><span class="method"><a name="addFreeTrial">addFreeTrial</a></span>
-</div>
-<p>returns the inventory</p>
-<h3>Required Parameters</h3>
-<table class="table table-bordered table-striped">
-	<thead>
-		<th>Parameter Name</th>
-		<th>Type</th>
-		<th>Definition</th>
-	</thead>
-	<tbody>
-		<tr>
-			<td>name</td>
-			<td>string</td>
-			<td>The name of the free trial</td>
-		</tr>
-		<tr>
-			<td>description</td>
-			<td>string</td>
-			<td>The description for free trial</td>
-		</tr>
-		<tr>
-			<td>freeTrialDays</td>
-			<td>int</td>
-			<td>The number of days free trial last</td>
-		</tr>
-		<tr>
-			<td>hidePrice</td>
-			<td>int</td>
-			<td>The option to show or hide price</td>
-		</tr>
-		<tr>
-			<td>subscriptionPlanId</td>
-			<td>int</td>
-			<td>The Id of the subscription</td>
-		</tr>
-	</tbody>
-</table>
-<h3>Sample Request</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				<div class="full_method">
+					<span class="collection">DiscountService.</span><span class="method"><a name="addFreeTrial">addFreeTrial</a></span>
+				</div>
+				<p>Adds a Free trial</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>name</td>
+							<td>string</td>
+							<td>The name of the free trial</td>
+						</tr>
+						<tr>
+							<td>description</td>
+							<td>string</td>
+							<td>The description for free trial</td>
+						</tr>
+						<tr>
+							<td>freeTrialDays</td>
+							<td>int</td>
+							<td>The number of days free trial last</td>
+						</tr>
+						<tr>
+							<td>hidePrice</td>
+							<td>int</td>
+							<td>The option to show or hide price</td>
+						</tr>
+						<tr>
+							<td>subscriptionPlanId</td>
+							<td>int</td>
+							<td>The Id of the subscription</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
   &lt;methodName&gt;DiscountService.addFreeTrial&lt;/methodName&gt;
   &lt;params&gt;
@@ -123,9 +123,10 @@
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
-
-<h3>Sample Response</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
@@ -133,32 +134,35 @@
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
-
-<h3>PHP iSDK Sample</h3>
-<pre class="prettyprint">$app->addFreeTrial("test", "test description", 5, 0, 1);</pre>
-<hr>
-
-<div class="full_method">
-	<span class="collection">DiscountService.</span><span class="method"><a name="getFreeTrial">getFreeTrial</a></span>
-</div>
-<p>description here</p>
-<h3>Required Parameters</h3>
-<table class="table table-bordered table-striped">
-	<thead>
-		<th>Parameter Name</th>
-		<th>Type</th>
-		<th>Definition</th>
-	</thead>
-	<tbody>
-		<tr>
-			<td>trialId</td>
-			<td>int</td>
-			<td>The Id for free trial</td>
-		</tr>
-	</tbody>
-</table>
-<h3>Sample Request</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->addFreeTrial("test", "test description", 5, 0, 1);</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+					<span class="collection">DiscountService.</span><span class="method"><a name="getFreeTrial">getFreeTrial</a></span>
+				</div>
+				<p>Returns the options and values of the free trial id passed</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>trialId</td>
+							<td>int</td>
+							<td>The Id for free trial</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
   &lt;methodName&gt;DiscountService.getFreeTrial&lt;/methodName&gt;
   &lt;params&gt;
@@ -170,9 +174,10 @@
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
-
-<h3>Sample Response</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
@@ -207,86 +212,90 @@
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
-
-<h3>PHP iSDK Sample</h3>
-<pre class="prettyprint">$app->getFreeTrial(1);</pre>
-<hr>
-
-<div class="full_method">
-<span class="collection">DiscountService.</span><span class="method"><a name="addOrderTotalDiscount">addOrderTotalDiscount</a></span>
-</div>
-<p>description here</p>
-<h3>Required Parameters</h3>
-<table class="table table-bordered table-striped">
-	<thead>
-		<th>Parameter Name</th>
-		<th>Type</th>
-		<th>Definition</th>
-	</thead>
-	<tbody>
-		<tr>
-			<td>name</td>
-			<td>string</td>
-			<td>The name of commission</td>
-		</tr>
-		<tr>
-			<td>description</td>
-			<td>string</td>
-			<td>Description for commission</td>
-		</tr>
-		<tr>
-			<td>applyDiscountToCommission</td>
-			<td>int</td>
-			<td>Do you want to apply the discount to the commission?</td>
-		</tr>
-		<tr>
-			<td>percentOrAmt</td>
-			<td>int</td>
-			<td>Percentage</td>
-		</tr>
-		<tr>
-			<td>amt</td>
-			<td>int</td>
-			<td>The amount</td>
-		</tr>
-		<tr>
-			<td>payType</td>
-			<td>string</td>
-			<td>This will either be gross or net</td>
-		</tr>
-	</tbody>
-</table>
-<h3>Sample Request</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->getFreeTrial(1);</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+				<span class="collection">DiscountService.</span><span class="method"><a name="addOrderTotalDiscount">addOrderTotalDiscount</a></span>
+				</div>
+				<p>Adds a order total discount</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>name</td>
+							<td>string</td>
+							<td>The name of commission</td>
+						</tr>
+						<tr>
+							<td>description</td>
+							<td>string</td>
+							<td>Description for commission</td>
+						</tr>
+						<tr>
+							<td>applyDiscountToCommission</td>
+							<td>int</td>
+							<td>Do you want to apply the discount to the commission?</td>
+						</tr>
+						<tr>
+							<td>percentOrAmt</td>
+							<td>int</td>
+							<td>Percentage</td>
+						</tr>
+						<tr>
+							<td>amt</td>
+							<td>int</td>
+							<td>The amount</td>
+						</tr>
+						<tr>
+							<td>payType</td>
+							<td>string</td>
+							<td>This will either be gross or net</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;DiscountService.addOrderTotalDiscount&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;name&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;description&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;applyDiscountToCommission&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;perentOrAmt&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;double&gt;amt&lt;/double&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;payType&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;DiscountService.addOrderTotalDiscount&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;name&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;description&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;applyDiscountToCommission&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;perentOrAmt&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;double&gt;amt&lt;/double&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;payType&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
-
-<h3>Sample Response</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
@@ -298,46 +307,50 @@
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
-
-<h3>PHP iSDK Sample</h3>
-<pre class="prettyprint">$app->addOrderTotalDiscount("test", "test description", 0, 1, 5.00, "Gross");</pre>
-<hr>
-
-<div class="full_method">
-<span class="collection">DiscountService.</span><span class="method"><a name="getOrderTotalDiscount">getOrderTotalDiscount</a></span>
-</div>
-<p>description here</p>
-<h3>Required Parameters</h3>
-<table class="table table-bordered table-striped">
-	<thead>
-		<th>Parameter Name</th>
-		<th>Type</th>
-		<th>Definition</th>
-	</thead>
-	<tbody>
-		<tr>
-			<td>id</td>
-			<td>int</td>
-			<td>The Id of the order</td>
-		</tr>
-	</tbody>
-</table>
-<h3>Sample Request</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->addOrderTotalDiscount("test", "test description", 0, 1, 5.00, "Gross");</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+				<span class="collection">DiscountService.</span><span class="method"><a name="getOrderTotalDiscount">getOrderTotalDiscount</a></span>
+				</div>
+				<p>Adds a order total discount</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>id</td>
+							<td>int</td>
+							<td>The Id of the order</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;DiscountService.getOrderTotalDiscount&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;id&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;DiscountService.getOrderTotalDiscount&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;id&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
-
-<h3>Sample Response</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
@@ -396,70 +409,74 @@
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
-
-<h3>PHP iSDK Sample</h3>
-<pre class="prettyprint">$app->getOrderTotalDiscount(1);</pre>
-<hr>
-
-<div class="full_method">
-	<span class="collection">DiscountService.</span><span class="method"><a name="addCategoryDiscount">addCategoryDiscount</a></span>
-</div>
-<p>description here</p>
-<h3>Required Parameters</h3>
-<table class="table table-bordered table-striped">
-	<thead>
-		<th>Parameter Name</th>
-		<th>Type</th>
-		<th>Definition</th>
-	</thead>
-	<tbody>
-		<tr>
-			<td>name</td>
-			<td>string</td>
-			<td>The category discount name</td>
-		</tr>
-		<tr>
-			<td>description</td>
-			<td>string</td>
-			<td>The description of category discount</td>
-		</tr>
-		<tr>
-			<td>applyDiscountToCommission</td>
-			<td>int</td>
-			<td>Boolean integer to determine whether or not a discount is applied to commission</td>
-		</tr>
-		<tr>
-			<td>amt</td>
-			<td>int</td>
-			<td>The amount of discount</td>
-		</tr>
-	</tbody>
-</table>
-<h3>Sample Request</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->getOrderTotalDiscount(1);</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+					<span class="collection">DiscountService.</span><span class="method"><a name="addCategoryDiscount">addCategoryDiscount</a></span>
+				</div>
+				<p>Adds a category discount</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>name</td>
+							<td>string</td>
+							<td>The category discount name</td>
+						</tr>
+						<tr>
+							<td>description</td>
+							<td>string</td>
+							<td>The description of category discount</td>
+						</tr>
+						<tr>
+							<td>applyDiscountToCommission</td>
+							<td>int</td>
+							<td>Boolean integer to determine whether or not a discount is applied to commission</td>
+						</tr>
+						<tr>
+							<td>amt</td>
+							<td>int</td>
+							<td>The amount of discount</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;DiscountService.addCategoryDiscount&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;name&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;description&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;applyDiscountToCommission&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;double&gt;amt&lt;/double&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;DiscountService.addCategoryDiscount&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;name&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;description&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;applyDiscountToCommission&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;double&gt;amt&lt;/double&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
-
-<h3>Sample Response</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
@@ -471,46 +488,50 @@
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
-
-<h3>PHP iSDK Sample</h3>
-<pre class="prettyprint">$app->addCategoryDiscount("test", "test description", 0, 5.00);</pre>
-<hr>
-
-<div class="full_method">
-	<span class="collection">DiscountService.</span><span class="method"><a name="getCategoryDiscount">getCategoryDiscount</a></span>
-</div>
-<p>description here</p>
-<h3>Required Parameters</h3>
-<table class="table table-bordered table-striped">
-	<thead>
-		<th>Parameter Name</th>
-		<th>Type</th>
-		<th>Definition</th>
-	</thead>
-	<tbody>
-		<tr>
-			<td>id</td>
-			<td>int</td>
-			<td>The Id of category discount</td>
-		</tr>
-	</tbody>
-</table>
-<h3>Sample Request</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->addCategoryDiscount("test", "test description", 0, 5.00);</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+					<span class="collection">DiscountService.</span><span class="method"><a name="getCategoryDiscount">getCategoryDiscount</a></span>
+				</div>
+				<p>Returns the options and values of the category discount id passed</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>id</td>
+							<td>int</td>
+							<td>The Id of category discount</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;DiscountService.getCategoryDiscount&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;id&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;DiscountService.getCategoryDiscount&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;id&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
-
-<h3>Sample Response</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
@@ -545,54 +566,58 @@
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
-
-<h3>PHP iSDK Sample</h3>
-<pre class="prettyprint">$app->getCategoryDiscount(1);</pre>
-<hr>
-
-<div class="full_method">
-	<span class="collection">DiscountService.</span><span class="method"><a name="addCategoryAssignmentToCategoryDiscount">addCategoryAssignmentToCategoryDiscount</a></span>
-</div>
-<p>description here</p>
-<h3>Required Parameters</h3>
-<table class="table table-bordered table-striped">
-	<thead>
-		<th>Parameter Name</th>
-		<th>Type</th>
-		<th>Definition</th>
-	</thead>
-	<tbody>
-		<tr>
-			<td>id</td>
-			<td>int</td>
-			<td>The Id of category discount</td>
-		</tr>
-		<tr>
-			<td>productId</td>
-			<td>int</td>
-			<td>The Id of product</td>
-		</tr>
-	</tbody>
-</table>
-<h3>Sample Request</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->getCategoryDiscount(1);</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+					<span class="collection">DiscountService.</span><span class="method"><a name="addCategoryAssignmentToCategoryDiscount">addCategoryAssignmentToCategoryDiscount</a></span>
+				</div>
+				<p>Assigns a product to a category discount</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>id</td>
+							<td>int</td>
+							<td>The Id of category discount</td>
+						</tr>
+						<tr>
+							<td>productId</td>
+							<td>int</td>
+							<td>The Id of product</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;DiscountService.addCategoryAssignmentToCategoryDiscount&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;id&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;productId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;DiscountService.addCategoryAssignmentToCategoryDiscount&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;id&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;productId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
-
-<h3>Sample Response</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
@@ -604,46 +629,50 @@
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
-
-<h3>PHP iSDK Sample</h3>
-<pre class="prettyprint">$app->addCategoryAssignmentToCategoryDiscount(1, 2);</pre>
-<hr>
-
-<div class="full_method">
-	<span class="collection">DiscountService.</span><span class="method"><a name="getCategoryAssignmentsForCategoryDiscount">getCategoryAssignmentsForCategoryDiscount</a></span>
-</div>
-<p>description here</p>
-<h3>Required Parameters</h3>
-<table class="table table-bordered table-striped">
-	<thead>
-		<th>Parameter Name</th>
-		<th>Type</th>
-		<th>Definition</th>
-	</thead>
-	<tbody>
-		<tr>
-			<td>id</td>
-			<td>int</td>
-			<td>The Id of category discount</td>
-		</tr>
-	</tbody>
-</table>
-<h3>Sample Request</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->addCategoryAssignmentToCategoryDiscount(1, 2);</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+					<span class="collection">DiscountService.</span><span class="method"><a name="getCategoryAssignmentsForCategoryDiscount">getCategoryAssignmentsForCategoryDiscount</a></span>
+				</div>
+				<p>Returns the options and values of the category assignment for category discount passed</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>id</td>
+							<td>int</td>
+							<td>The Id of category discount</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;DiscountService.getCategoryAssignmentsForCategoryDiscount&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;id&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;DiscountService.getCategoryAssignmentsForCategoryDiscount&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;id&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
-
-<h3>Sample Response</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
@@ -684,86 +713,90 @@
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
-
-<h3>PHP iSDK Sample</h3>
-<pre class="prettyprint">$app->getCategoryAssignmentsForCategoryDiscount(1);</pre>
-<hr>
-
-<div class="full_method">
-	<span class="collection">DiscountService.</span><span class="method"><a name="addProductTotalDiscount">addProductTotalDiscount</a></span>
-</div>
-<p>description here</p>
-<h3>Required Parameters</h3>
-<table class="table table-bordered table-striped">
-	<thead>
-		<th>Parameter Name</th>
-		<th>Type</th>
-		<th>Definition</th>
-	</thead>
-	<tbody>
-		<tr>
-			<td>name</td>
-			<td>string</td>
-			<td>The Id of category discount</td>
-		</tr>
-		<tr>
-			<td>description</td>
-			<td>string</td>
-			<td>The Id of category discount</td>
-		</tr>
-		<tr>
-			<td>applyDiscountToCommission</td>
-			<td>int</td>
-			<td>The Id of category discount</td>
-		</tr>
-		<tr>
-			<td>productId</td>
-			<td>int</td>
-			<td>The Id of category discount</td>
-		</tr>
-		<tr>
-			<td>percentOrAmt</td>
-			<td>int</td>
-			<td>The Id of category discount</td>
-		</tr>
-		<tr>
-			<td>amt</td>
-			<td>int</td>
-			<td>The Id of category discount</td>
-		</tr>
-	</tbody>
-</table>
-<h3>Sample Request</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->getCategoryAssignmentsForCategoryDiscount(1);</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+					<span class="collection">DiscountService.</span><span class="method"><a name="addProductTotalDiscount">addProductTotalDiscount</a></span>
+				</div>
+				<p>Add a product total discount</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>name</td>
+							<td>string</td>
+							<td>The Id of category discount</td>
+						</tr>
+						<tr>
+							<td>description</td>
+							<td>string</td>
+							<td>The Id of category discount</td>
+						</tr>
+						<tr>
+							<td>applyDiscountToCommission</td>
+							<td>int</td>
+							<td>The Id of category discount</td>
+						</tr>
+						<tr>
+							<td>productId</td>
+							<td>int</td>
+							<td>The Id of category discount</td>
+						</tr>
+						<tr>
+							<td>percentOrAmt</td>
+							<td>int</td>
+							<td>The Id of category discount</td>
+						</tr>
+						<tr>
+							<td>amt</td>
+							<td>int</td>
+							<td>The Id of category discount</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;DiscountService.addProductTotalDiscount&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;name&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;description&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;applyDiscountToCommission&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;productId&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;percentOrAmt&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;double&gt;amt&lt;/double&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;DiscountService.addProductTotalDiscount&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;name&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;description&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;applyDiscountToCommission&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;productId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;percentOrAmt&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;double&gt;amt&lt;/double&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
-
-<h3>Sample Response</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
@@ -775,46 +808,50 @@
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
-
-<h3>PHP iSDK Sample</h3>
-<pre class="prettyprint">$app->addProductTotalDiscount("test discount", "discount for a product", 0, 3, 3, 5);</pre>
-<hr>
-
-<div class="full_method">
-	<span class="collection">DiscountService.</span><span class="method"><a name="getProductTotalDiscount">getProductTotalDiscount</a></span>
-</div>
-<p>description here</p>
-<h3>Required Parameters</h3>
-<table class="table table-bordered table-striped">
-	<thead>
-		<th>Parameter Name</th>
-		<th>Type</th>
-		<th>Definition</th>
-	</thead>
-	<tbody>
-		<tr>
-			<td>id</td>
-			<td>string</td>
-			<td>Id of product discount</td>
-		</tr>
-	</tbody>
-</table>
-<h3>Sample Request</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->addProductTotalDiscount("test discount", "discount for a product", 0, 3, 3, 5);</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+					<span class="collection">DiscountService.</span><span class="method"><a name="getProductTotalDiscount">getProductTotalDiscount</a></span>
+				</div>
+				<p>Returns the options and values of the product total discount id passed</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>id</td>
+							<td>string</td>
+							<td>Id of product discount</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;DiscountService.getProductTotalDiscount&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;id&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;DiscountService.getProductTotalDiscount&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;id&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
-
-<h3>Sample Response</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
@@ -833,7 +870,7 @@
               name
             &lt;/name&gt;
             &lt;value&gt;
-              prod dictount total
+              prod discount total
             &lt;/value&gt;
           &lt;/member&gt;
           &lt;member&gt;
@@ -857,78 +894,82 @@
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
-
-<h3>PHP iSDK Sample</h3>
-<pre class="prettyprint">$app->getProductTotalDiscount(1);</pre>
-<hr>
-
-<div class="full_method">
-	<span class="collection">DiscountService.</span><span class="method"><a name="addShippingTotalDiscount">addShippingTotalDiscount</a></span>
-</div>
-<p>description here</p>
-<h3>Required Parameters</h3>
-<table class="table table-bordered table-striped">
-	<thead>
-		<th>Parameter Name</th>
-		<th>Type</th>
-		<th>Definition</th>
-	</thead>
-	<tbody>
-		<tr>
-			<td>name</td>
-			<td>string</td>
-			<td>Name of shipping discount</td>
-		</tr>
-		<tr>
-			<td>description</td>
-			<td>string</td>
-			<td>Description of shipping discount</td>
-		</tr>
-		<tr>
-			<td>applyDiscountToCommission</td>
-			<td>int</td>
-			<td>Determines whether or not to apply discount to commission</td>
-		</tr>
-		<tr>
-			<td>percentOrAmt</td>
-			<td>int</td>
-			<td>Percent or amount of discount</td>
-		</tr>
-		<tr>
-			<td>amt</td>
-			<td>int</td>
-			<td>Amount of discount</td>
-		</tr>
-	</tbody>
-</table>
-<h3>Sample Request</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->getProductTotalDiscount(1);</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+					<span class="collection">DiscountService.</span><span class="method"><a name="addShippingTotalDiscount">addShippingTotalDiscount</a></span>
+				</div>
+				<p>Adds a shipping total discount</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>name</td>
+							<td>string</td>
+							<td>Name of shipping discount</td>
+						</tr>
+						<tr>
+							<td>description</td>
+							<td>string</td>
+							<td>Description of shipping discount</td>
+						</tr>
+						<tr>
+							<td>applyDiscountToCommission</td>
+							<td>int</td>
+							<td>Determines whether or not to apply discount to commission</td>
+						</tr>
+						<tr>
+							<td>percentOrAmt</td>
+							<td>int</td>
+							<td>Percent or amount of discount</td>
+						</tr>
+						<tr>
+							<td>amt</td>
+							<td>int</td>
+							<td>Amount of discount</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;DiscountService.addShippingTotalDiscount&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;name&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;description&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;applyDiscountToCommission&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;percentOrAmt&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;double&gt;amt&lt;/double&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;DiscountService.addShippingTotalDiscount&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;name&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;description&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;applyDiscountToCommission&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;percentOrAmt&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;double&gt;amt&lt;/double&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
-
-<h3>Sample Response</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
@@ -940,46 +981,50 @@
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
-
-<h3>PHP iSDK Sample</h3>
-<pre class="prettyprint">$app->addShippingTotalDiscount("test", "test description", 0, 2, 18.00);</pre>
-<hr>
-
-<div class="full_method">
-	<span class="collection">DiscountService.</span><span class="method"><a name="getShippingTotalDiscount">getShippingTotalDiscount</a></span>
-</div>
-<p>description here</p>
-<h3>Required Parameters</h3>
-<table class="table table-bordered table-striped">
-	<thead>
-		<th>Parameter Name</th>
-		<th>Type</th>
-		<th>Definition</th>
-	</thead>
-	<tbody>
-		<tr>
-			<td>id</td>
-			<td>int</td>
-			<td>Id of shipping discount</td>
-		</tr>
-	</tbody>
-</table>
-<h3>Sample Request</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->addShippingTotalDiscount("test", "test description", 0, 2, 18.00);</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+					<span class="collection">DiscountService.</span><span class="method"><a name="getShippingTotalDiscount">getShippingTotalDiscount</a></span>
+				</div>
+				<p>Returns the options and values of the shipping total discount id passed</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>id</td>
+							<td>int</td>
+							<td>Id of shipping discount</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;DiscountService.getShippingTotalDiscount&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;id&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;DiscountService.getShippingTotalDiscount&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;1609f90120a2fbab8365423d00d1697a&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;id&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
-
-<h3>Sample Response</h3>
-<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
@@ -1030,10 +1075,9 @@
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
-
-<h3>PHP iSDK Sample</h3>
-<pre class="prettyprint">$app->addShippingTotalDiscount(6);</pre>
-<hr>
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->addShippingTotalDiscount(6);</pre>
 
 				</div>
 			</div>
