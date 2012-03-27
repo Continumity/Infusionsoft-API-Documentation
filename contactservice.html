@@ -769,26 +769,27 @@ $result = $app->grpRemove($contactId, $groupId);</pre>
 						</tbody>
 					</table>
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+					<pre class="prettyprint">
+&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;ContactService.rescheduleCampaignStep&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;c94a1f2b395a9ab97d4263b37f7b0923&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;array&gt;
-&lt;data&gt;
-&lt;value&gt;&lt;int&gt;22&lt;/int&gt;&lt;/value&gt;
-&lt;value&gt;&lt;int&gt;12&lt;/int&gt;&lt;/value&gt;
-&lt;value&gt;&lt;int&gt;16&lt;/int&gt;&lt;/value&gt;
-&lt;/data&gt;
-&lt;/array&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;2&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;/params&gt;
+  &lt;methodName&gt;ContactService.rescheduleCampaignStep&lt;/methodName&gt;
+    &lt;params&gt;
+      &lt;param&gt;
+        &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+      &lt;/param&gt;
+    &lt;param&gt;
+    &lt;value&gt;&lt;array&gt;
+      &lt;data&gt;
+        &lt;value&gt;&lt;int&gt;22&lt;/int&gt;&lt;/value&gt;
+        &lt;value&gt;&lt;int&gt;12&lt;/int&gt;&lt;/value&gt;
+        &lt;value&gt;&lt;int&gt;16&lt;/int&gt;&lt;/value&gt;
+      &lt;/data&gt;
+    &lt;/array&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;2&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 <h3>Sample Response</h3>
 <pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
