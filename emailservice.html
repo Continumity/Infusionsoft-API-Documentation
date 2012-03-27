@@ -890,27 +890,28 @@
 					<p>Return: True if the email has been sent, an error will be sent back otherwise!</p>
 					
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-&lt;methodName&gt;APIEmailService.sendEmail&lt;/methodName&gt;
-&lt;params&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;array&gt;
-&lt;data&gt;
-&lt;value&gt;&lt;int&gt;12&lt;/int&gt;&lt;/value&gt;
-&lt;value&gt;&lt;int&gt;16&lt;/int&gt;&lt;/value&gt;
-&lt;value&gt;&lt;int&gt;22&lt;/int&gt;&lt;/value&gt;
-&lt;/data&gt;
-&lt;/array&gt;&lt;/value&gt;
-&lt;/param&gt;
-&lt;param&gt;
-&lt;value&gt;&lt;int&gt;3380&lt;/int&gt;&lt;/value&gt;
-&lt;/param&gt;
+  &lt;methodName&gt;APIEmailService.sendEmail&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;array&gt;
+      &lt;data&gt;
+        &lt;value&gt;&lt;int&gt;12&lt;/int&gt;&lt;/value&gt;
+        &lt;value&gt;&lt;int&gt;16&lt;/int&gt;&lt;/value&gt;
+        &lt;value&gt;&lt;int&gt;22&lt;/int&gt;&lt;/value&gt;
+      &lt;/data&gt;
+      &lt;/array&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;param&gt;
+    &lt;value&gt;&lt;int&gt;3380&lt;/int&gt;&lt;/value&gt;
+  &lt;/param&gt;
 &lt;/params&gt;
-&lt;/methodCall&gt;</pre>
+&lt;/methodCall&gt;
+</pre>
 
 					<h3>Sample Response</h3>
 					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
