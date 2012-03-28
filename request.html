@@ -62,15 +62,15 @@
 					<pre class="prettyprint">
 &lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;methodCall&gt;
-	&lt;methodName&gt;service.methodName&lt;/methodName&gt;
-	&lt;params&gt;
-		&lt;param&gt;
-			&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-		&lt;/param&gt;
-		&lt;param&gt;
-			&lt;value&gt;&lt;int&gt;12345&lt;/int&gt;&lt;/value&gt;
-		&lt;/param&gt;
-	&lt;/params&gt;
+  &lt;methodName&gt;service.methodName&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;12345&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodCall&gt;
 					</pre>
 					<h3>Handling Arrays and Associative Arrays</h3>
@@ -79,10 +79,12 @@
 					<p>This method is intended to update one, or all of the fields of a contact. In PHP, you'd simply use an array with the fields for keys. In XML, we need to be a little bit more thorough. </p>
 					<pre class="prettyprint">
 &lt;value&gt;&lt;struct&gt;
-    &lt;member&gt;&lt;name&gt;fieldToUpdate1&lt;/name&gt;
+  &lt;member&gt;
+    &lt;name&gt;fieldToUpdate1&lt;/name&gt;
     &lt;value&gt;&lt;string&gt;field1&lt;/string&gt;&lt;/value&gt;
   &lt;/member&gt;
-    &lt;member&gt;&lt;name&gt;fieldToUpdate2&lt;/name&gt;
+  &lt;member&gt;
+    &lt;name&gt;fieldToUpdate2&lt;/name&gt;
     &lt;value&gt;&lt;string&gt;field2&lt;/string&gt;&lt;/value&gt;
   &lt;/member&gt;
 &lt;/struct&gt;&lt;/value&gt;
@@ -90,12 +92,14 @@
 					<p>In XML, we have a &lt;struct&gt; element and within &lt;members&gt; we put the Member/Value pair. So, to update only the FirstName and Email fields, we would put together a Member/Value request like this:</p>
 					<pre class="prettyprint">
 &lt;value&gt;&lt;struct&gt;
-&lt;member&gt;&lt;name&gt;FirstName&lt;/name&gt;
-&lt;value&gt;&lt;string&gt;Jon&lt;/string&gt;&lt;/value&gt;
-&lt;/member&gt;
-&lt;member&gt;&lt;name&gt;Email&lt;/name&gt;
-&lt;value&gt;&lt;string&gt;Jon@Doe.com&lt;/string&gt;&lt;/value&gt;
-&lt;/member&gt;
+  &lt;member&gt;
+    &lt;name&gt;FirstName&lt;/name&gt;
+    &lt;value&gt;&lt;string&gt;Jon&lt;/string&gt;&lt;/value&gt;
+  &lt;/member&gt;
+  &lt;member&gt;
+    &lt;name&gt;Email&lt;/name&gt;
+    &lt;value&gt;&lt;string&gt;Jon@Doe.com&lt;/string&gt;&lt;/value&gt;
+  &lt;/member&gt;
 &lt;/struct&gt;&lt;/value&gt;
 					</pre>
 					<p>It's important to note that anything after the first set of arguments is optional, but you must have at least one member of your struct.</p>
