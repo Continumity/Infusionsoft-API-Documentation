@@ -72,7 +72,7 @@
 					<h3>Multi Parameter Responses</h3>
 					<p>When receiving multi parameter responses, you'll need to parse the struct. Here is the response from findByEmail. You'll need to parse the "Name/Value" out of the &lt;struct&gt;. If it returns more than one set of data, it will be in multiple &lt;structs&gt;.</p>
 					<pre class="prettyprint">
-					&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
@@ -82,60 +82,33 @@
             &lt;value&gt;
               &lt;struct&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    FirstName
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    John
-                  &lt;/value&gt;
+                  &lt;name&gt;FirstName&lt;/name&gt;
+                  &lt;value&gt;John&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    Id
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;i4&gt;
-                      16
-                    &lt;/i4&gt;
-                  &lt;/value&gt;
+                  &lt;name&gt;Id&lt;/name&gt;
+                  &lt;value&gt;&lt;i4&gt;16&lt;/i4&gt;&lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    LastName
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    Doe
-                  &lt;/value&gt;
+                  &lt;name&gt;LastName&lt;/name&gt;
+                  &lt;value&gt;Doe&lt;/value&gt;
                 &lt;/member&gt;
               &lt;/struct&gt;
             &lt;/value&gt;
             &lt;value&gt;
               &lt;struct&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    FirstName
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    Ron
+                  &lt;name&gt;FirstName&lt;/name&gt;
+                  &lt;value&gt;Ron &lt;/value&gt;
+                &lt;/member&gt;
+                &lt;member&gt;
+                  &lt;name&gt;Id &lt;/name&gt;
+                  &lt;value&gt;&lt;i4&gt;18&lt;/i4&gt;
                   &lt;/value&gt;
                 &lt;/member&gt;
                 &lt;member&gt;
-                  &lt;name&gt;
-                    Id
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    &lt;i4&gt;
-                      18
-                    &lt;/i4&gt;
-                  &lt;/value&gt;
-                &lt;/member&gt;
-                &lt;member&gt;
-                  &lt;name&gt;
-                    LastName
-                  &lt;/name&gt;
-                  &lt;value&gt;
-                    Doe
-                  &lt;/value&gt;
+                  &lt;name&gt;LastName&lt;/name&gt;
+                  &lt;value&gt;Doe&lt;/value&gt;
                 &lt;/member&gt;
               &lt;/struct&gt;
             &lt;/value&gt;
