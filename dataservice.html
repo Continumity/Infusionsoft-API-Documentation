@@ -136,7 +136,7 @@
 					                'LastName'  => 'Doe',
 					                'Email'     => 'JDoe@email.com');
 					
-					$conID = $myApp->dsAdd("Contact", $conDat);</pre>
+					$conID = $app->dsAdd("Contact", $conDat);</pre>
 
 					<hr>
 									
@@ -236,7 +236,7 @@
 			
 					<h3>PHP iSDK Sample</h3>
 					<pre class="prettyprint">$returnFields = array('Email', 'FirstName', 'LastName');
-					$conDat = $myApp->dsLoad("Contact", 123, $returnFields);</pre>
+					$conDat = $app->dsLoad("Contact", 123, $returnFields);</pre>
 
 
 					<hr>
@@ -329,7 +329,7 @@
 					<pre class="prettyprint">$grp = array('GroupName'  => 'Test Group',
 					             'GroupDescription'  => 'This tag was Created with api');
 					$grpID = 97;
-					$grpID = $myApp->dsUpdate("ContactGroup", $grpID, $grp);</pre>
+					$grpID = $app->dsUpdate("ContactGroup", $grpID, $grp);</pre>
 					
 					
 					<hr>
@@ -505,7 +505,7 @@
 					<h3>PHP iSDK Sample</h3>
 					<pre class="prettyprint">
 $returnFields = array('ContactId','ContactGroup');
-$contacts = $myApp->dsFind('ContactGroupAssign',5,0,'GroupId',97,$returnFields);</pre>
+$contacts = $app->dsFind('ContactGroupAssign',5,0,'GroupId',97,$returnFields);</pre>
 					
 					
 					<hr>
@@ -627,7 +627,7 @@ $contacts = $myApp->dsFind('ContactGroupAssign',5,0,'GroupId',97,$returnFields);
 					<pre class="prettyprint">
 $returnFields = array('Id','FirstName');
 $query = array('FirstName' => 'justin');
-$contacts = $myApp->dsQuery("Contact",10,0,$query,$returnFields);</pre>
+$contacts = $app->dsQuery("Contact",10,0,$query,$returnFields);</pre>
 					
 					
 					<hr>

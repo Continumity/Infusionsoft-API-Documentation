@@ -155,8 +155,8 @@
 &lt;/methodResponse&gt;</pre>
 	
 										<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">$oDate = $myApp->infuDate("8-9-2008");
-$invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
+					<pre class="prettyprint">$oDate = $app->infuDate("8-9-2008");
+$invoiceId = $app->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 					
 					<!-- METHOD END -->
 					
@@ -334,7 +334,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 &lt;/methodResponse&gt;</pre>
 	
 										<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">$result = $myApp->addOrderItem($invoiceId, 17, 6, 23.07, 2, "Turbo Booster", "Jay's Awesome Turbo Booster");</pre>
+					<pre class="prettyprint">$result = $app->addOrderItem($invoiceId, 17, 6, 23.07, 2, "Turbo Booster", "Jay's Awesome Turbo Booster");</pre>
 					
 					<!-- METHOD END -->
 					
@@ -472,7 +472,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 &lt;/methodResponse&gt;</pre>
 	
 										<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">$result = $myApp->chargeInvoice(16,"API Upsell Payment",2,1,false);</pre>
+					<pre class="prettyprint">$result = $app->chargeInvoice(16,"API Upsell Payment",2,1,false);</pre>
 					
 					<!-- METHOD END -->
 					
@@ -668,7 +668,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 &lt;/methodResponse&gt;</pre>
 	
 										<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">$result = $myApp->addRecurringAdv($cid,false,23,2,2.95,true,1,$ccId,$affId,0);</pre>
+					<pre class="prettyprint">$result = $app->addRecurringAdv($cid,false,23,2,2.95,true,1,$ccId,$affId,0);</pre>
 					
 					<!-- METHOD END -->
 					
@@ -762,7 +762,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 &lt;/methodResponse&gt;</pre>
 	
 										<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">$result = $myApp->recurringCommOverride(123,1,25.50,5,"Changed Commision to 25.50")</pre>
+					<pre class="prettyprint">$result = $app->recurringCommOverride(123,1,25.50,5,"Changed Commision to 25.50")</pre>
 					
 					<!-- METHOD END -->
 					
@@ -824,7 +824,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 &lt;/methodResponse&gt;</pre>
 	
 										<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">$result = $myApp->recurringInvoice($recurringOrderId);</pre>
+					<pre class="prettyprint">$result = $app->recurringInvoice($recurringOrderId);</pre>
 					
 					<!-- METHOD END -->
 					
@@ -911,7 +911,7 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 &lt;/methodResponse&gt;</pre>
 	
 										<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">$result = $myApp->recurringInvoice($recurringOrderId);</pre>
+					<pre class="prettyprint">$result = $app->recurringInvoice($recurringOrderId);</pre>
 					
 					<!-- METHOD END -->
 					
@@ -1054,9 +1054,9 @@ $invoiceId = $myApp->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 &lt;/methodResponse&gt;</pre>
 	
 										<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">$inDate = $myApp->infuDate("10-11-2008");
-$stDate = $myApp->infuDate("10-25-2008");
-$result = $myApp->payPlan(43,true,12,1,2,3,25.50,$inDate,$stDate,5,30);</pre>
+					<pre class="prettyprint">$inDate = $app->infuDate("10-11-2008");
+$stDate = $app->infuDate("10-25-2008");
+$result = $app->payPlan(43,true,12,1,2,3,25.50,$inDate,$stDate,5,30);</pre>
 					
 					<!-- METHOD END -->
 					
@@ -1118,15 +1118,15 @@ $result = $myApp->payPlan(43,true,12,1,2,3,25.50,$inDate,$stDate,5,30);</pre>
 &lt;/methodResponse&gt;</pre>
 	
 										<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">$payDate = $myApp->infuDate("01-12-2007");
-echo "Invoice 43 owes: " . $myApp->amtOwed(43) ;
-$operation = $myApp->manualPmt(43,5.06,$payDate,"Check","Personal check",false);
+					<pre class="prettyprint">$payDate = $app->infuDate("01-12-2007");
+echo "Invoice 43 owes: " . $app->amtOwed(43) ;
+$operation = $app->manualPmt(43,5.06,$payDate,"Check","Personal check",false);
 if ($operation) {
     echo "Manual Payment Successful";
 } else {
     echo "Manual Payment Failed";
 }
-echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
+echo "Invoice 43 now owes: " . $app->amtOwed(43);</pre>
 					
 					<!-- METHOD END -->
 					
@@ -1215,7 +1215,7 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
 &lt;/methodResponse&gt;</pre>
 	
 										<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">$result = $myApp->getAllPaymentOptions();</pre>
+					<pre class="prettyprint">$result = $app->getAllPaymentOptions();</pre>
 					
 					<!-- METHOD END -->
 					
@@ -1330,7 +1330,7 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
 &lt;/methodResponse&gt;</pre>
 	
 					<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">$result = $myApp->getPayments($invId);</pre>
+					<pre class="prettyprint">$result = $app->getPayments($invId);</pre>
 					
 					<!-- METHOD END -->
 					
@@ -1400,7 +1400,7 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
 &lt;/methodResponse&gt;</pre>
 	
 										<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">$result = $myApp->locateCard($contactId,"1234");</pre>
+					<pre class="prettyprint">$result = $app->locateCard($contactId,"1234");</pre>
 					
 					<!-- METHOD END -->
 					
@@ -1602,7 +1602,7 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
 &lt;/methodResponse&gt;</pre>
 	
 					<h3>Existing Card PHP iSDK Sample</h3>
-					<pre class="prettyprint">$result = $myApp->validateCard(156);</pre>
+					<pre class="prettyprint">$result = $app->validateCard(156);</pre>
 					
 					<h3>New Card PHP iSDK Sample</h3>
 					<pre class="prettyprint">$card = array('CardType' => 'Visa',
@@ -1611,7 +1611,7 @@ echo "Invoice 43 now owes: " . $myApp->amtOwed(43);</pre>
               'ExpirationMonth' => '12',
               'ExpirationYear' => '2009',
               'CVV2' => '123');
-$result = $myApp->validateCard($card);</pre>
+$result = $app->validateCard($card);</pre>
 					
 					<!-- METHOD END -->
 					
@@ -1665,7 +1665,7 @@ $result = $myApp->validateCard($card);</pre>
 &lt;/methodResponse&gt;</pre>
 	
 										<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">$result = $myApp->getAllShippingOptions();</pre>
+					<pre class="prettyprint">$result = $app->getAllShippingOptions();</pre>
 					
 					<!-- METHOD END -->
 					
@@ -1856,9 +1856,9 @@ $result = $app->updateSubscriptionNextBillDate($recurringOrderId,$nDate);</pre>
 &lt;/methodResponse&gt;</pre>
 	
 										<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">$cDate = $myApp->infuDate("01-12-2007");
+					<pre class="prettyprint">$cDate = $app->infuDate("01-12-2007");
 
-$myApp->commOverride(43,1,3,15,5.06,5,"No Description",$cDate);</pre>
+$app->commOverride(43,1,3,15,5.06,5,"No Description",$cDate);</pre>
 					
 					<!-- METHOD END -->
 					
