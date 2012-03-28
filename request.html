@@ -51,13 +51,13 @@
 					<h3>Request Format</h3>
 					<p>Traditionally, requests to the Infusionsoft API have been documented as requiring XML-RPC. In reality, it is perfectly allowable to send valid XML as a string over HTTP to the endpoint provided to you. XML-RPC as a protocol is powerful, and may programming languages have classes and/or libraries available that make it easy to send XML-RPC requests.</p>
 					<p>No matter how you send your request, your XML must be valid, properly formatted, and contain the service and method, API Key, and any required parameters to make a valid request.</p>
-					<p>Though the XML can take any data type that’s a string, the endpoint will require certain data types to not balk. The PHP iSDK will handle this for you, but in case you’re not using that we’ve made several considerations. To help you, we’ve included two data types with each variable. The first data type is what you’ll want to output as, and the second is what the endpoint is expecting. Some common ones you’ll see are:</p>
+					<p>Though the XML can take any data type that's a string, the endpoint will require certain data types to not balk. The PHP iSDK will handle this for you, but in case you're not using that we've made several considerations. To help you, we've included two data types with each variable. The first data type is what you'll want to output as, and the second is what the endpoint is expecting. Some common ones you'll see are:</p>
 					<ul>
-						<li>String int - You’ll output the integer as a string. If it’s not an integer, the API will return faults.</li>
+						<li>String int - You'll output the integer as a string. If it's not an integer, the API will return faults.</li>
 						<li>Bool int - The endpoint is expecting a Boolean value, but it should be represented as an integer in the XML.</li>
 					</ul>
 					<br>
-					<p>The XML documents we’ve outlined for you will help show you how to structure your XML requests, and how to read the responses. However, you still might have questions about what each call does, and what data to send. If you have questions about what a particular function does, or where it would be used, we recommend you consult the documentation for the PHP SDK which specifies what each function does, available here: <a href="http://help.infusionsoft.com/developers/services-methods">http://help.infusionsoft.com/developers/services-methods</a></p>
+					<p>The XML documents we've outlined for you will help show you how to structure your XML requests, and how to read the responses. However, you still might have questions about what each call does, and what data to send. If you have questions about what a particular function does, or where it would be used, we recommend you consult the documentation for the PHP SDK which specifies what each function does, available here: <a href="http://help.infusionsoft.com/developers/services-methods">http://help.infusionsoft.com/developers/services-methods</a></p>
 					<p>The first argument in all your XML calls is the service.methodName, and you can match the methodName on the left hand side for more information about the particular arguments something is looking for. </p>
 					<pre class="prettyprint">
 &lt;?xml version=&quot;1.0&quot;?&gt;
@@ -74,9 +74,9 @@
 &lt;/methodCall&gt;
 					</pre>
 					<h3>Handling Arrays and Associative Arrays</h3>
-					<p>One of the main deviations from implementing raw XML versus the PHP SDK is that you’ll have to output your arrays, and associative arrays as a collection of arguments in the XML-RPC standard. You can learn more about the Standard here: http://en.wikipedia.org/wiki/XML-RPC</p>
+					<p>One of the main deviations from implementing raw XML versus the PHP SDK is that you'll have to output your arrays, and associative arrays as a collection of arguments in the XML-RPC standard. You can learn more about the Standard here: http://en.wikipedia.org/wiki/XML-RPC</p>
 					<p>Let's take a look at <a href="#">ContactService.update</a> for an example of how you'll deal with associative arrays in XML.</p>
-					<p>This method is intended to update one, or all of the fields of a contact. In PHP, you’d simply use an array with the fields for keys. In XML, we need to be a little bit more thorough. </p>
+					<p>This method is intended to update one, or all of the fields of a contact. In PHP, you'd simply use an array with the fields for keys. In XML, we need to be a little bit more thorough. </p>
 					<pre class="prettyprint">
 &lt;value&gt;&lt;struct&gt;
     &lt;member&gt;&lt;name&gt;fieldToUpdate1&lt;/name&gt;
@@ -98,9 +98,9 @@
 &lt;/member&gt;
 &lt;/struct&gt;&lt;/value&gt;
 					</pre>
-					<p>It’s important to note that anything after the first set of arguments is optional, but you must have at least one member of your struct.</p>
-					<p>When you’re dealing with sending multiple arguments to the same part of the API, you can implement it a little easier. Let’s take a look at <a href="#">ContactService.findByEmail</a> as an example for sending multiple pieces of data.</p>
-					<p><a href="#">ContactService.findByEmail</a> is designed to let you search the database by Email, and return any of the fields you’d like from the Contacts table. In PHP, you’d just send an array of the fields you’d like returned. In XML, we simply just list the values inside the &lt;array&gt; element surrounded by &lt;value&gt; and &lt;string&gt; tags.</p>
+					<p>It's important to note that anything after the first set of arguments is optional, but you must have at least one member of your struct.</p>
+					<p>When you're dealing with sending multiple arguments to the same part of the API, you can implement it a little easier. Let's take a look at <a href="#">ContactService.findByEmail</a> as an example for sending multiple pieces of data.</p>
+					<p><a href="#">ContactService.findByEmail</a> is designed to let you search the database by Email, and return any of the fields you'd like from the Contacts table. In PHP, you'd just send an array of the fields you'd like returned. In XML, we simply just list the values inside the &lt;array&gt; element surrounded by &lt;value&gt; and &lt;string&gt; tags.</p>
 					<pre class="prettyprint">
 &lt;value&gt;&lt;array&gt;
   &lt;data&gt;
