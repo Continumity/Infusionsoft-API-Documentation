@@ -11,6 +11,7 @@
 	</head>
 	<body onload="prettyPrint()">
 		<div class="container">
+		<img src="bootstrap/img/logo.png"><hr>
 			<div class="row">
 				<div class="span12" style="margin-top:40px;">
 				</div>
@@ -142,7 +143,7 @@
       &lt;value&gt;&lt;string&gt;title&lt;/string&gt;&lt;/value&gt;
     &lt;/param&gt;
     &lt;param&gt;
-      &lt;value&gt;&lt;string&gt;category&lt;/string&gt;&lt;/value&gt;
+      &lt;value&gt;&lt;string&gt;categories&lt;/string&gt;&lt;/value&gt;
     &lt;/param&gt;
     &lt;param&gt;
       &lt;value&gt;&lt;string&gt;fromAddress&lt;/string&gt;&lt;/value&gt;
@@ -186,7 +187,18 @@
 &lt;/methodResponse&gt;</pre>
 	
 					<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">$tmpId = $app->addEmailTemplate("template API Test", "API Category", "from@infusionsoft.com", "~Contact.Email~", "", "", "My Fancy Subject Line", "This is the text email body", "This is html body", "HTML", "Contact");</pre>
+					<pre class="prettyprint">$title = "template API test";
+$category = "API Category";
+$fromAddress = "from@infusionsoft.com";
+$toAddress = "~Contact.Email~";
+$ccAddress = "";
+$bccAddresses = "";
+$subject = "My Fancy Subject Line";
+$textBody = "This is the text email body";
+$htmlBody = "HTML"
+$contentType = "Contact";
+$mergeContext = "";
+$tmpId = $app->addEmailTemplate($title, $category, $fromAddress, $toAddress, $ccAddress, $bccAddresses, $subject, $textBody, $htmlBody, $contentType, $mergeContext);</pre>
 
 
 					<hr>
@@ -351,9 +363,21 @@
 &lt;/methodResponse&gt;</pre>
 	
 					<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">$status = $app->attachEmail(123,"John Doe","JDoe@test.com","Tester@test.com","",
-                            "","TEXT","Test Subject","","Test Body Can Be Anything",
-                            $emlHeader,$receivedDate,$sentDate);</pre>		
+					<pre class="prettyprint">$contactId = 123;
+$fromName = "John Doe";
+$fromAddress = "JDoe@test.com";
+$toAddress = "Tester@test.com";
+$ccAddress = "cc@test.com";
+$bccAddress = "bcc$test.com";
+$contentType = "TEXT";
+$subject = "test subject";
+$htmlBody = "html here";
+$textBody = "Test Body Can Be Anything";
+$header = "Email header";
+$receiveDate = "";
+$sentDate = "";
+$emailSentType = 1;
+$status = $app->attachEmail($contactId, $fromName, $fromAddress, $toAddress, $ccAddress, $bccAddress, $contentType, $subject, $htmlBody, $textBody, $header, $receiveDate, $sentDate, $emailSentType);</pre>		
 
 
 					<hr>

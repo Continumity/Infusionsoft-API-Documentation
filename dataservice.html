@@ -11,6 +11,7 @@
 	</head>
 	<body onload="prettyPrint()">
 		<div class="container">
+		<img src="bootstrap/img/logo.png"><hr>
 			<div class="row">
 				<div class="span12" style="margin-top:40px;">
 				</div>
@@ -136,7 +137,6 @@
 					<pre class="prettyprint">$conDat = array('FirstName' => 'John',
 					                'LastName'  => 'Doe',
 					                'Email'     => 'JDoe@email.com');
-					
 					$conID = $app->dsAdd("Contact", $conDat);</pre>
 
 					<hr>
@@ -237,7 +237,7 @@
 			
 					<h3>PHP iSDK Sample</h3>
 					<pre class="prettyprint">$returnFields = array('Email', 'FirstName', 'LastName');
-					$conDat = $app->dsLoad("Contact", 123, $returnFields);</pre>
+$conDat = $app->dsLoad("Contact", 123, $returnFields);</pre>
 
 
 					<hr>
@@ -328,9 +328,9 @@
 	
 					<h3>PHP iSDK Sample</h3>
 					<pre class="prettyprint">$grp = array('GroupName'  => 'Test Group',
-					             'GroupDescription'  => 'This tag was Created with api');
-					$grpID = 97;
-					$grpID = $app->dsUpdate("ContactGroup", $grpID, $grp);</pre>
+'GroupDescription'  => 'This tag was Created with api');
+$grpID = 97;
+$grpID = $app->dsUpdate("ContactGroup", $grpID, $grp);</pre>
 					
 					
 					<hr>
@@ -504,8 +504,7 @@
 &lt;/methodResponse&gt;</pre>
 	
 					<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">
-$returnFields = array('ContactId','ContactGroup');
+					<pre class="prettyprint">$returnFields = array('ContactId','ContactGroup');
 $contacts = $app->dsFind('ContactGroupAssign',5,0,'GroupId',97,$returnFields);</pre>
 					
 					
@@ -625,8 +624,7 @@ $contacts = $app->dsFind('ContactGroupAssign',5,0,'GroupId',97,$returnFields);</
 &lt;/methodResponse&gt;</pre>
 	
 					<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">
-$returnFields = array('Id','FirstName');
+					<pre class="prettyprint">$returnFields = array('Id','FirstName');
 $query = array('FirstName' => 'justin');
 $contacts = $app->dsQuery("Contact",10,0,$query,$returnFields);</pre>
 					
@@ -725,8 +723,7 @@ $contacts = $app->dsQuery("Contact",10,0,$query,$returnFields);</pre>
 &lt;/methodResponse&gt;</pre>
 	
 					<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">
-$newField = $app->addCustomField('Contact','Test Field','Text',1);</pre>
+					<pre class="prettyprint">$newField = $app->addCustomField('Contact','Test Field','Text',1);</pre>
 					
 					
 					<hr>
@@ -804,8 +801,7 @@ $newField = $app->addCustomField('Contact','Test Field','Text',1);</pre>
 &lt;/methodResponse&gt;</pre>
 	
 					<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">
-$uid = $app->authenticateUser("JDoe","Test123");</pre>
+					<pre class="prettyprint">$uid = $app->authenticateUser("JDoe","Test123");</pre>
 					
 					
 					<hr>
@@ -877,8 +873,7 @@ $uid = $app->authenticateUser("JDoe","Test123");</pre>
 &lt;/methodResponse&gt;</pre>
 	
 					<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">
-$result = $app->dsGetSetting('Contact', 'optiontypes');</pre>
+					<pre class="prettyprint">$result = $app->dsGetSetting('Contact', 'optiontypes');</pre>
 					
 					
 					<hr>
@@ -1009,8 +1004,7 @@ $result = $app->dsGetSetting('Contact', 'optiontypes');</pre>
 &lt;/methodResponse&gt;</pre>
 	
 					<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">
-$meta = $app->addCustomField('Contact','API TEST','Text',1);
+					<pre class="prettyprint">$meta = $app->addCustomField('Contact','API TEST','Text',1);
 $values = array('Label' => 'API_TEST_UPDATE');
 $status = $app->updateCustomField($meta,$values);</pre>
 					

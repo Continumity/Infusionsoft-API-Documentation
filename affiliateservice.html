@@ -11,6 +11,7 @@
 	</head>
 	<body onload="prettyPrint()">
 		<div class="container">
+		<img src="bootstrap/img/logo.png"><hr>
 			<div class="row">
 				<div class="span12" style="margin-top:40px;">
 				</div>
@@ -123,10 +124,10 @@ To manage affiliate information (ie Name, Phone, etc.) you will need to use the 
 &lt;/methodResponse&gt;</pre>
 	
 										<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">$start = date('Ymd\TH:i:s',mktime(00,00,00,09,01,2008));
+					<pre class="prettyprint">$affiliateId = 123;
+$start = date('Ymd\TH:i:s',mktime(00,00,00,09,01,2008));
 $finish = date('Ymd\TH:i:s',mktime(00,00,00,09,30,2008));
-
-$claws = $app->affClawbacks(123,$start,$finish);</pre>
+$claws = $app->affClawbacks($affiliateId, $start, $finish);</pre>
 
 					<hr>
 					
@@ -198,11 +199,10 @@ $claws = $app->affClawbacks(123,$start,$finish);</pre>
 &lt;/methodResponse&gt;</pre>
 	
 					<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">
+					<pre class="prettyprint">$affiliateId = 123;
 $start = date('Ymd\TH:i:s',mktime(00,00,00,09,01,2008));
 $finish = date('Ymd\TH:i:s',mktime(00,00,00,09,30,2008));
-
-$comms = $app->affCommissions(123,$start,$finish);</pre>
+$comms = $app->affCommissions($affiliateId, $start, $finish);</pre>
 					<hr>
 					
 <div class="full_method">
@@ -272,10 +272,10 @@ $comms = $app->affCommissions(123,$start,$finish);</pre>
 &lt;/methodResponse&gt;</pre>
 
 <h3>PHP iSDK Sample</h3>
-<pre class="prettyprint">$start = date('Ymd\TH:i:s',mktime(00,00,00,09,01,2008));
+<pre class="prettyprint">$affiliateId = 123;
+$start = date('Ymd\TH:i:s',mktime(00,00,00,09,01,2008));
 $finish = date('Ymd\TH:i:s',mktime(00,00,00,09,30,2008));
-
-$pays = $app->affPayouts(123,$start,$finish);</pre>
+$pays = $app->affPayouts($affiliateId, $start, $finish);</pre>
 <hr>
 
 <div class="full_method">
@@ -412,9 +412,8 @@ $pays = $app->affPayouts(123,$start,$finish);</pre>
 &lt;/methodResponse&gt;</pre>
 
 <h3>PHP iSDK Sample</h3>
-<pre class="prettyprint">$affs = array(123,456,789);
-
-$totals = $app->affPayouts($affs);</pre>
+<pre class="prettyprint">$affiliateIds = array(123,456,789);
+$totals = $app->affPayouts($affiliateIds);</pre>
 <hr>
 
 <div class="full_method">
@@ -556,11 +555,10 @@ $totals = $app->affPayouts($affs);</pre>
 &lt;/methodResponse&gt;</pre>
 
 <h3>PHP iSDK Sample</h3>
-<pre class="prettyprint">$affs = array(123,456,789);
+<pre class="prettyprint">$affiliateIds = array(123,456,789);
 $start = date('Ymd\TH:i:s',mktime(00,00,00,09,01,2008));
 $finish = date('Ymd\TH:i:s',mktime(00,00,00,09,30,2008));
-
-$pays = $app->affSummary($affs,$start,$finish);</pre>
+$pays = $app->affSummary($affiliateIds, $start, $finish);</pre>
 <hr>
 				</div>
 			</div>
