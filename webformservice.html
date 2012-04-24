@@ -75,31 +75,38 @@
 					<pre class="prettyprint">
 &lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodCall&gt;
-  &lt;methodName&gt;WebFormService.getFile&lt;/methodName&gt;
+  &lt;methodName&gt;WebFormService.getMap&lt;/methodName&gt;
   &lt;params&gt;
     &lt;param&gt;
       &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
-    &lt;/param&gt;
-    &lt;param&gt;
-      &lt;value&gt;&lt;int&gt;fileUID&lt;/int&gt;&lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
 					<pre class="prettyprint">
-&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;fileData&lt;/value&gt;
+      &lt;value&gt;
+        &lt;struct&gt;
+          &lt;member&gt;
+            &lt;name&gt;
+              6
+            &lt;/name&gt;
+            &lt;value&gt;
+              test
+            &lt;/value&gt;
+          &lt;/member&gt;
+        &lt;/struct&gt;
+      &lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
 	
 										<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">$fileId = 64;
-$myUrl = $app->getFile($fileId);</pre>
+					<pre class="prettyprint">$map = $app->getWebFormMap();</pre>
 
 					<hr>
 				</div>

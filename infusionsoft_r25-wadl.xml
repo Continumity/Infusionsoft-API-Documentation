@@ -1,0 +1,2105 @@
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:apigee="http://api.apigee.com/wadl/2010/07/" 
+	xmlns="http://wadl.dev.java.net/2009/02"
+	xsi:schemaLocation="http://wadl.dev.java.net/2009/02 http://apigee.com/schemas/wadl-schema.xsd http://api.apigee.com/wadl/2010/07/ http://apigee.com/schemas/apigee-wadl-extensions.xsd">
+	<resources base="https://username.infusionsoft.com/api/xmlrpc">
+			<resource path="APIAffiliateService.{methodName}">
+						<method id="affClawbacks" name="POST" apigee:displayName="affClawbacks">
+				<apigee:tags>
+					<apigee:tag primary="true">APIAffiliateService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="APIAffiliateService.affClawbacks" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/affiliateservice.html#affClawbacks">
+					The affClawbacks method is used when you need to retrieve all clawed back commissions for a particular affiliate. Claw backs typically occur when an order has been refunded to the customer				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="affiliateId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number for the affiliate record you would like the claw backs for</doc>
+						</param>
+											<param name="filterStartDate" type="xsd:dateTime" style="query" required="true">
+								<doc>The starting date for the date range which you would like affiliate claw backs for</doc>
+						</param>
+											<param name="filterEndDate" type="xsd:dateTime" style="query" required="true">
+								<doc>The ending date for the date range which you would like the affiliate claw backs for</doc>
+						</param>
+								</request>
+			</method>
+						<method id="affCommissions" name="POST" apigee:displayName="affCommissions">
+				<apigee:tags>
+					<apigee:tag primary="true">APIAffiliateService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="APIAffiliateService.affCommissions" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/affiliateservice.html#affCommissions">
+					This method is used to retrieve all commissions for a specific affiliate within a date range				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="affiliateId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number for the affiliate record you would like the claw backs for</doc>
+						</param>
+											<param name="filterStartDate" type="xsd:dateTime" style="query" required="true">
+								<doc>The starting date for the date range which you would like affiliate commissions for</doc>
+						</param>
+											<param name="filterEndDate" type="xsd:dateTime" style="query" required="true">
+								<doc>The ending date for the date range which you would like the affiliate commissions  for</doc>
+						</param>
+								</request>
+			</method>
+						<method id="affPayouts" name="POST" apigee:displayName="affPayouts">
+				<apigee:tags>
+					<apigee:tag primary="true">APIAffiliateService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="APIAffiliateService.affPayouts" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/affiliateservice.html#affPayouts">
+					This method is used to retrieve all payments for a specific affiliate within a date range				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="affiliateId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number for the affiliate record you would like the claw backs for</doc>
+						</param>
+											<param name="filterStartDate" type="xsd:dateTime" style="query" required="true">
+								<doc>The starting date for the date range which you would like affiliate payments for</doc>
+						</param>
+											<param name="filterEndDate" type="xsd:dateTime" style="query" required="true">
+								<doc>The ending date for the date range which you would like the affiliate payments for</doc>
+						</param>
+								</request>
+			</method>
+						<method id="affRunningTotals" name="POST" apigee:displayName="affRunningTotals">
+				<apigee:tags>
+					<apigee:tag primary="true">APIAffiliateService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="APIAffiliateService.affRunningTotals" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/affiliateservice.html#affRunningTotals">
+					The affRunningTotals method is used to retrieve the current balances for Amount Earned, Clawbacks, and Running Balance.				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="affiliateIds" type="xsd:array" style="query" required="true">
+								<doc>An integer array of the affiliate Id numbers that you would like the balances for</doc>
+						</param>
+								</request>
+			</method>
+						<method id="affSummary" name="POST" apigee:displayName="affSummary">
+				<apigee:tags>
+					<apigee:tag primary="true">APIAffiliateService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="APIAffiliateService.affSummary" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/affiliateservice.html#affSummary">
+					The affSummary method is used to retrieve a summary of statistics for a list of affiliates				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="affiliateId" type="xsd:integer" style="query" required="true">
+								<doc>An array of Affiliate Id numbers you would like stats for</doc>
+						</param>
+											<param name="filterStartDate" type="xsd:dateTime" style="query" required="true">
+								<doc>The starting date for the date range which you would like affiliate stats for</doc>
+						</param>
+											<param name="filterEndDate" type="xsd:dateTime" style="query" required="true">
+								<doc>The ending date for the date range which you would like the affiliate stats for</doc>
+						</param>
+								</request>
+			</method>
+					</resource>
+			<resource path="ContactService.{methodName}">
+						<method id="add1" name="POST" apigee:displayName="add">
+				<apigee:tags>
+					<apigee:tag primary="true">ContactService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ContactService.add" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/contactservice.html#add">
+					Creates a new contact record from the data passed in the associative array				</doc>
+				<request>
+										<param name="Key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="data" type="xsd:array" style="query" required="true">
+								<doc>an associative array of the data for this new contact record. The array key is the field name to store the value within</doc>
+						</param>
+								</request>
+			</method>
+						<method id="addToCampaign" name="POST" apigee:displayName="addToCampaign">
+				<apigee:tags>
+					<apigee:tag primary="true">ContactService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ContactService.addToCampaign" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/contactservice.html#addToCampaign">
+					Adds a contact to a follow-up sequence (campaigns were the original name of follow-up sequences)				</doc>
+				<request>
+										<param name="Key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="contactId" type="xsd:integer" style="query" required="true">
+								<doc>the contact Id number you would like to start the follow-up sequence for</doc>
+						</param>
+											<param name="campaignId" type="xsd:integer" style="query" required="true">
+								<doc>the Id number of the follow-up sequence you would like to start</doc>
+						</param>
+								</request>
+			</method>
+						<method id="addToGroup" name="POST" apigee:displayName="addToGroup">
+				<apigee:tags>
+					<apigee:tag primary="true">ContactService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ContactService.addToGroup" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/contactservice.html#addToGroup">
+					Adds a tag to a contact record				</doc>
+				<request>
+										<param name="Key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="contactId" type="xsd:integer" style="query" required="true">
+								<doc>the contact Id number you would like to start the follow-up sequence for</doc>
+						</param>
+											<param name="campaignId" type="xsd:integer" style="query" required="true">
+								<doc>the Id number of the follow-up sequence you would like to start</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getNextCampaignStep" name="POST" apigee:displayName="getNextCampaignStep">
+				<apigee:tags>
+					<apigee:tag primary="true">ContactService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ContactService.getNextCampaignStep" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/contactservice.html#getNextCampaignStep">
+					Returns the Id number of the next follow-up sequence step for the given contact				</doc>
+				<request>
+										<param name="Key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="contactId" type="xsd:integer" style="query" required="true">
+								<doc>the Id number of the contact record you would like to get the next sequence step for</doc>
+						</param>
+											<param name="followUpSequenceId" type="xsd:integer" style="query" required="true">
+								<doc>the follow-up sequence Id number you would like to get the next step for the given contact</doc>
+						</param>
+								</request>
+			</method>
+						<method id="findByEmail" name="POST" apigee:displayName="findByEmail">
+				<apigee:tags>
+					<apigee:tag primary="true">ContactService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ContactService.findByEmail" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/contactservice.html#findByEmail">
+					Finds all contacts with the given email address. This searches the Email, Email 2, and Email 3 fields				</doc>
+				<request>
+										<param name="Key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="email" type="xsd:email" style="query" required="true">
+								<doc>The email address to search contacts by</doc>
+						</param>
+											<param name="selectedFields" type="xsd:array" style="query" required="true">
+								<doc>The contact fields you would like returned</doc>
+						</param>
+								</request>
+			</method>
+						<method id="load" name="POST" apigee:displayName="load">
+				<apigee:tags>
+					<apigee:tag primary="true">ContactService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ContactService.load" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/contactservice.html#load">
+					Load data from a specific contact record				</doc>
+				<request>
+										<param name="Key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="contactId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the contact you would like to load data from</doc>
+						</param>
+											<param name="selectedFields" type="xsd:array" style="query" required="true">
+								<doc>An array of strings where each string is the database field name of the field you would like sent back</doc>
+						</param>
+								</request>
+			</method>
+						<method id="pauseCampaign" name="POST" apigee:displayName="pauseCampaign">
+				<apigee:tags>
+					<apigee:tag primary="true">ContactService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ContactService.pauseCampaign" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/contactservice.html#pauseCampaign">
+					Pauses a follow-up sequence for the given contact record				</doc>
+				<request>
+										<param name="Key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="contactId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the contact record you are pausing the sequence on</doc>
+						</param>
+											<param name="sequenceId" type="xsd:integer" style="query" required="true">
+								<doc>The follow-up sequence Id number</doc>
+						</param>
+								</request>
+			</method>
+						<method id="removeFromCampaign" name="POST" apigee:displayName="removeFromCampaign">
+				<apigee:tags>
+					<apigee:tag primary="true">ContactService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ContactService.removeFromCampaign" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/contactservice.html#removeFromCampaign">
+					Removes a follow-up sequence from a contact record				</doc>
+				<request>
+										<param name="Key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="contactId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the contact you want to remove the sequence from</doc>
+						</param>
+											<param name="followUpSequenceId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the sequence you would like to remove the contact from</doc>
+						</param>
+								</request>
+			</method>
+						<method id="resumeCampaignForContact" name="POST" apigee:displayName="resumeCampaignForContact">
+				<apigee:tags>
+					<apigee:tag primary="true">ContactService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ContactService.resumeCampaignForContact" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/contactservice.html#resumeCampaignForContact">
+					Resumes a follow-up sequence that has been stopped/paused for a given contact				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="contactId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the contact you would like to remove the tag from</doc>
+						</param>
+											<param name="seqId" type="xsd:integer" style="query" required="true">
+								<doc>The follow-up sequence Id number</doc>
+						</param>
+								</request>
+			</method>
+						<method id="rescheduleCampaignStep" name="POST" apigee:displayName="rescheduleCampaignStep">
+				<apigee:tags>
+					<apigee:tag primary="true">ContactService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ContactService.rescheduleCampaignStep" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/contactservice.html#rescheduleCampaignStep">
+					Immediately performs the given follow-up sequence stepId for the given contacts				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="contactIds" type="xsd:array" style="query" required="true">
+								<doc>An array of contact Id numbers you would like to reschedule the step for</doc>
+						</param>
+											<param name="sequenceStepId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the particular sequence step you would like to reschedule</doc>
+						</param>
+								</request>
+			</method>
+						<method id="removeFromGroup" name="POST" apigee:displayName="removeFromGroup">
+				<apigee:tags>
+					<apigee:tag primary="true">ContactService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ContactService.removeFromGroup" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/contactservice.html#removeFromGroup">
+					Removes a tag from a contact (groups were the original name of tags)				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="contactId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the contact you would like to remove the tag from</doc>
+						</param>
+											<param name="tagId" type="xsd:integer" style="query" required="true">
+								<doc>The tag Id number. This is found on the Setup->Tags menu</doc>
+						</param>
+								</request>
+			</method>
+						<method id="runActionSequence" name="POST" apigee:displayName="runActionSequence">
+				<apigee:tags>
+					<apigee:tag primary="true">ContactService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ContactService.runActionSequence" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/contactservice.html#runActionSequence">
+					Runs an action set on a given contact record				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="contactId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the contact record you want to run the action set on</doc>
+						</param>
+											<param name="actionSetId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the action set you would like to run. This is found on the Setup->Action sets menu</doc>
+						</param>
+								</request>
+			</method>
+						<method id="addWithDupCheck" name="POST" apigee:displayName="addWithDupCheck">
+				<apigee:tags>
+					<apigee:tag primary="true">ContactService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ContactService.addWithDupCheck" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/contactservice.html#addWithDupCheck">
+					Adds or updates a contact record based on matching data				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="data" type="xsd:array" style="query" required="true">
+								<doc>An associative array of the data for this new contact record. The array key is the field name to store the value within</doc>
+						</param>
+											<param name="dupCheckType" type="xsd:string" style="query" required="true">
+								<doc>Determines how to consider a duplicate record. Options: 'Email', 'EmailAndName', 'EmailAndNameAndCompany'</doc>
+						</param>
+								</request>
+			</method>
+						<method id="update" name="POST" apigee:displayName="update">
+				<apigee:tags>
+					<apigee:tag primary="true">ContactService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ContactService.update" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/contactservice.html#update">
+					Updates the data on a contact record				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="contactId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the contact you wish to update</doc>
+						</param>
+											<param name="data" type="xsd:array" style="query" required="true">
+								<doc>An associate array of the data for this contact. The array key needs to be the field name in which you store the value</doc>
+						</param>
+								</request>
+			</method>
+					</resource>
+			<resource path="DataService.{methodName}">
+						<method id="add" name="POST" apigee:displayName="add">
+				<apigee:tags>
+					<apigee:tag primary="true">DataService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DataService.add" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/dataservice.html#add">
+					To manage affiliate information (i.e. Name, Phone, etc.) you will need to use the DataService.				</doc>
+				<request>
+										<param name="key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="table" type="xsd:string" style="query" required="true">
+								<doc>The Infusionsoft database table name</doc>
+						</param>
+											<param name="values" type="xsd:struct" style="query" required="true">
+								<doc>An associative array of data you would like stored into this new row in the table</doc>
+						</param>
+								</request>
+			</method>
+						<method id="load1" name="POST" apigee:displayName="load">
+				<apigee:tags>
+					<apigee:tag primary="true">DataService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DataService.load" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/dataservice.html#load">
+					Adds a record to the specified table in Infusionsoft.				</doc>
+				<request>
+										<param name="key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="table" type="xsd:string" style="query" required="true">
+								<doc>Infusionsoft database table name from which you want to load a record</doc>
+						</param>
+											<param name="recordId" type="xsd:integer" style="query" required="true">
+								<doc>The unique Id number for the record you would like to load</doc>
+						</param>
+											<param name="wantedFields" type="xsd:array" style="query" required="true">
+								<doc>The fields you would like returned from this row in the database</doc>
+						</param>
+								</request>
+			</method>
+						<method id="update1" name="POST" apigee:displayName="update">
+				<apigee:tags>
+					<apigee:tag primary="true">DataService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DataService.update" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/dataservice.html#update">
+					Return: (int) the new records unique ID number				</doc>
+				<request>
+										<param name="key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="table" type="xsd:string" style="query" required="true">
+								<doc>The Infusionsoft database table name</doc>
+						</param>
+											<param name="Id" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the record you would like updated on the given table</doc>
+						</param>
+											<param name="values" type="xsd:struct" style="query" required="true">
+								<doc>An associative array of data you would like updated</doc>
+						</param>
+								</request>
+			</method>
+						<method id="delete" name="POST" apigee:displayName="delete">
+				<apigee:tags>
+					<apigee:tag primary="true">DataService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DataService.delete" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/dataservice.html#delete">
+					Loads a struct with data from the given database record				</doc>
+				<request>
+										<param name="key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="table" type="xsd:string" style="query" required="true">
+								<doc>The table you would like to delete the record from</doc>
+						</param>
+											<param name="Id" type="xsd:integer" style="query" required="true">
+								<doc>The id number of the record you want to delete</doc>
+						</param>
+								</request>
+			</method>
+						<method id="findByField" name="POST" apigee:displayName="findByField">
+				<apigee:tags>
+					<apigee:tag primary="true">DataService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DataService.findByField" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/dataservice.html#findByField">
+					Return: (struct) the specified fields for the given contact record				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="table" type="xsd:string" style="query" required="true">
+								<doc>The Infusionsoft database table name</doc>
+						</param>
+											<param name="limit" type="xsd:string" style="query" required="true">
+								<doc>How many records you would like returned. The maximum possible is 1000</doc>
+						</param>
+											<param name="page" type="xsd:string" style="query" required="true">
+								<doc>The page of results you would like returned. The first page is page 0 (loop through pages to get more than 1000 records)</doc>
+						</param>
+											<param name="fieldName" type="xsd:string" style="query" required="true">
+								<doc>The name of the field you would like to run the search on</doc>
+						</param>
+											<param name="fieldValue" type="xsd:string" style="query" required="true">
+								<doc>The value stored in the field you would like to search by</doc>
+						</param>
+											<param name="returnFields" type="xsd:string" style="query" required="true">
+								<doc>The fields you would like returned from the table you are searching on</doc>
+						</param>
+								</request>
+			</method>
+						<method id="query" name="POST" apigee:displayName="query">
+				<apigee:tags>
+					<apigee:tag primary="true">DataService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DataService.query" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/dataservice.html#query">
+					Updates the specified record (indicated by ID) with the data provided				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="table" type="xsd:string" style="query" required="true">
+								<doc>The table to look in</doc>
+						</param>
+											<param name="limit" type="xsd:integer" style="query" required="true">
+								<doc>The number of records to pull (max 1000)</doc>
+						</param>
+											<param name="page" type="xsd:integer" style="query" required="true">
+								<doc>What page of data to pull (in case there are more than 1000 records). The paging starts with 0</doc>
+						</param>
+											<param name="queryData" type="xsd:struct" style="query" required="true">
+								<doc>A struct containing query data. The key is the field to search on, and the value is the data to look for. % is the wild card operator and all searches are case insensitive. If you would like to query for an empty(null) field, use ~null~ in your query parameter, such as ‘FirstName' => ‘~null~'</doc>
+						</param>
+											<param name="selectedFields" type="xsd:array" style="query" required="true">
+								<doc>What fields to return from the query</doc>
+						</param>
+								</request>
+			</method>
+						<method id="addCustomField" name="POST" apigee:displayName="addCustomField">
+				<apigee:tags>
+					<apigee:tag primary="true">DataService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DataService.addCustomField" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/dataservice.html#addCustomField">
+					Return: (int) the ID number of the updated record				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="customFieldType" type="xsd:string" style="query" required="true">
+								<doc>Where the custom field will be used inside Infusionsoft. Options include Contact, Company, Affiliate, Task/Appt/Note, Order, Subscription, or Opportunity</doc>
+						</param>
+											<param name="displayName" type="xsd:string" style="query" required="true">
+								<doc>The label/name of this new custom field</doc>
+						</param>
+											<param name="dataType" type="xsd:string" style="query" required="true">
+								<doc>What type of data this field will support. Text, Dropdown, TextArea, etc.</doc>
+						</param>
+											<param name="headerId" type="xsd:integer" style="query" required="true">
+								<doc>Which custom field header you want this field to appear under. Customer headers are located on custom tabs</doc>
+						</param>
+								</request>
+			</method>
+						<method id="authenticateUser" name="POST" apigee:displayName="authenticateUser">
+				<apigee:tags>
+					<apigee:tag primary="true">DataService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DataService.authenticateUser" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/dataservice.html#authenticateUser">
+					Deletes the specified record in the given table from the database				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="username" type="xsd:string" style="query" required="true">
+								<doc>The Infusionsoft username</doc>
+						</param>
+											<param name="passwordHash" type="xsd:string" style="query" required="true">
+								<doc>An MD5 hash of the Infusionsoft users' password</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getAppSetting" name="POST" apigee:displayName="getAppSetting">
+				<apigee:tags>
+					<apigee:tag primary="true">DataService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DataService.getAppSetting" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/dataservice.html#getAppSetting">
+					Return: (boolean) True/False				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="module" type="xsd:string" style="query" required="true">
+								<doc>The application module this setting is a part of</doc>
+						</param>
+											<param name="setting" type="xsd:string" style="query" required="true">
+								<doc>The database name of the setting you would like the values returned for</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getTemporaryKey" name="POST" apigee:displayName="getTemporaryKey">
+				<apigee:tags>
+					<apigee:tag primary="true">DataService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DataService.getTemporaryKey" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/dataservice.html#getTemporaryKey">
+					This will locate all records in a given table that match the criteria for a given field				</doc>
+				<request>
+										<param name="vendorKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft Vendor key</doc>
+						</param>
+											<param name="username" type="xsd:string" style="query" required="true">
+								<doc>An Infusionsoft username</doc>
+						</param>
+											<param name="passwordHash" type="xsd:string" style="query" required="true">
+								<doc>An MD5 hash of the users' password. This is the password used to login to the Infusionsoft UI</doc>
+						</param>
+								</request>
+			</method>
+						<method id="updateCustomField" name="POST" apigee:displayName="updateCustomField">
+				<apigee:tags>
+					<apigee:tag primary="true">DataService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DataService.updateCustomField" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/dataservice.html#updateCustomField">
+					Return: (array) array of structs, one per result found. The struct will contain all fields specified in the method call with their corresponding value				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="customFieldId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the custom field you would like to update</doc>
+						</param>
+											<param name="values" type="xsd:struct" style="query" required="true">
+								<doc>The preset values for the given custom field</doc>
+						</param>
+								</request>
+			</method>
+					</resource>
+			<resource path="DiscountService.{methodName}">
+						<method id="addFreeTrial" name="POST" apigee:displayName="addFreeTrial">
+				<apigee:tags>
+					<apigee:tag primary="true">DiscountService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DiscountService.addFreeTrial" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/discountservice.html#addFreeTrial">
+					Adds a Free trial				</doc>
+				<request>
+										<param name="name" type="xsd:string" style="query" required="true">
+								<doc>The name of the free trial</doc>
+						</param>
+											<param name="description" type="xsd:string" style="query" required="true">
+								<doc>The description for free trial</doc>
+						</param>
+											<param name="freeTrialDays" type="xsd:integer" style="query" required="true">
+								<doc>The number of days free trial last</doc>
+						</param>
+											<param name="hidePrice" type="xsd:integer" style="query" required="true">
+								<doc>The option to show or hide price</doc>
+						</param>
+											<param name="subscriptionPlanId" type="xsd:integer" style="query" required="true">
+								<doc>The Id of the subscription</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getFreeTrial" name="POST" apigee:displayName="getFreeTrial">
+				<apigee:tags>
+					<apigee:tag primary="true">DiscountService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DiscountService.getFreeTrial" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/discountservice.html#getFreeTrial">
+					Returns the options and values of the free trial id passed				</doc>
+				<request>
+										<param name="trialId" type="xsd:integer" style="query" required="true">
+								<doc>The Id for free trial</doc>
+						</param>
+								</request>
+			</method>
+						<method id="addOrderTotalDiscount" name="POST" apigee:displayName="addOrderTotalDiscount">
+				<apigee:tags>
+					<apigee:tag primary="true">DiscountService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DiscountService.addOrderTotalDiscount" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/discountservice.html#addOrderTotalDiscount">
+					Adds a order total discount				</doc>
+				<request>
+										<param name="name" type="xsd:string" style="query" required="true">
+								<doc>The name of commission</doc>
+						</param>
+											<param name="description" type="xsd:string" style="query" required="true">
+								<doc>Description for commission</doc>
+						</param>
+											<param name="applyDiscountToCommission" type="xsd:integer" style="query" required="true">
+								<doc>Do you want to apply the discount to the commission?</doc>
+						</param>
+											<param name="percentOrAmt" type="xsd:integer" style="query" required="true">
+								<doc>Percentage</doc>
+						</param>
+											<param name="amt" type="xsd:integer" style="query" required="true">
+								<doc>The amount</doc>
+						</param>
+											<param name="payType" type="xsd:string" style="query" required="true">
+								<doc>This will either be gross or net</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getOrderTotalDiscount" name="POST" apigee:displayName="getOrderTotalDiscount">
+				<apigee:tags>
+					<apigee:tag primary="true">DiscountService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DiscountService.getOrderTotalDiscount" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/discountservice.html#getOrderTotalDiscount">
+					Adds a order total discount				</doc>
+				<request>
+										<param name="id" type="xsd:integer" style="query" required="true">
+								<doc>The Id of the order</doc>
+						</param>
+								</request>
+			</method>
+						<method id="addCategoryDiscount" name="POST" apigee:displayName="addCategoryDiscount">
+				<apigee:tags>
+					<apigee:tag primary="true">DiscountService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DiscountService.addCategoryDiscount" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/discountservice.html#addCategoryDiscount">
+					Adds a category discount				</doc>
+				<request>
+										<param name="name" type="xsd:string" style="query" required="true">
+								<doc>The category discount name</doc>
+						</param>
+											<param name="description" type="xsd:string" style="query" required="true">
+								<doc>The description of category discount</doc>
+						</param>
+											<param name="applyDiscountToCommission" type="xsd:integer" style="query" required="true">
+								<doc>Boolean integer to determine whether or not a discount is applied to commission</doc>
+						</param>
+											<param name="amt" type="xsd:integer" style="query" required="true">
+								<doc>The amount of discount</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getCategoryDiscount" name="POST" apigee:displayName="getCategoryDiscount">
+				<apigee:tags>
+					<apigee:tag primary="true">DiscountService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DiscountService.getCategoryDiscount" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/discountservice.html#getCategoryDiscount">
+					Returns the options and values of the category discount id passed				</doc>
+				<request>
+										<param name="id" type="xsd:integer" style="query" required="true">
+								<doc>The Id of category discount</doc>
+						</param>
+								</request>
+			</method>
+						<method id="addCategoryAssignmentToCategoryDiscount" name="POST" apigee:displayName="addCategoryAssignmentToCategoryDiscount">
+				<apigee:tags>
+					<apigee:tag primary="true">DiscountService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DiscountService.addCategoryAssignmentToCategoryDiscount" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/discountservice.html#addCategoryAssignmentToCategoryDiscount">
+					Assigns a product to a category discount				</doc>
+				<request>
+										<param name="id" type="xsd:integer" style="query" required="true">
+								<doc>The Id of category discount</doc>
+						</param>
+											<param name="productId" type="xsd:integer" style="query" required="true">
+								<doc>The Id of product</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getCategoryAssignmentsForCategoryDiscount" name="POST" apigee:displayName="getCategoryAssignmentsForCategoryDiscount">
+				<apigee:tags>
+					<apigee:tag primary="true">DiscountService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DiscountService.getCategoryAssignmentsForCategoryDiscount" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/discountservice.html#getCategoryAssignmentsForCategoryDiscount">
+					Returns the options and values of the category assignment for category discount passed				</doc>
+				<request>
+										<param name="id" type="xsd:integer" style="query" required="true">
+								<doc>The Id of category discount</doc>
+						</param>
+								</request>
+			</method>
+						<method id="addProductTotalDiscount" name="POST" apigee:displayName="addProductTotalDiscount">
+				<apigee:tags>
+					<apigee:tag primary="true">DiscountService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DiscountService.addProductTotalDiscount" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/discountservice.html#addProductTotalDiscount">
+					Add a product total discount				</doc>
+				<request>
+										<param name="name" type="xsd:string" style="query" required="true">
+								<doc>The Id of category discount</doc>
+						</param>
+											<param name="description" type="xsd:string" style="query" required="true">
+								<doc>The Id of category discount</doc>
+						</param>
+											<param name="applyDiscountToCommission" type="xsd:integer" style="query" required="true">
+								<doc>The Id of category discount</doc>
+						</param>
+											<param name="productId" type="xsd:integer" style="query" required="true">
+								<doc>The Id of category discount</doc>
+						</param>
+											<param name="percentOrAmt" type="xsd:integer" style="query" required="true">
+								<doc>The Id of category discount</doc>
+						</param>
+											<param name="amt" type="xsd:integer" style="query" required="true">
+								<doc>The Id of category discount</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getProductTotalDiscount" name="POST" apigee:displayName="getProductTotalDiscount">
+				<apigee:tags>
+					<apigee:tag primary="true">DiscountService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DiscountService.getProductTotalDiscount" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/discountservice.html#getProductTotalDiscount">
+					Returns the options and values of the product total discount id passed				</doc>
+				<request>
+										<param name="id" type="xsd:string" style="query" required="true">
+								<doc>Id of product discount</doc>
+						</param>
+								</request>
+			</method>
+						<method id="addShippingTotalDiscount" name="POST" apigee:displayName="addShippingTotalDiscount">
+				<apigee:tags>
+					<apigee:tag primary="true">DiscountService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DiscountService.addShippingTotalDiscount" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/discountservice.html#addShippingTotalDiscount">
+					Adds a shipping total discount				</doc>
+				<request>
+										<param name="name" type="xsd:string" style="query" required="true">
+								<doc>Name of shipping discount</doc>
+						</param>
+											<param name="description" type="xsd:string" style="query" required="true">
+								<doc>Description of shipping discount</doc>
+						</param>
+											<param name="applyDiscountToCommission" type="xsd:integer" style="query" required="true">
+								<doc>Determines whether or not to apply discount to commission</doc>
+						</param>
+											<param name="percentOrAmt" type="xsd:integer" style="query" required="true">
+								<doc>Percent or amount of discount</doc>
+						</param>
+											<param name="amt" type="xsd:integer" style="query" required="true">
+								<doc>Amount of discount</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getShippingTotalDiscount" name="POST" apigee:displayName="getShippingTotalDiscount">
+				<apigee:tags>
+					<apigee:tag primary="true">DiscountService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="DiscountService.getShippingTotalDiscount" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/discountservice.html#getShippingTotalDiscount">
+					Returns the options and values of the shipping total discount id passed				</doc>
+				<request>
+										<param name="id" type="xsd:integer" style="query" required="true">
+								<doc>Id of shipping discount</doc>
+						</param>
+								</request>
+			</method>
+					</resource>
+			<resource path="EmailService.{methodName}">
+						<method id="addEmailTemplate" name="POST" apigee:displayName="addEmailTemplate">
+				<apigee:tags>
+					<apigee:tag primary="true">EmailService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="EmailService.addEmailTemplate" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/emailservice.html#addEmailTemplate">
+					Create a new email template that can be used for future emails				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="pieceTitle" type="xsd:string" style="query" required="true">
+								<doc>The name of the template. This will be displayed within the Infusionsoft template library</doc>
+						</param>
+											<param name="categories" type="xsd:string" style="query" required="true">
+								<doc>The category of templates you would like this template saved in fromAddress - The from email address this template sends as. Format: "FirstName LastName "</doc>
+						</param>
+											<param name="toAddress" type="xsd:string" style="query" required="true">
+								<doc>The email address this template sends to. Typically this will be "~Contact.Email~"</doc>
+						</param>
+											<param name="ccAddress" type="xsd:string" style="query" required="true">
+								<doc>Any email addresses you would like to CC when this template is sent</doc>
+						</param>
+											<param name="bccAddress" type="xsd:string" style="query" required="true">
+								<doc>Any email address you would like to BCC when this template is sent</doc>
+						</param>
+											<param name="subject" type="xsd:string" style="query" required="true">
+								<doc>The subject line for this email template</doc>
+						</param>
+											<param name="textBody" type="xsd:string" style="query" required="true">
+								<doc>The content you would like sent in the body of the plain text version of this email template</doc>
+						</param>
+											<param name="htmlBody" type="xsd:string" style="query" required="true">
+								<doc>The HTML that makes up the body of this template. If you only send plain text emails</doc>
+						</param>
+											<param name="contentType" type="xsd:string" style="query" required="true">
+								<doc>HTML, Text, or Multipart</doc>
+						</param>
+											<param name="mergeContext" type="xsd:string" style="query" required="true">
+								<doc>Contact, Opportunity, Invoice, or CreditCard</doc>
+						</param>
+								</request>
+			</method>
+						<method id="attachEmail" name="POST" apigee:displayName="attachEmail">
+				<apigee:tags>
+					<apigee:tag primary="true">EmailService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="EmailService.attachEmail" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/emailservice.html#attachEmail">
+					Return: (int) templateId of the created email template				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="contactId" type="xsd:integer" style="query" required="true">
+								<doc>The Id of the contact you would like to add this email history to</doc>
+						</param>
+											<param name="fromName" type="xsd:string" style="query" required="true">
+								<doc>The name portion of the from address. I.E. FirstName LastName, not the email@domain.com portion</doc>
+						</param>
+											<param name="fromAddress" type="xsd:string" style="query" required="true">
+								<doc>The email address the email was sent from</doc>
+						</param>
+											<param name="toAddress" type="xsd:string" style="query" required="true">
+								<doc>The email address the email was sent to</doc>
+						</param>
+											<param name="ccAddresses" type="xsd:string" style="query" required="true">
+								<doc>Any email address that was CC'd</doc>
+						</param>
+											<param name="bccAddresses" type="xsd:string" style="query" required="true">
+								<doc>Any email address that was BCC'd</doc>
+						</param>
+											<param name="contentType" type="xsd:string" style="query" required="true">
+								<doc>What type of email this was. Text, HTML, or Multipart (case sensitive)</doc>
+						</param>
+											<param name="subject" type="xsd:string" style="query" required="true">
+								<doc>The subject line</doc>
+						</param>
+											<param name="htmlBody" type="xsd:string" style="query" required="true">
+								<doc>The html from the body of the email</doc>
+						</param>
+											<param name="textBody" type="xsd:string" style="query" required="true">
+								<doc>The plain text body of the email</doc>
+						</param>
+											<param name="header" type="xsd:string" style="query" required="true">
+								<doc>The email header information</doc>
+						</param>
+											<param name="receivedDate" type="xsd:string" style="query" required="true">
+								<doc>The date this email was received. This determines where this displays in comparison to other emails</doc>
+						</param>
+											<param name="sentDate" type="xsd:string" style="query" required="true">
+								<doc>The date this email was sent</doc>
+						</param>
+											<param name="emailSentType" type="xsd:integer" style="query" required="true">
+								<doc>A boolean int, 1 is used for marking the email as sent inside the contact history and 0 is used for marking the email as received</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getAvailableMergeFields" name="POST" apigee:displayName="getAvailableMergeFields">
+				<apigee:tags>
+					<apigee:tag primary="true">EmailService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="EmailService.getAvailableMergeFields" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/emailservice.html#getAvailableMergeFields">
+					This will create an item in the email history for a contact. This does not actually send the email, it only places an item into the email history. Using the API to instruct Infusionsoft to send an email will handle this automatically.				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="mergeContext" type="xsd:string" style="query" required="true">
+								<doc>Contact, Opportunity, Invoice, or CreditCard</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getEmailTemplate" name="POST" apigee:displayName="getEmailTemplate">
+				<apigee:tags>
+					<apigee:tag primary="true">EmailService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="EmailService.getEmailTemplate" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/emailservice.html#getEmailTemplate">
+					Return: (boolean) True/False				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="templateId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number for the template you wish to retrieve details about</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getOptStatus" name="POST" apigee:displayName="getOptStatus">
+				<apigee:tags>
+					<apigee:tag primary="true">EmailService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="EmailService.getOptStatus" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/emailservice.html#getOptStatus">
+					This retrieves all possible merge fields for the context provided				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="email" type="xsd:string" style="query" required="true">
+								<doc>The email address you wish to retrieve the status of</doc>
+						</param>
+								</request>
+			</method>
+						<method id="optIn" name="POST" apigee:displayName="optIn">
+				<apigee:tags>
+					<apigee:tag primary="true">EmailService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="EmailService.optIn" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/emailservice.html#optIn">
+					Return: (array) the available merge fields for the given context				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="email" type="xsd:string" style="query" required="true">
+								<doc>The email address to opt-in</doc>
+						</param>
+											<param name="optInReason" type="xsd:string" style="query" required="true">
+								<doc>This is how you can note why/how this email was opted-in. *If a blank optInReason is passed the system will default a reason of "API Opt In"</doc>
+						</param>
+								</request>
+			</method>
+						<method id="optOut" name="POST" apigee:displayName="optOut">
+				<apigee:tags>
+					<apigee:tag primary="true">EmailService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="EmailService.optOut" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/emailservice.html#optOut">
+					This method is not currently built into the iSDK				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="email" type="xsd:string" style="query" required="true">
+								<doc>The email address to opt-out</doc>
+						</param>
+											<param name="optOutreason" type="xsd:string" style="query" required="true">
+								<doc>Reason the address is being opt-out</doc>
+						</param>
+								</request>
+			</method>
+						<method id="sendEmail" name="POST" apigee:displayName="sendEmail">
+				<apigee:tags>
+					<apigee:tag primary="true">EmailService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="EmailService.sendEmail" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/emailservice.html#sendEmail">
+					Retrieves the details for a particular email template				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="contactList" type="xsd:string" style="query" required="true">
+								<doc>An integer array of Contact Id numbers you would like to send this email to</doc>
+						</param>
+											<param name="fromAddress" type="xsd:string" style="query" required="true">
+								<doc>The email address this template will be sent from</doc>
+						</param>
+											<param name="toAddress" type="xsd:string" style="query" required="true">
+								<doc>The email address this template will send to. This is typically the merge field "~Contact.Email~"</doc>
+						</param>
+											<param name="ccAddresses" type="xsd:string" style="query" required="true">
+								<doc>The email address(es) this template will carbon copy. Multiples separated by comma</doc>
+						</param>
+											<param name="bccAddresses" type="xsd:string" style="query" required="true">
+								<doc>the email address(es) this template will blind carbon copy. Multiples separated by comma</doc>
+						</param>
+											<param name="contentType" type="xsd:string" style="query" required="true">
+								<doc>HTML, Text, or Multipart (this is case sensitive)</doc>
+						</param>
+											<param name="subject" type="xsd:string" style="query" required="true">
+								<doc>The subject line of this email</doc>
+						</param>
+											<param name="htmlBody" type="xsd:string" style="query" required="true">
+								<doc>The HTML content the body of this email is comprised of</doc>
+						</param>
+											<param name="textBody" type="xsd:string" style="query" required="true">
+								<doc>The content of the plain text body of this template</doc>
+						</param>
+											<param name="templateId" type="xsd:string" style="query" required="true">
+								<doc>The Id number of the template you would like to send</doc>
+						</param>
+								</request>
+			</method>
+						<method id="sendTemplate" name="POST" apigee:displayName="sendTemplate">
+				<apigee:tags>
+					<apigee:tag primary="true">EmailService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="EmailService.sendTemplate" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/emailservice.html#sendTemplate">
+					Returns: (array) all data for a particular email template 					Example: 					Struct(  					[pieceTitle] => Example 					[categories] => Email 					[fromAddress] => example@example.com 					[toAddress] => ~Contact.Email~ 					[ccAddress] => 					[bccAddress] => 					[subject] => Example Subject 					[textBody] => Some example body 					[htmlBody] => Some HTML here 					[contentType] => HTML 					[mergeContext] => Contact 					)				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="contactList" type="xsd:array" style="query" required="true">
+								<doc>An integer array of Contact Id numbers you would like to send this email to</doc>
+						</param>
+											<param name="templateId" type="xsd:string" style="query" required="true">
+								<doc>The Id of of template to send</doc>
+						</param>
+								</request>
+			</method>
+						<method id="updateEmailTemplate" name="POST" apigee:displayName="updateEmailTemplate">
+				<apigee:tags>
+					<apigee:tag primary="true">EmailService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="EmailService.updateEmailTemplate" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/emailservice.html#updateEmailTemplate">
+									</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="templateId" type="xsd:string" style="query" required="true">
+								<doc>The Id number of the email template you would like to update</doc>
+						</param>
+											<param name="pieceTitle" type="xsd:string" style="query" required="true">
+								<doc>The title/name of this template. This is the internal name, not visible to customers</doc>
+						</param>
+											<param name="category" type="xsd:string" style="query" required="true">
+								<doc>The category you would like to save this template in</doc>
+						</param>
+											<param name="fromAddress" type="xsd:string" style="query" required="true">
+								<doc>The email address this template will be sent from. Format: "First Last"</doc>
+						</param>
+											<param name="toAddress" type="xsd:string" style="query" required="true">
+								<doc>The email address this template will send to. This is typically the merge field "~Contact.Email~"</doc>
+						</param>
+											<param name="ccAddress" type="xsd:string" style="query" required="true">
+								<doc>The email address(es) this template will carbon copy. Multiples separated by comma</doc>
+						</param>
+											<param name="bccAddresses" type="xsd:string" style="query" required="true">
+								<doc>The email address(es) this template will blind carbon copy. Multiples separated by comma</doc>
+						</param>
+											<param name="subject" type="xsd:string" style="query" required="true">
+								<doc>The subject line of this email</doc>
+						</param>
+											<param name="textBody" type="xsd:string" style="query" required="true">
+								<doc>The content of the plain text body of this template</doc>
+						</param>
+											<param name="htmlBody" type="xsd:string" style="query" required="true">
+								<doc>The HTML content the body of this email is comprised of</doc>
+						</param>
+											<param name="contentType" type="xsd:string" style="query" required="true">
+								<doc>HTML, text, or multipart (this is case sensitive)</doc>
+						</param>
+											<param name="mergeContext" type="xsd:string" style="query" required="true">
+								<doc>Contact, Opportunity, Invoice, or CreditCard (this is typically Contact)</doc>
+						</param>
+								</request>
+			</method>
+					</resource>
+			<resource path="FileService.{methodName}">
+						<method id="getFile" name="POST" apigee:displayName="getFile">
+				<apigee:tags>
+					<apigee:tag primary="true">FileService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="FileService.getFile" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/fileservice.html#getFile">
+					This method retrieves the file data for the given ID number.				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="FileId" type="xsd:integer" style="query" required="true">
+								<doc>The ID of the file you would like to return.</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getDownloadUrl" name="POST" apigee:displayName="getDownloadUrl">
+				<apigee:tags>
+					<apigee:tag primary="true">FileService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="FileService.getDownloadUrl" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/fileservice.html#getDownloadUrl">
+					This method will return a string of the download URL for the given file.				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="FileId" type="xsd:integer" style="query" required="true">
+								<doc>The ID of the file url to be returned.</doc>
+						</param>
+								</request>
+			</method>
+						<method id="uploadFile" name="POST" apigee:displayName="uploadFile">
+				<apigee:tags>
+					<apigee:tag primary="true">FileService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="FileService.uploadFile" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/fileservice.html#uploadFile">
+					This method uploads the file to Infusionsoft. The optional contactId parameter is used to place the file in a specific contact's filebox.				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="FileName" type="xsd:string" style="query" required="true">
+								<doc>The name of the file to be uploaded</doc>
+						</param>
+											<param name="Base64EncodedData" type="xsd:string" style="query" required="true">
+								<doc>A string that is 64 base encoded.</doc>
+						</param>
+											<param name="ContactId" type="xsd:integer" style="query" required="true">
+								<doc>ID of the contact record to add the file to.</doc>
+						</param>
+								</request>
+			</method>
+						<method id="replaceFile" name="POST" apigee:displayName="replaceFile">
+				<apigee:tags>
+					<apigee:tag primary="true">FileService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="FileService.replaceFile" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/fileservice.html#replaceFile">
+					This method will return a string of the download URL for the given file.				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="FileId" type="xsd:integer" style="query" required="true">
+								<doc>ID of the file to be replaced.</doc>
+						</param>
+											<param name="Base64EncodedData" type="xsd:string" style="query" required="true">
+								<doc>New string of data.</doc>
+						</param>
+								</request>
+			</method>
+						<method id="renameFile" name="POST" apigee:displayName="renameFile">
+				<apigee:tags>
+					<apigee:tag primary="true">FileService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="FileService.renameFile" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/fileservice.html#renameFile">
+					This method will return a string of the download URL for the given file.				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="FileId" type="xsd:integer" style="query" required="true">
+								<doc>Id of the file to be renamed.</doc>
+						</param>
+											<param name="fileName" type="xsd:string" style="query" required="true">
+								<doc>New string of data.</doc>
+						</param>
+								</request>
+			</method>
+					</resource>
+			<resource path="InvoiceService.{methodName}">
+						<method id="createBlankOrder" name="POST" apigee:displayName="createBlankOrder">
+				<apigee:tags>
+					<apigee:tag primary="true">InvoiceService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="InvoiceService.createBlankOrder" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/invoiceservice.html#createBlankOrder">
+					Creates a one-time order with no added line items				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="contactId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the contact record this order will be connected to</doc>
+						</param>
+											<param name="description" type="xsd:string" style="query" required="true">
+								<doc>The name this order will display. This is also the hyperlink to the order found on the contact's order tab</doc>
+						</param>
+											<param name="orderDate" type="xsd:dateTime" style="query" required="true">
+								<doc>Date of order</doc>
+						</param>
+											<param name="leadAffiliateId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the affiliate you would like placed as the lead affiliate. 0 if no affiliate should be attached</doc>
+						</param>
+											<param name="saleAffiliateId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the affiliate you would like placed as the sale affiliate. 0 if no affiliate should be attached</doc>
+						</param>
+								</request>
+			</method>
+						<method id="addOrderItem" name="POST" apigee:displayName="addOrderItem">
+				<apigee:tags>
+					<apigee:tag primary="true">InvoiceService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="InvoiceService.addOrderItem" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/invoiceservice.html#addOrderItem">
+					(int) Invoice Id for this new order				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="invoiceId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the invoice this item is being added to</doc>
+						</param>
+											<param name="productId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the product you are adding. If you are adding something such as tax, shipping, or a discount, make this 0</doc>
+						</param>
+											<param name="type" type="xsd:integer" style="query" required="true">
+								<doc>The line item type - defined in the table below</doc>
+						</param>
+											<param name="price" type="xsd:double" style="query" required="true">
+								<doc>The price of this line item.</doc>
+						</param>
+											<param name="quantity" type="xsd:integer" style="query" required="true">
+								<doc>The quantity of item added</doc>
+						</param>
+											<param name="title" type="xsd:string" style="query" required="true">
+								<doc>The name you want this line item to appear as</doc>
+						</param>
+											<param name="description" type="xsd:string" style="query" required="true">
+								<doc>A full description for this line item</doc>
+						</param>
+								</request>
+			</method>
+						<method id="chargeInvoice" name="POST" apigee:displayName="chargeInvoice">
+				<apigee:tags>
+					<apigee:tag primary="true">InvoiceService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="InvoiceService.chargeInvoice" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/invoiceservice.html#chargeInvoice">
+					Adds a line item to an order. This used to add a Product to an order as well as any other sort of charge/discount.				</doc>
+				<request>
+						<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+						<param name="invoiceId" type="xsd:integer" style="query" required="true">
+								<doc>The Invoice Id you would like to charge the balance due on</doc>
+						</param>
+						<param name="notes" type="xsd:string" style="query" required="true">
+								<doc>A note about the payment. Ex: "API Upsell Payment"</doc>
+						</param>
+						<param name="creditCardId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the credit card being charged</doc>
+						</param>
+						<param name="merchantAccountId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the merchant account the payment is to process through</doc>
+						</param>
+						<param name="bypassComissions" type="xsd:boolean" style="query" required="true">
+								<doc>A boolean telling the system if this payment should count towards affiliate commissions earned. This is almost always false.</doc>
+						</param>
+				</request>
+			</method>
+						<method id="deleteSubscription" name="POST" apigee:displayName="deleteSubscription">
+				<apigee:tags>
+					<apigee:tag primary="true">InvoiceService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="InvoiceService.deleteSubscription" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/invoiceservice.html#deleteSubscription">
+					(boolean) True/False				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="invoiceId" type="xsd:integer" style="query" required="true">
+								<doc>The Invoice Id you would like to charge the balance due on</doc>
+						</param>
+											<param name="notes" type="xsd:string" style="query" required="true">
+								<doc>A note about the payment. Ex: "API Upsell Payment"</doc>
+						</param>
+											<param name="creditCardId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the credit card being charged</doc>
+						</param>
+											<param name="merchantAccountId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the merchant account the payment is to process through</doc>
+						</param>
+											<param name="bypassCommissions" type="xsd:boolean" style="query" required="true">
+								<doc>A boolean telling the system if this payment should count towards affiliate commissions earned. This is almost always false.</doc>
+						</param>
+								</request>
+			</method>
+						<method id="addRecurringOrder" name="POST" apigee:displayName="addRecurringOrder">
+				<apigee:tags>
+					<apigee:tag primary="true">InvoiceService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="InvoiceService.addRecurringOrder" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/invoiceservice.html#addRecurringOrder">
+					This will cause a credit card to be charged for the amount currently due on an invoice				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="recurringOrderId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the particular subscription being deleted</doc>
+						</param>
+								</request>
+			</method>
+						<method id="addRecurringCommissionOverride" name="POST" apigee:displayName="addRecurringCommissionOverride">
+				<apigee:tags>
+					<apigee:tag primary="true">InvoiceService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="InvoiceService.addRecurringCommissionOverride" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/invoiceservice.html#addRecurringCommissionOverride">
+					(struct) a struct containing payment details. The struct will contain the following keys:  							Successful – true or false on whether or not the card was charged. (If there was nothing to charge, this will be false) 							Code – The approval code: APPROVED, DECLINED, ERROR, SKIPPED (there was no balance to charge) 							RefNum – If charge was successful, this is the reference number passed back by the merchant account 							Message – Error message for the transaction, if any 						 									</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="contactId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the contact this subscription will be connected with</doc>
+						</param>
+											<param name="allowDuplicate" type="xsd:boolean" style="query" required="true">
+								<doc>If duplicate subscriptions should be allowed</doc>
+						</param>
+											<param name="cProgramId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the subscription you are adding. This is from the cProgram table</doc>
+						</param>
+											<param name="qty" type="xsd:integer" style="query" required="true">
+								<doc>Quantity of this service/product price - price charged per quantity</doc>
+						</param>
+											<param name="price" type="xsd:double" style="query" required="true">
+								<doc>Price to charge for the subscription</doc>
+						</param>
+											<param name="taxable" type="xsd:boolean" style="query" required="true">
+								<doc>If tax should be charged on this subscription</doc>
+						</param>
+											<param name="merchantAccountId" type="xsd:integer" style="query" required="true">
+								<doc>The merchant account this subscription will bill through</doc>
+						</param>
+											<param name="creditCardId" type="xsd:integer" style="query" required="true">
+								<doc>The Id of the credit card this subscription will charge to</doc>
+						</param>
+											<param name="affiliateId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number for the affiliate being placed as the sale affiliate. 0 if no affiliate</doc>
+						</param>
+											<param name="daysTillCharge" type="xsd:integer" style="query" required="true">
+								<doc>The number of days until this subscription should be charged. Essentially free trial days</doc>
+						</param>
+								</request>
+			</method>
+						<method id="createInvoiceForRecurring" name="POST" apigee:displayName="createInvoiceForRecurring">
+				<apigee:tags>
+					<apigee:tag primary="true">InvoiceService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="InvoiceService.createInvoiceForRecurring" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/invoiceservice.html#createInvoiceForRecurring">
+					Deletes the specified subscription from the database, as well as all invoices tied to the subscription				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="recurringOrderId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the recurringOrder(subscription record) this override is being applied to</doc>
+						</param>
+											<param name="affiliateId" type="xsd:integer" style="query" required="true">
+								<doc>The Id of the affiliate earning this commission</doc>
+						</param>
+											<param name="amount" type="xsd:double" style="query" required="true">
+								<doc>The commission amount being earned</doc>
+						</param>
+											<param name="payoutType" type="xsd:integer" style="query" required="true">
+								<doc>How the commissions will be earned. 4 - up front earning, 5 - upon customer payment. Typically this is 5</doc>
+						</param>
+											<param name="description" type="xsd:string" style="query" required="true">
+								<doc>A short note about this commission override.</doc>
+						</param>
+								</request>
+			</method>
+						<method id="addManualPayment" name="POST" apigee:displayName="addManualPayment">
+				<apigee:tags>
+					<apigee:tag primary="true">InvoiceService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="InvoiceService.addManualPayment" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/invoiceservice.html#addManualPayment">
+					(boolean) True/False				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="recurringOrderId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number for the particular subscription you want invoiced</doc>
+						</param>
+								</request>
+			</method>
+						<method id="addPaymentPlan" name="POST" apigee:displayName="addPaymentPlan">
+				<apigee:tags>
+					<apigee:tag primary="true">InvoiceService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="InvoiceService.addPaymentPlan" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/invoiceservice.html#addPaymentPlan">
+					Creates a subscription for a contact. Subscriptions are billing automatically by Infusionsoft within the next six hours. If you want to bill immediately you will need to utilize the InvoiceService.createInvoiceForRecurring and InvoiceService.chargeInvoice methods to accomplish this.				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="invoiceId" type="xsd:integer" style="query" required="true">
+								<doc>The Id of invoice being paid</doc>
+						</param>
+											<param name="amt" type="xsd:double" style="query" required="true">
+								<doc>The amount of this payment</doc>
+						</param>
+											<param name="paymentDate" type="xsd:dateTime" style="query" required="true">
+								<doc>Date of payment</doc>
+						</param>
+											<param name="paymentType" type="xsd:string" style="query" required="true">
+								<doc>Cash, Check, Credit Card, Money Order, PayPal, etc.</doc>
+						</param>
+											<param name="paymentDescription" type="xsd:string" style="query" required="true">
+								<doc>An area useful for noting payment details such as a check number</doc>
+						</param>
+											<param name="bypassCommissions" type="xsd:boolean" style="query" required="true">
+								<doc>A boolean which tells the system if this payment should count towards what the affiliate has earned. This is almost always false.</doc>
+						</param>
+								</request>
+			</method>
+						<method id="calculateAmountOwed" name="POST" apigee:displayName="calculateAmountOwed">
+				<apigee:tags>
+					<apigee:tag primary="true">InvoiceService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="InvoiceService.calculateAmountOwed" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/invoiceservice.html#calculateAmountOwed">
+					(int) Id of the newly created Subscription				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="invoiceId" type="xsd:integer" style="query" required="true">
+								<doc>The Id of the invoice this payment plan is fo</doc>
+						</param>
+											<param name="autoCharge" type="xsd:boolean" style="query" required="true">
+								<doc>If the auto-charge for this pay plan should be enabled or disabled</doc>
+						</param>
+											<param name="creditCardId" type="xsd:integer" style="query" required="true">
+								<doc>Credit card being charged for this pay plan</doc>
+						</param>
+											<param name="merchantAccountId" type="xsd:integer" style="query" required="true">
+								<doc>Merchant account this pay plan will charge through</doc>
+						</param>
+											<param name="daysBetweenRetry" type="xsd:integer" style="query" required="true">
+								<doc>The number of days Infusionsoft should wait before re-attempting to charge a failed payment</doc>
+						</param>
+											<param name="maxRetry" type="xsd:integer" style="query" required="true">
+								<doc>The maximum number of times Infusionsoft should retry a failed payment</doc>
+						</param>
+											<param name="initialPmtAmt" type="xsd:double" style="query" required="true">
+								<doc>The amount of the very first charge on this payment plan</doc>
+						</param>
+											<param name="initialPmtDate" type="xsd:dateTime" style="query" required="true">
+								<doc>The date the first payment should occur</doc>
+						</param>
+											<param name="planStartDate" type="xsd:dateTime" style="query" required="true">
+								<doc>The date the second payment should occur for the payment plan</doc>
+						</param>
+											<param name="numPmts" type="xsd:integer" style="query" required="true">
+								<doc>The number of payments in this payment plan. This does not include the original/first payment</doc>
+						</param>
+											<param name="daysBetweenPmts" type="xsd:integer" style="query" required="true">
+								<doc>The number of days between payments in this payment plan. This first time this comes into play will be between the second and third payments</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getAllPaymentOptions" name="POST" apigee:displayName="getAllPaymentOptions">
+				<apigee:tags>
+					<apigee:tag primary="true">InvoiceService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="InvoiceService.getAllPaymentOptions" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/invoiceservice.html#getAllPaymentOptions">
+					Modifies the commissions being earned on a particular subscription. This does not affect previously generated invoices for this subscription.				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="invoiceId" type="xsd:integer" style="query" required="true">
+								<doc>The invoice Id number you would like amount owed for</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getPayments" name="POST" apigee:displayName="getPayments">
+				<apigee:tags>
+					<apigee:tag primary="true">InvoiceService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="InvoiceService.getPayments" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/invoiceservice.html#getPayments">
+					(boolean) True/False				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+								</request>
+			</method>
+						<method id="locateExistingCard" name="POST" apigee:displayName="locateExistingCard">
+				<apigee:tags>
+					<apigee:tag primary="true">InvoiceService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="InvoiceService.locateExistingCard" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/invoiceservice.html#locateExistingCard">
+					This will create an invoice for all charges due on a Subscription. If the subscription has three billing cycles that are due, it will create one invoice with all three items attached.				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="invoiceId" type="xsd:integer" style="query" required="true">
+								<doc>The Id of the invoice you would like payments for.</doc>
+						</param>
+								</request>
+			</method>
+						<method id="recalculateTax" name="POST" apigee:displayName="recalculateTax">
+				<apigee:tags>
+					<apigee:tag primary="true">InvoiceService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="InvoiceService.recalculateTax" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/invoiceservice.html#recalculateTax">
+					(int) the Id of the invoice that was created, or zero if the subscription failed to generate any invoices (none due)				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="contactId" type="xsd:integer" style="query" required="true">
+								<doc>The contact Id number for which you would like to find the credit card for</doc>
+						</param>
+											<param name="last4" type="xsd:integer" style="query" required="true">
+								<doc>The last 4 digits of the card you need the Id number for</doc>
+						</param>
+								</request>
+			</method>
+						<method id="validateCreditCard" name="POST" apigee:displayName="validateCreditCard">
+				<apigee:tags>
+					<apigee:tag primary="true">InvoiceService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="InvoiceService.validateCreditCard" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/invoiceservice.html#validateCreditCard">
+					Adds a payment to an invoice without actually processing a charge through a merchant. This is useful if you accept cash/check, or handle payments outside of Infusionsoft.				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="invoiceId" type="xsd:integer" style="query" required="true">
+								<doc>The id of the invoice you want to calculate tax on</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getAllShippingOptions" name="POST" apigee:displayName="getAllShippingOptions">
+				<apigee:tags>
+					<apigee:tag primary="true">InvoiceService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="InvoiceService.getAllShippingOptions" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/invoiceservice.html#getAllShippingOptions">
+					(boolean) True/False				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="creditCardId" type="xsd:integer" style="query" required="true">
+								<doc>The Infusionsoft ID number of an existing credit card</doc>
+						</param>
+								</request>
+			</method>
+						<method id="updateJobRecurringNextBillDate" name="POST" apigee:displayName="updateJobRecurringNextBillDate">
+				<apigee:tags>
+					<apigee:tag primary="true">InvoiceService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="InvoiceService.updateJobRecurringNextBillDate" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/invoiceservice.html#updateJobRecurringNextBillDate">
+					Allows you to setup a custom payment plan for an invoice.				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="CardType" type="xsd:integer" style="query" required="true">
+								<doc>Credit card type (Visa, American Express, etc)</doc>
+						</param>
+											<param name="ContactId" type="xsd:integer" style="query" required="true">
+								<doc>The Id of a contact to own the credit card</doc>
+						</param>
+											<param name="CardNumber" type="xsd:integer" style="query" required="true">
+								<doc>Credit card number</doc>
+						</param>
+											<param name="ExpirationMonth" type="xsd:integer" style="query" required="true">
+								<doc>Two digit expiration month</doc>
+						</param>
+											<param name="ExpirationYear" type="xsd:integer" style="query" required="true">
+								<doc>Four digit expiration year</doc>
+						</param>
+											<param name="CVV2" type="xsd:integer" style="query" required="true">
+								<doc>Card security code</doc>
+						</param>
+								</request>
+			</method>
+						<method id="addOrderCommissionOverride" name="POST" apigee:displayName="addOrderCommissionOverride">
+				<apigee:tags>
+					<apigee:tag primary="true">InvoiceService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="InvoiceService.addOrderCommissionOverride" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/invoiceservice.html#addOrderCommissionOverride">
+					(boolean) True/False				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+								</request>
+			</method>
+					</resource>
+			<resource path="ProductService.{methodName}">
+						<method id="getInventory" name="POST" apigee:displayName="getInventory">
+				<apigee:tags>
+					<apigee:tag primary="true">ProductService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ProductService.getInventory" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/productservice.html#getInventory">
+					Returns a product inventory provided the Id				</doc>
+				<request>
+										<param name="Key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="productId" type="xsd:integer" style="query" required="true">
+								<doc>id of the product</doc>
+						</param>
+								</request>
+			</method>
+						<method id="incrementInventory" name="POST" apigee:displayName="incrementInventory">
+				<apigee:tags>
+					<apigee:tag primary="true">ProductService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ProductService.incrementInventory" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/productservice.html#incrementInventory">
+					Increments the inventory by one product, provided you pass the productId to increment withy				</doc>
+				<request>
+										<param name="Key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="productId" type="xsd:integer" style="query" required="true">
+								<doc>id of the product</doc>
+						</param>
+								</request>
+			</method>
+						<method id="decrementInventory" name="POST" apigee:displayName="decrementInventory">
+				<apigee:tags>
+					<apigee:tag primary="true">ProductService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ProductService.decrementInventory" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/productservice.html#decrementInventory">
+					Decrements the inventory by one product, provided you pass the productId to decrement with				</doc>
+				<request>
+										<param name="Key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="productId" type="xsd:integer" style="query" required="true">
+								<doc>id of the product</doc>
+						</param>
+								</request>
+			</method>
+						<method id="increaseInventory" name="POST" apigee:displayName="increaseInventory">
+				<apigee:tags>
+					<apigee:tag primary="true">ProductService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ProductService.increaseInventory" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/productservice.html#increaseInventory">
+					Increases the inventory with a particular product by the quantity you specify				</doc>
+				<request>
+										<param name="Key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="productId" type="xsd:integer" style="query" required="true">
+								<doc>id of the product</doc>
+						</param>
+											<param name="quantity" type="xsd:integer" style="query" required="true">
+								<doc>quantity to increase</doc>
+						</param>
+								</request>
+			</method>
+						<method id="decreaseInventory" name="POST" apigee:displayName="decreaseInventory">
+				<apigee:tags>
+					<apigee:tag primary="true">ProductService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ProductService.decreaseInventory" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/productservice.html#decreaseInventory">
+					Decreases the inventory with a particular product by the quantity you specify				</doc>
+				<request>
+										<param name="Key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="productId" type="xsd:integer" style="query" required="true">
+								<doc>id of the product</doc>
+						</param>
+											<param name="quantity" type="xsd:integer" style="query" required="true">
+								<doc>quantity to decrease</doc>
+						</param>
+								</request>
+			</method>
+						<method id="deactivateCreditCard" name="POST" apigee:displayName="deactivateCreditCard">
+				<apigee:tags>
+					<apigee:tag primary="true">ProductService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ProductService.deactivateCreditCard" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/productservice.html#deactivateCreditCard">
+					Deactivates the specified Credit Card				</doc>
+				<request>
+										<param name="Key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="creditCardId" type="xsd:integer" style="query" required="true">
+								<doc>id of the credit card</doc>
+						</param>
+								</request>
+			</method>
+					</resource>
+			<resource path="SearchService.{methodName}">
+						<method id="getAllReportColumns" name="POST" apigee:displayName="getAllReportColumns">
+				<apigee:tags>
+					<apigee:tag primary="true">SearchService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="SearchService.getAllReportColumns" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/searchservice.html#getAllReportColumns">
+					Note** that in order to retrieve the Id number for saved searches you will need to utilize the DataService.query method and query the table called SavedFilter based on the UserId you are looking for the saved search Id for. Also note that UserId field on the SavedFilter table can contain multiple userId's separated by a comma, so if you are querying for a report created by userId 6, I recommend appending the wildcard to the end of the userId. Something like $query = array( 'UserId' => '6%' );				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="savedSearchId" type="xsd:integer" style="query" required="true">
+								<doc>The Id of the saved search you would like columns for</doc>
+						</param>
+											<param name="userId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the user who created the saved search</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getSavedSearchResultsAllFields" name="POST" apigee:displayName="getSavedSearchResultsAllFields">
+				<apigee:tags>
+					<apigee:tag primary="true">SearchService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="SearchService.getSavedSearchResultsAllFields" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/searchservice.html#getSavedSearchResultsAllFields">
+					Gets all possible fields/columns available for return on a saved search/report				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="savedSearchId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the saved search being run</doc>
+						</param>
+											<param name="userId" type="xsd:integer" style="query" required="true">
+								<doc>The userId who the saved search is assigned to. If it is 'Everyone', you still need to pass a valid userId</doc>
+						</param>
+											<param name="pageNumber" type="xsd:integer" style="query" required="true">
+								<doc>The page you would like results from. Zero is the first page</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getAvailableQuickSearches" name="POST" apigee:displayName="getAvailableQuickSearches">
+				<apigee:tags>
+					<apigee:tag primary="true">SearchService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="SearchService.getAvailableQuickSearches" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/searchservice.html#getAvailableQuickSearches">
+					(struct) An array of fields available for returns when using the SearchService.getSavedSearchResults method				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="userId" type="xsd:integer" style="query" required="true">
+								<doc>The userId you are checking access for</doc>
+						</param>
+								</request>
+			</method>
+						<method id="quickSearch" name="POST" apigee:displayName="quickSearch">
+				<apigee:tags>
+					<apigee:tag primary="true">SearchService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="SearchService.quickSearch" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/searchservice.html#quickSearch">
+					Runs a saved search/report and returns all possible fields				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="quickSearchType" type="xsd:integer" style="query" required="true">
+								<doc>The type of search you are running. Person, Order, Opportunity, Company, Task, Subscription, or Affiliate</doc>
+						</param>
+											<param name="userId" type="xsd:integer" style="query" required="true">
+								<doc>The Id number of the user running this search. Results are dependent on this users' permissions</doc>
+						</param>
+											<param name="searchData" type="xsd:integer" style="query" required="true">
+								<doc>String to run the search based on</doc>
+						</param>
+											<param name="page" type="xsd:integer" style="query" required="true">
+								<doc>The page of results you would like returned</doc>
+						</param>
+											<param name="returnLimit" type="xsd:integer" style="query" required="true">
+								<doc>Number of results returned. Max is 1000</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getDefaultQuickSearch" name="POST" apigee:displayName="getDefaultQuickSearch">
+				<apigee:tags>
+					<apigee:tag primary="true">SearchService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="SearchService.getDefaultQuickSearch" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/searchservice.html#getDefaultQuickSearch">
+					(struct) results of the given saved search				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+								</request>
+			</method>
+					</resource>
+			<resource path="ShippingService.{methodName}">
+						<method id="getFlatRateShippingOption" name="POST" apigee:displayName="getFlatRateShippingOption">
+				<apigee:tags>
+					<apigee:tag primary="true">ShippingService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ShippingService.getFlatRateShippingOption" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/shippingservice.html#getFlatRateShippingOption">
+					Returns the options and values of the flat rate shipping option provided				</doc>
+				<request>
+										<param name="Key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="optionId" type="xsd:integer" style="query" required="true">
+								<doc>The Id for the shipping option</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getOrderTotalShippingOption" name="POST" apigee:displayName="getOrderTotalShippingOption">
+				<apigee:tags>
+					<apigee:tag primary="true">ShippingService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ShippingService.getOrderTotalShippingOption" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/shippingservice.html#getOrderTotalShippingOption">
+					Returns the options and values of the order total shipping option provided				</doc>
+				<request>
+										<param name="Key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="optionId" type="xsd:integer" style="query" required="true">
+								<doc>The Id for the shipping option</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getOrderTotalShippingRanges" name="POST" apigee:displayName="getOrderTotalShippingRanges">
+				<apigee:tags>
+					<apigee:tag primary="true">ShippingService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ShippingService.getOrderTotalShippingRanges" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/shippingservice.html#getOrderTotalShippingRanges">
+					Returns the options and values of the order total shipping ranges option provided				</doc>
+				<request>
+										<param name="Key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="optionId" type="xsd:integer" style="query" required="true">
+								<doc>The Id for the shipping option</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getProductBasedShippingOption" name="POST" apigee:displayName="getProductBasedShippingOption">
+				<apigee:tags>
+					<apigee:tag primary="true">ShippingService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ShippingService.getProductBasedShippingOption" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/shippingservice.html#getProductBasedShippingOption">
+					Returns the options and values of the product based shipping option provided				</doc>
+				<request>
+										<param name="Key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="optionId" type="xsd:integer" style="query" required="true">
+								<doc>The Id for the shipping option</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getOrderQuantityShippingOption" name="POST" apigee:displayName="getOrderQuantityShippingOption">
+				<apigee:tags>
+					<apigee:tag primary="true">ShippingService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ShippingService.getOrderQuantityShippingOption" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/shippingservice.html#getOrderQuantityShippingOption">
+					Returns the options and values of the order quantity shipping option provided				</doc>
+				<request>
+										<param name="Key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="optionId" type="xsd:integer" style="query" required="true">
+								<doc>The Id for the shipping option</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getWeightBasedShippingOption" name="POST" apigee:displayName="getWeightBasedShippingOption">
+				<apigee:tags>
+					<apigee:tag primary="true">ShippingService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ShippingService.getWeightBasedShippingOption" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/shippingservice.html#getWeightBasedShippingOption">
+					Returns the options and values of the weight based shipping option provided				</doc>
+				<request>
+										<param name="Key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="optionId" type="xsd:integer" style="query" required="true">
+								<doc>The Id for the shipping option</doc>
+						</param>
+								</request>
+			</method>
+						<method id="getUpsShippingOption" name="POST" apigee:displayName="getUpsShippingOption">
+				<apigee:tags>
+					<apigee:tag primary="true">ShippingService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="ShippingService.getUpsShippingOption" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/shippingservice.html#getUpsShippingOption">
+					Returns the options and values of the ups shipping option provided				</doc>
+				<request>
+										<param name="Key" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+											<param name="optionId" type="xsd:integer" style="query" required="true">
+								<doc>The Id for the shipping option</doc>
+						</param>
+								</request>
+			</method>
+					</resource>
+			<resource path="WebFormService.{methodName}">
+						<method id="getMap" name="POST" apigee:displayName="getMap">
+				<apigee:tags>
+					<apigee:tag primary="true">WebFormService</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example url="WebFormService.getMap" />
+				<doc title="" apigee:url="http://help.infusionsoft.com/api/webformservice.html#getMap">
+					This retrieves the web form names and Id numbers from the application.				</doc>
+				<request>
+										<param name="privateKey" type="xsd:string" style="query" required="true">
+								<doc>Your Infusionsoft API key</doc>
+						</param>
+								</request>
+			</method>
+					</resource>
+		</resources>
+</application>
