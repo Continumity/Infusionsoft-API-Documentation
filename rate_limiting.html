@@ -43,7 +43,7 @@
 						<h1>API Rate Limiting <small>how the Infusionsoft rate limiting works</small></h1>
 					</div>
 					<p>The API throttling is a credit-based system with bursting capabilities and built-in protection against thread starvation issues. 
-					Below are the parameters that affect how the API throttling works</p>
+					Below are the parameters that affect how the API throttling works:</p>
 					<table class="table table-striped">
 						<thead>
 							<tr>
@@ -69,28 +69,28 @@
 					<h4>Bullets</h4>
 					<ul>
 						<li>Applications start with 0 credits</li>
-						<li>Every 500ms with no API traffic the application accumulates 1 credit</li>
-						<li>Each API request cost the application 1 credit</li>
+						<li>For every 500ms with no API traffic, the application accumulates 1 credit</li>
+						<li>Each API request costs the application 1 credit</li>
 					</ul>
-					<h4>Detailed Explenation</h4>
-					<p>First thing to keep in mind when learning about the Infusionsoft rate limiting system is that throttling happens only for the app, and not the API client.
-					For example, if a customer has purchased 3 add-ons, each of the add-ons must compete with the others for the API credits.</p>
-					<p>So the application starts with 0 credits, and every 500ms the application has no API traffic a credit is rewarded. 
-					If nothing happends for about 16 minutes then the application will reach the max number of credits that can be accumulated, which is 2000.
-					Now, let's suppose they start a large sync of their database (10,000 records).  
-					Their API client will blow through the 2000 accumulated credits as fast as they can until they hit zero.  
-					Once they hit zero, they will have to wait for 500ms to earn a new credit.  
-					Each subsequent call will be blocked (on the Infusionsoft side) until 500ms has passed from the time the previous api call was completed.  
+					<h4>Detailed Explanation</h4>
+					<p>First thing to keep in mind when learning about the Infusionsoft rate limiting system is that throttling happens only for the app, not for the API client.
+					For example, if a customer purchases 3 add-ons, each of the add-ons must compete with the others for the API credits.</p>
+					<p>Every application starts with 0 credits. For every 500ms the application does not get any API traffic, one credit is rewarded. 
+					If nothing happends after about 16 minutes, the application will reach its max number of allowed credits (max credits will always be 2,000).</p>
+					<p>Now, let's suppose the customer starts with a large sync of his database. In this example, we'll start with 10,000 records.  
+					The customer's API client will blow through the 2,000 accumulated credits as fast as it can until credits hit zero.  
+					Once it hits zero, the customer will have to wait for 500ms to earn one new credit.  
+					Each subsequent call will be blocked (on the Infusionsoft side) until 500ms has passed from the most recently completed API call.  
 					In essence, it will appear to the API client that each call is taking exactly 500ms (plus/minus network latency).  
 					As long as these calls are made in succession in a single thread, no API calls will be rejected.</p>
-					<p>As soon as you throw a second thread at it, it will appear to the API client that calls are now taking 1s apiece.  
+					<p>As soon as the customer throws a second thread at Infusionsoft's server, it will appear to the API client that calls are now taking one second a piece.  
 					This is due to the fact that there are twice as many threads competing for the same number of resources.  
 					In this circumstance, it is essentially guaranteed that both threads will end up blocked at the same time.  
 					This obviously poses a problem, as a customer could easily throw a couple hundred threads at the API and cause a thread starvation issue for the web server.</p>
-					<p>This is why we have a limit to the number of threads that can be throttled at any given time.  
-					Keep in mind, it's not the number of threads that can access the API at any given time – as long as they have the credits, they can use as many threads as they'd like.  
-					It's only when they start being throttled that we care.  
-					Currently, if there are 3 threads throttled and a 4th attempts to access the API – and there still isn't a credit available, the 4th will be rejected with an error message.</p>
+					<p>This is why Infusionsoft has a limit to the number of threads that can be throttled at any given time.  
+					Keep in mind, it's not the number of threads that can access the API at any given time – as long as the customer has credits, he can use as many threads as he'd like.  
+					It's only when the threads start being throttled that Infusionsoft starts limiting requests.  
+					Currently, if there are 3 threads throttled and a 4th attempts to access the API without available credits, the 4th attempt will be rejected with an error message.</p>
 				</div>
 			</div>
 		</div>
