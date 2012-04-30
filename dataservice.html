@@ -38,6 +38,7 @@
 							<li><a href="#delete">delete</a></li>
 							<li><a href="#findByField">findByField</a></li>
 							<li><a href="#getAppSetting">getAppSetting</a></li>
+							<li><a href="#getTemporaryKey">getTemporaryKey</a></li>
 							<li><a href="#load">load</a></li>
 							<li><a href="#update">update</a></li>
 							<li><a href="#updateCustomField">updateCustomField</a></li>
@@ -915,15 +916,33 @@ $contacts = $app->dsQuery("Contact",10,0,$query,$returnFields);</pre>
 					<p>Return: (string) a temporary API key</p>
 					
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">
-</pre>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+   &lt;methodName&gt;DataService.getTemporaryKey&lt;/methodName&gt;
+      &lt;params&gt;
+         &lt;param&gt;
+            &lt;value&gt;&lt;string&gt;c94a1f2b395a9ab97d4263b37f7b0923&lt;/string&gt;&lt;/value&gt;
+         &lt;/param&gt;
+         &lt;param&gt;
+            &lt;value&gt;&lt;string&gt;chris@vuurr.com&lt;/string&gt;&lt;/value&gt;
+         &lt;/param&gt;
+         &lt;param&gt;
+            &lt;value&gt;&lt;string&gt;182b4b18f3716549bbb28eccb5400074&lt;/string&gt;&lt;/value&gt;
+         &lt;/param&gt;
+      &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
 					<pre class="prettyprint">
 </pre>
 	
 					<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint">
+					<pre class="prettyprint">$carray = array(
+php_xmlrpc_encode($app->key),
+php_xmlrpc_encode("user"),
+php_xmlrpc_encode(md5("password")));
+
+$app->methodCaller("DataService.getTemporaryKey",$carray);
 </pre>
 					
 					
