@@ -36,24 +36,25 @@
 							<li><a href="emailservice.html">EmailService</a></li>
 							<li><a href="fileservice.html">FileService</a></li>
 							<li class="nav-header active"><a href="invoiceservice.html">InvoiceService</a></li>
-							<li><a href="#createBlankOrder">createBlankOrder</a></li>
+							<li><a href="#addManualPayment">addManualPayment</a></li>
+							<li><a href="#addOrderCommissionOverride">addOrderCommissionOverride</a></li>
 							<li><a href="#addOrderItem">addOrderItem</a></li>
-							<li><a href="#chargeInvoice">chargeInvoice</a></li>
-							<li><a href="#deleteSubscription">deleteSubscription</a></li>
+							<li><a href="#addPaymentPlan">addPaymentPlan</a></li>
 							<li><a href="#addRecurringOrder">addRecurringOrder</a></li>
 							<li><a href="#addRecurringCommissionOverride">addRecurringCommissionOverride</a></li>
-							<li><a href="#createInvoiceForRecurring">createInvoiceForRecurring</a></li>
-							<li><a href="#addManualPayment">addManualPayment</a></li>
-							<li><a href="#addPaymentPlan">addPaymentPlan</a></li>
 							<li><a href="#calculateAmountOwed">calculateAmountOwed</a></li>
+							<li><a href="#chargeInvoice">chargeInvoice</a></li>
+							<li><a href="#createBlankOrder">createBlankOrder</a></li>
+							<li><a href="#createInvoiceForRecurring">createInvoiceForRecurring</a></li>
+							<li><a href="#deleteSubscription">deleteInvoice</a></li>
+							<li><a href="#deleteSubscription">deleteSubscription</a></li>
 							<li><a href="#getAllPaymentOptions">getAllPaymentOptions</a></li>
+							<li><a href="#getAllShippingOptions">getAllShippingOptions</a></li>
 							<li><a href="#getPayments">getPayments</a></li>
 							<li><a href="#locateExistingCard">locateExistingCard</a></li>
 							<li><a href="#recalculateTax">recalculateTax</a></li>
-							<li><a href="#validateCreditCard">validateCreditCard</a></li>
-							<li><a href="#getAllShippingOptions">getAllShippingOptions</a></li>
 							<li><a href="#updateJobRecurringNextBillDate">updateJobRecurringNextBillDate</a></li>
-							<li><a href="#addOrderCommissionOverride">addOrderCommissionOverride</a></li>
+							<li><a href="#validateCreditCard">validateCreditCard</a></li>
 							<li class="divider"></li>
 							<li><a href="productservice.html">ProductService</a></li>
 							<li><a href="searchservice.html">SearchService</a></li>
@@ -539,6 +540,71 @@ $invoiceId = $app->blankOrder(123,"Some Cart Order", $oDate, 0, 187);</pre>
 	
 										<h3>PHP iSDK Sample</h3>
 					<pre class="prettyprint">$result = $app->deleteSubscription($recurringOrderId);</pre>
+					
+					<!-- METHOD END -->
+					
+					<!-- METHOD START -->
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">InvoiceService.</span><span class="method"><a name="deleteInvoice">deleteInvoice</a></span>
+					</div>
+					
+					<p>This method is used when you would like to delete an order (not a subscription). You pass in the invoice for this particular order, and the method handles deleting the invoice as well as the order (Job table) tied to the invoice.</p>
+
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key</td>
+							</tr>
+							<tr>
+								<td>invoiceId</td>
+								<td>int</td>
+								<td>The Id of the invoice</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>(boolean) True/False</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;InvoiceService.deleteInvoice&lt;/methodName&gt;
+	&lt;params&gt;
+	  &lt;param&gt;
+	     &lt;value&gt;&lt;string&gt;c94a1f2b395a9ab97d4263b37f7b0923&lt;/string&gt;&lt;/value&gt;
+	  &lt;/param&gt;
+	  &lt;param&gt;
+	     &lt;value&gt;&lt;int&gt;6&lt;/int&gt;&lt;/value&gt;
+	  &lt;/param&gt;
+	&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;methodResponse&gt;
+    &lt;params&gt;
+        &lt;param&gt;
+            &lt;value&gt;
+                &lt;boolean&gt;1&lt;/boolean&gt;
+            &lt;/value&gt;
+        &lt;/param&gt;
+    &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+										<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$invoiceId = 1;
+$result = $app->deleteInvoice($invoiceId);</pre>
 					
 					<!-- METHOD END -->
 					
