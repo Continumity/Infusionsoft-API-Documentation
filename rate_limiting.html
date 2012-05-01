@@ -88,7 +88,7 @@
 					In this circumstance, it is essentially guaranteed that both threads will end up blocked at the same time.  
 					This obviously poses a problem, as a customer could easily throw a couple hundred threads at the API and cause a thread starvation issue for the web server.</p>
 					<p>This is why Infusionsoft has a limit to the number of threads that can be throttled at any given time.  
-					Keep in mind, it's not the number of threads that can access the API at any given time – as long as the customer has credits, he can use as many threads as he'd like.  
+					Keep in mind, it's not the number of threads that can access the API at any given time ï¿½ as long as the customer has credits, he can use as many threads as he'd like.  
 					It's only when the threads start being throttled that Infusionsoft starts limiting requests.  
 					Currently, if there are 3 threads throttled and a 4th attempts to access the API without available credits, the 4th attempt will be rejected with an error message.</p>
 				</div>
