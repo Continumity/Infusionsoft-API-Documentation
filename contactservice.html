@@ -36,6 +36,7 @@
 							<li><a href="#addToGroup">addToGroup</a></li>
 							<li><a href="#findByEmail">findByEmail</a></li>
 							<li><a href="#load">load</a></li>
+							<li><a href="#merge">merge</a></li>
 							<li><a href="#getNextCampaignStep">getNextCampaignStep</a></li>
 							<li><a href="#pauseCampaign">pauseCampaign</a></li>
 							<li><a href="#removeFromCampaign">removeFromCampaign</a></li>
@@ -129,6 +130,75 @@
                 'Email'     => 'JDoe@email.com');
 
 $conID = $app->addCon($conDat);</pre>
+
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">ContactService.</span><span class="method"><a name="merge">merge</a></span>
+					</div>
+					
+					<p>Merge two contacts together</p>
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key</td>
+							</tr>
+							<tr>
+								<td>contactId</td>
+								<td>int</td>
+								<td>the contact Id number you want to merge</td>
+							</tr>
+							<tr>
+								<td>duplicateContactId</td>
+								<td>int</td>
+								<td>the Id of the duplicate contact you would like to merge</td>
+							</tr>
+						</tbody>
+					</table>
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+	&lt;methodName&gt;ContactService.merge&lt;/methodName&gt;
+	&lt;params&gt;
+		&lt;param&gt;
+			&lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+		&lt;/param&gt;
+		&lt;param&gt;
+			&lt;value&gt;&lt;int&gt;contactId&lt;/int&gt;&lt;/value&gt;
+		&lt;/param&gt;
+		&lt;param&gt;
+			&lt;value&gt;&lt;int&gt;duplicateContactId&lt;/int&gt;&lt;/value&gt;
+		&lt;/param&gt;
+	&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;methodResponse&gt;
+    &lt;params&gt;
+        &lt;param&gt;
+            &lt;value&gt;
+                &lt;boolean&gt;1&lt;/boolean&gt;
+            &lt;/value&gt;
+        &lt;/param&gt;
+    &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+										<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$carray = array(
+php_xmlrpc_encode($app->key),
+php_xmlrpc_encode(16),
+php_xmlrpc_encode(24));
+
+$app->methodCaller("ContactService.merge",$carray);</pre>
 
 					<hr>
 					
