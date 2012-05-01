@@ -37,6 +37,7 @@
 							<li><a href="#authenticateUser">authenticateUser</a></li>
 							<li><a href="#delete">delete</a></li>
 							<li><a href="#findByField">findByField</a></li>
+							<li><a href="#getAppointmentCal">getAppointmentCal</a></li>
 							<li><a href="#getAppSetting">getAppSetting</a></li>
 							<li><a href="#getTemporaryKey">getTemporaryKey</a></li>
 							<li><a href="#load">load</a></li>
@@ -881,6 +882,69 @@ $contacts = $app->dsQuery("Contact",10,0,$query,$returnFields);</pre>
 					
 					<hr>
 					
+										<div class="full_method">
+						<span class="collection">DataService.</span><span class="method"><a name="getAppointmentCal">getAppointmentCal</a></span>
+					</div>
+					<p>Returns an iCalendar entry for the given appointment</p>
+					
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key</td>
+							</tr>
+							<tr>
+								<td>appointmentId</td>
+								<td>int</td>
+								<td>The id of the appointment you want the calendar for</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>Returns an iCalendar entry for the given appointment</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+   &lt;methodName&gt;DataService.getAppointmentICal&lt;/methodName&gt;
+      &lt;params&gt;
+         &lt;param&gt;
+            &lt;value&gt;&lt;string&gt;c94a1f2b395a9ab97d4263b37f7b0923&lt;/string&gt;&lt;/value&gt;
+         &lt;/param&gt;
+         &lt;param&gt;
+            &lt;value&gt;&lt;int&gt;2&lt;/int&gt;&lt;/value&gt;
+         &lt;/param&gt;
+       &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;methodResponse&gt;
+    &lt;params&gt;
+        &lt;param&gt;
+            &lt;value&gt;BEGIN:VCALENDAR PRODID:-//Infusionsoft//iCal4j 1.0//EN VERSION:2.0 CALSCALE:GREGORIAN BEGIN:VEVENT DTSTAMP:20120430T235728Z DTSTART:20120430T181500Z DTEND:20120430T184500Z SUMMARY:blah UID:20120430T235728Z-vuurr24@fe80:0:0:0:d6be:d9ff:feaa:f495%3 DESCRIPTION: ORGANIZER;ROLE=REQ-PARTICIPANT;CN=Chris Conrey:mailto:chris@vuurr.com END:VEVENT END:VCALENDAR&lt;/value&gt;
+        &lt;/param&gt;
+    &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+					<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$carray = array(
+php_xmlrpc_encode($app->key),
+php_xmlrpc_encode(2));
+
+$app->methodCaller("DataService.getAppointmentICal",$carray);</pre>
+					
+					
+					<hr>
+					
 					<div class="full_method">
 						<span class="collection">DataService.</span><span class="method"><a name="getTemporaryKey">getTemporaryKey</a></span>
 					</div>
@@ -921,13 +985,13 @@ $contacts = $app->dsQuery("Contact",10,0,$query,$returnFields);</pre>
    &lt;methodName&gt;DataService.getTemporaryKey&lt;/methodName&gt;
       &lt;params&gt;
          &lt;param&gt;
-            &lt;value&gt;&lt;string&gt;c94a1f2b395a9ab97d4263b37f7b0923&lt;/string&gt;&lt;/value&gt;
+            &lt;value&gt;&lt;string&gt;vendorKey&lt;/string&gt;&lt;/value&gt;
          &lt;/param&gt;
          &lt;param&gt;
-            &lt;value&gt;&lt;string&gt;chris@vuurr.com&lt;/string&gt;&lt;/value&gt;
+            &lt;value&gt;&lt;string&gt;username&lt;/string&gt;&lt;/value&gt;
          &lt;/param&gt;
          &lt;param&gt;
-            &lt;value&gt;&lt;string&gt;182b4b18f3716549bbb28eccb5400074&lt;/string&gt;&lt;/value&gt;
+            &lt;value&gt;&lt;string&gt;passwordHash&lt;/string&gt;&lt;/value&gt;
          &lt;/param&gt;
       &lt;/params&gt;
 &lt;/methodCall&gt;</pre>
