@@ -1058,14 +1058,50 @@ $result = $app->runAS($contactId, $actionId);</pre>
 						</tbody>
 					</table>
 					<h3>Sample Request</h3>
-					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-</pre>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+	&lt;methodName&gt;ContactService.addWithDupCheck&lt;/methodName&gt;
+		&lt;params&gt;
+			&lt;param&gt;
+				&lt;value&gt;&lt;string&gt;c94a1f2b395a9ab97d4263b37f7b0923&lt;/string&gt;&lt;/value&gt;
+			&lt;/param&gt;
+			&lt;param&gt;
+				&lt;value&gt;
+					&lt;struct&gt;
+						&lt;member&gt;
+							&lt;name&gt;FirstName&lt;/name&gt;
+							&lt;value&gt;&lt;string&gt;mytest&lt;/string&gt;&lt;/value&gt;
+						&lt;/member&gt;
+						&lt;member&gt;
+							&lt;name&gt;LastName&lt;/name&gt;
+							&lt;value&gt;&lt;string&gt;duh&lt;/string&gt;&lt;/value&gt;
+						&lt;/member&gt;
+						&lt;member&gt;
+							&lt;name&gt;Email&lt;/name&gt;
+							&lt;value&gt;&lt;string&gt;me@testingthis.com&lt;/string&gt;&lt;/value&gt;
+						&lt;/member&gt;
+					&lt;/struct&gt;
+				&lt;/value&gt;
+			&lt;/param&gt;
+			&lt;param&gt;
+				&lt;value&gt;&lt;string&gt;EmailAndName&lt;/string&gt;&lt;/value&gt;
+			&lt;/param&gt;
+		&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
 <h3>Sample Response</h3>
-<pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
-</pre>
+<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;methodResponse&gt;
+    &lt;params&gt;
+        &lt;param&gt;
+            &lt;value&gt;
+                &lt;i4&gt;40&lt;/i4&gt;
+            &lt;/value&gt;
+        &lt;/param&gt;
+    &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
 	
 					<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint"></pre>
+					<pre class="prettyprint">$app->addWithDupCheck(array('FirstName' => 'test', 'LastName' => 'test', 'Email' => 'test@test.com'), 'EmailAndName');</pre>
 					
 					
 					
