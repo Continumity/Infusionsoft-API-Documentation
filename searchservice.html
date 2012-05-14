@@ -42,6 +42,7 @@
 							<li><a href="#getAvailableQuickSearches">getAvailableQuickSearches </a></li>
 							<li><a href="#getDefaultQuickSearch">getDefaultQuickSearch</a></li>
 							<li><a href="#getSavedSearchResultsAllFields">getSavedSearchResultsAllFields</a></li>
+							<li><a href="#getSavedSearchResults">getSavedSearchResults</a></li>
 							<li><a href="#quickSearch">quickSearch</a></li>
 							<li class="divider"></li>
 							<li><a href="shippingservice.html">ShippingService</a></li>
@@ -726,7 +727,238 @@ $results = $app->getAvailableFields($savedSearchId, $userId);</pre>
 					<pre class="prettyprint">$savedSearchId = 5;
 $userId = 34;
 $results = $app->savedSearchAllFields($savedSearchId, $userId, 0);</pre>
+			
+					<hr>
 					
+					<div class="full_method">
+						<span class="collection">SearchService.</span><span class="method"><a name="getSavedSearchResults">getSavedSearchResults</a></span>
+					</div>
+					<p>Runs a saved search/report returning only the specified fields</p>
+					
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key</td>
+							</tr>
+							<tr>
+								<td>savedSearchId</td>
+								<td>int</td>
+								<td>The Id number of the saved search being run</td>
+							</tr>
+							<tr>
+								<td>userId</td>
+								<td>int</td>
+								<td>The userId who the saved search is assigned to. If it is 'Everyone', you still need to pass a valid userId</td>
+							</tr>
+							<tr>
+								<td>pageNumber</td>
+								<td>int</td>
+								<td>The page you would like results from. Zero is the first page</td>
+							</tr>
+							<tr>
+								<td>returnFields</td>
+								<td>array</td>
+								<td>The fields/columns of data you want returned from this saved search</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>(struct) the specified fields for the given saved search/report</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+	&lt;methodName&gt;SearchService.getSavedSearchResults&lt;/methodName&gt;
+	&lt;params&gt;
+		&lt;param&gt;
+			&lt;value&gt;&lt;string&gt;c94a1f2b395a9ab97d4263b37f7b0923&lt;/string&gt;&lt;/value&gt;
+		&lt;/param&gt;
+		&lt;param&gt;
+			&lt;value&gt;&lt;int&gt;124&lt;/int&gt;&lt;/value&gt;
+		&lt;/param&gt;
+		&lt;param&gt;
+			&lt;value&gt;&lt;int&gt;1&lt;/int&gt;&lt;/value&gt;
+		&lt;/param&gt;
+		&lt;param&gt;
+			&lt;value&gt;&lt;int&gt;0&lt;/int&gt;&lt;/value&gt;
+		&lt;/param&gt;
+		&lt;param&gt;
+			&lt;value&gt;&lt;array&gt;
+			&lt;data&gt;
+				&lt;value&gt;&lt;string&gt;ContactId&lt;/string&gt;&lt;/value&gt;
+			&lt;/data&gt;
+			&lt;/array&gt;&lt;/value&gt;
+		&lt;/param&gt;
+	&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;array&gt;
+          &lt;data&gt;
+            &lt;value&gt;
+              &lt;struct&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    ContactId
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    &lt;i4&gt;
+                      12
+                    &lt;/i4&gt;
+                  &lt;/value&gt;
+                &lt;/member&gt;
+              &lt;/struct&gt;
+            &lt;/value&gt;
+            &lt;value&gt;
+              &lt;struct&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    ContactId
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    &lt;i4&gt;
+                      22
+                    &lt;/i4&gt;
+                  &lt;/value&gt;
+                &lt;/member&gt;
+              &lt;/struct&gt;
+            &lt;/value&gt;
+            &lt;value&gt;
+              &lt;struct&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    ContactId
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    &lt;i4&gt;
+                      38
+                    &lt;/i4&gt;
+                  &lt;/value&gt;
+                &lt;/member&gt;
+              &lt;/struct&gt;
+            &lt;/value&gt;
+            &lt;value&gt;
+              &lt;struct&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    ContactId
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    &lt;i4&gt;
+                      16
+                    &lt;/i4&gt;
+                  &lt;/value&gt;
+                &lt;/member&gt;
+              &lt;/struct&gt;
+            &lt;/value&gt;
+            &lt;value&gt;
+              &lt;struct&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    ContactId
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    &lt;i4&gt;
+                      26
+                    &lt;/i4&gt;
+                  &lt;/value&gt;
+                &lt;/member&gt;
+              &lt;/struct&gt;
+            &lt;/value&gt;
+            &lt;value&gt;
+              &lt;struct&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    ContactId
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    &lt;i4&gt;
+                      40
+                    &lt;/i4&gt;
+                  &lt;/value&gt;
+                &lt;/member&gt;
+              &lt;/struct&gt;
+            &lt;/value&gt;
+            &lt;value&gt;
+              &lt;struct&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    ContactId
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    &lt;i4&gt;
+                      28
+                    &lt;/i4&gt;
+                  &lt;/value&gt;
+                &lt;/member&gt;
+              &lt;/struct&gt;
+            &lt;/value&gt;
+            &lt;value&gt;
+              &lt;struct&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    ContactId
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    &lt;i4&gt;
+                      30
+                    &lt;/i4&gt;
+                  &lt;/value&gt;
+                &lt;/member&gt;
+              &lt;/struct&gt;
+            &lt;/value&gt;
+            &lt;value&gt;
+              &lt;struct&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    ContactId
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    &lt;i4&gt;
+                      36
+                    &lt;/i4&gt;
+                  &lt;/value&gt;
+                &lt;/member&gt;
+              &lt;/struct&gt;
+            &lt;/value&gt;
+            &lt;value&gt;
+              &lt;struct&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    ContactId
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    &lt;i4&gt;
+                      32
+                    &lt;/i4&gt;
+                  &lt;/value&gt;
+                &lt;/member&gt;
+              &lt;/struct&gt;
+            &lt;/value&gt;
+          &lt;/data&gt;
+        &lt;/array&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+					<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$rets = array('ContactId','FullName');
+$results = $app->savedSearch(326,6,0,$rets);</pre>			
 					
 					<hr>
 					
