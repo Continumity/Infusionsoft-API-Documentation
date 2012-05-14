@@ -1010,11 +1010,46 @@ $result = $app->grpRemove($contactId, $groupId);</pre>
 &lt;/methodCall&gt;
 </pre>
 <h3>Sample Response</h3>
-<pre class="prettyprint">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodResponse&gt;
   &lt;params&gt;
     &lt;param&gt;
-      &lt;value&gt;&lt;boolean&gt;0&lt;/boolean&gt;&lt;/value&gt;
+      &lt;value&gt;
+        &lt;array&gt;
+          &lt;data&gt;
+            &lt;value&gt;
+              &lt;struct&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    Action
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    Apply/Remove Tag
+                  &lt;/value&gt;
+                &lt;/member&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    Message
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    tags applied to Contact: Nurture Subscriber
+                  &lt;/value&gt;
+                &lt;/member&gt;
+                &lt;member&gt;
+                  &lt;name&gt;
+                    IsError
+                  &lt;/name&gt;
+                  &lt;value&gt;
+                    &lt;boolean&gt;
+                      0
+                    &lt;/boolean&gt;
+                  &lt;/value&gt;
+                &lt;/member&gt;
+              &lt;/struct&gt;
+            &lt;/value&gt;
+          &lt;/data&gt;
+        &lt;/array&gt;
+      &lt;/value&gt;
     &lt;/param&gt;
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
