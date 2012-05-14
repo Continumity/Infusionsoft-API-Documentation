@@ -154,23 +154,15 @@ $myUrl = $app->getFile($fileId);</pre>
 &lt;/methodCall&gt;</pre>
 
 					<h3>Sample Response</h3>
-					<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;methodResponse&gt;
-  &lt;fault&gt;
-    &lt;value&gt;
-      &lt;struct&gt;
-        &lt;member&gt;
-          &lt;name&gt;faultCode&lt;/name&gt;
-          &lt;value&gt;&lt;i4&gt;3&lt;/i4&gt;&lt;/value&gt;
-        &lt;/member&gt;
-        &lt;member&gt;
-          &lt;name&gt;faultString&lt;/name&gt;
-          &lt;value&gt;[Unexpected]Error getting download url: Access denied&lt;/value&gt;
-        &lt;/member&gt;
-      &lt;/struct&gt;
-    &lt;/value&gt;
-  &lt;/fault&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        https://d1yoaun8syyxxt.cloudfront.net/vuurr24-oyyiqfanmyqasnemdveoikolqesnxkxp-v2
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
 
 					<h3>PHP iSDK Sample</h3>
