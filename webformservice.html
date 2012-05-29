@@ -41,7 +41,7 @@
 							<li><a href="shippingservice.html">ShippingService</a></li>
 							<li class="nav-header active"><a href="webformservice.html">WebFormService</a></li>
 							<li><a href="#getMap">getMap</a></li>
-							<!--<li><a href="#getHTML">getHTML</a></li>-->
+							<li><a href="#getHTML">getHTML</a></li>
 							<li class="divider"></li>
 						</ul>
 					</div>
@@ -73,6 +73,8 @@
 							</tr>
 						</tbody>
 					</table>
+					<h3>Returns</h3>
+					<p>(array) the title and Id number for each web form within the system</p>
 					<h3>Sample Request</h3>
 					<pre class="prettyprint">
 &lt;?xml version='1.0' encoding='UTF-8'?&gt;
@@ -107,8 +109,161 @@
   &lt;/params&gt;
 &lt;/methodResponse&gt;</pre>
 	
-										<h3>PHP iSDK Sample</h3>
+					<h3>PHP iSDK Sample</h3>
 					<pre class="prettyprint">$map = $app->getWebFormMap();</pre>
+
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">WebFormService.</span><span class="method"><a name="getHTML">getHTML</a></span>
+					</div>
+					
+					<p>This retrieves the HTML for the given web form</p>
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key</td>
+							</tr>
+							<tr>
+								<td>webFormId</td>
+								<td>int</td>
+								<td>The Id to your web form</td>
+							</tr>
+						</tbody>
+					</table>
+					<h3>Returns</h3>
+					<p>(string) the HTML for this web form</p>
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;WebFormService.getHTML&lt;/methodName&gt;
+	&lt;params&gt;
+	&lt;param&gt;
+		&lt;value&gt;&lt;string&gt;c94a1f2b395a9ab97d4263b37f7b0923&lt;/string&gt;&lt;/value&gt;
+	&lt;/param&gt;
+	&lt;param&gt;
+		&lt;value&gt;&lt;int&gt;6&lt;/int&gt;&lt;/value&gt;
+	&lt;/param&gt;
+	&lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &amp;lt;html style=&quot;height:100%; margin:0;
+        padding:0&quot;&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta content=&quot;text/html; charset=UTF-8&quot;
+        http-equiv=&quot;Content-Type&quot; /&amp;gt;&amp;lt;style type=&quot;text/css&quot;&amp;gt;.beta-base
+        .preheader, .beta-base .header, .beta-base .sidebar, .beta-base .body,
+        .beta-base .footer, #mainContent { text-align: left; } .beta-base
+        .preheader, .beta-base .header, .beta-base .body, .beta-base .sidebar,
+        .beta-base .leftSidebar, .beta-base .rightSidebar, .beta-base .footer {
+        margin: 0; padding: 0; border: none; white-space: normal; line-height:
+        normal; } .beta-base .title, .beta-base .subtitle, .beta-base .text,
+        .beta-base img { margin: 0; padding: 0; background: none; border: none;
+        white-space: normal; line-height: normal; } .beta-base .bodyContainer
+        td.preheader{ padding: 10px 0; } .beta-base .bodyContainer td.header {
+        padding: 0; height: 30px; } .beta-base .bodyContainer td.body,
+        .beta-base .bodyContainer td.footer, .beta-base .bodyContainer
+        td.sidebar, .beta-base .bodyContainer td.leftSidebar, .beta-base
+        .bodyContainer td.rightSidebar { padding: 20px; } .beta-base
+        .bodyContainer td.header p, .beta-base .bodyContainer td.preheader p,
+        .beta-base .bodyContainer td.body p, .beta-base .bodyContainer td.footer
+        p, .beta-base .bodyContainer td.sidebar p, .beta-base .bodyContainer
+        td.leftSidebar p, .beta-base .bodyContainer td.rightSidebar p { margin:
+        0; color: inherit; } .beta-base .bodyContainer td.header div.title,
+        .beta-base .bodyContainer td.preheader div.title, .beta-base
+        .bodyContainer td.body div.title, .beta-base .bodyContainer td.footer
+        div.title, .beta-base .bodyContainer td.sidebar div.title, .beta-base
+        .bodyContainer td.leftSidebar div.title, .beta-base .bodyContainer
+        td.rightSidebar div.title, .beta-base .bodyContainer td.header
+        div.subtitle, .beta-base .bodyContainer td.preheader div.subtitle,
+        .beta-base .bodyContainer td.body div.subtitle, .beta-base
+        .bodyContainer td.footer div.subtitle, .beta-base .bodyContainer
+        td.sidebar div.subtitle, .beta-base .bodyContainer td.leftSidebar
+        div.subtitle, .beta-base .bodyContainer td.rightSidebar div.subtitle,
+        .beta-base .bodyContainer td.header div.text, .beta-base .bodyContainer
+        td.preheader div.text, .beta-base .bodyContainer td.body div.text,
+        .beta-base .bodyContainer td.footer div.text, .beta-base .bodyContainer
+        td.sidebar div.text, .beta-base .bodyContainer td.leftSidebar div.text,
+        .beta-base .bodyContainer td.rightSidebar div.text { overflow: auto; }
+        .beta-base .optout { margin-bottom: 10px; margin-top: 10px; }
+        div.infusion-captcha { width: 220px; padding: 10px; }
+        div.infusion-captcha input, div.infusion-captcha select,
+        div.infusion-captcha textarea { width: 95%; display: inline-block;
+        vertical-align: middle; } table.infusion-field-container
+        td.infusion-field-input-container input[type='text'],
+        table.infusion-field-container td.infusion-field-input-container
+        input[type='password'], table.infusion-field-container
+        td.infusion-field-input-container textarea { width: 98%; /* must be 98%
+        to make the snippet-menu line up due to border width */ margin: 0; }
+        table.infusion-field-container td.infusion-field-input-container select
+        { width: 101%; *width: 102%; /* this one for IE */ margin: 0; }
+        table.infusion-field-container td.infusion-field-label-container {
+        padding-right: 5px; } td.header .image-snippet img { vertical-align:
+        bottom; } #webformErrors { color: #990000; font-size: 14px; } html, body
+        { margin: 0; padding: 0; height: 100%; } .infusion-form { margin: 0;
+        height: 100%; } .infusion-option { display: block; }
+        &amp;lt;/style&amp;gt;&amp;lt;style type=&quot;text/css&quot;&amp;gt;.beta-font-b .title,
+        .beta-font-b .title p { font-size: 20px; font-weight: bold; font-family:
+        arial,sans-serif; } .beta-font-b .subtitle, .beta-font-b .subtitle p {
+        font-size: 11px; font-weight: normal; font-family: arial,sans-serif; }
+        .beta-font-b .text, .beta-font-b p { font-size: 12px; font-family:
+        arial,sans-serif; } .beta-font-b .preheader .text, .beta-font-b
+        .preheader .text p { font-size: 11px; font-family: arial,sans-serif; }
+        .beta-font-b .footer a, .beta-font-b .footer a { font-size: 11px; }
+        .beta-font-b .footer .text { font-size: 10px; font-family:
+        verdana,sans-serif; } .beta-font-b .sidebar .title, .beta-font-b
+        .leftSidebar .title, .beta-font-b .rightSidebar .title { font-size:
+        15px; font-weight: bold; font-family: arial,sans-serif; } .beta-font-b a
+        { font-family: arial,sans-serif; } .beta-font-b .sidebar .subtitle,
+        .beta-font-b .leftSidebar .subtitle, .beta-font-b .rightSidebar
+        .subtitle { font-size: 12px; font-family: arial, sans-serif; }
+        .beta-font-b .sidebar .text, .beta-font-b .leftSidebar .text,
+        .beta-font-b .rightSidebar .text { font-size: 11px; font-family: arial,
+        sans-serif; } .infusion-field-label-container { font-size: 14px;
+        font-family: arial,sans-serif; } .infusion-field-input-container {
+        color: #000000; font-size: 12px; } .infusion-option label { color:
+        #000000; font-size: 14px; font-family: arial,sans-serif; }
+        &amp;lt;/style&amp;gt;&amp;lt;style type=&quot;text/css&quot;&amp;gt;/* order is very important!
+        Overridden classes MUST come first */ .blue .background {
+        background-color: #3B607E; } .blue a { color: #0934C1; } .blue .text {
+        color: #000000; } .blue .preheader a { color: #D4D4D4; } .blue
+        .preheader .text { color: #D4D4D4; } .blue .header { background-color:
+        #EEEEEE; } .blue .title { color: #3B607E; } .blue .subtitle { color:
+        #BD3919; } .blue .sidebar .title, .blue .leftSidebar .title, .blue
+        .rightSidebar .title { color: #3B607E; } .blue .sidebar .subtitle, .blue
+        .leftSidebar .subtitle, .blue .rightSidebar .subtitle { color: #E74F46;
+        } .blue .footer { background-color: #EEEEEE; } .blue .footer a { color:
+        #0934C1; } .blue .footer .text { color: #2A2928; } .blue
+        .infusion-field-label-container { color: #000000; font-size: 14px;
+        font-family: arial, sans-serif; } .blue .infusion-field-input-container
+        { color: #000000; font-size: 12px; } .blue .infusion-option label {
+        color: #000000; font-size: 14px; font-family: arial, sans-serif; }
+        &amp;lt;/style&amp;gt;&amp;lt;style
+        type=&quot;text/css&quot;&amp;gt;.infusion-field-label-container { text-align:Left; }
+        .infusion-field-label-container { vertical-align:Middle; }
+        .infusion-field-input-container { width:200px; } .bodyContainer {
+        width:425px; } &amp;lt;/style&amp;gt;&amp;lt;script
+        src=&quot;https://vuurr24.infusionsoft.com/app/webTracking/getTrackingCode?trackingId=ffa91a687d65b564d650842ee54ec3ef&quot; type=&quot;text/javascript&quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body leftmargin=&quot;0&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; offset=&quot;0&quot; style=&quot;margin-bottom: 0px; margin-top: 0px&quot;&amp;gt; &amp;lt;form accept-charset=&quot;UTF-8&quot; action=&quot;https://vuurr24.infusionsoft.com/app/form/process/14fdd03c2d776633a1593b36969bf6ab&quot; class=&quot;infusion-form&quot; method=&quot;POST&quot; name=&quot;test&quot; onsubmit=&quot;var form = document.forms[0]; var resolution = document.createElement('input'); resolution.setAttribute('id', 'screenResolution'); resolution.setAttribute('type', 'hidden'); resolution.setAttribute('name', 'screenResolution'); var resolutionString = screen.width + 'x' + screen.height; resolution.setAttribute('value', resolutionString); form.appendChild(resolution); var pluginString = ''; for (var i = 0; i &amp;amp;lt; navigator.plugins.length; i++) { pluginString += navigator.plugins[i].name + ','; } pluginString = pluginString.substring(0, pluginString.lastIndexOf(',')); var plugins = document.createElement('input'); plugins.setAttribute('id', 'pluginList'); plugins.setAttribute('type', 'hidden'); plugins.setAttribute('name', 'pluginList'); plugins.setAttribute('value', pluginString); form.appendChild(plugins); var java = navigator.javaEnabled(); var javaEnabled = document.createElement('input'); javaEnabled.setAttribute('id', 'javaEnabled'); javaEnabled.setAttribute('type', 'hidden'); javaEnabled.setAttribute('name', 'javaEnabled'); javaEnabled.setAttribute('value', java); form.appendChild(javaEnabled);&quot;&amp;gt; &amp;lt;input name=&quot;inf_form_xid&quot; type=&quot;hidden&quot; value=&quot;14fdd03c2d776633a1593b36969bf6ab&quot; /&amp;gt;&amp;lt;input name=&quot;inf_form_name&quot; type=&quot;hidden&quot; value=&quot;test&quot; /&amp;gt;&amp;lt;input name=&quot;infusionsoft_version&quot; type=&quot;hidden&quot; value=&quot;1.25.5.27&quot; /&amp;gt; &amp;lt;div class=&quot;blue beta-base beta-font-b&quot; id=&quot;mainContent&quot; style=&quot;height:100%&quot;&amp;gt; &amp;lt;table cellpadding=&quot;10&quot; cellspacing=&quot;0&quot; class=&quot;background&quot; style=&quot;height: 100%; width: 100%&quot;&amp;gt;&amp;lt;tbody&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;td align=&quot;center&quot; valign=&quot;top&quot;&amp;gt; &amp;lt;table bgcolor=&quot;#FFFFFF&quot; cellpadding=&quot;20&quot; cellspacing=&quot;0&quot; class=&quot;bodyContainer&quot; width=&quot;100%&quot;&amp;gt;&amp;lt;tbody&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;td bgcolor=&quot;#FFFFFF&quot; class=&quot;body&quot; sectionid=&quot;body&quot; valign=&quot;top&quot;&amp;gt; &amp;lt;div class=&quot;text&quot; id=&quot;webformErrors&quot; name=&quot;errorContent&quot;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;table class=&quot;infusion-field-container&quot; style=&quot;width:100%&quot;&amp;gt;&amp;lt;tbody&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;td class=&quot;infusion-field-label-container&quot;&amp;gt;&amp;lt;label for=&quot;inf_field_FirstName&quot;&amp;gt;First Name *&amp;lt;/label&amp;gt;&amp;lt;/td&amp;gt;&amp;lt;td class=&quot;infusion-field-input-container&quot; style=&quot;width:200px&quot;&amp;gt;&amp;lt;input id=&quot;inf_field_FirstName&quot; name=&quot;inf_field_FirstName&quot; type=&quot;text&quot; /&amp;gt;&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;/tbody&amp;gt;&amp;lt;/table&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;table class=&quot;infusion-field-container&quot; style=&quot;width:100%&quot;&amp;gt;&amp;lt;tbody&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;td class=&quot;infusion-field-label-container&quot;&amp;gt;&amp;lt;label for=&quot;inf_field_Email&quot;&amp;gt;Email *&amp;lt;/label&amp;gt;&amp;lt;/td&amp;gt;&amp;lt;td class=&quot;infusion-field-input-container&quot; style=&quot;width:200px&quot;&amp;gt;&amp;lt;input id=&quot;inf_field_Email&quot; name=&quot;inf_field_Email&quot; type=&quot;text&quot; /&amp;gt;&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;/tbody&amp;gt;&amp;lt;/table&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div style=&quot;height:25px; line-height:25px&quot;&amp;gt;&amp;amp;nbsp;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;table class=&quot;infusion-field-container&quot; style=&quot;width:100%&quot;&amp;gt;&amp;lt;tbody&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;td class=&quot;infusion-field-input-container&quot; style=&quot;width:200px&quot;&amp;gt;&amp;lt;span class=&quot;infusion-option&quot;&amp;gt;&amp;lt;input id=&quot;inf_option_Signmeupforthenewsletter&quot; name=&quot;inf_option_Signmeupforthenewsletter&quot; style=&quot;margin-right:3px&quot; type=&quot;checkbox&quot; value=&quot;230&quot; /&amp;gt;&amp;lt;label for=&quot;inf_option_Signmeupforthenewsletter&quot;&amp;gt;Sign me up for the newsletter&amp;lt;/label&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;/tbody&amp;gt;&amp;lt;/table&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div style=&quot;height:15px; line-height:15px&quot;&amp;gt;&amp;amp;nbsp;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div class=&quot;infusion-submit&quot; style=&quot;text-align:left&quot;&amp;gt; &amp;lt;input style=&quot;&quot; type=&quot;submit&quot; value=&quot;Submit&quot; /&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;/tbody&amp;gt;&amp;lt;/table&amp;gt; &amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;/tbody&amp;gt;&amp;lt;/table&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+					<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$formId = 6;
+$form = $app->getWebFormHtml($formId);</pre>
 
 					<hr>
 				</div>
