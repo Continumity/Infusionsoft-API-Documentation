@@ -948,7 +948,7 @@ $app->methodCaller("DataService.getAppointmentICal",$carray);</pre>
 					<div class="full_method">
 						<span class="collection">DataService.</span><span class="method"><a name="getTemporaryKey">getTemporaryKey</a></span>
 					</div>
-					<p>Returns a temporary API key which is valid for one hour if given a valid Vendor key and user credentials</p>
+					<p>Returns a temporary API key which is valid for one hour if given a valid Vendor key and user credentials. For security, never store a users password in plaintext. You only need to pass the MD5 hash with this method, so only the MD5 hash needs to be stored.</p>
 					
 					<h3>Required Parameters</h3>
 					<table class="table table-bordered table-striped">
