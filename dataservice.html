@@ -560,6 +560,27 @@ $contacts = $app->dsFind('ContactGroupAssign',5,0,'GroupId',97,$returnFields);</
 						</tbody>
 					</table>
 					
+					<h3>Optional Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>orderBy</td>
+								<td>string</td>
+								<td>The field which the results should be sorted by</td>
+							</tr>
+							<tr>
+								<td>ascending</td>
+								<td>bool</td>
+								<td>Changes the order of results to ascending instead of descending (default)</td>
+							</tr>
+						</tbody>
+					</table>
+
 					<h3>Returns</h3>
 					<p>Return: (array) array of structs, one per result found by the query. The struct will contain all fields specified by selectedFields with their correspondingvalues</p>
 					
