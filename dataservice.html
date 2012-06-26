@@ -434,12 +434,12 @@ $grpID = $app->dsUpdate("ContactGroup", $grpID, $grp);</pre>
 							</tr>
 							<tr>
 								<td>limit</td>
-								<td>string</td>
+								<td>int</td>
 								<td>How many records you would like returned. The maximum possible is 1000</td>
 							</tr>
 							<tr>
 								<td>page</td>
-								<td>string</td>
+								<td>int</td>
 								<td>The page of results you would like returned. The first page is page 0 (loop through pages to get more than 1000 records)</td>
 							</tr>
 							<tr>
@@ -454,7 +454,7 @@ $grpID = $app->dsUpdate("ContactGroup", $grpID, $grp);</pre>
 							</tr>
 							<tr>
 								<td>returnFields</td>
-								<td>string</td>
+								<td>array (of strings)</td>
 								<td>The fields you would like returned from the table you are searching on</td>
 							</tr>
 						</tbody>
