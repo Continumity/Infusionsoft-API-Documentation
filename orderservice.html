@@ -141,10 +141,76 @@
 &lt;/methodCall&gt;</pre>
 	
 					<h3>Sample Response</h3>
-					<pre class="prettyprint"></pre>
+					<pre class="prettyprint">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;struct&gt;
+          &lt;member&gt;
+            &lt;name&gt;
+              Successful
+            &lt;/name&gt;
+            &lt;value&gt;
+              false
+            &lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;
+              Message
+            &lt;/name&gt;
+            &lt;value&gt;
+              None
+            &lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;
+              RefNum
+            &lt;/name&gt;
+            &lt;value&gt;
+              None
+            &lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;
+              OrderId
+            &lt;/name&gt;
+            &lt;value&gt;
+              74
+            &lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;
+              InvoiceId
+            &lt;/name&gt;
+            &lt;value&gt;
+              74
+            &lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;
+              Code
+            &lt;/name&gt;
+            &lt;value/&gt;
+          &lt;/member&gt;
+        &lt;/struct&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
 	
 					<h3>PHP iSDK Sample</h3>
-					<pre class="prettyprint"></pre>
+					<pre class="prettyprint">$carray = array(
+	php_xmlrpc_encode($app->key),
+	php_xmlrpc_encode($contactId),  
+	php_xmlrpc_encode($creditCardId), 
+	php_xmlrpc_encode($payPlanId), 
+	php_xmlrpc_encode(array($productId1, $productId2)), 
+	php_xmlrpc_encode(array($subscriptionPlanId1, $subscriptionPlanId2)), 
+	php_xmlrpc_encode($processSpecials), 
+	php_xmlrpc_encode(array($promoCode1, $promoCode2)) // array of strings
+);
+$app->methodCaller("OrderService.placeOrder", $carray);</pre>
 				</div>
 			</div>
 		</div>
