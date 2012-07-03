@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ProductService - Infusionsoft API</title>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap-extension.css"/>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+		<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+		<link href="google-code-prettify/src/prettify.css" type="text/css" rel="stylesheet"/>
+		<script type="text/javascript" src="google-code-prettify/src/prettify.js"></script>
+	</head>
+	<body onload="prettyPrint()">
+		<div class="container">
+		<img src="bootstrap/img/logo.png"><hr>
+			<div class="row">
+				<div class="span12" style="margin-top:40px;">
+				</div>
+			</div>
+			<div class="row">
+				<div class="span3 sidebar">
+					<div class="well" style="padding: 8px 0;">
+						<ul class="nav nav-list">
+							<li class="nav-header">Overview</li>
+							<li><a href="index.html">Introduction</a></li>
+							<li><a href="request.html">Requests</a></li>
+							<li><a href="response.html">Responses</a></li>
+							<li><a href="error.html">Errors</a></li>
+							<li><a href="api_console.html">API Console</a></li>
+							<li><a href="rate_limiting.html">API Rate Limiting</a></li>
+							<li><a href="changelog.html">Changelog</a></li>
+							<li class="nav-header">Services</li>
+							<li><a href="affiliateservice.html">AffiliateService</a></li>
+							<li><a href="contactservice.html">ContactService</a></li>
+							<li><a href="dataservice.html">DataService</a></li>
+							<li><a href="discountservice.html">DiscountService</a></li>
+							<li><a href="emailservice.html">EmailService</a></li>
+							<li><a href="fileservice.html">FileService</a></li>
+							<li><a href="invoiceservice.html">InvoiceService</a></li>
+							<li><a href="orderservice.html">OrderService</a></li>
+							<li class="nav-header active"><a href="productservice.html">ProductService</a></li>
+							<li><a href="#deactivateCreditCard">deactivateCreditCard</a></li>
+							<li><a href="#decreaseInventory">decreaseInventory</a></li>
+							<li><a href="#decrementInventory">decrementInventory</a></li>
+							<li><a href="#getInventory">getInventory</a></li
+							<li><a href="#increaseInventory">increaseInventory</a></li>
+							<li><a href="#incrementInventory">incrementInventory</a></li>
+							<li class="divider"></li>
+							<li><a href="searchservice.html">SearchService</a></li>
+							<li><a href="shippingservice.html">ShippingService</a></li>
+							<li><a href="webformservice.html">WebFormService</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="span9">
+					<h1>ProductService API</h1>
+
+					<p>ProductService is used to manage products. You can add, update and find products in addition to managing follow up sequences, tags and action sets.</p>
+					
+					<hr>
+					
+				<div class="full_method">
+					<span class="collection">ProductService.</span><span class="method"><a name="getInventory">getInventory</a></span>
+				</div>
+				<p>Returns a product inventory provided the Id</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Key</td>
+							<td>string</td>
+							<td>Your Infusionsoft API key</td>
+						</tr>
+						<tr>
+							<td>productId</td>
+							<td>int</td>
+							<td>id of the product</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ProductService.getInventory&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;productId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;i4&gt;0&lt;/i4&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->getInventory(1);</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+					<span class="collection">ProductService.</span><span class="method"><a name="incrementInventory">incrementInventory</a></span>
+				</div>
+				<p>Increments the inventory by one product, provided you pass the productId to increment withy</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Key</td>
+							<td>string</td>
+							<td>Your Infusionsoft API key</td>
+						</tr>
+						<tr>
+							<td>productId</td>
+							<td>int</td>
+							<td>id of the product</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ProductService.incrementInventory&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;productId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;boolean&gt;1&lt;/boolean&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->incrementInventory(1);</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+					<span class="collection">ProductService.</span><span class="method"><a name="decrementInventory">decrementInventory</a></span>
+				</div>
+				<p>Decrements the inventory by one product, provided you pass the productId to decrement with</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Key</td>
+							<td>string</td>
+							<td>Your Infusionsoft API key</td>
+						</tr>
+						<tr>
+							<td>productId</td>
+							<td>int</td>
+							<td>id of the product</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ProductService.decrementInventory&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;productId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+<h3>Sample Response</h3>
+<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;boolean&gt;1&lt;/boolean&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->decrementInventory(1);</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+					<span class="collection">ProductService.</span><span class="method"><a name="increaseInventory">increaseInventory</a></span>
+				</div>
+				<p>Increases the inventory with a particular product by the quantity you specify</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Key</td>
+							<td>string</td>
+							<td>Your Infusionsoft API key</td>
+						</tr>
+						<tr>
+							<td>productId</td>
+							<td>int</td>
+							<td>id of the product</td>
+						</tr>
+						<tr>
+							<td>quantity</td>
+							<td>int</td>
+							<td>quantity to increase</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ProductService.increaseInventory&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;productId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;quantity&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;boolean&gt;1&lt;/boolean&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->increaseInventory(1, 3);</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+					<span class="collection">ProductService.</span><span class="method"><a name="decreaseInventory">decreaseInventory</a></span>
+				</div>
+				<p>Decreases the inventory with a particular product by the quantity you specify</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>	
+						<tr>
+							<td>Key</td>
+							<td>string</td>
+							<td>Your Infusionsoft API key</td>
+						</tr>
+						<tr>
+							<td>productId</td>
+							<td>int</td>
+							<td>id of the product</td>
+						</tr>
+						<tr>
+							<td>quantity</td>
+							<td>int</td>
+							<td>quantity to decrease</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ProductService.decreaseInventory&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;productId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;quantity&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;boolean&gt;1&lt;/boolean&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->decreaseInventory(1, 3);</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+					<span class="collection">ProductService.</span><span class="method"><a name="deactivateCreditCard">deactivateCreditCard</a></span>
+				</div>
+				<p>Deactivates the specified Credit Card</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Key</td>
+							<td>string</td>
+							<td>Your Infusionsoft API key</td>
+						</tr>
+						<tr>
+							<td>creditCardId</td>
+							<td>int</td>
+							<td>id of the credit card</td>
+						</tr>
+						
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ProductService.deactivateCreditCard&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;creditCardId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;boolean&gt;1&lt;/boolean&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->deactivateCreditCard(1);</pre>
+
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

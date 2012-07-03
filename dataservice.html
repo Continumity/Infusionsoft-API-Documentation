@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DataService - Infusionsoft API</title>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap-extension.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+		<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+		<link href="google-code-prettify/src/prettify.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript" src="google-code-prettify/src/prettify.js"></script>
+	</head>
+	<body onload="prettyPrint()">
+		<div class="container">
+		<img src="bootstrap/img/logo.png"><hr>
+			<div class="row">
+				<div class="span12" style="margin-top:40px;">
+				</div>
+			</div>
+			<div class="row">
+				<div class="span3 sidebar">
+					<div class="well" style="padding: 8px 0;">
+						<ul class="nav nav-list">
+							<li class="nav-header">Overview</li>
+							<li><a href="index.html">Introduction</a></li>
+							<li><a href="request.html">Requests</a></li>
+							<li><a href="response.html">Responses</a></li>
+							<li><a href="error.html">Errors</a></li>
+							<li><a href="api_console.html">API Console</a></li>
+							<li><a href="rate_limiting.html">API Rate Limiting</a></li>
+							<li><a href="changelog.html">Changelog</a></li>
+							<li class="nav-header">Services</li>
+							<li><a href="affiliateservice.html">AffiliateService</a></li>
+							<li><a href="contactservice.html">ContactService</a></li>
+							<li class="nav-header active"><a href="dataservice.html">DataService</a></li>
+							<li><a href="#add">add</a></li>
+							<li><a href="#addCustomField">addCustomField</a></li>
+							<li><a href="#authenticateUser">authenticateUser</a></li>
+							<li><a href="#delete">delete</a></li>
+							<li><a href="#findByField">findByField</a></li>
+							<li><a href="#getAppointmentCal">getAppointmentCal</a></li>
+							<li><a href="#getAppSetting">getAppSetting</a></li>
+							<li><a href="#getTemporaryKey">getTemporaryKey</a></li>
+							<li><a href="#load">load</a></li>
+							<li><a href="#update">update</a></li>
+							<li><a href="#updateCustomField">updateCustomField</a></li>
+							<li><a href="#query">query</a></li>
+							<li class="divider"></li>
+							<li><a href="discountservice.html">DiscountService</a></li>
+							<li><a href="emailservice.html">EmailService</a></li>
+							<li><a href="fileservice.html">FileService</a></li>
+							<li><a href="invoiceservice.html">InvoiceService</a></li>
+							<li><a href="orderservice.html">OrderService</a></li>
+							<li><a href="productservice.html">ProductService</a></li>
+							<li><a href="searchservice.html">SearchService</a></li>
+							<li><a href="shippingservice.html">ShippingService</a></li>
+							<li><a href="webformservice.html">WebFormService</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="span9">
+					<h1>DataService</h1>
+					<p>The DataService is used to manipulate most data in Infusionsoft. It permits you to work on any available tables and has a wide range of uses. Here's a list of all available tables, and the fields they contain: <a href="http://help.infusionsoft.com/developers/tables">InfusionSoft Tables</a><b> (Pro Tip: Open this in a new tab.)</b> </p>
+					<p>To manage affiliate information (i.e. Name, Phone, etc.) you will need to use the DataService.</p>
+					
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">DataService.</span><span class="method"><a name="add">add</a></span>
+					</div>
+					<p>Adds a record to the specified table in Infusionsoft.</p>
+					
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>key</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key</td>
+							</tr>
+							<tr>
+								<td>table</td>
+								<td>string</td>
+								<td>The Infusionsoft database table name</td>
+							</tr>
+							<tr>
+								<td>values</td>
+								<td>struct</td>
+								<td>An associative array of data you would like stored into this new row in the table</td>
+							</tr>
+							
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>Return: (int) the new records unique ID number</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;DataService.add&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;tableName&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;struct&gt;
+        &lt;member&gt;&lt;name&gt;tableColumn1&lt;/name&gt;
+          &lt;value&gt;&lt;string&gt;columnValue1&lt;/string&gt;&lt;/value&gt;
+        &lt;/member&gt;
+        &lt;member&gt;&lt;name&gt;tableColumn2&lt;/name&gt;
+          &lt;value&gt;&lt;string&gt;columnValue2&lt;/string&gt;&lt;/value&gt;
+        &lt;/member&gt;
+        &lt;member&gt;&lt;name&gt;tableColumn3&lt;/name&gt;
+          &lt;value&gt;&lt;string&gt;columnValue3&lt;/string&gt;&lt;/value&gt;
+        &lt;/member&gt;
+      &lt;/struct&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">
+&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;i4&gt;26&lt;/i4&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+					<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$conDat = array('FirstName' => 'John',
+		'LastName'  => 'Doe',
+		'Email'     => 'JDoe@email.com');
+$conID = $app->dsAdd("Contact", $conDat);</pre>
+
+					<hr>
+									
+					<div class="full_method">
+						<span class="collection">DataService.</span><span class="method"><a name="load">load</a></span>
+					</div>
+					
+					<p>Loads a struct with data from the given database record</p>
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>key</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key</td>
+							</tr>
+							<tr>
+								<td>table</td>
+								<td>string</td>
+								<td>Infusionsoft database table name from which you want to load a record</td>
+							</tr>
+							<tr>
+								<td>recordId</td>
+								<td>int</td>
+								<td>The unique Id number for the record you would like to load</td>
+							</tr>
+							<tr>
+								<td>wantedFields</td>
+								<td>array</td>
+								<td>The fields you would like returned from this row in the database</td>
+							</tr>
+							
+							
+						</tbody>
+					</table>
+									
+							<h3>Returns</h3>
+							<p>Return: (struct) the specified fields for the given contact record</p>
+							
+							<h3>Sample Request</h3>
+							<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;DataService.load&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;tableName&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;idNumber&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;array&gt;
+        &lt;data&gt;
+          &lt;value&gt;&lt;string&gt;field1&lt;/string&gt;&lt;/value&gt;
+          &lt;value&gt;&lt;string&gt;field2&lt;/string&gt;&lt;/value&gt;
+          &lt;value&gt;&lt;string&gt;field3&lt;/string&gt;&lt;/value&gt;
+        &lt;/data&gt;
+      &lt;/array&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+		
+							<h3>Sample Response</h3>
+							<pre class="prettyprint">
+&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;struct&gt;
+          &lt;member&gt;
+            &lt;name&gt;field1&lt;/name&gt;
+            &lt;value&gt;field1Value&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;field2&lt;/name&gt;
+            &lt;value&gt;field2Value&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;field3&lt;/name&gt;
+            &lt;value&gt;field3Value&lt;/value&gt;
+          &lt;/member&gt;
+        &lt;/struct&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+			
+					<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$returnFields = array('Email', 'FirstName', 'LastName');
+$conDat = $app->dsLoad("Contact", 123, $returnFields);</pre>
+
+
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">DataService.</span><span class="method"><a name="update">update</a></span>
+					</div>
+					
+					<p>Updates the specified record (indicated by ID) with the data provided</p>
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>key</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key</td>
+							</tr>
+							<tr>
+								<td>table</td>
+								<td>string</td>
+								<td>The Infusionsoft database table name</td>
+							</tr>
+							<tr>
+								<td>Id</td>
+								<td>int</td>
+								<td>The Id number of the record you would like updated on the given table</td>
+							</tr>
+							<tr>
+								<td>values</td>
+								<td>struct</td>
+								<td>An associative array of data you would like updated</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>Return: (int) the ID number of the updated record</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;DataService.updateCustomField&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;customFieldId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;struct&gt;
+          &lt;member&gt;
+            &lt;name&gt;contextOfField&lt;/name&gt;
+            &lt;value&gt;&lt;string&gt;fieldValue&lt;/string&gt;&lt;/value&gt;
+          &lt;/member&gt;
+        &lt;/struct&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">
+&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;fault&gt;
+    &lt;value&gt;
+      &lt;struct&gt;
+        &lt;member&gt;
+          &lt;name&gt;faultCode&lt;/name&gt;
+          &lt;value&gt;&lt;i4&gt;4&lt;/i4&gt;&lt;/value&gt;
+        &lt;/member&gt;
+        &lt;member&gt;
+          &lt;name&gt;faultString&lt;/name&gt;
+          &lt;value&gt;[DatabaseError]Error creating custom field&lt;/value&gt;
+        &lt;/member&gt;
+      &lt;/struct&gt;
+    &lt;/value&gt;
+  &lt;/fault&gt;
+&lt;/methodResponse&gt;</pre>
+	
+					<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$grp = array('GroupName'  => 'Test Group',
+'GroupDescription'  => 'This tag was Created with api');
+$grpID = 97;
+$grpID = $app->dsUpdate("ContactGroup", $grpID, $grp);</pre>
+					
+					
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">DataService.</span><span class="method"><a name="delete">delete</a></span>
+					</div>
+					<p>Deletes the specified record in the given table from the database</p>
+					
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>key</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key</td>
+							</tr>
+							<tr>
+								<td>table</td>
+								<td>string</td>
+								<td>The table you would like to delete the record from</td>
+							</tr>
+							<tr>
+								<td>Id</td>
+								<td>int</td>
+								<td>The id number of the record you want to delete</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>Return: (boolean) True/False</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;DataService.delete&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;tableName&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;idNumberToDelete&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">
+&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;boolean&gt;1&lt;/boolean&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+					<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$result = $app->dsDelete('Contact',123);</pre>
+					
+					
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">DataService.</span><span class="method"><a name="findByField">findByField</a></span>
+					</div>
+					<p>This will locate all records in a given table that match the criteria for a given field</p>
+					
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key</td>
+							</tr>
+							<tr>
+								<td>table</td>
+								<td>string</td>
+								<td>The Infusionsoft database table name</td>
+							</tr>
+							<tr>
+								<td>limit</td>
+								<td>int</td>
+								<td>How many records you would like returned. The maximum possible is 1000</td>
+							</tr>
+							<tr>
+								<td>page</td>
+								<td>int</td>
+								<td>The page of results you would like returned. The first page is page 0 (loop through pages to get more than 1000 records)</td>
+							</tr>
+							<tr>
+								<td>fieldName</td>
+								<td>string</td>
+								<td>The name of the field you would like to run the search on</td>
+							</tr>
+							<tr>
+								<td>fieldValue</td>
+								<td>string</td>
+								<td>The value stored in the field you would like to search by</td>
+							</tr>
+							<tr>
+								<td>returnFields</td>
+								<td>array (of strings)</td>
+								<td>The fields you would like returned from the table you are searching on</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>Return: (array) array of structs, one per result found. The struct will contain all fields specified in the method call with their corresponding value</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;DataService.findByField&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;tableName&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;limit&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;page&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;fieldName&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;fieldValue&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;array&gt;
+        &lt;data&gt;
+          &lt;value&gt;&lt;string&gt;returnField1&lt;/string&gt;&lt;/value&gt;
+        &lt;/data&gt;
+      &lt;/array&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">
+&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;array&gt;&lt;data/&gt;&lt;/array&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+					<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$returnFields = array('ContactId','ContactGroup');
+$contacts = $app->dsFind('ContactGroupAssign',5,0,'GroupId',97,$returnFields);</pre>
+					
+					
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">DataService.</span><span class="method"><a name="query">query</a></span>
+					</div>
+					<p>Performs a query across the given table based on the query data</p>
+					
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key</td>
+							</tr>
+							<tr>
+								<td>table</td>
+								<td>string</td>
+								<td>The table to look in</td>
+							</tr>
+							<tr>
+								<td>limit</td>
+								<td>int</td>
+								<td>The number of records to pull (max 1000)</td>
+							</tr>
+							<tr>
+								<td>page</td>
+								<td>int</td>
+								<td>What page of data to pull (in case there are more than 1000 records). The paging starts with 0</td>
+							</tr>
+							<tr>
+								<td>queryData</td>
+								<td>struct</td>
+								<td>A struct containing query data. The key is the field to search on, and the value is the data to look for. % is the wild card operator and all searches are case insensitive. If you would like to query for an empty(null) field, use ~null~ in your query parameter, such as ‘FirstName' => ‘~null~'</td>
+							</tr>
+							<tr>
+								<td>selectedFields</td>
+								<td>array</td>
+								<td>What fields to return from the query</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Optional Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>orderBy</td>
+								<td>string</td>
+								<td>The field which the results should be sorted by</td>
+							</tr>
+							<tr>
+								<td>ascending</td>
+								<td>bool</td>
+								<td>Changes the order of results to ascending instead of descending (default)</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<h3>Returns</h3>
+					<p>Return: (array) array of structs, one per result found by the query. The struct will contain all fields specified by selectedFields with their correspondingvalues</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;DataService.query&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;tableName&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;limit&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;page&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;struct&gt;
+        &lt;member&gt;&lt;name&gt;queryField&lt;/name&gt;
+          &lt;value&gt;&lt;string&gt;query&lt;/string&gt;&lt;/value&gt;
+        &lt;/member&gt;
+      &lt;/struct&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;array&gt;
+        &lt;data&gt;
+          &lt;value&gt;&lt;string&gt;returnField1&lt;/string&gt;&lt;/value&gt;
+          &lt;value&gt;&lt;string&gt;returnField2&lt;/string&gt;&lt;/value&gt;
+        &lt;/data&gt;
+      &lt;/array&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">
+&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;array&gt;
+          &lt;data&gt;
+            &lt;value&gt;
+              &lt;struct&gt;
+                &lt;member&gt;
+                  &lt;name&gt;FirstName&lt;/name&gt;
+                  &lt;value&gt;Chuck&lt;/value&gt;
+                &lt;/member&gt;
+                &lt;member&gt;
+                  &lt;name&gt;Id&lt;/name&gt;
+                  &lt;value&gt;&lt;i4&gt;22&lt;/i4&gt;&lt;/value&gt;
+                &lt;/member&gt;
+              &lt;/struct&gt;
+            &lt;/value&gt;
+          &lt;/data&gt;
+        &lt;/array&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+					<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$returnFields = array('Id','FirstName');
+$query = array('FirstName' => 'justin');
+$contacts = $app->dsQuery("Contact",10,0,$query,$returnFields);</pre>
+					
+					
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">DataService.</span><span class="method"><a name="addCustomField">addCustomField</a></span>
+					</div>
+					<p>Creates a new custom fields within Infusionsoft</p>
+					
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key</td>
+							</tr>
+							<tr>
+								<td>customFieldType</td>
+								<td>string</td>
+								<td>Where the custom field will be used inside Infusionsoft. Options include Contact, Company, Affiliate, Task/Appt/Note, Order, Subscription, or Opportunity</td>
+							</tr>
+							<tr>
+								<td>displayName</td>
+								<td>string</td>
+								<td>The label/name of this new custom field</td>
+							</tr>
+							<tr>
+								<td>dataType</td>
+								<td>string</td>
+								<td>What type of data this field will support. Text, Dropdown, TextArea, etc.</td>
+							</tr>
+							<tr>
+								<td>headerId</td>
+								<td>int</td>
+								<td>Which custom field header you want this field to appear under. Customer headers are located on custom tabs</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Additional Notes</h3>
+					<p>Note: If you are utilizing the API to create the custom field tab and header, before running addCustomField you will need to utilize the DataService.add method to create the tab and header. You create the tab by adding to the DataFormTab table. There are two fields on that table you will need to populate, TabName and FormId.<br><br>
+					TabName is the display name for that custom tab.<br>
+					FormId tells the system what record this custom tab appears on. Contacts, Orders, Affiliates, etc. Here are the values for the FormId field:<br>
+					1 - Contact record<br>
+					3 – Affiliate record<br>
+					4 – Opportunity record<br>
+					6 – Company record<br>
+					9 – Order record<br>
+					10 – Subscription record<br>
+					After creating the tab, create the Header by adding a line to the table called DataFormGroup.</p>
+					
+					<h3>Returns</h3>
+					<p>Return: (int) ID of the custom field added</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;DataService.addCustomField&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;contextOfField&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;displayName&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;dataType&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;headerID&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">
+&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;i4&gt;4&lt;/i4&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+					<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$newField = $app->addCustomField('Contact','Test Field','Text',1);</pre>
+					
+					
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">DataService.</span><span class="method"><a name="authenticateUser">authenticateUser</a></span>
+					</div>
+					<p>This method is used to authenticate an Infusionsoft username and password(md5 hash). If the credentials match it will return back a User ID, if the credentials do not match it will send back an error message</p>
+					
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key</td>
+							</tr>
+							<tr>
+								<td>username</td>
+								<td>string</td>
+								<td>The Infusionsoft username</td>
+							</tr>
+							<tr>
+								<td>passwordHash</td>
+								<td>string</td>
+								<td>An MD5 hash of the Infusionsoft users' password</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>Return: (int) user ID of the authenticated user</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;DataService.authenticateUser&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;userName&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;password&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">
+&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;fault&gt;
+    &lt;value&gt;
+      &lt;struct&gt;
+        &lt;member&gt;
+          &lt;name&gt;faultCode&lt;/name&gt;
+          &lt;value&gt;&lt;i4&gt;13&lt;/i4&gt;&lt;/value&gt;
+        &lt;/member&gt;
+        &lt;member&gt;
+          &lt;name&gt;faultString&lt;/name&gt;
+          &lt;value&gt;[FailedLoginAttempt]Invalid username and/or password.&lt;/value&gt;
+        &lt;/member&gt;
+      &lt;/struct&gt;
+    &lt;/value&gt;
+  &lt;/fault&gt;
+&lt;/methodResponse&gt;</pre>
+	
+					<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$uid = $app->authenticateUser("JDoe","Test123");</pre>
+					
+					
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">DataService.</span><span class="method"><a name="getAppSetting">getAppSetting</a></span>
+					</div>
+					<p>This method will return back the data currently configured in a user configured application setting</p>
+					
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key</td>
+							</tr>
+							<tr>
+								<td>module</td>
+								<td>string</td>
+								<td>The application module this setting is a part of</td>
+							</tr>
+							<tr>
+								<td>setting</td>
+								<td>string</td>
+								<td>The database name of the setting you would like the values returned for</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Additional Notes</h3>
+					<p>Note: to find the module and option names, view the HTML field name within the Infusionsoft settings. You will see something such as name="Contact_WebModule0optiontypes". The portion before the underscore is the module name. "Contact" in this example. The portion after the 0 is the setting name, "optiontypes" in this example.</p>
+					
+					<h3>Returns</h3>
+					<p>Return: (string) Current values in given application setting</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;DataService.getAppSetting&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;moduleName&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;settingName&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">
+&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;Prospect,Customer,Partner,Personal Contact,Vendor&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+					<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$result = $app->dsGetSetting('Contact', 'optiontypes');</pre>
+					
+					
+					<hr>
+					
+										<div class="full_method">
+						<span class="collection">DataService.</span><span class="method"><a name="getAppointmentCal">getAppointmentCal</a></span>
+					</div>
+					<p>Returns an iCalendar entry for the given appointment</p>
+					
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key</td>
+							</tr>
+							<tr>
+								<td>appointmentId</td>
+								<td>int</td>
+								<td>The id of the appointment you want the calendar for</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>Returns an iCalendar entry for the given appointment</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+   &lt;methodName&gt;DataService.getAppointmentICal&lt;/methodName&gt;
+      &lt;params&gt;
+         &lt;param&gt;
+            &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+         &lt;/param&gt;
+         &lt;param&gt;
+            &lt;value&gt;&lt;int&gt;appointmentId&lt;/int&gt;&lt;/value&gt;
+         &lt;/param&gt;
+       &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;methodResponse&gt;
+    &lt;params&gt;
+        &lt;param&gt;
+            &lt;value&gt;BEGIN:VCALENDAR PRODID:-//Infusionsoft//iCal4j 1.0//EN VERSION:2.0 CALSCALE:GREGORIAN BEGIN:VEVENT DTSTAMP:20120430T235728Z DTSTART:20120430T181500Z DTEND:20120430T184500Z SUMMARY:blah UID:20120430T235728Z-vuurr24@fe80:0:0:0:d6be:d9ff:feaa:f495%3 DESCRIPTION: ORGANIZER;ROLE=REQ-PARTICIPANT;CN=Chris Conrey:mailto:chris@vuurr.com END:VEVENT END:VCALENDAR&lt;/value&gt;
+        &lt;/param&gt;
+    &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+	
+					<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$carray = array(
+php_xmlrpc_encode($app->key),
+php_xmlrpc_encode(2));
+
+$app->methodCaller("DataService.getAppointmentICal",$carray);</pre>
+					
+					
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">DataService.</span><span class="method"><a name="getTemporaryKey">getTemporaryKey</a></span>
+					</div>
+					<p>Returns a temporary API key which is valid for one hour if given a valid Vendor key and user credentials. For security, never store a users password in plaintext. You only need to pass the MD5 hash with this method, so only the MD5 hash needs to be stored.</p>
+					
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>vendorKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft Vendor key</td>
+							</tr>
+							<tr>
+								<td>username</td>
+								<td>string</td>
+								<td>An Infusionsoft username</td>
+							</tr>
+							<tr>
+								<td>passwordHash</td>
+								<td>string</td>
+								<td>An MD5 hash of the users' password. This is the password used to login to the Infusionsoft UI</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>Return: (string) a temporary API key valid for one hour</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;methodCall&gt;
+   &lt;methodName&gt;DataService.getTemporaryKey&lt;/methodName&gt;
+      &lt;params&gt;
+         &lt;param&gt;
+            &lt;value&gt;&lt;string&gt;vendorKey&lt;/string&gt;&lt;/value&gt;
+         &lt;/param&gt;
+         &lt;param&gt;
+            &lt;value&gt;&lt;string&gt;username&lt;/string&gt;&lt;/value&gt;
+         &lt;/param&gt;
+         &lt;param&gt;
+            &lt;value&gt;&lt;string&gt;passwordHash&lt;/string&gt;&lt;/value&gt;
+         &lt;/param&gt;
+      &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">
+</pre>
+	
+					<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$carray = array(
+php_xmlrpc_encode($app->key),
+php_xmlrpc_encode("user"),
+php_xmlrpc_encode(md5("password")));
+
+$app->methodCaller("DataService.getTemporaryKey",$carray);
+</pre>
+					
+					
+					<hr>
+					
+					<div class="full_method">
+						<span class="collection">DataService.</span><span class="method"><a name="updateCustomField">updateCustomField</a></span>
+					</div>
+					<p>Updates a custom field. Every field can have it's display name and group id changed, but only certain data types will allow you to change values(dropdown, listbox, radio, etc)</p>
+					
+					<h3>Required Parameters</h3>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<th>Parameter Name</th>
+							<th>Type</th>
+							<th>Definition</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>privateKey</td>
+								<td>string</td>
+								<td>Your Infusionsoft API key</td>
+							</tr>
+							<tr>
+								<td>customFieldId</td>
+								<td>int</td>
+								<td>The Id number of the custom field you would like to update</td>
+							</tr>
+							<tr>
+								<td>values</td>
+								<td>struct</td>
+								<td>The preset values for the given custom field</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h3>Returns</h3>
+					<p>Return: (boolean) True/False</p>
+					
+					<h3>Sample Request</h3>
+					<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;DataService.updateCustomField&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;customFieldId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;struct&gt;
+        &lt;member&gt;&lt;name&gt;contextOfField&lt;/name&gt;
+          &lt;value&gt;&lt;string&gt;fieldValue&lt;/string&gt;&lt;/value&gt;
+        &lt;/member&gt;
+      &lt;/struct&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+
+					<h3>Sample Response</h3>
+					<pre class="prettyprint">
+&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;fault&gt;
+    &lt;value&gt;
+      &lt;struct&gt;
+        &lt;member&gt;
+          &lt;name&gt;faultCode&lt;/name&gt;
+          &lt;value&gt;&lt;i4&gt;4&lt;/i4&gt;&lt;/value&gt;
+        &lt;/member&gt;
+        &lt;member&gt;
+          &lt;name&gt;faultString&lt;/name&gt;
+          &lt;value&gt;[DatabaseError]Error creating custom field&lt;/value&gt;
+        &lt;/member&gt;
+      &lt;/struct&gt;
+    &lt;/value&gt;
+  &lt;/fault&gt;
+&lt;/methodResponse&gt;</pre>
+	
+					<h3>PHP iSDK Sample</h3>
+					<pre class="prettyprint">$meta = $app->addCustomField('Contact','API TEST','Text',1);
+$values = array('Label' => 'API_TEST_UPDATE');
+$status = $app->updateCustomField($meta,$values);</pre>
+					
+					
+					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

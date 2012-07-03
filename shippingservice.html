@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ShippingService - Infusionsoft API</title>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap-extension.css"/>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+		<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+		<link href="google-code-prettify/src/prettify.css" type="text/css" rel="stylesheet"/>
+		<script type="text/javascript" src="google-code-prettify/src/prettify.js"></script>
+	</head>
+	<body onload="prettyPrint()">
+		<div class="container">
+		<img src="bootstrap/img/logo.png"><hr>
+			<div class="row">
+				<div class="span12" style="margin-top:40px;">
+				</div>
+			</div>
+			<div class="row">
+				<div class="span3 sidebar">
+					<div class="well" style="padding: 8px 0;">
+						<ul class="nav nav-list">
+							<li class="nav-header">Overview</li>
+							<li><a href="index.html">Introduction</a></li>
+							<li><a href="request.html">Requests</a></li>
+							<li><a href="response.html">Responses</a></li>
+							<li><a href="error.html">Errors</a></li>
+							<li><a href="api_console.html">API Console</a></li>
+							<li><a href="rate_limiting.html">API Rate Limiting</a></li>
+							<li><a href="changelog.html">Changelog</a></li>
+							<li class="nav-header">Services</li>
+							<li><a href="affiliateservice.html">AffiliateService</a></li>
+							<li><a href="contactservice.html">ContactService</a></li>
+							<li><a href="dataservice.html">DataService</a></li>
+							<li><a href="discountservice.html">DiscountService</a></li>
+							<li><a href="emailservice.html">EmailService</a></li>
+							<li><a href="fileservice.html">FileService</a></li>
+							<li><a href="invoiceservice.html">InvoiceService</a></li>
+							<li><a href="orderservice.html">OrderService</a></li>
+							<li><a href="productservice.html">ProductService</a></li>
+							<li><a href="searchservice.html">SearchService</a></li>
+							<li class="nav-header active"><a href="shippingservice.html">ShippingService</a></li>
+							<li><a href="#getAllShippingOptions">getAllShippingOptions</a></li>
+							<li><a href="#getFlatRateShippingOption">getFlatRateShippingOption</a></li>
+							<li><a href="#getOrderTotalShippingOption">getOrderTotalShippingOption</a></li>
+							<li><a href="#getOrderTotalShippingRanges">getOrderTotalShippingRanges</a></li>
+							<li><a href="#getOrderQuantityShippingOption">getOrderQuantityShippingOption</a></li>
+							<li><a href="#getProductBasedShippingOption">getProductBasedShippingOption</a></li>
+							<!--<li><a href="#getProductShippingPricesForProductShippingOption">getProductShippingPricesForProductShippingOption</a></li>-->
+							<li><a href="#getUpsShippingOption">getUpsShippingOption</a></li>
+							<li><a href="#getWeightBasedShippingOption">getWeightBasedShippingOption</a></li>
+							<li class="divider"></li>
+							<li><a href="webformservice.html">WebFormService</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="span9">
+					<h1>ShippingService API</h1>
+
+					<p>ShippingService is used to manage products. You can add, update and find products in addition to managing follow up sequences, tags and action sets.</p>
+					
+				<hr>
+				
+				<div class="full_method">
+					<span class="collection">ShippingService.</span><span class="method"><a name="getAllShippingOptions">getAllShippingOptions</a></span>
+				</div>
+				<p>Returns all shipping options configured</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Key</td>
+							<td>string</td>
+							<td>Your Infusionsoft API key</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ShippingService.getAllShippingOptions&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;array&gt;&lt;data/&gt;&lt;/array&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->getAllConfiguredShippingOptions();</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+					<span class="collection">ShippingService.</span><span class="method"><a name="getFlatRateShippingOption">getFlatRateShippingOption</a></span>
+				</div>
+				<p>Returns the options and values of the flat rate shipping option provided</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Key</td>
+							<td>string</td>
+							<td>Your Infusionsoft API key</td>
+						</tr>
+						<tr>
+							<td>optionId</td>
+							<td>int</td>
+							<td>The Id for the shipping option</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ShippingService.getFlatRateShippingOption&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;optionId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;struct&gt;
+          &lt;member&gt;
+            &lt;name&gt;id&lt;/name&gt;
+            &lt;value&gt;1&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;price&lt;/name&gt;
+            &lt;value&gt;0.0&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;description&lt;/name&gt;
+            &lt;value&gt;test&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;orderBased&lt;/name&gt;
+            &lt;value&gt;false&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;name&lt;/name&gt;
+            &lt;value&gt;Flat Rate Per Order&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;international&lt;/name&gt;
+            &lt;value&gt;false&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;active&lt;/name&gt;
+            &lt;value&gt;true&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;type&lt;/name&gt;
+            &lt;value&gt;Flat&lt;/value&gt;
+          &lt;/member&gt;
+        &lt;/struct&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->getFlatRateShippingOption(1);</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+					<span class="collection">ShippingService.</span><span class="method"><a name="getOrderTotalShippingOption">getOrderTotalShippingOption</a></span>
+				</div>
+				<p>Returns the options and values of the order total shipping option provided</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Key</td>
+							<td>string</td>
+							<td>Your Infusionsoft API key</td>
+						</tr>
+						<tr>
+							<td>optionId</td>
+							<td>int</td>
+							<td>The Id for the shipping option</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ShippingService.getOrderTotalShippingOption&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;optionId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;array&gt;
+          &lt;data/&gt;
+        &lt;/array&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->getOrderTotalShippingOption(1);</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+					<span class="collection">ShippingService.</span><span class="method"><a name="getOrderTotalShippingRanges">getOrderTotalShippingRanges</a></span>
+				</div>
+				<p>Returns the options and values of the order total shipping ranges option provided</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Key</td>
+							<td>string</td>
+							<td>Your Infusionsoft API key</td>
+						</tr>
+						<tr>
+							<td>optionId</td>
+							<td>int</td>
+							<td>The Id for the shipping option</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ShippingService.getOrderTotalShippingRanges&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;optionId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;array&gt;
+          &lt;data/&gt;
+        &lt;/array&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->getOrderTotalShippingRanges(1);</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+					<span class="collection">ShippingService.</span><span class="method"><a name="getProductBasedShippingOption">getProductBasedShippingOption</a></span>
+				</div>
+				<p>Returns the options and values of the product based shipping option provided</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Key</td>
+							<td>string</td>
+							<td>Your Infusionsoft API key</td>
+						</tr>
+						<tr>
+							<td>optionId</td>
+							<td>int</td>
+							<td>The Id for the shipping option</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ShippingService.getProductBasedShippingOption&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;optionId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;struct&gt;
+          &lt;member&gt;
+            &lt;name&gt;id&lt;/name&gt;
+            &lt;value&gt;3&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;description&lt;/name&gt;
+            &lt;value/&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;name&lt;/name&gt;
+            &lt;value&gt;Specific Price Per Product&lt;/value&gt;
+          &lt;/member&gt;
+        &lt;/struct&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->getProductBasedShippingOption(1);</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+					<span class="collection">ShippingService.</span><span class="method"><a name="getOrderQuantityShippingOption">getOrderQuantityShippingOption</a></span>
+				</div>
+				<p>Returns the options and values of the order quantity shipping option provided</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Key</td>
+							<td>string</td>
+							<td>Your Infusionsoft API key</td>
+						</tr>
+						<tr>
+							<td>optionId</td>
+							<td>int</td>
+							<td>The Id for the shipping option</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ShippingService.getOrderQuantityShippingOption&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;optionId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;struct&gt;
+          &lt;member&gt;
+            &lt;name&gt;id&lt;/name&gt;
+            &lt;value&gt;7&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;baseShippingPrice&lt;/name&gt;
+            &lt;value&gt;1.0&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;pricePerItem&lt;/name&gt;
+            &lt;value&gt;1.0&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;description&lt;/name&gt;
+            &lt;value/&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;orderBased&lt;/name&gt;
+            &lt;value&gt;false&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;name&lt;/name&gt;
+            &lt;value&gt;test quan&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;international&lt;/name&gt;
+            &lt;value&gt;false&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;active&lt;/name&gt;
+            &lt;value&gt;true&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;type&lt;/name&gt;
+            &lt;value&gt;Quantity&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;minimumShippingPrice&lt;/name&gt;
+            &lt;value&gt;1.0&lt;/value&gt;
+          &lt;/member&gt;
+        &lt;/struct&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->getOrderQuantityShippingOption(1);</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+					<span class="collection">ShippingService.</span><span class="method"><a name="getWeightBasedShippingOption">getWeightBasedShippingOption</a></span>
+				</div>
+				<p>Returns the options and values of the weight based shipping option provided</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Key</td>
+							<td>string</td>
+							<td>Your Infusionsoft API key</td>
+						</tr>
+						<tr>
+							<td>optionId</td>
+							<td>int</td>
+							<td>The Id for the shipping option</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ShippingService.getWeightBasedShippingOption&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt;optionId&lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;struct&gt;
+          &lt;member&gt;
+            &lt;name&gt;id&lt;/name&gt;
+            &lt;value&gt;11&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;description&lt;/name&gt;
+            &lt;value/&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;name&lt;/name&gt;
+            &lt;value&gt;Ship by Weight&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;orderBased&lt;/name&gt;
+            &lt;value&gt;true&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;international&lt;/name&gt;
+            &lt;value&gt;false&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;active&lt;/name&gt;
+            &lt;value&gt;true&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;type&lt;/name&gt;
+            &lt;value&gt;Weight&lt;/value&gt;
+          &lt;/member&gt;
+        &lt;/struct&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->getWeightBasedShippingOption(1);</pre>
+				
+				
+				<hr>
+				
+				<div class="full_method">
+					<span class="collection">ShippingService.</span><span class="method"><a name="getUpsShippingOption">getUpsShippingOption</a></span>
+				</div>
+				<p>Returns the options and values of the ups shipping option provided</p>
+				<h3>Required Parameters</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<th>Parameter Name</th>
+						<th>Type</th>
+						<th>Definition</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Key</td>
+							<td>string</td>
+							<td>Your Infusionsoft API key</td>
+						</tr>
+						<tr>
+							<td>optionId</td>
+							<td>int</td>
+							<td>The Id for the shipping option</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Sample Request</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodCall&gt;
+  &lt;methodName&gt;ShippingService.getUpsShippingOption&lt;/methodName&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;string&gt;privateKey&lt;/string&gt;&lt;/value&gt;
+    &lt;/param&gt;
+    &lt;param&gt;
+      &lt;value&gt;&lt;int&gt; optionId &lt;/int&gt;&lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodCall&gt;</pre>
+				
+				<h3>Sample Response</h3>
+				<pre class="prettyprint">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;struct&gt;
+          &lt;member&gt;
+            &lt;name&gt;deliveryType&lt;/name&gt;
+            &lt;value&gt;01,03,07&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;orderBased&lt;/name&gt;
+            &lt;value&gt;false&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;international&lt;/name&gt;
+            &lt;value&gt;false&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;accessLicenseNumber&lt;/name&gt;
+            &lt;value&gt;niewonfidso&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;type&lt;/name&gt;
+            &lt;value&gt;UPS&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;pickupType&lt;/name&gt;
+            &lt;value&gt;01&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;id&lt;/name&gt;
+            &lt;value&gt;13&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;accountNumber&lt;/name&gt;
+            &lt;value&gt;39208234&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;accessPassword&lt;/name&gt;
+            &lt;value&gt;ronald11&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;destinationType&lt;/name&gt;
+            &lt;value&gt;0&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;description&lt;/name&gt;
+            &lt;value/&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;packagingType&lt;/name&gt;
+            &lt;value&gt;01&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;name&lt;/name&gt;
+            &lt;value&gt;UPS&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;active&lt;/name&gt;
+            &lt;value&gt;true&lt;/value&gt;
+          &lt;/member&gt;
+          &lt;member&gt;
+            &lt;name&gt;accessUserId&lt;/name&gt;
+            &lt;value&gt;ron&lt;/value&gt;
+          &lt;/member&gt;
+        &lt;/struct&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;</pre>
+				
+				<h3>PHP iSDK Sample</h3>
+				<pre class="prettyprint">$app->getUpsShippingOption(1);</pre>
+				<hr>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

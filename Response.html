@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Responses</title>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap-extension.css"/>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+		<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+		<link href="google-code-prettify/src/prettify.css" type="text/css" rel="stylesheet"/>
+		<script type="text/javascript" src="google-code-prettify/src/prettify.js"></script>
+	</head>
+	<body onload="prettyPrint()">
+		<div class="container">
+		<img src="bootstrap/img/logo.png"><hr>
+			<div class="row">
+				<div class="span3 sidebar">
+					<div class="well" style="padding: 8px 0;">
+						<ul class="nav nav-list">
+							<li class="nav-header">Overview</li>
+							<li><a href="index.html">Introduction</a></li>
+							<li><a href="request.html">Requests</a></li>
+							<li class="active"><a href="response.html">Responses</a></li>
+							<li><a href="error.html">Errors</a></li>
+							<li><a href="api_console.html">API Console</a></li>
+							<li><a href="rate_limiting.html">API Rate Limiting</a></li>
+							<li><a href="changelog.html">Changelog</a></li>
+							<li class="nav-header">Services</li>
+							<li><a href="affiliateservice.html">AffiliateService</a></li>
+							<li><a href="contactservice.html">ContactService</a></li>
+							<li><a href="dataservice.html">DataService</a></li>
+							<li><a href="discountservice.html">DiscountService</a></li>
+							<li><a href="emailservice.html">EmailService</a></li>
+							<li><a href="fileservice.html">FileService</a></li>
+							<li><a href="invoiceservice.html">InvoiceService</a></li>
+							<li><a href="orderservice.html">OrderService</a></li>
+							<li><a href="productservice.html">ProductService</a></li>
+							<li><a href="searchservice.html">SearchService</a></li>
+							<li><a href="shippingservice.html">ShippingService</a></li>
+							<li><a href="webformservice.html">WebFormService</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="span9">
+					<h1>Responses Overview</h1>
+					<p>Infusionsoft will reply to your API requests with XML returned as a string to your HTTP requests. If using an XML-RPC library, it should take care of parsing the returned XML for you. If not, you will need to parse the response yourself. It would be worth your while to investigate whether or not functionality already exists for handling XML-RPC in your language of choice.</p>
+					<h3>Response Format</h3>
+					<p>Different methods return different data types in the XML structured in different ways - it is important to note what the response format for a given method is in order to avoid errors when parsing a response.</p>
+					<pre class="prettyprint">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;key&gt;482&lt;/key&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;
+					</pre>
+					<h3>Single Parameter Responses</h3>
+					<p>Methods that return single responses such as a Boolean or an integer do so within a single parameter of the response. Here's a successful response from a method that returns a value:</p>
+					<span>Reurn: (int) The Id number of contact updated</span>
+					<pre class="prettyprint">
+&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;i4&gt;
+          contactIDNumber
+        &lt;/i4&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;
+					</pre>
+					<h3>Multi Parameter Responses</h3>
+					<p>When receiving multi parameter responses, you'll need to parse the struct. Here is the response from findByEmail. You'll need to parse the "Name/Value" out of the &lt;struct&gt;. If it returns more than one set of data, it will be in multiple &lt;structs&gt;.</p>
+					<pre class="prettyprint">
+&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;methodResponse&gt;
+  &lt;params&gt;
+    &lt;param&gt;
+      &lt;value&gt;
+        &lt;array&gt;
+          &lt;data&gt;
+            &lt;value&gt;
+              &lt;struct&gt;
+                &lt;member&gt;
+                  &lt;name&gt;FirstName&lt;/name&gt;
+                  &lt;value&gt;John&lt;/value&gt;
+                &lt;/member&gt;
+                &lt;member&gt;
+                  &lt;name&gt;Id&lt;/name&gt;
+                  &lt;value&gt;&lt;i4&gt;16&lt;/i4&gt;&lt;/value&gt;
+                &lt;/member&gt;
+                &lt;member&gt;
+                  &lt;name&gt;LastName&lt;/name&gt;
+                  &lt;value&gt;Doe&lt;/value&gt;
+                &lt;/member&gt;
+              &lt;/struct&gt;
+            &lt;/value&gt;
+            &lt;value&gt;
+              &lt;struct&gt;
+                &lt;member&gt;
+                  &lt;name&gt;FirstName&lt;/name&gt;
+                  &lt;value&gt;Ron &lt;/value&gt;
+                &lt;/member&gt;
+                &lt;member&gt;
+                  &lt;name&gt;Id &lt;/name&gt;
+                  &lt;value&gt;&lt;i4&gt;18&lt;/i4&gt;
+                  &lt;/value&gt;
+                &lt;/member&gt;
+                &lt;member&gt;
+                  &lt;name&gt;LastName&lt;/name&gt;
+                  &lt;value&gt;Doe&lt;/value&gt;
+                &lt;/member&gt;
+              &lt;/struct&gt;
+            &lt;/value&gt;
+          &lt;/data&gt;
+        &lt;/array&gt;
+      &lt;/value&gt;
+    &lt;/param&gt;
+  &lt;/params&gt;
+&lt;/methodResponse&gt;
+					</pre>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
